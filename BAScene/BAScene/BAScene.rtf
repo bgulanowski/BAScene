@@ -1,0 +1,46 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1038\cocoasubrtf350
+{\fonttbl\f0\fnil\fcharset0 Monaco;}
+{\colortbl;\red255\green255\blue255;}
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\ql\qnatural\pardirnatural
+
+\f0\fs20 \cf0 2009.09.07\
+\
+Intro\
+\
+BAScene is the Bored Astronaut Scene Graph framework. It is a Mac OS X framework written in Objective-C, which depends on the CoreData framework, making it distinctly non-portable.\
+\
+The framework is intended to be dual-purpose. On the one hand, it is a flexible API for creating and saving 3D models, or entire scenes, using a custom format. On the other, it is a self-optimizing (future) rendering engine with built-in support for frustum and occlusion culling (future), thanks to its automated scene-graph management intelligence (future).\
+\
+The framework seeks to balance simplicity and familiarity for Cocoa programmers with sufficient performance for medium-duty real-time rendering. Objective-C and graphics rendering performance are considered contradictory due to the costs incurred by the Objective-C dynamic runtime. It is a primary goal of the framework to overcome this contradiction through dynamic geometry optimization.\
+\
+All primitives are represented by mutable, persistent Cocoa objects, right down to points and point indices (from which polygons are made). The object model is highly hierarchical. But such dynamic objects can also be compiled into various high-performance representations like display lists, vertex arrays and vertex buffers, while transforms and rendering effects should be compilable into fragment programs.\
+\
+The framework is intended to also support animations, which for now is represented only in the lowly BATransform class, which should be extended dramatically and hopefully support run-time compile optimizations also.\
+\
+The project is ambitious and I don't have a lot of energy to devote to it, so it will develop slowly and perhaps never be realized as I want it to be, but I won't give up hope.\
+\
+Beyond the manual construction and fixed compilation, a long-term goal is to support procedural geometric content, including infinite level of detail fractal geometry, but that's far beyond my current abilities.\
+\
+Eventually I would also hope for it to be complemented by a full-featured Cocoa math library full of custom mathematical objects and algorithms (which I may be able to inherit from elsewhere), an artificial life/intelligence/ecosystem and virtual machine simulation framework, a game framework (for defining games based on game tokens, events and situations, including win/loss/tie states), and support frameworks for networking, user account management, chat and distributed content management.\
+\
+\
+Overview\
+\
+Basic elements:\
+ - BASceneView: supports rendering the active  put one into a window in your nib\
+ - BACamera: every view has one; set properties on the camera to change the view rendering style and viewpoint position\
+ - BAColor: \
+\
+The essential pieces of the sytem are:\
+ - BAScene: source of the scene model, sends out an update heartbeat\
+ - BAStage: root container for scene objects (called "props")\
+ - BAProp: a visually represented object\
+ - BAPrototype: a shared representation of one or more props; a collection of one or more meshes (or other geometric constructs not yet implemented)\
+ - BAMesh: a collection of polygons with an optional performance-optimized representation which can be stored externally\
+ - BAPolygon: a collection of points which make up a single polygon in a mesh\
+ - BAPoint: a vertex with three values x, y, z representing a point in cartesian coordinates in local space\
+ - BALight: a light source; represents an OpenGL light\
+\
+\
+Usage\
+}

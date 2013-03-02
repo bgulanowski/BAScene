@@ -1,0 +1,22 @@
+//
+// Prefix header for all source files of the 'SceneKit' target in the 'SceneKit' project
+//
+
+#ifdef __OBJC__
+
+    #import <UIKit/UIKit.h>
+	#import <CoreGraphics/CoreGraphics.h>
+    #import <QuartzCore/QuartzCore.h>
+    #import <Foundation/Foundation.h>
+
+    #if TARGET_OS_IPHONE
+        #import <OpenGLES/ES1/gl.h>
+    #else
+        #import <OpenGL/OpenGL.h>
+    #endif
+
+    #import <BAScene/BAScene.h>
+    #import "NSManagedObjectContext+BAAdditions.h"
+    #import "NSManagedObject+BAAdditions.h"
+
+#endif

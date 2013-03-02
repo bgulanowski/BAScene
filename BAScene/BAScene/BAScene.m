@@ -1,0 +1,110 @@
+//
+//  BAScene.m
+//  BAScene
+//
+//  Created by Brent Gulanowski on 11/10/08.
+//  Copyright 2008 Bored Astronaut. All rights reserved.
+//
+
+#import "BAScene.h"
+
+#import "BACamera.h"
+
+
+@implementation BAScene
+
+@synthesize lastUpdate=_lastUpdate;
+@synthesize updateQueue;
+
+#pragma mark - Accessors
+- (void)setUpdateQueue:(dispatch_queue_t)newQueue {
+    if(updateQueue)
+        dispatch_release(updateQueue);
+    updateQueue = newQueue;
+    if(updateQueue)
+        dispatch_retain(updateQueue);
+}
+
+
+#pragma mark - NSObject
+
+- (void)dealloc {
+    self.updateQueue = NULL;
+    [super dealloc];
+}
+
+- (id)init {
+	self = [super init];
+	if(self) {
+        self.model = [[self class] sceneModel];
+	}
+	return self;
+}
+
+- (void)startUpdates:(BOOL (^)(BAScene *scene, NSTimeInterval interval))updateBlock {
+    
+    if(!updateQueue)
+		self.updateQueue = dispatch_queue_create("BAScene_update", NULL);
+
+    dispatch_once(&updateToken, ^{
+
+        _lastUpdate = [NSDate timeIntervalSinceReferenceDate];
+        timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, updateQueue);
+        
+        BAScene *weakSelf = self;
+        int64_t delta = NSEC_PER_SEC/100;
+        
+        dispatch_source_set_event_handler(timer, ^{
+            
+            NSTimeInterval lastUpdate = weakSelf->_lastUpdate;
+            NSTimeInterval now = [NSDate timeIntervalSinceReferenceDate];
+            
+            weakSelf->_lastUpdate = now;
+            
+            if(updateBlock(weakSelf, now - lastUpdate))
+                dispatch_async(dispatch_get_main_queue(), ^{ [self cancelUpdates]; });
+        });
+        dispatch_source_set_timer(timer, dispatch_time(DISPATCH_TIME_NOW, 0), delta, NSEC_PER_USEC/10000);
+        
+//        updateBlock(self, 0);
+
+        [self resumeUpdates];
+    });
+}
+
+- (void)pauseUpdates {
+    if(timer)
+        dispatch_suspend(timer);
+}
+
+- (void)resumeUpdates {
+    if(timer)
+        dispatch_resume(timer);
+}
+
+- (void)cancelUpdates {
+    if(timer) {
+        dispatch_source_cancel(timer);
+        timer = NULL;
+        updateToken = 0;
+    }
+}
+
+
+#pragma mark - BACoreDataManager
++ (NSString *)defaultStoreExtension { return @"bascene"; }
+
+
+#pragma mark New
+
++ (NSManagedObjectModel *)sceneModel {
+    static NSManagedObjectModel *sceneModel;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSString *path = [[NSBundle bundleForClass:[BAScene class]] pathForResource:@"BAScene" ofType:@"mom"];
+        sceneModel = path ? [[NSManagedObjectModel alloc] initWithContentsOfURL:[NSURL fileURLWithPath:path]] : nil;
+    });
+	return sceneModel;
+}
+
+@end

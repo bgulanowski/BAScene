@@ -1,0 +1,14 @@
+//
+// Prefix header for all source files of the 'BAScene' target in the 'BAScene' project.
+//
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+    #import <CoreData/CoreData.h>
+    #import <OpenGL/gl.h>
+	#import "BASceneConstants.h"
+	#import "BASceneTypes.h"
+	#import "BASceneUtilities.h"
+	#import <BAFoundation/NSManagedObjectContext+BAAdditions.h>
+	#import <BAFoundation/NSManagedObject+BAAdditions.h>
+#endif

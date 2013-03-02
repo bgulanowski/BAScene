@@ -1,0 +1,17 @@
+//
+// Prefix header for all source files of the 'SceneKitTest' target in the 'SceneKitTest' project
+//
+
+#import <Availability.h>
+
+#ifndef __IPHONE_4_0
+#warning "This project uses features only available in iOS SDK 4.0 and later."
+#endif
+
+#ifdef __OBJC__
+    #import <UIKit/UIKit.h>
+    #import <QuartzCore/QuartzCore.h>
+    #import <Foundation/Foundation.h>
+    #import <OpenGLES/ES1/gl.h>
+    #import <BAScene/BAScene.h>
+#endif

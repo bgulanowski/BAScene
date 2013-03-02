@@ -1,0 +1,1603 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		4E122FB2121AD8C300EC0D92 /* BAScene SDK */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 4E122FED121AD91400EC0D92 /* Build configuration list for PBXAggregateTarget "BAScene SDK" */;
+			buildPhases = (
+				4E122FB1121AD8C300EC0D92 /* Headers */,
+				4E122FFC121AD97D00EC0D92 /* Libraries */,
+				4E1230A7121ADD6600EC0D92 /* Frameworks */,
+			);
+			dependencies = (
+				4E123062121ADD2300EC0D92 /* PBXTargetDependency */,
+				4E122FB6121AD8C900EC0D92 /* PBXTargetDependency */,
+				4E182C9412CD36FB00B92FDC /* PBXTargetDependency */,
+			);
+			name = "BAScene SDK";
+			productName = "BAScene SDK";
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		4E058A95117641B100BED553 /* BASceneConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E058A94117641B100BED553 /* BASceneConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E08E1E3136AFB4900F01674 /* NSIndexSet+BAAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E08E1E1136AFB4900F01674 /* NSIndexSet+BAAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E08E1E4136AFB4900F01674 /* NSIndexSet+BAAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E08E1E2136AFB4900F01674 /* NSIndexSet+BAAdditions.m */; };
+		4E08E1E5136AFB4900F01674 /* NSIndexSet+BAAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E08E1E1136AFB4900F01674 /* NSIndexSet+BAAdditions.h */; };
+		4E08E1E6136AFB4900F01674 /* NSIndexSet+BAAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E08E1E2136AFB4900F01674 /* NSIndexSet+BAAdditions.m */; };
+		4E122FC4121AD8F600EC0D92 /* _BAGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834D9711691D7800306C0A /* _BAGroup.h */; };
+		4E122FC5121AD8F600EC0D92 /* _BAMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834D9911691D7800306C0A /* _BAMesh.h */; };
+		4E122FC6121AD8F600EC0D92 /* _BAPartition.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834D9B11691D7800306C0A /* _BAPartition.h */; };
+		4E122FC8121AD8F600EC0D92 /* _BAPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834D9F11691D7800306C0A /* _BAPoint.h */; };
+		4E122FC9121AD8F600EC0D92 /* _BAPolygon.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834DA111691D7800306C0A /* _BAPolygon.h */; };
+		4E122FCA121AD8F600EC0D92 /* _BAProp.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834DA311691D7800306C0A /* _BAProp.h */; };
+		4E122FCB121AD8F600EC0D92 /* _BAPrototype.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834DA511691D7800306C0A /* _BAPrototype.h */; };
+		4E122FCC121AD8F600EC0D92 /* _BAPrototypeMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EB8993E117A84F4005F8C4C /* _BAPrototypeMesh.h */; };
+		4E122FCD121AD8F600EC0D92 /* _BAScenePref.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834DA711691D7800306C0A /* _BAScenePref.h */; };
+		4E122FCE121AD8F600EC0D92 /* _BAStage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834DA911691D7800306C0A /* _BAStage.h */; };
+		4E122FCF121AD8F600EC0D92 /* _BATransform.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834DAB11691D7800306C0A /* _BATransform.h */; };
+		4E122FD0121AD8F600EC0D92 /* BACamera.h in Headers */ = {isa = PBXBuildFile; fileRef = B67412850FAF9F44001E3C0D /* BACamera.h */; };
+		4E122FD1121AD8F600EC0D92 /* BACameraSetup.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EBBD433117B253300B7315B /* BACameraSetup.h */; };
+		4E122FD2121AD8F600EC0D92 /* BAColor.h in Headers */ = {isa = PBXBuildFile; fileRef = B67412870FAF9F44001E3C0D /* BAColor.h */; };
+		4E122FD3121AD8F600EC0D92 /* BAGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E1B6D750FD1E75C00AE4803 /* BAGroup.h */; };
+		4E122FD4121AD8F600EC0D92 /* BAMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E1B6D580FD1E26F00AE4803 /* BAMesh.h */; };
+		4E122FD5121AD8F600EC0D92 /* BAMeshEditor.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E944E7110A07C9500ECE62C /* BAMeshEditor.h */; };
+		4E122FD6121AD8F600EC0D92 /* BAPartition.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E1B6E4E0FD413D300AE4803 /* BAPartition.h */; };
+		4E122FD7121AD8F600EC0D92 /* BATuple.h in Headers */ = {isa = PBXBuildFile; fileRef = B67411E60FAF6B4E001E3C0D /* BATuple.h */; };
+		4E122FD8121AD8F600EC0D92 /* BAPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E1B6DA80FD21CAE00AE4803 /* BAPoint.h */; };
+		4E122FD9121AD8F600EC0D92 /* BAPointsList.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E944E5210A06B7400ECE62C /* BAPointsList.h */; };
+		4E122FDA121AD8F600EC0D92 /* BATupleTester.h in Headers */ = {isa = PBXBuildFile; fileRef = B67411EC0FAF6C6E001E3C0D /* BATupleTester.h */; };
+		4E122FDB121AD8F600EC0D92 /* BAPolygon.h in Headers */ = {isa = PBXBuildFile; fileRef = B674128B0FAF9F44001E3C0D /* BAPolygon.h */; };
+		4E122FDC121AD8F600EC0D92 /* BAPolygonEditor.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E944E6D10A07C8E00ECE62C /* BAPolygonEditor.h */; };
+		4E122FDD121AD8F600EC0D92 /* BAProp.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E1B6D660FD1E3E900AE4803 /* BAProp.h */; };
+		4E122FDE121AD8F600EC0D92 /* BAPropTester.h in Headers */ = {isa = PBXBuildFile; fileRef = B67411C40FAF62F6001E3C0D /* BAPropTester.h */; };
+		4E122FDF121AD8F600EC0D92 /* BAPrototype.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E1B6D610FD1E3CB00AE4803 /* BAPrototype.h */; };
+		4E122FE0121AD8F600EC0D92 /* BAPrototypeMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EB89944117A8503005F8C4C /* BAPrototypeMesh.h */; };
+		4E122FE1121AD8F600EC0D92 /* BAScene.h in Headers */ = {isa = PBXBuildFile; fileRef = B67412890FAF9F44001E3C0D /* BAScene.h */; };
+		4E122FE2121AD8F600EC0D92 /* BASceneConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E058A94117641B100BED553 /* BASceneConstants.h */; };
+		4E122FE3121AD8F600EC0D92 /* BAScenePref.h in Headers */ = {isa = PBXBuildFile; fileRef = B674125A0FAF99F9001E3C0D /* BAScenePref.h */; };
+		4E122FE4121AD8F600EC0D92 /* BASceneTestSupport.h in Headers */ = {isa = PBXBuildFile; fileRef = B67411F10FAF6CAB001E3C0D /* BASceneTestSupport.h */; };
+		4E122FE5121AD8F600EC0D92 /* BASceneTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E573C30113FF3BB004EE087 /* BASceneTypes.h */; };
+		4E122FE6121AD8F600EC0D92 /* BASceneUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = B67411A40FAF61EA001E3C0D /* BASceneUtilities.h */; };
+		4E122FE7121AD8F600EC0D92 /* BASceneView.h in Headers */ = {isa = PBXBuildFile; fileRef = B67412970FAF9FB0001E3C0D /* BASceneView.h */; };
+		4E122FE8121AD8F600EC0D92 /* BAStage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E1B6E3E0FD3FFC400AE4803 /* BAStage.h */; };
+		4E122FE9121AD8F600EC0D92 /* BATransform.h in Headers */ = {isa = PBXBuildFile; fileRef = B67412580FAF99F9001E3C0D /* BATransform.h */; };
+		4E122FEA121AD8F600EC0D92 /* BAViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EBBD472117B289100B7315B /* BAViewController.h */; };
+		4E122FEB121AD8F600EC0D92 /* NSManagedObject+BAAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B674134B0FAFA93F001E3C0D /* NSManagedObject+BAAdditions.h */; };
+		4E122FEC121AD8F600EC0D92 /* NSManagedObjectContext+BAAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B67412680FAF9D12001E3C0D /* NSManagedObjectContext+BAAdditions.h */; };
+		4E122FEE121AD91500EC0D92 /* libscene.a in Libraries */ = {isa = PBXBuildFile; fileRef = 4E2957621217381000DB9320 /* libscene.a */; };
+		4E12306D121ADD2600EC0D92 /* BAScene.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* BAScene.framework */; };
+		4E1B6D5B0FD1E2FC00AE4803 /* BAMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E1B6D580FD1E26F00AE4803 /* BAMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E1B6D5C0FD1E2FD00AE4803 /* BAMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6D590FD1E26F00AE4803 /* BAMesh.m */; };
+		4E1B6D7F0FD1E95500AE4803 /* BAGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6D760FD1E75C00AE4803 /* BAGroup.m */; };
+		4E1B6D800FD1E95600AE4803 /* BAGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E1B6D750FD1E75C00AE4803 /* BAGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E1B6D870FD1EB3700AE4803 /* BAProp.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E1B6D660FD1E3E900AE4803 /* BAProp.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E1B6D880FD1EB3700AE4803 /* BAProp.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6D670FD1E3E900AE4803 /* BAProp.m */; };
+		4E1B6D890FD1EB3800AE4803 /* BAPrototype.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E1B6D610FD1E3CB00AE4803 /* BAPrototype.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E1B6D8A0FD1EB3800AE4803 /* BAPrototype.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6D620FD1E3CB00AE4803 /* BAPrototype.m */; };
+		4E1B6DAA0FD21CAE00AE4803 /* BAPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E1B6DA80FD21CAE00AE4803 /* BAPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E1B6DAB0FD21CAE00AE4803 /* BAPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6DA90FD21CAE00AE4803 /* BAPoint.m */; };
+		4E1B6E410FD3FFC400AE4803 /* BAStage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6E3F0FD3FFC400AE4803 /* BAStage.m */; };
+		4E1B6E500FD413D300AE4803 /* BAPartition.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E1B6E4E0FD413D300AE4803 /* BAPartition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E1B6E510FD413D300AE4803 /* BAPartition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6E4F0FD413D300AE4803 /* BAPartition.m */; };
+		4E21DF891066C26D00511C91 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E21DF881066C26D00511C91 /* OpenGL.framework */; };
+		4E2957741217388B00DB9320 /* NSManagedObjectContext+BAAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = B67412690FAF9D12001E3C0D /* NSManagedObjectContext+BAAdditions.m */; };
+		4E2957751217389C00DB9320 /* _BAGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834D9811691D7800306C0A /* _BAGroup.m */; };
+		4E2957761217389C00DB9320 /* _BAMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834D9A11691D7800306C0A /* _BAMesh.m */; };
+		4E2957771217389E00DB9320 /* _BAPartition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834D9C11691D7800306C0A /* _BAPartition.m */; };
+		4E2957791217389F00DB9320 /* _BAPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834DA011691D7800306C0A /* _BAPoint.m */; };
+		4E29577A121738A000DB9320 /* _BAPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834DA211691D7800306C0A /* _BAPolygon.m */; };
+		4E29577B121738A100DB9320 /* _BAProp.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834DA411691D7800306C0A /* _BAProp.m */; };
+		4E29577C121738A200DB9320 /* _BAPrototype.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834DA611691D7800306C0A /* _BAPrototype.m */; };
+		4E29577D121738A300DB9320 /* _BAPrototypeMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB8993F117A84F4005F8C4C /* _BAPrototypeMesh.m */; };
+		4E29577E121738A300DB9320 /* _BAScenePref.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834DA811691D7800306C0A /* _BAScenePref.m */; };
+		4E29577F121738A500DB9320 /* _BAStage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834DAA11691D7800306C0A /* _BAStage.m */; };
+		4E295780121738A500DB9320 /* _BATransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834DAC11691D7800306C0A /* _BATransform.m */; };
+		4E295781121738A700DB9320 /* BACamera.m in Sources */ = {isa = PBXBuildFile; fileRef = B67412860FAF9F44001E3C0D /* BACamera.m */; };
+		4E295782121738AA00DB9320 /* BACameraSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBBD434117B253300B7315B /* BACameraSetup.m */; };
+		4E295784121738AF00DB9320 /* BAColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B67412880FAF9F44001E3C0D /* BAColor.m */; };
+		4E295785121738B000DB9320 /* BAGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6D760FD1E75C00AE4803 /* BAGroup.m */; };
+		4E295786121738B100DB9320 /* BAMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6D590FD1E26F00AE4803 /* BAMesh.m */; };
+		4E295787121738B200DB9320 /* BAMeshEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E944E7210A07C9500ECE62C /* BAMeshEditor.m */; };
+		4E295788121738B500DB9320 /* BAPartition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6E4F0FD413D300AE4803 /* BAPartition.m */; };
+		4E295789121738B600DB9320 /* BATuple.m in Sources */ = {isa = PBXBuildFile; fileRef = B67411E70FAF6B4E001E3C0D /* BATuple.m */; };
+		4E29578C121738BC00DB9320 /* BAPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6DA90FD21CAE00AE4803 /* BAPoint.m */; };
+		4E29578D121738BD00DB9320 /* BAPointsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E944E5310A06B7400ECE62C /* BAPointsList.m */; };
+		4E29578E121738BD00DB9320 /* BAPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = B674128C0FAF9F44001E3C0D /* BAPolygon.m */; };
+		4E29578F121738BE00DB9320 /* BAPolygonEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E944E6E10A07C8E00ECE62C /* BAPolygonEditor.m */; };
+		4E295790121738BF00DB9320 /* BAProp.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6D670FD1E3E900AE4803 /* BAProp.m */; };
+		4E295791121738C000DB9320 /* BAPrototype.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6D620FD1E3CB00AE4803 /* BAPrototype.m */; };
+		4E295792121738C200DB9320 /* BAPrototypeMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB89945117A8503005F8C4C /* BAPrototypeMesh.m */; };
+		4E295793121738C200DB9320 /* BAScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B674128A0FAF9F44001E3C0D /* BAScene.m */; };
+		4E295794121738C300DB9320 /* BASceneConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC7C9E71198FBA500D1E2ED /* BASceneConstants.m */; };
+		4E295795121738C300DB9320 /* BAScenePref.m in Sources */ = {isa = PBXBuildFile; fileRef = B674125B0FAF99F9001E3C0D /* BAScenePref.m */; };
+		4E295796121738C400DB9320 /* BASceneTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E573C31113FF3BB004EE087 /* BASceneTypes.m */; };
+		4E295797121738C500DB9320 /* BASceneUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B67411A50FAF61EA001E3C0D /* BASceneUtilities.m */; };
+		4E295798121738C500DB9320 /* BASceneView.m in Sources */ = {isa = PBXBuildFile; fileRef = B67412980FAF9FB0001E3C0D /* BASceneView.m */; };
+		4E295799121738C600DB9320 /* BAStage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6E3F0FD3FFC400AE4803 /* BAStage.m */; };
+		4E29579A121738C700DB9320 /* BATransform.m in Sources */ = {isa = PBXBuildFile; fileRef = B67412590FAF99F9001E3C0D /* BATransform.m */; };
+		4E29579B121738C700DB9320 /* BAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBBD473117B289100B7315B /* BAViewController.m */; };
+		4E2A090D1361B40800EDD4A4 /* _BATuple.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E2A090B1361B40800EDD4A4 /* _BATuple.h */; };
+		4E2A090E1361B40800EDD4A4 /* _BATuple.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A090C1361B40800EDD4A4 /* _BATuple.m */; };
+		4E2A090F1361B40800EDD4A4 /* _BATuple.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E2A090B1361B40800EDD4A4 /* _BATuple.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E2A09101361B40800EDD4A4 /* _BATuple.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A090C1361B40800EDD4A4 /* _BATuple.m */; };
+		4E3E9F511347D1AE0016C8EA /* scenetest_main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E9F501347D1AE0016C8EA /* scenetest_main.m */; };
+		4E3E9F5B1347D1C40016C8EA /* libscene.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E2957621217381000DB9320 /* libscene.a */; };
+		4E3E9F621347D1EF0016C8EA /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F7E79907B2D74100F64583 /* CoreData.framework */; };
+		4E3E9F681347D2100016C8EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E3E9F671347D2100016C8EA /* Foundation.framework */; };
+		4E3E9F761347D2C60016C8EA /* BAVoxelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E58596B1345FCC100A8D0BB /* BAVoxelArray.m */; };
+		4E3E9F771347D2C70016C8EA /* BAResourceStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDEE12CE36950083CCFC /* BAResourceStorage.m */; };
+		4E3E9F781347D2C70016C8EA /* BAResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDE212CE30020083CCFC /* BAResource.m */; };
+		4E3E9F791347D2CA0016C8EA /* _BAColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDD212CE2FEF0083CCFC /* _BAColor.m */; };
+		4E3E9F7A1347D2CB0016C8EA /* _BALight.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDD412CE2FEF0083CCFC /* _BALight.m */; };
+		4E3E9F7B1347D2CC0016C8EA /* _BAResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDD612CE2FEF0083CCFC /* _BAResource.m */; };
+		4E3E9F7C1347D2CE0016C8EA /* BALight.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDE012CE30020083CCFC /* BALight.m */; };
+		4E3E9F8C1347D33C0016C8EA /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E21DF881066C26D00511C91 /* OpenGL.framework */; };
+		4E3E9F911347D3620016C8EA /* libbaf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E585990134603A900A8D0BB /* libbaf.a */; };
+		4E3FE5AC13324E4800626212 /* BAColorTester.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FE5A513324AD700626212 /* BAColorTester.m */; };
+		4E47D191149B590400B5A862 /* BARegionUtilityTester.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E47D190149B590400B5A862 /* BARegionUtilityTester.m */; };
+		4E4F2C1E12CFACC90095AD3F /* BATexture.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E4F2C1C12CFACC90095AD3F /* BATexture.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E4F2C1F12CFACC90095AD3F /* BATexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4F2C1D12CFACC90095AD3F /* BATexture.m */; };
+		4E573C32113FF3BB004EE087 /* BASceneTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E573C30113FF3BB004EE087 /* BASceneTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E573C33113FF3BB004EE087 /* BASceneTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E573C31113FF3BB004EE087 /* BASceneTypes.m */; };
+		4E58596C1345FCC100A8D0BB /* BAVoxelArray.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E58596A1345FCC100A8D0BB /* BAVoxelArray.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E58596D1345FCC100A8D0BB /* BAVoxelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E58596B1345FCC100A8D0BB /* BAVoxelArray.m */; };
+		4E585993134603BF00A8D0BB /* BAFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E58598A134603A900A8D0BB /* BAFoundation.framework */; };
+		4E5859D713461B0600A8D0BB /* BAVoxelArrayTester.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E5859D613461B0600A8D0BB /* BAVoxelArrayTester.m */; };
+		4E71138D1055A963002B54BB /* BAScene.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4E71138C1055A963002B54BB /* BAScene.rtf */; };
+		4E7FBBD31132CF4500965767 /* BAGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E7FBBD11132CF4500965767 /* BAGeometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E7FBBD41132CF4500965767 /* BAGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FBBD21132CF4500965767 /* BAGeometry.m */; };
+		4E834DAD11691D7800306C0A /* _BAGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834D9711691D7800306C0A /* _BAGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E834DAE11691D7800306C0A /* _BAGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834D9811691D7800306C0A /* _BAGroup.m */; };
+		4E834DAF11691D7800306C0A /* _BAMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834D9911691D7800306C0A /* _BAMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E834DB011691D7800306C0A /* _BAMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834D9A11691D7800306C0A /* _BAMesh.m */; };
+		4E834DB111691D7800306C0A /* _BAPartition.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834D9B11691D7800306C0A /* _BAPartition.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E834DB211691D7800306C0A /* _BAPartition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834D9C11691D7800306C0A /* _BAPartition.m */; };
+		4E834DB511691D7800306C0A /* _BAPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834D9F11691D7800306C0A /* _BAPoint.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E834DB611691D7800306C0A /* _BAPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834DA011691D7800306C0A /* _BAPoint.m */; };
+		4E834DB711691D7800306C0A /* _BAPolygon.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834DA111691D7800306C0A /* _BAPolygon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E834DB811691D7800306C0A /* _BAPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834DA211691D7800306C0A /* _BAPolygon.m */; };
+		4E834DB911691D7800306C0A /* _BAProp.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834DA311691D7800306C0A /* _BAProp.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E834DBA11691D7800306C0A /* _BAProp.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834DA411691D7800306C0A /* _BAProp.m */; };
+		4E834DBB11691D7800306C0A /* _BAPrototype.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834DA511691D7800306C0A /* _BAPrototype.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E834DBC11691D7800306C0A /* _BAPrototype.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834DA611691D7800306C0A /* _BAPrototype.m */; };
+		4E834DBD11691D7800306C0A /* _BAScenePref.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834DA711691D7800306C0A /* _BAScenePref.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E834DBE11691D7800306C0A /* _BAScenePref.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834DA811691D7800306C0A /* _BAScenePref.m */; };
+		4E834DBF11691D7800306C0A /* _BAStage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834DA911691D7800306C0A /* _BAStage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E834DC011691D7800306C0A /* _BAStage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834DAA11691D7800306C0A /* _BAStage.m */; };
+		4E834DC111691D7800306C0A /* _BATransform.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834DAB11691D7800306C0A /* _BATransform.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E834DC211691D7800306C0A /* _BATransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834DAC11691D7800306C0A /* _BATransform.m */; };
+		4E887C401332FE8800B52EC4 /* BAVectorTester.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E887C271332FE0A00B52EC4 /* BAVectorTester.m */; };
+		4E887C65133308F200B52EC4 /* BAMatrixTester.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E887C5E133307E800B52EC4 /* BAMatrixTester.m */; };
+		4E91CE171349F25D00B90712 /* BATexture.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E4F2C1C12CFACC90095AD3F /* BATexture.h */; };
+		4E91CE181349F25E00B90712 /* BATexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4F2C1D12CFACC90095AD3F /* BATexture.m */; };
+		4E91CE191349F26600B90712 /* NSManagedObject+BAAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B674134B0FAFA93F001E3C0D /* NSManagedObject+BAAdditions.h */; };
+		4E91CE1A1349F26700B90712 /* NSManagedObjectContext+BAAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = B67412680FAF9D12001E3C0D /* NSManagedObjectContext+BAAdditions.h */; };
+		4E91CEC41349F80A00B90712 /* BAScene.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = B67411920FAF5E2C001E3C0D /* BAScene.xcdatamodel */; };
+		4E944E4B10A06AB700ECE62C /* BAPolygonEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E944E4A10A06AB700ECE62C /* BAPolygonEditor.xib */; };
+		4E944E4D10A06ACB00ECE62C /* BAMeshEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E944E4C10A06ACB00ECE62C /* BAMeshEditor.xib */; };
+		4E944E4F10A06B3200ECE62C /* BAPointsList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E944E4E10A06B3200ECE62C /* BAPointsList.xib */; };
+		4E944E5410A06B7400ECE62C /* BAPointsList.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E944E5210A06B7400ECE62C /* BAPointsList.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E944E5510A06B7400ECE62C /* BAPointsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E944E5310A06B7400ECE62C /* BAPointsList.m */; };
+		4E944E6F10A07C8E00ECE62C /* BAPolygonEditor.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E944E6D10A07C8E00ECE62C /* BAPolygonEditor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E944E7010A07C8E00ECE62C /* BAPolygonEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E944E6E10A07C8E00ECE62C /* BAPolygonEditor.m */; };
+		4E944E7310A07C9500ECE62C /* BAMeshEditor.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E944E7110A07C9500ECE62C /* BAMeshEditor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E944E7410A07C9500ECE62C /* BAMeshEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E944E7210A07C9500ECE62C /* BAMeshEditor.m */; };
+		4EA450FF136C4CF40081218A /* NSArray+BAAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EA450FD136C4CF40081218A /* NSArray+BAAdditions.h */; };
+		4EA45100136C4CF40081218A /* NSArray+BAAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA450FE136C4CF40081218A /* NSArray+BAAdditions.m */; };
+		4EA45101136C4CF40081218A /* NSArray+BAAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EA450FD136C4CF40081218A /* NSArray+BAAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4EA45102136C4CF40081218A /* NSArray+BAAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA450FE136C4CF40081218A /* NSArray+BAAdditions.m */; };
+		4EB89940117A84F4005F8C4C /* _BAPrototypeMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EB8993E117A84F4005F8C4C /* _BAPrototypeMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4EB89941117A84F4005F8C4C /* _BAPrototypeMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB8993F117A84F4005F8C4C /* _BAPrototypeMesh.m */; };
+		4EB89946117A8503005F8C4C /* BAPrototypeMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EB89944117A8503005F8C4C /* BAPrototypeMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4EB89947117A8503005F8C4C /* BAPrototypeMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB89945117A8503005F8C4C /* BAPrototypeMesh.m */; };
+		4EBBD435117B253300B7315B /* BACameraSetup.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EBBD433117B253300B7315B /* BACameraSetup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4EBBD436117B253300B7315B /* BACameraSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBBD434117B253300B7315B /* BACameraSetup.m */; };
+		4EBBD438117B254000B7315B /* BACameraSetup.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EBBD437117B254000B7315B /* BACameraSetup.xib */; };
+		4EBBD474117B289100B7315B /* BAViewController.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EBBD472117B289100B7315B /* BAViewController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4EBBD475117B289100B7315B /* BAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBBD473117B289100B7315B /* BAViewController.m */; };
+		4EC7C9E81198FBA500D1E2ED /* BASceneConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC7C9E71198FBA500D1E2ED /* BASceneConstants.m */; };
+		4EEB2905106270AA004DCA14 /* BAStage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E1B6E3E0FD3FFC400AE4803 /* BAStage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4EEE171013586EEB00A6840F /* BAEqualFloatsTester.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EEE170B13586E7300A6840F /* BAEqualFloatsTester.m */; };
+		4EFEDDD712CE2FEF0083CCFC /* _BAColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EFEDDD112CE2FEF0083CCFC /* _BAColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4EFEDDD812CE2FEF0083CCFC /* _BAColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDD212CE2FEF0083CCFC /* _BAColor.m */; };
+		4EFEDDD912CE2FEF0083CCFC /* _BALight.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EFEDDD312CE2FEF0083CCFC /* _BALight.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4EFEDDDA12CE2FEF0083CCFC /* _BALight.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDD412CE2FEF0083CCFC /* _BALight.m */; };
+		4EFEDDDB12CE2FEF0083CCFC /* _BAResource.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EFEDDD512CE2FEF0083CCFC /* _BAResource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4EFEDDDC12CE2FEF0083CCFC /* _BAResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDD612CE2FEF0083CCFC /* _BAResource.m */; };
+		4EFEDDE312CE30020083CCFC /* BALight.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EFEDDDF12CE30020083CCFC /* BALight.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4EFEDDE412CE30020083CCFC /* BALight.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDE012CE30020083CCFC /* BALight.m */; };
+		4EFEDDE512CE30020083CCFC /* BAResource.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EFEDDE112CE30020083CCFC /* BAResource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4EFEDDE612CE30020083CCFC /* BAResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDE212CE30020083CCFC /* BAResource.m */; };
+		4EFEDDEF12CE36950083CCFC /* BAResourceStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EFEDDED12CE36950083CCFC /* BAResourceStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4EFEDDF012CE36950083CCFC /* BAResourceStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDEE12CE36950083CCFC /* BAResourceStorage.m */; };
+		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
+		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
+		B67410420FAF5DE9001E3C0D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F7E79907B2D74100F64583 /* CoreData.framework */; };
+		B67411A60FAF61EA001E3C0D /* BASceneUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = B67411A40FAF61EA001E3C0D /* BASceneUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B67411D40FAF63D6001E3C0D /* BAPropTester.m in Sources */ = {isa = PBXBuildFile; fileRef = B67411C50FAF62F6001E3C0D /* BAPropTester.m */; };
+		B67411DA0FAF63FA001E3C0D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B67411D90FAF63FA001E3C0D /* SenTestingKit.framework */; };
+		B67411E00FAF6476001E3C0D /* BAScene.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* BAScene.framework */; };
+		B67411F30FAF6CAB001E3C0D /* BASceneTestSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = B67411F20FAF6CAB001E3C0D /* BASceneTestSupport.m */; };
+		B67411F50FAF6CB9001E3C0D /* BATuple.h in Headers */ = {isa = PBXBuildFile; fileRef = B67411E60FAF6B4E001E3C0D /* BATuple.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B67411F60FAF6CBA001E3C0D /* BATuple.m in Sources */ = {isa = PBXBuildFile; fileRef = B67411E70FAF6B4E001E3C0D /* BATuple.m */; };
+		B67412140FAF9130001E3C0D /* BATupleTester.m in Sources */ = {isa = PBXBuildFile; fileRef = B67411ED0FAF6C6E001E3C0D /* BATupleTester.m */; };
+		B67413140FAFA576001E3C0D /* BAScene.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = B67411920FAF5E2C001E3C0D /* BAScene.xcdatamodel */; };
+		B674131D0FAFA648001E3C0D /* BASceneUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B67411A50FAF61EA001E3C0D /* BASceneUtilities.m */; };
+		B67413250FAFA6C7001E3C0D /* BACamera.h in Headers */ = {isa = PBXBuildFile; fileRef = B67412850FAF9F44001E3C0D /* BACamera.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B67413260FAFA6C7001E3C0D /* BACamera.m in Sources */ = {isa = PBXBuildFile; fileRef = B67412860FAF9F44001E3C0D /* BACamera.m */; };
+		B67413270FAFA6C8001E3C0D /* BAColor.h in Headers */ = {isa = PBXBuildFile; fileRef = B67412870FAF9F44001E3C0D /* BAColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B67413280FAFA6C9001E3C0D /* BAColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B67412880FAF9F44001E3C0D /* BAColor.m */; };
+		B67413290FAFA6C9001E3C0D /* BAScene.h in Headers */ = {isa = PBXBuildFile; fileRef = B67412890FAF9F44001E3C0D /* BAScene.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B674132A0FAFA6CA001E3C0D /* BAScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B674128A0FAF9F44001E3C0D /* BAScene.m */; };
+		B674132B0FAFA6CA001E3C0D /* BAPolygon.h in Headers */ = {isa = PBXBuildFile; fileRef = B674128B0FAF9F44001E3C0D /* BAPolygon.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B674132C0FAFA6CB001E3C0D /* BAPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = B674128C0FAF9F44001E3C0D /* BAPolygon.m */; };
+		B674132D0FAFA6D2001E3C0D /* BATransform.h in Headers */ = {isa = PBXBuildFile; fileRef = B67412580FAF99F9001E3C0D /* BATransform.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B674132E0FAFA6D3001E3C0D /* BATransform.m in Sources */ = {isa = PBXBuildFile; fileRef = B67412590FAF99F9001E3C0D /* BATransform.m */; };
+		B674132F0FAFA6D3001E3C0D /* BAScenePref.h in Headers */ = {isa = PBXBuildFile; fileRef = B674125A0FAF99F9001E3C0D /* BAScenePref.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B67413300FAFA6D4001E3C0D /* BAScenePref.m in Sources */ = {isa = PBXBuildFile; fileRef = B674125B0FAF99F9001E3C0D /* BAScenePref.m */; };
+		B67413730FB06269001E3C0D /* BASceneView.h in Headers */ = {isa = PBXBuildFile; fileRef = B67412970FAF9FB0001E3C0D /* BASceneView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B67413740FB06269001E3C0D /* BASceneView.m in Sources */ = {isa = PBXBuildFile; fileRef = B67412980FAF9FB0001E3C0D /* BASceneView.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4E122FB5121AD8C900EC0D92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E2957611217381000DB9320;
+			remoteInfo = scene;
+		};
+		4E123061121ADD2300EC0D92 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = BAScene;
+		};
+		4E182C9312CD36FB00B92FDC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B67411B60FAF62AD001E3C0D;
+			remoteInfo = BASceneTests;
+		};
+		4E3E9F531347D1B70016C8EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E2957611217381000DB9320;
+			remoteInfo = scene;
+		};
+		4E585989134603A900A8D0BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E585982134603A900A8D0BB /* BAFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = BAFoundation;
+		};
+		4E58598B134603A900A8D0BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E585982134603A900A8D0BB /* BAFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4E4CC4A51338D0F2007AD580;
+			remoteInfo = BAFoundationTests;
+		};
+		4E58598D134603A900A8D0BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E585982134603A900A8D0BB /* BAFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4E792A92133A2E82003C9B3E;
+			remoteInfo = baft;
+		};
+		4E58598F134603A900A8D0BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E585982134603A900A8D0BB /* BAFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4E792AAB133A2ECF003C9B3E;
+			remoteInfo = baf;
+		};
+		4E585991134603B000A8D0BB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E585982134603A900A8D0BB /* BAFoundation.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = BAFoundation;
+		};
+		4E91CE4C1349F5AC00B90712 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E585982134603A900A8D0BB /* BAFoundation.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E792AAA133A2ECF003C9B3E;
+			remoteInfo = baf;
+		};
+		B67411BC0FAF62B4001E3C0D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = BAScene;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4E122FB1121AD8C300EC0D92 /* Headers */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "BAScene SDK/Headers";
+			dstSubfolderSpec = 16;
+			files = (
+				4E122FC4121AD8F600EC0D92 /* _BAGroup.h in Headers */,
+				4E122FC5121AD8F600EC0D92 /* _BAMesh.h in Headers */,
+				4E122FC6121AD8F600EC0D92 /* _BAPartition.h in Headers */,
+				4E122FC8121AD8F600EC0D92 /* _BAPoint.h in Headers */,
+				4E122FC9121AD8F600EC0D92 /* _BAPolygon.h in Headers */,
+				4E122FCA121AD8F600EC0D92 /* _BAProp.h in Headers */,
+				4E122FCB121AD8F600EC0D92 /* _BAPrototype.h in Headers */,
+				4E122FCC121AD8F600EC0D92 /* _BAPrototypeMesh.h in Headers */,
+				4E122FCD121AD8F600EC0D92 /* _BAScenePref.h in Headers */,
+				4E122FCE121AD8F600EC0D92 /* _BAStage.h in Headers */,
+				4E122FCF121AD8F600EC0D92 /* _BATransform.h in Headers */,
+				4E122FD0121AD8F600EC0D92 /* BACamera.h in Headers */,
+				4E122FD1121AD8F600EC0D92 /* BACameraSetup.h in Headers */,
+				4E122FD2121AD8F600EC0D92 /* BAColor.h in Headers */,
+				4E122FD3121AD8F600EC0D92 /* BAGroup.h in Headers */,
+				4E122FD4121AD8F600EC0D92 /* BAMesh.h in Headers */,
+				4E122FD5121AD8F600EC0D92 /* BAMeshEditor.h in Headers */,
+				4E122FD6121AD8F600EC0D92 /* BAPartition.h in Headers */,
+				4E122FD7121AD8F600EC0D92 /* BATuple.h in Headers */,
+				4E122FD8121AD8F600EC0D92 /* BAPoint.h in Headers */,
+				4E122FD9121AD8F600EC0D92 /* BAPointsList.h in Headers */,
+				4E122FDA121AD8F600EC0D92 /* BATupleTester.h in Headers */,
+				4E122FDB121AD8F600EC0D92 /* BAPolygon.h in Headers */,
+				4E122FDC121AD8F600EC0D92 /* BAPolygonEditor.h in Headers */,
+				4E122FDD121AD8F600EC0D92 /* BAProp.h in Headers */,
+				4E122FDE121AD8F600EC0D92 /* BAPropTester.h in Headers */,
+				4E122FDF121AD8F600EC0D92 /* BAPrototype.h in Headers */,
+				4E122FE0121AD8F600EC0D92 /* BAPrototypeMesh.h in Headers */,
+				4E122FE1121AD8F600EC0D92 /* BAScene.h in Headers */,
+				4E122FE2121AD8F600EC0D92 /* BASceneConstants.h in Headers */,
+				4E122FE3121AD8F600EC0D92 /* BAScenePref.h in Headers */,
+				4E122FE4121AD8F600EC0D92 /* BASceneTestSupport.h in Headers */,
+				4E122FE5121AD8F600EC0D92 /* BASceneTypes.h in Headers */,
+				4E122FE6121AD8F600EC0D92 /* BASceneUtilities.h in Headers */,
+				4E122FE7121AD8F600EC0D92 /* BASceneView.h in Headers */,
+				4E122FE8121AD8F600EC0D92 /* BAStage.h in Headers */,
+				4E122FE9121AD8F600EC0D92 /* BATransform.h in Headers */,
+				4E122FEA121AD8F600EC0D92 /* BAViewController.h in Headers */,
+				4E122FEB121AD8F600EC0D92 /* NSManagedObject+BAAdditions.h in Headers */,
+				4E122FEC121AD8F600EC0D92 /* NSManagedObjectContext+BAAdditions.h in Headers */,
+			);
+			name = Headers;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E122FFC121AD97D00EC0D92 /* Libraries */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "BAScene SDK/Libraries";
+			dstSubfolderSpec = 16;
+			files = (
+				4E122FEE121AD91500EC0D92 /* libscene.a in Libraries */,
+			);
+			name = Libraries;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E1230A7121ADD6600EC0D92 /* Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "BAScene SDK/Frameworks";
+			dstSubfolderSpec = 16;
+			files = (
+				4E12306D121ADD2600EC0D92 /* BAScene.framework in Frameworks */,
+			);
+			name = Frameworks;
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		32DBCF5E0370ADEE00C91783 /* BAScene_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAScene_Prefix.pch; sourceTree = "<group>"; };
+		4E058A94117641B100BED553 /* BASceneConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BASceneConstants.h; sourceTree = "<group>"; };
+		4E08E1E1136AFB4900F01674 /* NSIndexSet+BAAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexSet+BAAdditions.h"; sourceTree = "<group>"; };
+		4E08E1E2136AFB4900F01674 /* NSIndexSet+BAAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexSet+BAAdditions.m"; sourceTree = "<group>"; };
+		4E1B6D580FD1E26F00AE4803 /* BAMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAMesh.h; sourceTree = "<group>"; };
+		4E1B6D590FD1E26F00AE4803 /* BAMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAMesh.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		4E1B6D610FD1E3CB00AE4803 /* BAPrototype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAPrototype.h; sourceTree = "<group>"; };
+		4E1B6D620FD1E3CB00AE4803 /* BAPrototype.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAPrototype.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		4E1B6D660FD1E3E900AE4803 /* BAProp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAProp.h; sourceTree = "<group>"; };
+		4E1B6D670FD1E3E900AE4803 /* BAProp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAProp.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		4E1B6D750FD1E75C00AE4803 /* BAGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAGroup.h; sourceTree = "<group>"; };
+		4E1B6D760FD1E75C00AE4803 /* BAGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAGroup.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		4E1B6DA80FD21CAE00AE4803 /* BAPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAPoint.h; sourceTree = "<group>"; };
+		4E1B6DA90FD21CAE00AE4803 /* BAPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAPoint.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		4E1B6E3E0FD3FFC400AE4803 /* BAStage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAStage.h; sourceTree = "<group>"; };
+		4E1B6E3F0FD3FFC400AE4803 /* BAStage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAStage.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		4E1B6E4E0FD413D300AE4803 /* BAPartition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAPartition.h; sourceTree = "<group>"; };
+		4E1B6E4F0FD413D300AE4803 /* BAPartition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAPartition.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		4E21DF881066C26D00511C91 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		4E2957621217381000DB9320 /* libscene.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libscene.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E2A090B1361B40800EDD4A4 /* _BATuple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BATuple.h; sourceTree = "<group>"; };
+		4E2A090C1361B40800EDD4A4 /* _BATuple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BATuple.m; sourceTree = "<group>"; };
+		4E3E9F4B1347D1840016C8EA /* scenetest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = scenetest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E3E9F501347D1AE0016C8EA /* scenetest_main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = scenetest_main.m; sourceTree = "<group>"; };
+		4E3E9F671347D2100016C8EA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4E3FE5A413324AD700626212 /* BAColorTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAColorTester.h; sourceTree = "<group>"; };
+		4E3FE5A513324AD700626212 /* BAColorTester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAColorTester.m; sourceTree = "<group>"; };
+		4E47D18F149B590400B5A862 /* BARegionUtilityTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARegionUtilityTester.h; sourceTree = "<group>"; };
+		4E47D190149B590400B5A862 /* BARegionUtilityTester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BARegionUtilityTester.m; sourceTree = "<group>"; };
+		4E4F2C1C12CFACC90095AD3F /* BATexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BATexture.h; sourceTree = "<group>"; };
+		4E4F2C1D12CFACC90095AD3F /* BATexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BATexture.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		4E573C30113FF3BB004EE087 /* BASceneTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BASceneTypes.h; sourceTree = "<group>"; };
+		4E573C31113FF3BB004EE087 /* BASceneTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BASceneTypes.m; sourceTree = "<group>"; };
+		4E58596A1345FCC100A8D0BB /* BAVoxelArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAVoxelArray.h; sourceTree = "<group>"; };
+		4E58596B1345FCC100A8D0BB /* BAVoxelArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAVoxelArray.m; sourceTree = "<group>"; };
+		4E585982134603A900A8D0BB /* BAFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BAFoundation.xcodeproj; path = ../BAFoundation/BAFoundation.xcodeproj; sourceTree = SOURCE_ROOT; };
+		4E5859D513461B0600A8D0BB /* BAVoxelArrayTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAVoxelArrayTester.h; sourceTree = "<group>"; };
+		4E5859D613461B0600A8D0BB /* BAVoxelArrayTester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAVoxelArrayTester.m; sourceTree = "<group>"; };
+		4E71138C1055A963002B54BB /* BAScene.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = BAScene.rtf; sourceTree = "<group>"; };
+		4E7FBBD11132CF4500965767 /* BAGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAGeometry.h; sourceTree = "<group>"; };
+		4E7FBBD21132CF4500965767 /* BAGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAGeometry.m; sourceTree = "<group>"; };
+		4E834D9711691D7800306C0A /* _BAGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BAGroup.h; sourceTree = "<group>"; };
+		4E834D9811691D7800306C0A /* _BAGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BAGroup.m; sourceTree = "<group>"; };
+		4E834D9911691D7800306C0A /* _BAMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BAMesh.h; sourceTree = "<group>"; };
+		4E834D9A11691D7800306C0A /* _BAMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BAMesh.m; sourceTree = "<group>"; };
+		4E834D9B11691D7800306C0A /* _BAPartition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BAPartition.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		4E834D9C11691D7800306C0A /* _BAPartition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BAPartition.m; sourceTree = "<group>"; };
+		4E834D9F11691D7800306C0A /* _BAPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BAPoint.h; sourceTree = "<group>"; };
+		4E834DA011691D7800306C0A /* _BAPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BAPoint.m; sourceTree = "<group>"; };
+		4E834DA111691D7800306C0A /* _BAPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BAPolygon.h; sourceTree = "<group>"; };
+		4E834DA211691D7800306C0A /* _BAPolygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BAPolygon.m; sourceTree = "<group>"; };
+		4E834DA311691D7800306C0A /* _BAProp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BAProp.h; sourceTree = "<group>"; };
+		4E834DA411691D7800306C0A /* _BAProp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BAProp.m; sourceTree = "<group>"; };
+		4E834DA511691D7800306C0A /* _BAPrototype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BAPrototype.h; sourceTree = "<group>"; };
+		4E834DA611691D7800306C0A /* _BAPrototype.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BAPrototype.m; sourceTree = "<group>"; };
+		4E834DA711691D7800306C0A /* _BAScenePref.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BAScenePref.h; sourceTree = "<group>"; };
+		4E834DA811691D7800306C0A /* _BAScenePref.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BAScenePref.m; sourceTree = "<group>"; };
+		4E834DA911691D7800306C0A /* _BAStage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BAStage.h; sourceTree = "<group>"; };
+		4E834DAA11691D7800306C0A /* _BAStage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BAStage.m; sourceTree = "<group>"; };
+		4E834DAB11691D7800306C0A /* _BATransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BATransform.h; sourceTree = "<group>"; };
+		4E834DAC11691D7800306C0A /* _BATransform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BATransform.m; sourceTree = "<group>"; };
+		4E887C261332FE0A00B52EC4 /* BAVectorTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAVectorTester.h; sourceTree = "<group>"; };
+		4E887C271332FE0A00B52EC4 /* BAVectorTester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAVectorTester.m; sourceTree = "<group>"; };
+		4E887C5D133307E800B52EC4 /* BAMatrixTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAMatrixTester.h; sourceTree = "<group>"; };
+		4E887C5E133307E800B52EC4 /* BAMatrixTester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAMatrixTester.m; sourceTree = "<group>"; };
+		4E944E4A10A06AB700ECE62C /* BAPolygonEditor.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BAPolygonEditor.xib; sourceTree = "<group>"; };
+		4E944E4C10A06ACB00ECE62C /* BAMeshEditor.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BAMeshEditor.xib; sourceTree = "<group>"; };
+		4E944E4E10A06B3200ECE62C /* BAPointsList.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BAPointsList.xib; sourceTree = "<group>"; };
+		4E944E5210A06B7400ECE62C /* BAPointsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAPointsList.h; sourceTree = "<group>"; };
+		4E944E5310A06B7400ECE62C /* BAPointsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAPointsList.m; sourceTree = "<group>"; };
+		4E944E6D10A07C8E00ECE62C /* BAPolygonEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAPolygonEditor.h; sourceTree = "<group>"; };
+		4E944E6E10A07C8E00ECE62C /* BAPolygonEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAPolygonEditor.m; sourceTree = "<group>"; };
+		4E944E7110A07C9500ECE62C /* BAMeshEditor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAMeshEditor.h; sourceTree = "<group>"; };
+		4E944E7210A07C9500ECE62C /* BAMeshEditor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAMeshEditor.m; sourceTree = "<group>"; };
+		4EA450FD136C4CF40081218A /* NSArray+BAAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+BAAdditions.h"; sourceTree = "<group>"; };
+		4EA450FE136C4CF40081218A /* NSArray+BAAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+BAAdditions.m"; sourceTree = "<group>"; };
+		4EB8993E117A84F4005F8C4C /* _BAPrototypeMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BAPrototypeMesh.h; sourceTree = "<group>"; };
+		4EB8993F117A84F4005F8C4C /* _BAPrototypeMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BAPrototypeMesh.m; sourceTree = "<group>"; };
+		4EB89944117A8503005F8C4C /* BAPrototypeMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAPrototypeMesh.h; sourceTree = "<group>"; };
+		4EB89945117A8503005F8C4C /* BAPrototypeMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAPrototypeMesh.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		4EBBD433117B253300B7315B /* BACameraSetup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BACameraSetup.h; sourceTree = "<group>"; };
+		4EBBD434117B253300B7315B /* BACameraSetup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BACameraSetup.m; sourceTree = "<group>"; };
+		4EBBD437117B254000B7315B /* BACameraSetup.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BACameraSetup.xib; sourceTree = "<group>"; };
+		4EBBD472117B289100B7315B /* BAViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAViewController.h; sourceTree = "<group>"; };
+		4EBBD473117B289100B7315B /* BAViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAViewController.m; sourceTree = "<group>"; };
+		4EC7C9E71198FBA500D1E2ED /* BASceneConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BASceneConstants.m; sourceTree = "<group>"; };
+		4EEE170A13586E7300A6840F /* BAEqualFloatsTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAEqualFloatsTester.h; sourceTree = "<group>"; };
+		4EEE170B13586E7300A6840F /* BAEqualFloatsTester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAEqualFloatsTester.m; sourceTree = "<group>"; };
+		4EFEDDD112CE2FEF0083CCFC /* _BAColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BAColor.h; sourceTree = "<group>"; };
+		4EFEDDD212CE2FEF0083CCFC /* _BAColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BAColor.m; sourceTree = "<group>"; };
+		4EFEDDD312CE2FEF0083CCFC /* _BALight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BALight.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		4EFEDDD412CE2FEF0083CCFC /* _BALight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BALight.m; sourceTree = "<group>"; };
+		4EFEDDD512CE2FEF0083CCFC /* _BAResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BAResource.h; sourceTree = "<group>"; };
+		4EFEDDD612CE2FEF0083CCFC /* _BAResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BAResource.m; sourceTree = "<group>"; };
+		4EFEDDDF12CE30020083CCFC /* BALight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BALight.h; sourceTree = "<group>"; };
+		4EFEDDE012CE30020083CCFC /* BALight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BALight.m; sourceTree = "<group>"; };
+		4EFEDDE112CE30020083CCFC /* BAResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAResource.h; sourceTree = "<group>"; };
+		4EFEDDE212CE30020083CCFC /* BAResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAResource.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		4EFEDDED12CE36950083CCFC /* BAResourceStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAResourceStorage.h; sourceTree = "<group>"; };
+		4EFEDDEE12CE36950083CCFC /* BAResourceStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAResourceStorage.m; sourceTree = "<group>"; };
+		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DC2EF5B0486A6940098B216 /* BAScene.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BAScene.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B67411920FAF5E2C001E3C0D /* BAScene.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = BAScene.xcdatamodel; sourceTree = "<group>"; };
+		B67411A40FAF61EA001E3C0D /* BASceneUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BASceneUtilities.h; sourceTree = "<group>"; };
+		B67411A50FAF61EA001E3C0D /* BASceneUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BASceneUtilities.m; sourceTree = "<group>"; };
+		B67411B70FAF62AD001E3C0D /* BASceneTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BASceneTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B67411B80FAF62AD001E3C0D /* BASceneTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BASceneTests-Info.plist"; sourceTree = "<group>"; };
+		B67411C40FAF62F6001E3C0D /* BAPropTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAPropTester.h; sourceTree = "<group>"; };
+		B67411C50FAF62F6001E3C0D /* BAPropTester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAPropTester.m; sourceTree = "<group>"; };
+		B67411D90FAF63FA001E3C0D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		B67411E60FAF6B4E001E3C0D /* BATuple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BATuple.h; sourceTree = "<group>"; };
+		B67411E70FAF6B4E001E3C0D /* BATuple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BATuple.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		B67411EC0FAF6C6E001E3C0D /* BATupleTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BATupleTester.h; sourceTree = "<group>"; };
+		B67411ED0FAF6C6E001E3C0D /* BATupleTester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BATupleTester.m; sourceTree = "<group>"; };
+		B67411F10FAF6CAB001E3C0D /* BASceneTestSupport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BASceneTestSupport.h; sourceTree = "<group>"; };
+		B67411F20FAF6CAB001E3C0D /* BASceneTestSupport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BASceneTestSupport.m; sourceTree = "<group>"; };
+		B67412580FAF99F9001E3C0D /* BATransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BATransform.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		B67412590FAF99F9001E3C0D /* BATransform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BATransform.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		B674125A0FAF99F9001E3C0D /* BAScenePref.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAScenePref.h; sourceTree = "<group>"; };
+		B674125B0FAF99F9001E3C0D /* BAScenePref.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAScenePref.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		B67412680FAF9D12001E3C0D /* NSManagedObjectContext+BAAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSManagedObjectContext+BAAdditions.h"; path = "../BAAdditions/NSManagedObjectContext+BAAdditions.h"; sourceTree = SOURCE_ROOT; };
+		B67412690FAF9D12001E3C0D /* NSManagedObjectContext+BAAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObjectContext+BAAdditions.m"; path = "../BAAdditions/NSManagedObjectContext+BAAdditions.m"; sourceTree = SOURCE_ROOT; };
+		B67412850FAF9F44001E3C0D /* BACamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BACamera.h; sourceTree = "<group>"; };
+		B67412860FAF9F44001E3C0D /* BACamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BACamera.m; sourceTree = "<group>"; };
+		B67412870FAF9F44001E3C0D /* BAColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAColor.h; sourceTree = "<group>"; };
+		B67412880FAF9F44001E3C0D /* BAColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAColor.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		B67412890FAF9F44001E3C0D /* BAScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAScene.h; sourceTree = "<group>"; };
+		B674128A0FAF9F44001E3C0D /* BAScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAScene.m; sourceTree = "<group>"; };
+		B674128B0FAF9F44001E3C0D /* BAPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAPolygon.h; sourceTree = "<group>"; };
+		B674128C0FAF9F44001E3C0D /* BAPolygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAPolygon.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		B67412970FAF9FB0001E3C0D /* BASceneView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BASceneView.h; sourceTree = "<group>"; };
+		B67412980FAF9FB0001E3C0D /* BASceneView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BASceneView.m; sourceTree = "<group>"; };
+		B674134B0FAFA93F001E3C0D /* NSManagedObject+BAAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "NSManagedObject+BAAdditions.h"; path = "../BAAdditions/NSManagedObject+BAAdditions.h"; sourceTree = SOURCE_ROOT; };
+		B674134C0FAFA93F001E3C0D /* NSManagedObject+BAAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "NSManagedObject+BAAdditions.m"; path = "../BAAdditions/NSManagedObject+BAAdditions.m"; sourceTree = SOURCE_ROOT; };
+		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4E2957601217381000DB9320 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E3E9F491347D1840016C8EA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E3E9F911347D3620016C8EA /* libbaf.a in Frameworks */,
+				4E3E9F5B1347D1C40016C8EA /* libscene.a in Frameworks */,
+				4E3E9F621347D1EF0016C8EA /* CoreData.framework in Frameworks */,
+				4E3E9F681347D2100016C8EA /* Foundation.framework in Frameworks */,
+				4E3E9F8C1347D33C0016C8EA /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DC2EF560486A6940098B216 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */,
+				B67410420FAF5DE9001E3C0D /* CoreData.framework in Frameworks */,
+				4E21DF891066C26D00511C91 /* OpenGL.framework in Frameworks */,
+				4E585993134603BF00A8D0BB /* BAFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B67411B40FAF62AD001E3C0D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B67411DA0FAF63FA001E3C0D /* SenTestingKit.framework in Frameworks */,
+				B67411E00FAF6476001E3C0D /* BAScene.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DC2EF5B0486A6940098B216 /* BAScene.framework */,
+				B67411B70FAF62AD001E3C0D /* BASceneTests.octest */,
+				4E2957621217381000DB9320 /* libscene.a */,
+				4E3E9F4B1347D1840016C8EA /* scenetest */,
+			);
+			name = Products;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0867D691FE84028FC02AAC07 /* BAScene */ = {
+			isa = PBXGroup;
+			children = (
+				B67411C10FAF62D7001E3C0D /* Unit Tests */,
+				4E7113891055A946002B54BB /* Docs */,
+				B67412650FAF9CFB001E3C0D /* BAAdditions */,
+				08FB77AEFE84172EC02AAC07 /* BAScene */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
+				089C1665FE841158C02AAC07 /* Resources */,
+				0867D69AFE84028FC02AAC07 /* Dependencies */,
+				034768DFFF38A50411DB9C8B /* Products */,
+			);
+			name = BAScene;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* Dependencies */ = {
+			isa = PBXGroup;
+			children = (
+				4E585982134603A900A8D0BB /* BAFoundation.xcodeproj */,
+				4E3E9F671347D2100016C8EA /* Foundation.framework */,
+				1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */,
+				D2F7E79907B2D74100F64583 /* CoreData.framework */,
+				B67411D90FAF63FA001E3C0D /* SenTestingKit.framework */,
+				4E21DF881066C26D00511C91 /* OpenGL.framework */,
+			);
+			name = Dependencies;
+			sourceTree = "<group>";
+		};
+		089C1665FE841158C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8DC2EF5A0486A6940098B216 /* Info.plist */,
+				089C1666FE841158C02AAC07 /* InfoPlist.strings */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77AEFE84172EC02AAC07 /* BAScene */ = {
+			isa = PBXGroup;
+			children = (
+				4E4F2C1912CFACA80095AD3F /* Rendering */,
+				4E1B6D340FD1898200AE4803 /* Support */,
+				B67412840FAF9F44001E3C0D /* Archived */,
+				B67411E30FAF6B3C001E3C0D /* Persistent */,
+				4E1B6D330FD1897500AE4803 /* View */,
+			);
+			name = BAScene;
+			sourceTree = "<group>";
+		};
+		32C88DFF0371C24200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				32DBCF5E0370ADEE00C91783 /* BAScene_Prefix.pch */,
+				4E3E9F501347D1AE0016C8EA /* scenetest_main.m */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		4E1B6D330FD1897500AE4803 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4E944E4710A06A5500ECE62C /* Editors */,
+				B67412970FAF9FB0001E3C0D /* BASceneView.h */,
+				B67412980FAF9FB0001E3C0D /* BASceneView.m */,
+				4EBBD433117B253300B7315B /* BACameraSetup.h */,
+				4EBBD434117B253300B7315B /* BACameraSetup.m */,
+				4EBBD437117B254000B7315B /* BACameraSetup.xib */,
+				4EBBD472117B289100B7315B /* BAViewController.h */,
+				4EBBD473117B289100B7315B /* BAViewController.m */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		4E1B6D340FD1898200AE4803 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				4E058A94117641B100BED553 /* BASceneConstants.h */,
+				4EC7C9E71198FBA500D1E2ED /* BASceneConstants.m */,
+				4E573C30113FF3BB004EE087 /* BASceneTypes.h */,
+				4E573C31113FF3BB004EE087 /* BASceneTypes.m */,
+				B67412890FAF9F44001E3C0D /* BAScene.h */,
+				B674128A0FAF9F44001E3C0D /* BAScene.m */,
+				B67411A40FAF61EA001E3C0D /* BASceneUtilities.h */,
+				B67411A50FAF61EA001E3C0D /* BASceneUtilities.m */,
+				4EFEDDED12CE36950083CCFC /* BAResourceStorage.h */,
+				4EFEDDEE12CE36950083CCFC /* BAResourceStorage.m */,
+				4E58596A1345FCC100A8D0BB /* BAVoxelArray.h */,
+				4E58596B1345FCC100A8D0BB /* BAVoxelArray.m */,
+			);
+			name = Support;
+			sourceTree = "<group>";
+		};
+		4E4F2C1912CFACA80095AD3F /* Rendering */ = {
+			isa = PBXGroup;
+			children = (
+				4E7FBBD11132CF4500965767 /* BAGeometry.h */,
+				4E7FBBD21132CF4500965767 /* BAGeometry.m */,
+				4E4F2C1C12CFACC90095AD3F /* BATexture.h */,
+				4E4F2C1D12CFACC90095AD3F /* BATexture.m */,
+			);
+			name = Rendering;
+			sourceTree = "<group>";
+		};
+		4E585983134603A900A8D0BB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4E58598A134603A900A8D0BB /* BAFoundation.framework */,
+				4E58598C134603A900A8D0BB /* BAFoundationTests.octest */,
+				4E58598E134603A900A8D0BB /* baft */,
+				4E585990134603A900A8D0BB /* libbaf.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4E7113891055A946002B54BB /* Docs */ = {
+			isa = PBXGroup;
+			children = (
+				4E71138C1055A963002B54BB /* BAScene.rtf */,
+			);
+			name = Docs;
+			sourceTree = "<group>";
+		};
+		4E823ABC11711FC70002DC98 /* Custom */ = {
+			isa = PBXGroup;
+			children = (
+				B67412870FAF9F44001E3C0D /* BAColor.h */,
+				B67412880FAF9F44001E3C0D /* BAColor.m */,
+				4E1B6D750FD1E75C00AE4803 /* BAGroup.h */,
+				4E1B6D760FD1E75C00AE4803 /* BAGroup.m */,
+				4EFEDDDF12CE30020083CCFC /* BALight.h */,
+				4EFEDDE012CE30020083CCFC /* BALight.m */,
+				4E1B6D580FD1E26F00AE4803 /* BAMesh.h */,
+				4E1B6D590FD1E26F00AE4803 /* BAMesh.m */,
+				4E1B6E4E0FD413D300AE4803 /* BAPartition.h */,
+				4E1B6E4F0FD413D300AE4803 /* BAPartition.m */,
+				B67411E60FAF6B4E001E3C0D /* BATuple.h */,
+				B67411E70FAF6B4E001E3C0D /* BATuple.m */,
+				4E1B6DA80FD21CAE00AE4803 /* BAPoint.h */,
+				4E1B6DA90FD21CAE00AE4803 /* BAPoint.m */,
+				B674128B0FAF9F44001E3C0D /* BAPolygon.h */,
+				B674128C0FAF9F44001E3C0D /* BAPolygon.m */,
+				4E1B6D660FD1E3E900AE4803 /* BAProp.h */,
+				4E1B6D670FD1E3E900AE4803 /* BAProp.m */,
+				4E1B6D610FD1E3CB00AE4803 /* BAPrototype.h */,
+				4E1B6D620FD1E3CB00AE4803 /* BAPrototype.m */,
+				4EB89944117A8503005F8C4C /* BAPrototypeMesh.h */,
+				4EB89945117A8503005F8C4C /* BAPrototypeMesh.m */,
+				4EFEDDE112CE30020083CCFC /* BAResource.h */,
+				4EFEDDE212CE30020083CCFC /* BAResource.m */,
+				B674125A0FAF99F9001E3C0D /* BAScenePref.h */,
+				B674125B0FAF99F9001E3C0D /* BAScenePref.m */,
+				4E1B6E3E0FD3FFC400AE4803 /* BAStage.h */,
+				4E1B6E3F0FD3FFC400AE4803 /* BAStage.m */,
+				B67412580FAF99F9001E3C0D /* BATransform.h */,
+				B67412590FAF99F9001E3C0D /* BATransform.m */,
+			);
+			name = Custom;
+			sourceTree = "<group>";
+		};
+		4E834D9211691D5B00306C0A /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				4EFEDDD112CE2FEF0083CCFC /* _BAColor.h */,
+				4EFEDDD212CE2FEF0083CCFC /* _BAColor.m */,
+				4E834D9711691D7800306C0A /* _BAGroup.h */,
+				4E834D9811691D7800306C0A /* _BAGroup.m */,
+				4EFEDDD312CE2FEF0083CCFC /* _BALight.h */,
+				4EFEDDD412CE2FEF0083CCFC /* _BALight.m */,
+				4E834D9911691D7800306C0A /* _BAMesh.h */,
+				4E834D9A11691D7800306C0A /* _BAMesh.m */,
+				4E834D9B11691D7800306C0A /* _BAPartition.h */,
+				4E834D9C11691D7800306C0A /* _BAPartition.m */,
+				4E834D9F11691D7800306C0A /* _BAPoint.h */,
+				4E834DA011691D7800306C0A /* _BAPoint.m */,
+				4E834DA111691D7800306C0A /* _BAPolygon.h */,
+				4E834DA211691D7800306C0A /* _BAPolygon.m */,
+				4E834DA311691D7800306C0A /* _BAProp.h */,
+				4E834DA411691D7800306C0A /* _BAProp.m */,
+				4E834DA511691D7800306C0A /* _BAPrototype.h */,
+				4E834DA611691D7800306C0A /* _BAPrototype.m */,
+				4EB8993E117A84F4005F8C4C /* _BAPrototypeMesh.h */,
+				4EB8993F117A84F4005F8C4C /* _BAPrototypeMesh.m */,
+				4EFEDDD512CE2FEF0083CCFC /* _BAResource.h */,
+				4EFEDDD612CE2FEF0083CCFC /* _BAResource.m */,
+				4E834DA711691D7800306C0A /* _BAScenePref.h */,
+				4E834DA811691D7800306C0A /* _BAScenePref.m */,
+				4E834DA911691D7800306C0A /* _BAStage.h */,
+				4E834DAA11691D7800306C0A /* _BAStage.m */,
+				4E834DAB11691D7800306C0A /* _BATransform.h */,
+				4E834DAC11691D7800306C0A /* _BATransform.m */,
+				4E2A090B1361B40800EDD4A4 /* _BATuple.h */,
+				4E2A090C1361B40800EDD4A4 /* _BATuple.m */,
+			);
+			name = Generated;
+			sourceTree = "<group>";
+		};
+		4E944E4710A06A5500ECE62C /* Editors */ = {
+			isa = PBXGroup;
+			children = (
+				4E944E7110A07C9500ECE62C /* BAMeshEditor.h */,
+				4E944E7210A07C9500ECE62C /* BAMeshEditor.m */,
+				4E944E4C10A06ACB00ECE62C /* BAMeshEditor.xib */,
+				4E944E5210A06B7400ECE62C /* BAPointsList.h */,
+				4E944E5310A06B7400ECE62C /* BAPointsList.m */,
+				4E944E4E10A06B3200ECE62C /* BAPointsList.xib */,
+				4E944E6D10A07C8E00ECE62C /* BAPolygonEditor.h */,
+				4E944E6E10A07C8E00ECE62C /* BAPolygonEditor.m */,
+				4E944E4A10A06AB700ECE62C /* BAPolygonEditor.xib */,
+			);
+			name = Editors;
+			sourceTree = "<group>";
+		};
+		B67411C10FAF62D7001E3C0D /* Unit Tests */ = {
+			isa = PBXGroup;
+			children = (
+				4E3FE5A413324AD700626212 /* BAColorTester.h */,
+				4E3FE5A513324AD700626212 /* BAColorTester.m */,
+				4EEE170A13586E7300A6840F /* BAEqualFloatsTester.h */,
+				4EEE170B13586E7300A6840F /* BAEqualFloatsTester.m */,
+				4E887C5D133307E800B52EC4 /* BAMatrixTester.h */,
+				4E887C5E133307E800B52EC4 /* BAMatrixTester.m */,
+				B67411EC0FAF6C6E001E3C0D /* BATupleTester.h */,
+				B67411ED0FAF6C6E001E3C0D /* BATupleTester.m */,
+				B67411C40FAF62F6001E3C0D /* BAPropTester.h */,
+				B67411C50FAF62F6001E3C0D /* BAPropTester.m */,
+				B67411B80FAF62AD001E3C0D /* BASceneTests-Info.plist */,
+				B67411F10FAF6CAB001E3C0D /* BASceneTestSupport.h */,
+				B67411F20FAF6CAB001E3C0D /* BASceneTestSupport.m */,
+				4E887C261332FE0A00B52EC4 /* BAVectorTester.h */,
+				4E887C271332FE0A00B52EC4 /* BAVectorTester.m */,
+				4E5859D513461B0600A8D0BB /* BAVoxelArrayTester.h */,
+				4E5859D613461B0600A8D0BB /* BAVoxelArrayTester.m */,
+				4E47D18F149B590400B5A862 /* BARegionUtilityTester.h */,
+				4E47D190149B590400B5A862 /* BARegionUtilityTester.m */,
+			);
+			name = "Unit Tests";
+			sourceTree = "<group>";
+		};
+		B67411E30FAF6B3C001E3C0D /* Persistent */ = {
+			isa = PBXGroup;
+			children = (
+				B67411920FAF5E2C001E3C0D /* BAScene.xcdatamodel */,
+				4E834D9211691D5B00306C0A /* Generated */,
+				4E823ABC11711FC70002DC98 /* Custom */,
+			);
+			name = Persistent;
+			sourceTree = "<group>";
+		};
+		B67412650FAF9CFB001E3C0D /* BAAdditions */ = {
+			isa = PBXGroup;
+			children = (
+				4E08E1E1136AFB4900F01674 /* NSIndexSet+BAAdditions.h */,
+				4E08E1E2136AFB4900F01674 /* NSIndexSet+BAAdditions.m */,
+				B674134B0FAFA93F001E3C0D /* NSManagedObject+BAAdditions.h */,
+				B674134C0FAFA93F001E3C0D /* NSManagedObject+BAAdditions.m */,
+				B67412680FAF9D12001E3C0D /* NSManagedObjectContext+BAAdditions.h */,
+				B67412690FAF9D12001E3C0D /* NSManagedObjectContext+BAAdditions.m */,
+				4EA450FD136C4CF40081218A /* NSArray+BAAdditions.h */,
+				4EA450FE136C4CF40081218A /* NSArray+BAAdditions.m */,
+			);
+			name = BAAdditions;
+			sourceTree = "<group>";
+		};
+		B67412840FAF9F44001E3C0D /* Archived */ = {
+			isa = PBXGroup;
+			children = (
+				B67412850FAF9F44001E3C0D /* BACamera.h */,
+				B67412860FAF9F44001E3C0D /* BACamera.m */,
+			);
+			name = Archived;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		4E29575E1217381000DB9320 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E91CE171349F25D00B90712 /* BATexture.h in Headers */,
+				4E91CE191349F26600B90712 /* NSManagedObject+BAAdditions.h in Headers */,
+				4E91CE1A1349F26700B90712 /* NSManagedObjectContext+BAAdditions.h in Headers */,
+				4E2A090D1361B40800EDD4A4 /* _BATuple.h in Headers */,
+				4E08E1E5136AFB4900F01674 /* NSIndexSet+BAAdditions.h in Headers */,
+				4EA450FF136C4CF40081218A /* NSArray+BAAdditions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DC2EF500486A6940098B216 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B67411A60FAF61EA001E3C0D /* BASceneUtilities.h in Headers */,
+				B67411F50FAF6CB9001E3C0D /* BATuple.h in Headers */,
+				B67413250FAFA6C7001E3C0D /* BACamera.h in Headers */,
+				B67413270FAFA6C8001E3C0D /* BAColor.h in Headers */,
+				B67413290FAFA6C9001E3C0D /* BAScene.h in Headers */,
+				B674132B0FAFA6CA001E3C0D /* BAPolygon.h in Headers */,
+				B674132D0FAFA6D2001E3C0D /* BATransform.h in Headers */,
+				B674132F0FAFA6D3001E3C0D /* BAScenePref.h in Headers */,
+				B67413730FB06269001E3C0D /* BASceneView.h in Headers */,
+				4E1B6D5B0FD1E2FC00AE4803 /* BAMesh.h in Headers */,
+				4E1B6D800FD1E95600AE4803 /* BAGroup.h in Headers */,
+				4E1B6D870FD1EB3700AE4803 /* BAProp.h in Headers */,
+				4E1B6D890FD1EB3800AE4803 /* BAPrototype.h in Headers */,
+				4E1B6DAA0FD21CAE00AE4803 /* BAPoint.h in Headers */,
+				4E1B6E500FD413D300AE4803 /* BAPartition.h in Headers */,
+				4EEB2905106270AA004DCA14 /* BAStage.h in Headers */,
+				4E944E5410A06B7400ECE62C /* BAPointsList.h in Headers */,
+				4E944E6F10A07C8E00ECE62C /* BAPolygonEditor.h in Headers */,
+				4E944E7310A07C9500ECE62C /* BAMeshEditor.h in Headers */,
+				4E7FBBD31132CF4500965767 /* BAGeometry.h in Headers */,
+				4E573C32113FF3BB004EE087 /* BASceneTypes.h in Headers */,
+				4E834DAD11691D7800306C0A /* _BAGroup.h in Headers */,
+				4E834DAF11691D7800306C0A /* _BAMesh.h in Headers */,
+				4E834DB111691D7800306C0A /* _BAPartition.h in Headers */,
+				4E834DB511691D7800306C0A /* _BAPoint.h in Headers */,
+				4E834DB711691D7800306C0A /* _BAPolygon.h in Headers */,
+				4E834DB911691D7800306C0A /* _BAProp.h in Headers */,
+				4E834DBB11691D7800306C0A /* _BAPrototype.h in Headers */,
+				4E834DBD11691D7800306C0A /* _BAScenePref.h in Headers */,
+				4E834DBF11691D7800306C0A /* _BAStage.h in Headers */,
+				4E834DC111691D7800306C0A /* _BATransform.h in Headers */,
+				4E058A95117641B100BED553 /* BASceneConstants.h in Headers */,
+				4EB89940117A84F4005F8C4C /* _BAPrototypeMesh.h in Headers */,
+				4EB89946117A8503005F8C4C /* BAPrototypeMesh.h in Headers */,
+				4EBBD435117B253300B7315B /* BACameraSetup.h in Headers */,
+				4EBBD474117B289100B7315B /* BAViewController.h in Headers */,
+				4EFEDDD712CE2FEF0083CCFC /* _BAColor.h in Headers */,
+				4EFEDDD912CE2FEF0083CCFC /* _BALight.h in Headers */,
+				4EFEDDDB12CE2FEF0083CCFC /* _BAResource.h in Headers */,
+				4EFEDDE312CE30020083CCFC /* BALight.h in Headers */,
+				4EFEDDE512CE30020083CCFC /* BAResource.h in Headers */,
+				4EFEDDEF12CE36950083CCFC /* BAResourceStorage.h in Headers */,
+				4E4F2C1E12CFACC90095AD3F /* BATexture.h in Headers */,
+				4E58596C1345FCC100A8D0BB /* BAVoxelArray.h in Headers */,
+				4E2A090F1361B40800EDD4A4 /* _BATuple.h in Headers */,
+				4E08E1E3136AFB4900F01674 /* NSIndexSet+BAAdditions.h in Headers */,
+				4EA45101136C4CF40081218A /* NSArray+BAAdditions.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		4E2957611217381000DB9320 /* scene */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E2957701217385900DB9320 /* Build configuration list for PBXNativeTarget "scene" */;
+			buildPhases = (
+				4E29575E1217381000DB9320 /* Headers */,
+				4E29575F1217381000DB9320 /* Sources */,
+				4E2957601217381000DB9320 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = scene;
+			productName = scene;
+			productReference = 4E2957621217381000DB9320 /* libscene.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		4E3E9F4A1347D1840016C8EA /* scenetest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E3E9F521347D1AE0016C8EA /* Build configuration list for PBXNativeTarget "scenetest" */;
+			buildPhases = (
+				4E3E9F481347D1840016C8EA /* Sources */,
+				4E3E9F491347D1840016C8EA /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4E3E9F541347D1B70016C8EA /* PBXTargetDependency */,
+				4E91CE4D1349F5AC00B90712 /* PBXTargetDependency */,
+			);
+			name = scenetest;
+			productName = scenetest;
+			productReference = 4E3E9F4B1347D1840016C8EA /* scenetest */;
+			productType = "com.apple.product-type.tool";
+		};
+		8DC2EF4F0486A6940098B216 /* BAScene */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "BAScene" */;
+			buildPhases = (
+				8DC2EF500486A6940098B216 /* Headers */,
+				8DC2EF520486A6940098B216 /* Resources */,
+				8DC2EF540486A6940098B216 /* Sources */,
+				8DC2EF560486A6940098B216 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4E585992134603B000A8D0BB /* PBXTargetDependency */,
+			);
+			name = BAScene;
+			productInstallPath = "$(HOME)/Library/Frameworks";
+			productName = BAScene;
+			productReference = 8DC2EF5B0486A6940098B216 /* BAScene.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		B67411B60FAF62AD001E3C0D /* BASceneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B67411BB0FAF62B0001E3C0D /* Build configuration list for PBXNativeTarget "BASceneTests" */;
+			buildPhases = (
+				B67411B20FAF62AD001E3C0D /* Resources */,
+				B67411B30FAF62AD001E3C0D /* Sources */,
+				B67411B40FAF62AD001E3C0D /* Frameworks */,
+				B67411B50FAF62AD001E3C0D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B67411BD0FAF62B4001E3C0D /* PBXTargetDependency */,
+			);
+			name = BASceneTests;
+			productName = BASceneTests;
+			productReference = B67411B70FAF62AD001E3C0D /* BASceneTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "Bored Astronaut";
+			};
+			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "BAScene" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 0867D691FE84028FC02AAC07 /* BAScene */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 4E585983134603A900A8D0BB /* Products */;
+					ProjectRef = 4E585982134603A900A8D0BB /* BAFoundation.xcodeproj */;
+				},
+			);
+			projectRoot = "";
+			targets = (
+				8DC2EF4F0486A6940098B216 /* BAScene */,
+				B67411B60FAF62AD001E3C0D /* BASceneTests */,
+				4E2957611217381000DB9320 /* scene */,
+				4E122FB2121AD8C300EC0D92 /* BAScene SDK */,
+				4E3E9F4A1347D1840016C8EA /* scenetest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		4E58598A134603A900A8D0BB /* BAFoundation.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BAFoundation.framework;
+			remoteRef = 4E585989134603A900A8D0BB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4E58598C134603A900A8D0BB /* BAFoundationTests.octest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = BAFoundationTests.octest;
+			remoteRef = 4E58598B134603A900A8D0BB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4E58598E134603A900A8D0BB /* baft */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = baft;
+			remoteRef = 4E58598D134603A900A8D0BB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4E585990134603A900A8D0BB /* libbaf.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libbaf.a;
+			remoteRef = 4E58598F134603A900A8D0BB /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8DC2EF520486A6940098B216 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */,
+				4E71138D1055A963002B54BB /* BAScene.rtf in Resources */,
+				4E944E4B10A06AB700ECE62C /* BAPolygonEditor.xib in Resources */,
+				4E944E4D10A06ACB00ECE62C /* BAMeshEditor.xib in Resources */,
+				4E944E4F10A06B3200ECE62C /* BAPointsList.xib in Resources */,
+				4EBBD438117B254000B7315B /* BACameraSetup.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B67411B20FAF62AD001E3C0D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B67411B50FAF62AD001E3C0D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4E29575F1217381000DB9320 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E2957741217388B00DB9320 /* NSManagedObjectContext+BAAdditions.m in Sources */,
+				4E2957751217389C00DB9320 /* _BAGroup.m in Sources */,
+				4E2957761217389C00DB9320 /* _BAMesh.m in Sources */,
+				4E2957771217389E00DB9320 /* _BAPartition.m in Sources */,
+				4E2957791217389F00DB9320 /* _BAPoint.m in Sources */,
+				4E29577A121738A000DB9320 /* _BAPolygon.m in Sources */,
+				4E29577B121738A100DB9320 /* _BAProp.m in Sources */,
+				4E29577C121738A200DB9320 /* _BAPrototype.m in Sources */,
+				4E29577D121738A300DB9320 /* _BAPrototypeMesh.m in Sources */,
+				4E29577E121738A300DB9320 /* _BAScenePref.m in Sources */,
+				4E29577F121738A500DB9320 /* _BAStage.m in Sources */,
+				4E295780121738A500DB9320 /* _BATransform.m in Sources */,
+				4E295781121738A700DB9320 /* BACamera.m in Sources */,
+				4E295782121738AA00DB9320 /* BACameraSetup.m in Sources */,
+				4E295784121738AF00DB9320 /* BAColor.m in Sources */,
+				4E295785121738B000DB9320 /* BAGroup.m in Sources */,
+				4E295786121738B100DB9320 /* BAMesh.m in Sources */,
+				4E295787121738B200DB9320 /* BAMeshEditor.m in Sources */,
+				4E295788121738B500DB9320 /* BAPartition.m in Sources */,
+				4E295789121738B600DB9320 /* BATuple.m in Sources */,
+				4E29578C121738BC00DB9320 /* BAPoint.m in Sources */,
+				4E29578D121738BD00DB9320 /* BAPointsList.m in Sources */,
+				4E29578E121738BD00DB9320 /* BAPolygon.m in Sources */,
+				4E29578F121738BE00DB9320 /* BAPolygonEditor.m in Sources */,
+				4E295790121738BF00DB9320 /* BAProp.m in Sources */,
+				4E295791121738C000DB9320 /* BAPrototype.m in Sources */,
+				4E295792121738C200DB9320 /* BAPrototypeMesh.m in Sources */,
+				4E295793121738C200DB9320 /* BAScene.m in Sources */,
+				4E295794121738C300DB9320 /* BASceneConstants.m in Sources */,
+				4E295795121738C300DB9320 /* BAScenePref.m in Sources */,
+				4E295796121738C400DB9320 /* BASceneTypes.m in Sources */,
+				4E295797121738C500DB9320 /* BASceneUtilities.m in Sources */,
+				4E295798121738C500DB9320 /* BASceneView.m in Sources */,
+				4E295799121738C600DB9320 /* BAStage.m in Sources */,
+				4E29579A121738C700DB9320 /* BATransform.m in Sources */,
+				4E29579B121738C700DB9320 /* BAViewController.m in Sources */,
+				4E3E9F761347D2C60016C8EA /* BAVoxelArray.m in Sources */,
+				4E3E9F771347D2C70016C8EA /* BAResourceStorage.m in Sources */,
+				4E3E9F781347D2C70016C8EA /* BAResource.m in Sources */,
+				4E3E9F791347D2CA0016C8EA /* _BAColor.m in Sources */,
+				4E3E9F7A1347D2CB0016C8EA /* _BALight.m in Sources */,
+				4E3E9F7B1347D2CC0016C8EA /* _BAResource.m in Sources */,
+				4E3E9F7C1347D2CE0016C8EA /* BALight.m in Sources */,
+				4E91CE181349F25E00B90712 /* BATexture.m in Sources */,
+				4E91CEC41349F80A00B90712 /* BAScene.xcdatamodel in Sources */,
+				4E2A090E1361B40800EDD4A4 /* _BATuple.m in Sources */,
+				4E08E1E6136AFB4900F01674 /* NSIndexSet+BAAdditions.m in Sources */,
+				4EA45100136C4CF40081218A /* NSArray+BAAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E3E9F481347D1840016C8EA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E3E9F511347D1AE0016C8EA /* scenetest_main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8DC2EF540486A6940098B216 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B67411F60FAF6CBA001E3C0D /* BATuple.m in Sources */,
+				B67413140FAFA576001E3C0D /* BAScene.xcdatamodel in Sources */,
+				B674131D0FAFA648001E3C0D /* BASceneUtilities.m in Sources */,
+				B67413260FAFA6C7001E3C0D /* BACamera.m in Sources */,
+				B67413280FAFA6C9001E3C0D /* BAColor.m in Sources */,
+				B674132A0FAFA6CA001E3C0D /* BAScene.m in Sources */,
+				B674132C0FAFA6CB001E3C0D /* BAPolygon.m in Sources */,
+				B674132E0FAFA6D3001E3C0D /* BATransform.m in Sources */,
+				B67413300FAFA6D4001E3C0D /* BAScenePref.m in Sources */,
+				B67413740FB06269001E3C0D /* BASceneView.m in Sources */,
+				4E1B6D5C0FD1E2FD00AE4803 /* BAMesh.m in Sources */,
+				4E1B6D7F0FD1E95500AE4803 /* BAGroup.m in Sources */,
+				4E1B6D880FD1EB3700AE4803 /* BAProp.m in Sources */,
+				4E1B6D8A0FD1EB3800AE4803 /* BAPrototype.m in Sources */,
+				4E1B6DAB0FD21CAE00AE4803 /* BAPoint.m in Sources */,
+				4E1B6E410FD3FFC400AE4803 /* BAStage.m in Sources */,
+				4E1B6E510FD413D300AE4803 /* BAPartition.m in Sources */,
+				4E944E5510A06B7400ECE62C /* BAPointsList.m in Sources */,
+				4E944E7010A07C8E00ECE62C /* BAPolygonEditor.m in Sources */,
+				4E944E7410A07C9500ECE62C /* BAMeshEditor.m in Sources */,
+				4E7FBBD41132CF4500965767 /* BAGeometry.m in Sources */,
+				4E573C33113FF3BB004EE087 /* BASceneTypes.m in Sources */,
+				4E834DAE11691D7800306C0A /* _BAGroup.m in Sources */,
+				4E834DB011691D7800306C0A /* _BAMesh.m in Sources */,
+				4E834DB211691D7800306C0A /* _BAPartition.m in Sources */,
+				4E834DB611691D7800306C0A /* _BAPoint.m in Sources */,
+				4E834DB811691D7800306C0A /* _BAPolygon.m in Sources */,
+				4E834DBA11691D7800306C0A /* _BAProp.m in Sources */,
+				4E834DBC11691D7800306C0A /* _BAPrototype.m in Sources */,
+				4E834DBE11691D7800306C0A /* _BAScenePref.m in Sources */,
+				4E834DC011691D7800306C0A /* _BAStage.m in Sources */,
+				4E834DC211691D7800306C0A /* _BATransform.m in Sources */,
+				4EB89941117A84F4005F8C4C /* _BAPrototypeMesh.m in Sources */,
+				4EB89947117A8503005F8C4C /* BAPrototypeMesh.m in Sources */,
+				4EBBD436117B253300B7315B /* BACameraSetup.m in Sources */,
+				4EBBD475117B289100B7315B /* BAViewController.m in Sources */,
+				4EC7C9E81198FBA500D1E2ED /* BASceneConstants.m in Sources */,
+				4EFEDDD812CE2FEF0083CCFC /* _BAColor.m in Sources */,
+				4EFEDDDA12CE2FEF0083CCFC /* _BALight.m in Sources */,
+				4EFEDDDC12CE2FEF0083CCFC /* _BAResource.m in Sources */,
+				4EFEDDE412CE30020083CCFC /* BALight.m in Sources */,
+				4EFEDDE612CE30020083CCFC /* BAResource.m in Sources */,
+				4EFEDDF012CE36950083CCFC /* BAResourceStorage.m in Sources */,
+				4E4F2C1F12CFACC90095AD3F /* BATexture.m in Sources */,
+				4E58596D1345FCC100A8D0BB /* BAVoxelArray.m in Sources */,
+				4E2A09101361B40800EDD4A4 /* _BATuple.m in Sources */,
+				4E08E1E4136AFB4900F01674 /* NSIndexSet+BAAdditions.m in Sources */,
+				4EA45102136C4CF40081218A /* NSArray+BAAdditions.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B67411B30FAF62AD001E3C0D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B67411D40FAF63D6001E3C0D /* BAPropTester.m in Sources */,
+				B67411F30FAF6CAB001E3C0D /* BASceneTestSupport.m in Sources */,
+				B67412140FAF9130001E3C0D /* BATupleTester.m in Sources */,
+				4E3FE5AC13324E4800626212 /* BAColorTester.m in Sources */,
+				4E887C401332FE8800B52EC4 /* BAVectorTester.m in Sources */,
+				4E887C65133308F200B52EC4 /* BAMatrixTester.m in Sources */,
+				4E5859D713461B0600A8D0BB /* BAVoxelArrayTester.m in Sources */,
+				4EEE171013586EEB00A6840F /* BAEqualFloatsTester.m in Sources */,
+				4E47D191149B590400B5A862 /* BARegionUtilityTester.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4E122FB6121AD8C900EC0D92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4E2957611217381000DB9320 /* scene */;
+			targetProxy = 4E122FB5121AD8C900EC0D92 /* PBXContainerItemProxy */;
+		};
+		4E123062121ADD2300EC0D92 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DC2EF4F0486A6940098B216 /* BAScene */;
+			targetProxy = 4E123061121ADD2300EC0D92 /* PBXContainerItemProxy */;
+		};
+		4E182C9412CD36FB00B92FDC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B67411B60FAF62AD001E3C0D /* BASceneTests */;
+			targetProxy = 4E182C9312CD36FB00B92FDC /* PBXContainerItemProxy */;
+		};
+		4E3E9F541347D1B70016C8EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4E2957611217381000DB9320 /* scene */;
+			targetProxy = 4E3E9F531347D1B70016C8EA /* PBXContainerItemProxy */;
+		};
+		4E585992134603B000A8D0BB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BAFoundation;
+			targetProxy = 4E585991134603B000A8D0BB /* PBXContainerItemProxy */;
+		};
+		4E91CE4D1349F5AC00B90712 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = baf;
+			targetProxy = 4E91CE4C1349F5AC00B90712 /* PBXContainerItemProxy */;
+		};
+		B67411BD0FAF62B4001E3C0D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DC2EF4F0486A6940098B216 /* BAScene */;
+			targetProxy = B67411BC0FAF62B4001E3C0D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		089C1666FE841158C02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C1667FE841158C02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB91AE08733DA50010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_GC = supported;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = BAScene_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				ONLY_ACTIVE_ARCH = NO;
+				"OTHER_CFLAGS[arch=*]" = "-DDEBUG";
+				PRODUCT_NAME = BAScene;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		1DEB91AF08733DA50010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = s;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = BAScene_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "@executable_path/../Frameworks";
+				PRODUCT_NAME = BAScene;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		1DEB91B208733DA50010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		1DEB91B308733DA50010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_ENABLE_OBJC_GC = supported;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		4E122FB3121AD8C300EC0D92 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				PRODUCT_NAME = "BAScene SDK";
+			};
+			name = Debug;
+		};
+		4E122FB4121AD8C300EC0D92 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				PRODUCT_NAME = "BAScene SDK";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		4E2957631217381100DB9320 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = BAScene_Prefix.pch;
+				INSTALL_PATH = /usr/local/lib;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = scene;
+			};
+			name = Debug;
+		};
+		4E2957641217381100DB9320 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = BAScene_Prefix.pch;
+				INSTALL_PATH = /usr/local/lib;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = scene;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		4E3E9F4D1347D1840016C8EA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_GC = supported;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PRODUCT_NAME = scenetest;
+			};
+			name = Debug;
+		};
+		4E3E9F4E1347D1840016C8EA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_LDFLAGS = (
+					"-all_load",
+					"-ObjC",
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PRODUCT_NAME = scenetest;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		B67411B90FAF62AF001E3C0D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = BAScene_Prefix.pch;
+				INFOPLIST_FILE = "BASceneTests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = BASceneTests;
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		B67411BA0FAF62AF001E3C0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_ENABLE_OBJC_GC = unsupported;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = BAScene_Prefix.pch;
+				INFOPLIST_FILE = "BASceneTests-Info.plist";
+				INSTALL_PATH = "$(USER_LIBRARY_DIR)/Bundles";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Cocoa,
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = BASceneTests;
+				WRAPPER_EXTENSION = octest;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "BAScene" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB91AE08733DA50010E9CD /* Debug */,
+				1DEB91AF08733DA50010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "BAScene" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB91B208733DA50010E9CD /* Debug */,
+				1DEB91B308733DA50010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4E122FED121AD91400EC0D92 /* Build configuration list for PBXAggregateTarget "BAScene SDK" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E122FB3121AD8C300EC0D92 /* Debug */,
+				4E122FB4121AD8C300EC0D92 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4E2957701217385900DB9320 /* Build configuration list for PBXNativeTarget "scene" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E2957631217381100DB9320 /* Debug */,
+				4E2957641217381100DB9320 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		4E3E9F521347D1AE0016C8EA /* Build configuration list for PBXNativeTarget "scenetest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E3E9F4D1347D1840016C8EA /* Debug */,
+				4E3E9F4E1347D1840016C8EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B67411BB0FAF62B0001E3C0D /* Build configuration list for PBXNativeTarget "BASceneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B67411B90FAF62AF001E3C0D /* Debug */,
+				B67411BA0FAF62AF001E3C0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}
