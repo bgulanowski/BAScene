@@ -50,7 +50,7 @@ I intend to replace this design with something slightly different that I have us
 Rendering
 ---------
 
-The basics of rendering involves a view, a camera, and a collection of props. The `BASceneView` class is a subclass of `NSOpenGLView`. It uses CVDisplayLink to manage drawing updates, and implements `-refresh` to update the view frustum. You can change properties on `BASceneView` to alter some aspects of the frustum, but it needs to be updated to provide more flexibility and support for orthogonal projection. It provides basic support for mouse and WSAD-based keyboard control, so you can fly around your scene as though you were in a game.
+The basics of rendering involves a view, a camera, and a collection of props. The `BASceneView` class is a subclass of `NSOpenGLView`. It uses CVDisplayLink to manage drawing updates, and implements `-refresh` to update the view frustum. You can change properties on `BASceneView` to alter some aspects of the frustum, but it needs to be updated to provide more flexibility and support for parallel projection. It provides basic support for mouse and WSAD-based keyboard control, so you can fly around your scene as though you were in a game.
 
 `BASceneView` relies on `BACamera` for actually drawing any scene content. The view will create its own camera automatically. `BACamera` represents the viewer's point of view in the scene. It has very primitive support for animating the camera, in order to make the mouse and keyboard controls work. It also manages other aspects of OpenGL drawing state, like the background colour, back face culling, rendering mode (fill, line, point), and more.
 
