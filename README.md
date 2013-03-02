@@ -47,7 +47,23 @@ For example, to make a new mesh, you might invoke `-[BAMesh meshWithTriangles:co
 I intend to replace this design with something slightly different that I have used elsewhere, and much prefer. (Briefly, it instead defines new instance methods on `NSManagedObjectContext` using a category. But this category is defined in the custom ("human") class file for the entity in question.)
 
 
-BAScene Usage
--------------
+Rendering
+---------
 
-[to do]
+The basics of rendering involves a view, a camera, and a collection of props. The `BASceneView` class is a subclass of `NSOpenGLView`. It uses CVDisplayLink to manage drawing updates, and implements `-refresh` to update the view frustum. You can change properties on `BASceneView` to alter some aspects of the frustum, but it needs to be updated to provide more flexibility and support for orthogonal projection. It provides basic support for mouse and WSAD-based keyboard control, so you can fly around your scene as though you were in a game.
+
+`BASceneView` relies on `BACamera` for actually drawing any scene content. The view will create its own camera automatically. `BACamera` represents the viewer's point of view in the scene. It has very primitive support for animating the camera, in order to make the mouse and keyboard controls work. It also manages other aspects of OpenGL drawing state, like the background colour, back face culling, rendering mode (fill, line, point), and more.
+
+The way you actually get stuff on-screen is to provide the camera with a "draw delegate", an object which conforms to the very simple `BACameraDrawDelegate` protocol. The draw delegate should respond to two methods: `-sortedPropsForCamera:`, which returns an array of objects to be drawn (optionally sorted relative to the camera's location), and `-paintForCamera:`, which is useful for drawing overlay content (it is invoked after the scene content is drawn).
+
+The props returned to the camera do not have to be `BAProp` objects--they can be any object which conforms to the `BAVisible` protocol, which includes only one mandatory method: `-paintForCamera:`. The camera iterates over this objects and asks them to draw themselves, one by one. Of course, `BAProp` does conform to this protocol.
+
+Once you have a view and a camera, you can start regular drawing updates by sending `-enableDisplayLink` to `BASceneView`. Alternately, just send `-setNeedsDisplay`, and the view will be redrawn using the standard Cocoa drawing system. (Note that in the former case, drawing is performed on the display link's dedicated thread. Also, the two update techniques are mutually exclusive.)
+
+
+Updating the Scene
+------------------
+
+In order to facilitate simulation and animation, you can use the built in update queue provided by the `BAScene` class. (Remember how I suggested using it has your application delegate's superclass?) When your app starts, just send a `-startUpdates:` message, including a block that will invoke an update cycle on your model. You can pause and resume updates at will, or cancel updates altogether.
+
+For examples, please see the PerlinTerrain and Blocks demo projects.
