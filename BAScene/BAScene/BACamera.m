@@ -72,14 +72,10 @@ void compareMatrices(BAMatrix4x4f a, BAMatrix4x4f b);
 		self.bgColor = BAMakeColorf(0, 0, 0.1f, 1.0f);
 		self.exposures = 1;
         matrix = (BAMatrix4x4f)BAIdentityMatrix4x4f;
-        options.lightsOn = YES;
-        options.cullOn = YES;
-        options.depthOn = YES;
-        changes.lightsOn = YES;
-        changes.cullOn = YES;
-        changes.depthOn = YES;
-        changes.frontMode = BAPolygonModeFill;
-        changes.backMode = BAPolygonModeFill;
+        self.lightsOn = YES;
+        self.cullingOn = YES;
+        self.depthOn = YES;
+        self.frontMode = self.backMode = BAPolygonModeToGL(BAPolygonModeFill);
 	}
 	return self;
 }
@@ -230,6 +226,7 @@ void compareMatrices(BAMatrix4x4f a, BAMatrix4x4f b);
 
 - (void)setFrontMode:(GLenum)frontMode {
     options.frontMode = BAPolygonModeFromGL(frontMode);
+    changes.frontMode = 1;
 }
 
 - (GLenum)backMode {
@@ -238,6 +235,7 @@ void compareMatrices(BAMatrix4x4f a, BAMatrix4x4f b);
 
 - (void)setBackMode:(GLenum)backMode {
     options.backMode = BAPolygonModeFromGL(backMode);
+    changes.backMode = 1;
 }
 
 #if ! TARGET_OS_IPHONE
@@ -247,6 +245,7 @@ void compareMatrices(BAMatrix4x4f a, BAMatrix4x4f b);
 
 - (void)setFrontLineModeOn:(BOOL)flag {
     options.frontMode = flag ? BAPolygonModeLine : BAPolygonModeFill;
+    changes.frontMode = 1;
 }
 
 - (BOOL)isBackLineModeOn {
@@ -255,12 +254,13 @@ void compareMatrices(BAMatrix4x4f a, BAMatrix4x4f b);
 
 - (void)setBackLineModeOn:(BOOL)flag {
     options.backMode = flag ? BAPolygonModeLine : BAPolygonModeFill;
+    changes.backMode = 1;
 }
 #endif
 
 - (void)setBgColor:(BAColorf)aColor {
-    colorChanges.background = YES;
     bgColor = aColor;
+    colorChanges.background = YES;
 }
 
 - (void)setLightLoc:(BALocationf)location {
@@ -269,14 +269,13 @@ void compareMatrices(BAMatrix4x4f a, BAMatrix4x4f b);
 }
 
 - (void)setLightColor:(BAColorf)aColor {
-    colorChanges.light = YES;
 	lightColor = aColor;
-    
+    colorChanges.light = YES;
 }
 
 - (void)setLightShine:(BAColorf)aColor {
-    colorChanges.shine = YES;
 	lightShine = aColor;
+    colorChanges.shine = YES;
 }
 
 #if ! TARGET_OS_IPHONE && ! TARGET_IPHONE_SIMULATOR
@@ -543,8 +542,6 @@ do {\
 	glMatrixMode(GL_MODELVIEW);
 #if ! TARGET_OS_IPHONE
 	glRenderMode(GL_RENDER);
-//	glPolygonMode(GL_FRONT, frontMode);
-//	glPolygonMode(GL_BACK, backMode);
 #endif
     
     glPushMatrix();
