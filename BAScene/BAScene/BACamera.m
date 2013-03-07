@@ -10,8 +10,6 @@
 
 #import "BASceneUtilities.h"
 
-#import "BAColor.h"
-
 #import <math.h>
 
 
@@ -37,6 +35,33 @@ static inline BAPolygonMode BAPolygonModeFromGL(GLenum mode) {
         case GL_FILL:
         default:       return BAPolygonModeFill;  break;
     }
+}
+
+static inline NSString *BAStringForGLPolygonMode(GLenum mode) {
+    switch (mode) {
+        case GL_POINT: return @"Point"; break;
+        case GL_LINE:  return @"Line";  break;
+        case GL_FILL:
+        default:       return @"Fill";  break;
+    }    
+}
+
+NSString *BACameraOptionsToString(BACameraOptions options) {
+    NSMutableArray *optionNames = [NSMutableArray array];
+    if(options.testOn) [optionNames addObject:@"TEST"];
+    if(options.rateOn) [optionNames addObject:@"RATE"];
+    if(options.showOriginOn) [optionNames addObject:@"SHOW_ORIGIN"];
+    if(options.showFocusOn) [optionNames addObject:@"SHOW_FOCUS"];
+    if(options.revolveOn) [optionNames addObject:@"REVOLVE"];
+    if(options.blurOn) [optionNames addObject:@"BLUR"];
+    if(options.lightsOn) [optionNames addObject:@"LIGHTS"];
+    if(options.cullOn) [optionNames addObject:@"CULL"];
+    if(options.depthOn) [optionNames addObject:@"DEPTH"];
+    
+    [optionNames addObject:[NSString stringWithFormat:@"FRONT FACE:%@", BAStringForGLPolygonMode(BAPolygonModeToGL(options.frontMode))]];
+    [optionNames addObject:[NSString stringWithFormat:@"BACK FACE:%@", BAStringForGLPolygonMode(BAPolygonModeToGL(options.backMode))]];
+    
+    return [optionNames componentsJoinedByString:@", "];
 }
 
 
@@ -393,11 +418,9 @@ void compareMatrices(BAMatrix4x4f a, BAMatrix4x4f b) {
 
 - (void)setup {
 
-	glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LESS);
-	glEnable(GL_CULL_FACE);
-	glEnable(GL_BLEND);
 	glBlendFunc(GL_SRC_ALPHA,  GL_ONE_MINUS_SRC_ALPHA);
+	glEnable(GL_BLEND);
 	glShadeModel(GL_SMOOTH);
 	glLightModelf(GL_LIGHT_MODEL_TWO_SIDE, 1.0);
 	glEnable(GL_COLOR_MATERIAL);
@@ -410,29 +433,26 @@ void compareMatrices(BAMatrix4x4f a, BAMatrix4x4f b) {
 	self.lightShine = BAMakeColorf(0.8f, 0.8f, 0.8f, 1.0f);
 	
 	BALocationf loc;
-	GLfloat ambient[4]  = { 0.2, 0.2, 0.2, 1.0f};
-	GLfloat diffuse[4]  = { 0.5f, 0.5f, 0.5f, 1.0f};
-	GLfloat specular[4] = { 0.1f, 0.1f, 0.1f, 1.0f};
 	
 	loc.p = BAMakePoint4f(0, 0, 0, 1);
 	self.lightLoc = loc;
 	
-    
-	glLightfv(GL_LIGHT0, GL_AMBIENT, ambient);
+	GLfloat diffuse[4]  = { 0.5f, 0.5f, 0.5f, 1.0f};
+
 	glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse);
-	glLightfv(GL_LIGHT0, GL_SPECULAR, specular);
 	glEnable(GL_LIGHT0);
 
+#if 0
+    GLfloat ambient[4] = { 0.2, 0.2, 0.2, 1.0f};
     GLfloat light7[4] = { 0, -1, 0, 0 };
 	
 	glLightfv(GL_LIGHT7, GL_POSITION, light7);
-	
 
-//	glLightfv(GL_LIGHT7, GL_AMBIENT, ambient);
-//	glLightfv(GL_LIGHT7, GL_DIFFUSE, ambient);
-//	glEnable(GL_LIGHT7);
-	
-	glEnable(GL_LIGHTING);
+	glLightfv(GL_LIGHT7, GL_AMBIENT, ambient);
+	glLightfv(GL_LIGHT7, GL_DIFFUSE, ambient);
+	glEnable(GL_LIGHT7);
+#endif
+    
 	glEnable(GL_NORMALIZE);
 }
 
@@ -453,9 +473,9 @@ void compareMatrices(BAMatrix4x4f a, BAMatrix4x4f b) {
 }
 
 - (void)updateGLState {
-    if(changes.lightsOn) options.lightsOn ? glEnable(GL_LIGHTING)  : glDisable(GL_LIGHTING);
-    if(changes.cullOn)   options.cullOn   ? glEnable(GL_CULL_FACE) : glDisable(GL_CULL_FACE);
-    if(changes.depthOn)  options.depthOn  ? glEnable(GL_DEPTH)     : glDisable(GL_DEPTH);
+    if(changes.lightsOn) options.lightsOn ? glEnable(GL_LIGHTING)   : glDisable(GL_LIGHTING);
+    if(changes.cullOn)   options.cullOn   ? glEnable(GL_CULL_FACE)  : glDisable(GL_CULL_FACE);
+    if(changes.depthOn)  options.depthOn  ? glEnable(GL_DEPTH_TEST) : glDisable(GL_DEPTH_TEST);
     
     if(changes.frontMode) glPolygonMode(GL_FRONT, self.frontMode);
     if(changes.backMode)  glPolygonMode(GL_BACK, self.backMode);
@@ -652,6 +672,38 @@ do {\
 	self.xRotRate = 0;
 	self.yRotRate = 0;
 	self.zRotRate = 0;
+}
+
+- (void)logCameraState {
+    NSLog(@"Settings: %@", BACameraOptionsToString(options));
+    NSLog(@"Out of date: %@", BACameraOptionsToString(changes));
+}
+
+- (void)logGLState {
+    
+#define STRING(bool) ((bool)?@"YES":@"NO")
+    
+    GLboolean lightingOn;
+    GLboolean cullingOn;
+    GLboolean depthOn;
+    GLint polygonModes[2];
+    
+    CGLContextObj cglContext = CGLGetCurrentContext();
+    
+    CGLLockContext(cglContext);
+    
+    glGetBooleanv(GL_LIGHTING, &lightingOn);
+    glGetBooleanv(GL_CULL_FACE, &cullingOn);
+    glGetBooleanv(GL_DEPTH_TEST, &depthOn);
+    glGetIntegerv(GL_POLYGON_MODE, polygonModes);
+    
+    CGLUnlockContext(cglContext);
+    
+    NSLog(@"Lighting:   %@", STRING(lightingOn));
+    NSLog(@"Cull face:  %@", STRING(cullingOn));
+    NSLog(@"Depth test: %@", STRING(depthOn));
+    NSLog(@"Front mode: %@", BAStringForGLPolygonMode(polygonModes[0]));
+    NSLog(@"Back mode:  %@", BAStringForGLPolygonMode(polygonModes[1]));
 }
 
 @end

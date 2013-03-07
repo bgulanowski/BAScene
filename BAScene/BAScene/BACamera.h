@@ -42,6 +42,9 @@ typedef struct BACameraOptionFlags {
     unsigned int reserved2:9;
 } BACameraOptions;
 
+
+extern NSString *BACameraOptionsToString(BACameraOptions options);
+
 typedef struct BACameraValueChanges {
     unsigned int background:1;
     unsigned int lightLoc:1;
@@ -195,6 +198,9 @@ typedef struct BACameraValueChanges {
 - (void)update:(NSTimeInterval)interval;
 - (void)capture;
 - (void)stop;
+
+- (void)logCameraState;
+- (void)logGLState;
 
 @end
 
