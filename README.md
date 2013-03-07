@@ -18,6 +18,8 @@ The scene graph classes are all persistent, but if you never save the object con
 
 The library is not designed for high-performance, although some parts have been optimized. It is primarily meant as a way to access 3D and scene graph features directly from Objective-C. It is ideally suited for use in small or medium-sized projects for creative and toy apps, demonstrations, and simple games. It is also useful for adding small amounts of 3D content to projects where 3D rendering or editing is not the primary purpose.
 
+I also have not yet updated BAScene to work with the OpenGL Core 3.2 profile. I have gotten as far as removing any uses of the GL Utility Toolkit, and the core functionality does not use immediate mode rendering, but I still use the OpenGL matrix stacks and other features of the fixed functionality pipeline. Switching over to a fully shader-based implementation is next on my agenda.
+
 You can watch a [presentation](http://www.slideshare.net/bgulanowski/intro-to-bascene-framework-for-mac) about BAScene on SlideShare. As you will see in the slides, it was at one time going to be named "Scene Kit", until Apple took that name.
 
 BAScene and SceneKit actually have very little overlap in their specific purpose and usefulness. Ensuring they are compatible is a pending task for improving BAScene.
