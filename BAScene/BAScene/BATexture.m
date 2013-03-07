@@ -50,8 +50,6 @@
 		
 		glGenTextures(1, &name);
 		glBindTexture(type, name);
-		glTexParameteri(type, GL_TEXTURE_MIN_FILTER, minFilter);
-		glTexParameteri(type, GL_TEXTURE_MAG_FILTER, magFilter);
 		glTexImage2D(type, 0, GL_RGBA, w, h, 0, GL_RGBA, GL_UNSIGNED_BYTE, [data bytes]);
 		glGenerateMipmap(type);
 		
@@ -82,6 +80,8 @@
 
 - (void)configureParameters {
 	glBindTexture(type, name);
+    glTexParameteri(type, GL_TEXTURE_MIN_FILTER, minFilter);
+    glTexParameteri(type, GL_TEXTURE_MAG_FILTER, magFilter);
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, mode );
 }
 
