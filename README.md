@@ -6,9 +6,9 @@ Overview
 
 BAScene is a 3D scene graph library. It is unusual in its support for fully editable and persistent objects. It is written in pure Objective-C for Mac OS X 10.5 and higher. An experimental version exists with support for iOS 4.0 and higher. It has been in sporadic development since 2008.
 
-BAScene relies on BAFoundation, also available on Github.
+BAScene relies on [BAFoundation](https://github.com/bgulanowski/BAFoundation), also available on Github.
 
-Two sample projects, Blocks and PerlinTerrain, demonstrate usage of BAScene. They are available as separately. The demos include compiled versions of BAScene (and BAFoundation), so it's possible to try them on their own.
+Two sample projects, [Blocks](https://github.com/bgulanowski/Blocks) and [PerlinTerrain](https://github.com/bgulanowski/PerlinTerrain), demonstrate usage of BAScene. They are available as separately. The demos include compiled versions of BAScene (and BAFoundation), so it's possible to try them on their own.
 
 The simplest way to get started with BAScene is to make your application delegate a subclass of the BAScene class. BAScene is, in turn, a subclass of the BACoreDataManager class, found in BAFoundation. BACoreDataManager combines a number of conveniences, and takes care of managing your model, persistent store coordinator, and managed object context. It offers numerous hooks to override so you can customize the behaviour.
 
@@ -107,7 +107,7 @@ In order to facilitate simulation and animation, you can use the built in update
 Example Code
 ------------
 
-For examples, please see the PerlinTerrain and Blocks demo projects.
+For examples, please see the [Blocks](https://github.com/bgulanowski/Blocks) and [PerlinTerrain](https://github.com/bgulanowski/PerlinTerrain) demo projects.
 
 
 Note on the API
