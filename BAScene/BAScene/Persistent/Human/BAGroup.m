@@ -10,7 +10,7 @@
 #import "BAGroup.h"
 
 #import "BAProp.h"
-
+#import "BAMesh.h"
 
 
 @interface BAGroup ()

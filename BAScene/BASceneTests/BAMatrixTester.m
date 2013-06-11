@@ -186,8 +186,8 @@
 	em = BAMultiplyMatrix3x3f(BARotationMatrix3x3f(M_PI), em);
 	em = BAMultiplyMatrix3x3f(BATranslationMatrix3x3f(v), em);
 	
-	NSMutableString *detail = [NSString stringWithFormat:@"sin(π): %.20f cos(π): %.20f", sine(M_PI), cosine(M_PI)];
-							   
+	NSMutableString *detail = [[NSString stringWithFormat:@"sin(π): %.20f cos(π): %.20f", sine(M_PI), cosine(M_PI)] mutableCopy];
+    
 	STAssertTrue(BAEqualMatrices3x3f(m, em), @"Create arbitrary rotation matrix failed; expected: %@, actual: %@\n%@",
 				 BAStringFromMatrix3x3f(em), BAStringFromMatrix3x3f(m), detail);
 	
