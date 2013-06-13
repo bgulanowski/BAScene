@@ -126,8 +126,6 @@
 		4E2A09101361B40800EDD4A4 /* _BATuple.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A090C1361B40800EDD4A4 /* _BATuple.m */; };
 		4E3E9F511347D1AE0016C8EA /* scenetest_main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E9F501347D1AE0016C8EA /* scenetest_main.m */; };
 		4E3E9F5B1347D1C40016C8EA /* libscene.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E2957621217381000DB9320 /* libscene.a */; };
-		4E3E9F621347D1EF0016C8EA /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F7E79907B2D74100F64583 /* CoreData.framework */; };
-		4E3E9F681347D2100016C8EA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E3E9F671347D2100016C8EA /* Foundation.framework */; };
 		4E3E9F761347D2C60016C8EA /* BAVoxelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E58596B1345FCC100A8D0BB /* BAVoxelArray.m */; };
 		4E3E9F771347D2C70016C8EA /* BAResourceStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDEE12CE36950083CCFC /* BAResourceStorage.m */; };
 		4E3E9F781347D2C70016C8EA /* BAResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDE212CE30020083CCFC /* BAResource.m */; };
@@ -210,10 +208,18 @@
 		4EFEDDE612CE30020083CCFC /* BAResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDE212CE30020083CCFC /* BAResource.m */; };
 		4EFEDDEF12CE36950083CCFC /* BAResourceStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EFEDDED12CE36950083CCFC /* BAResourceStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4EFEDDF012CE36950083CCFC /* BAResourceStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDEE12CE36950083CCFC /* BAResourceStorage.m */; };
-		849BD20A16BEB94400CFDCCC /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 849BD20916BEB94400CFDCCC /* CoreVideo.framework */; };
+		84A591B7176900B100C7F7B6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A591B51769009200C7F7B6 /* CoreData.framework */; };
+		84A591B91769011200C7F7B6 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A591B81769011100C7F7B6 /* CoreVideo.framework */; };
+		84A591BB1769017F00C7F7B6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A591BA1769017F00C7F7B6 /* Cocoa.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		84A591BC1769018700C7F7B6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A591BA1769017F00C7F7B6 /* Cocoa.framework */; };
+		84A591BD1769018900C7F7B6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A591BA1769017F00C7F7B6 /* Cocoa.framework */; };
+		84A591BE1769018D00C7F7B6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A591B51769009200C7F7B6 /* CoreData.framework */; };
+		84A591BF1769018D00C7F7B6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A591B51769009200C7F7B6 /* CoreData.framework */; };
+		84A591C01769019000C7F7B6 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A591B81769011100C7F7B6 /* CoreVideo.framework */; };
+		84A591C11769019100C7F7B6 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A591B81769011100C7F7B6 /* CoreVideo.framework */; };
+		84A591C21769019D00C7F7B6 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E21DF881066C26D00511C91 /* OpenGL.framework */; };
+		84A591C31769019D00C7F7B6 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E21DF881066C26D00511C91 /* OpenGL.framework */; };
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
-		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
-		B67410420FAF5DE9001E3C0D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D2F7E79907B2D74100F64583 /* CoreData.framework */; };
 		B67411A60FAF61EA001E3C0D /* BASceneUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = B67411A40FAF61EA001E3C0D /* BASceneUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B67411D40FAF63D6001E3C0D /* BAPropTester.m in Sources */ = {isa = PBXBuildFile; fileRef = B67411C50FAF62F6001E3C0D /* BAPropTester.m */; };
 		B67411DA0FAF63FA001E3C0D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B67411D90FAF63FA001E3C0D /* SenTestingKit.framework */; };
@@ -353,7 +359,6 @@
 
 /* Begin PBXFileReference section */
 		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		32DBCF5E0370ADEE00C91783 /* BAScene_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAScene_Prefix.pch; sourceTree = "<group>"; };
 		4E058A94117641B100BED553 /* BASceneConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BASceneConstants.h; sourceTree = "<group>"; };
 		4E08E1E1136AFB4900F01674 /* NSIndexSet+BAAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexSet+BAAdditions.h"; sourceTree = "<group>"; };
@@ -378,7 +383,6 @@
 		4E2A090C1361B40800EDD4A4 /* _BATuple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BATuple.m; sourceTree = "<group>"; };
 		4E3E9F4B1347D1840016C8EA /* scenetest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = scenetest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E3E9F501347D1AE0016C8EA /* scenetest_main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = scenetest_main.m; sourceTree = "<group>"; };
-		4E3E9F671347D2100016C8EA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		4E3FE5A413324AD700626212 /* BAColorTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAColorTester.h; sourceTree = "<group>"; };
 		4E3FE5A513324AD700626212 /* BAColorTester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAColorTester.m; sourceTree = "<group>"; };
 		4E47D18F149B590400B5A862 /* BARegionUtilityTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BARegionUtilityTester.h; sourceTree = "<group>"; };
@@ -453,7 +457,9 @@
 		4EFEDDE212CE30020083CCFC /* BAResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAResource.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		4EFEDDED12CE36950083CCFC /* BAResourceStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAResourceStorage.h; sourceTree = "<group>"; };
 		4EFEDDEE12CE36950083CCFC /* BAResourceStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAResourceStorage.m; sourceTree = "<group>"; };
-		849BD20916BEB94400CFDCCC /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = /System/Library/Frameworks/CoreVideo.framework; sourceTree = "<absolute>"; };
+		84A591B51769009200C7F7B6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		84A591B81769011100C7F7B6 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		84A591BA1769017F00C7F7B6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* BAScene.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BAScene.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B67411920FAF5E2C001E3C0D /* BAScene.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = BAScene.xcdatamodel; sourceTree = "<group>"; };
@@ -484,7 +490,6 @@
 		B674128C0FAF9F44001E3C0D /* BAPolygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAPolygon.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B67412970FAF9FB0001E3C0D /* BASceneView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BASceneView.h; sourceTree = "<group>"; };
 		B67412980FAF9FB0001E3C0D /* BASceneView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BASceneView.m; sourceTree = "<group>"; };
-		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -492,6 +497,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84A591BC1769018700C7F7B6 /* Cocoa.framework in Frameworks */,
+				84A591BF1769018D00C7F7B6 /* CoreData.framework in Frameworks */,
+				84A591C11769019100C7F7B6 /* CoreVideo.framework in Frameworks */,
+				84A591C31769019D00C7F7B6 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,8 +509,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E3E9F5B1347D1C40016C8EA /* libscene.a in Frameworks */,
-				4E3E9F621347D1EF0016C8EA /* CoreData.framework in Frameworks */,
-				4E3E9F681347D2100016C8EA /* Foundation.framework in Frameworks */,
 				4E3E9F8C1347D33C0016C8EA /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -510,9 +517,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				849BD20A16BEB94400CFDCCC /* CoreVideo.framework in Frameworks */,
-				8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */,
-				B67410420FAF5DE9001E3C0D /* CoreData.framework in Frameworks */,
+				84A591BB1769017F00C7F7B6 /* Cocoa.framework in Frameworks */,
+				84A591B91769011200C7F7B6 /* CoreVideo.framework in Frameworks */,
+				84A591B7176900B100C7F7B6 /* CoreData.framework in Frameworks */,
 				4E21DF891066C26D00511C91 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -521,6 +528,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84A591BD1769018900C7F7B6 /* Cocoa.framework in Frameworks */,
+				84A591BE1769018D00C7F7B6 /* CoreData.framework in Frameworks */,
+				84A591C01769019000C7F7B6 /* CoreVideo.framework in Frameworks */,
+				84A591C21769019D00C7F7B6 /* OpenGL.framework in Frameworks */,
 				B67411DA0FAF63FA001E3C0D /* SenTestingKit.framework in Frameworks */,
 				B67411E00FAF6476001E3C0D /* BAScene.framework in Frameworks */,
 			);
@@ -555,12 +566,11 @@
 		0867D69AFE84028FC02AAC07 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				849BD20916BEB94400CFDCCC /* CoreVideo.framework */,
-				4E3E9F671347D2100016C8EA /* Foundation.framework */,
-				1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */,
-				D2F7E79907B2D74100F64583 /* CoreData.framework */,
-				B67411D90FAF63FA001E3C0D /* SenTestingKit.framework */,
+				84A591BA1769017F00C7F7B6 /* Cocoa.framework */,
+				84A591B51769009200C7F7B6 /* CoreData.framework */,
+				84A591B81769011100C7F7B6 /* CoreVideo.framework */,
 				4E21DF881066C26D00511C91 /* OpenGL.framework */,
+				B67411D90FAF63FA001E3C0D /* SenTestingKit.framework */,
 			);
 			name = Dependencies;
 			sourceTree = "<group>";
