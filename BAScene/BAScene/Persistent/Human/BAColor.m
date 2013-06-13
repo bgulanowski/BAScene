@@ -40,44 +40,33 @@
 }
 
 + (BAColor *)colorWithRed:(GLfloat)red green:(GLfloat)green blue:(GLfloat)blue alpha:(GLfloat)alpha {
-	
-	BAColor *color = (BAColor *)[self insertObject];
-	
-	color.rValue = red;
-	color.gValue = green;
-	color.bValue = blue;
-	color.aValue = alpha;
-	
-	return color;
+    BAAssertActiveContext();
+	return [BAActiveContext colorWithRed:red green:green blue:blue alpha:alpha];
 }
 
 + (BAColor *)colorWithRed:(GLfloat)red green:(GLfloat)green blue:(GLfloat)blue {
-	return [self colorWithRed:red green:green blue:blue alpha:1.0f];
+    BAAssertActiveContext();
+    return [BAActiveContext colorWithRed:red green:green blue:blue];
 }
 
 + (BAColor *)colorWithColor:(BAColorf)color {
-	return [self colorWithRed:color.c.r green:color.c.g blue:color.c.b alpha:color.c.a];
+    BAAssertActiveContext();
+    return [BAActiveContext colorWithColor:color];
 }
 
 + (BAColor *)randomColor {
-	return [self colorWithColor:BARandomColorf()];
+    BAAssertActiveContext();
+    return [BAActiveContext randomColor];
 }
 
 + (BAColor *)randomOpaqueColor {
-	return [self colorWithColor:BARandomOpaqueColorf()];
+    BAAssertActiveContext();
+    return [BAActiveContext randomOpaqueColor];
 }
 
 + (BAColor *)randomWarmColor {
-    
-    NSColor *base = [NSColor colorWithDeviceHue:BARandomFloat()*0.25f
-                                     saturation:BARandomFloat()*0.75f + 0.25f
-                                     brightness:BARandomFloat()*0.5f + 0.5f
-                                          alpha:1.0f];
-    CGFloat r, g, b;
-    
-    [base getRed:&r green:&g blue:&b alpha:NULL];
-    
-    return [self colorWithRed:r green:g blue:b];
+    BAAssertActiveContext();
+    return [BAActiveContext randomWarmColor];
 }
 
 #if 1
@@ -123,5 +112,51 @@
 	[super setA:value];
 }
 #endif
+
+@end
+
+
+@implementation NSManagedObjectContext (BAColorCreating)
+
+- (BAColor *)colorWithRed:(GLfloat)red green:(GLfloat)green blue:(GLfloat)blue alpha:(GLfloat)alpha {
+    
+    BAColor *color = [BAColor insertInManagedObjectContext:self];
+    
+	color.rValue = red;
+	color.gValue = green;
+	color.bValue = blue;
+	color.aValue = alpha;
+
+    return color;
+}
+
+- (BAColor *)colorWithRed:(GLfloat)red green:(GLfloat)green blue:(GLfloat)blue {
+    return [self colorWithRed:red green:green blue:blue alpha:1.0f];
+}
+
+- (BAColor *)colorWithColor:(BAColorf)color {
+    return [self colorWithRed:color.c.r green:color.c.g blue:color.c.b alpha:color.c.a];
+}
+
+- (BAColor *)randomColor {
+    return [self colorWithColor:BARandomColorf()];
+}
+
+- (BAColor *)randomOpaqueColor {
+    return [self colorWithColor:BARandomOpaqueColorf()];
+}
+
+- (BAColor *)randomWarmColor {
+    
+    NSColor *base = [NSColor colorWithDeviceHue:BARandomFloat()*0.25f
+                                     saturation:BARandomFloat()*0.75f + 0.25f
+                                     brightness:BARandomFloat()*0.5f + 0.5f
+                                          alpha:1.0f];
+    CGFloat r, g, b;
+    
+    [base getRed:&r green:&g blue:&b alpha:NULL];
+    
+    return [self colorWithRed:r green:g blue:b];
+}
 
 @end

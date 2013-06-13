@@ -8,10 +8,18 @@
 	BOOL appliesColor;
 }
 
-+ (BAPrototypeMesh *)prototypeMesh;
-
 - (BAMesh *)transformedMesh;
 - (NSSet *)transformedPolygons;
 - (BARegionf)transformedBounds;
 
+@end
+
+
+@interface BAPrototypeMesh (BAPrototypeMeshDeprecated)
++ (BAPrototypeMesh *)prototypeMesh DEPRECATED_ATTRIBUTE;
+@end
+
+
+@interface NSManagedObjectContext (BAPrototypeMeshCreating)
+- (BAPrototypeMesh *)prototypeMesh;
 @end

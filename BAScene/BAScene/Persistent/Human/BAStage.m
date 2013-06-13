@@ -17,7 +17,7 @@
 #pragma mark NSManagedObject
 - (void)awakeFromInsert {
 	// do stuff when you're first created
-	self.partitionRoot = [BAPartition rootPartition];
+	self.partitionRoot = [self.managedObjectContext rootPartition];
 	
 //	NSManagedObject *light = [BALight insertObject];
 }
@@ -41,16 +41,8 @@
 
 #pragma mark New
 + (BAStage *)stage {
-	
-	BAStage *stage = nil;
-	
-	if(nil == stage)
-		stage = [BAActiveContext objectForEntityNamed:@"Stage" matchingPredicate:nil];
-	
-	if(nil == stage && nil != BAActiveContext)
-		stage = (BAStage *)[self insertObject];
-	
-	return stage;
+	BAAssertActiveContext();
+    return [BAActiveContext stage];
 }
 
 
@@ -70,6 +62,21 @@
 
 - (void)update:(NSTimeInterval)interval {
 	[self.partitionRoot updateProps:interval];
+}
+
+@end
+
+
+@implementation NSManagedObjectContext (BAStageCreating)
+
+- (BAStage *)stage {
+	
+	BAStage *stage = [self objectForEntityNamed:[BAStage entityName] matchingPredicate:nil];
+	
+	if(nil == stage)
+		stage = (BAStage *)[BAStage insertInManagedObjectContext:self];
+	
+	return stage;
 }
 
 @end

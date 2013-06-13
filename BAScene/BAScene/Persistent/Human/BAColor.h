@@ -21,13 +21,30 @@
 @public
 	BAColorf values;
 }
+@end
 
-+ (BAColor *)colorWithRed:(GLfloat)red green:(GLfloat)green blue:(GLfloat)blue alpha:(GLfloat)alpha;
-+ (BAColor *)colorWithRed:(GLfloat)red green:(GLfloat)green blue:(GLfloat)blue;
-+ (BAColor *)colorWithColor:(BAColorf)color;
 
-+ (BAColor *)randomColor;
-+ (BAColor *)randomOpaqueColor;
-+ (BAColor *)randomWarmColor; // also opaque
+@interface BAColor (BAColorDeprecated)
+
++ (BAColor *)colorWithRed:(GLfloat)red green:(GLfloat)green blue:(GLfloat)blue alpha:(GLfloat)alpha DEPRECATED_ATTRIBUTE;
++ (BAColor *)colorWithRed:(GLfloat)red green:(GLfloat)green blue:(GLfloat)blue DEPRECATED_ATTRIBUTE;
++ (BAColor *)colorWithColor:(BAColorf)color DEPRECATED_ATTRIBUTE;
+
++ (BAColor *)randomColor DEPRECATED_ATTRIBUTE;
++ (BAColor *)randomOpaqueColor DEPRECATED_ATTRIBUTE;
++ (BAColor *)randomWarmColor DEPRECATED_ATTRIBUTE; // also opaque
+
+@end
+
+
+@interface NSManagedObjectContext (BAColorCreating)
+
+- (BAColor *)colorWithRed:(GLfloat)red green:(GLfloat)green blue:(GLfloat)blue alpha:(GLfloat)alpha;
+- (BAColor *)colorWithRed:(GLfloat)red green:(GLfloat)green blue:(GLfloat)blue;
+- (BAColor *)colorWithColor:(BAColorf)color;
+
+- (BAColor *)randomColor;
+- (BAColor *)randomOpaqueColor;
+- (BAColor *)randomWarmColor; // also opaque
 
 @end

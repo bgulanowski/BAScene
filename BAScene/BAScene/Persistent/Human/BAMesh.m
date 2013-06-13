@@ -79,7 +79,7 @@ static NSArray *pointSort;
 #pragma mark NSMutableCopying
 - (id)mutableCopyWithZone:(NSZone *)zone {
 	
-	BAMesh *mesh = [[self class] meshWithName:nil];
+	BAMesh *mesh = [[self managedObjectContext] meshWithName:nil];
 	NSMutableSet *newPolygons = [NSMutableSet setWithCapacity:[self.polygons count]];
 	
 	for(BAPolygon *polygon in self.polygons)
@@ -98,107 +98,57 @@ static NSArray *pointSort;
 
 #pragma mark Factories
 + (BAMesh *)meshWithName:(NSString *)aName create:(BOOL*)create {
-	
-	BAMesh *mesh = [BAActiveContext objectForEntityNamed:@"Mesh" matchingValue:aName forKey:@"name" create:create];
-	
-	if(create && *create)
-		mesh.typeValue = GL_TRIANGLES;
-
-	return mesh;
+    BAAssertActiveContext();
+    if(create && *create)
+        return [BAActiveContext meshWithName:aName];
+    else
+        return [BAActiveContext findMeshWithName:aName];
 }
 
 + (BAMesh *)meshWithName:(NSString *)aName vertices:(BAPointf *)vertices count:(NSUInteger)vcount texCoords:(BAPointf *)texCoords count:(NSUInteger)tcCount vIndices:(NSUInteger *)indices tcIndices:(NSUInteger *)tcIndices count:(NSUInteger)icount polySize:(NSUInteger)psize {
-	
-	BOOL create = YES;
-	BAMesh *mesh = [self meshWithName:aName create:&create];
-	
-	if(create) {
-		// FIXME: need to make this automatic
-		[mesh setPolygons:[BAPolygon polygonsWithSize:psize
-											 vertices:vertices ? [BATuple tuplesWithPointArray:vertices count:vcount] : nil
-											texCoords:texCoords ? [BATuple tuplesWithPointArray:texCoords count:tcCount] : nil
-											  indices:indices
-											tcIndices:tcIndices
-												count:icount]];
-		mesh.dirtyValue = YES;
-		mesh.hasNormalsValue = YES;
-	}
-	
-	return mesh;
+	BAAssertActiveContext();
+    return [BAActiveContext meshWithName:aName
+                                vertices:vertices count:vcount
+                               texCoords:texCoords count:tcCount
+                                vIndices:indices tcIndices:tcIndices count:icount
+                                polySize:psize];
 }
 
 + (BAMesh *)meshWithName:(NSString *)aName vertices:(BAPointf *)vertices count:(NSUInteger)vcount indices:(NSUInteger *)indices count:(NSUInteger)icount polySize:(NSUInteger)psize {
-	return [self meshWithName:aName vertices:vertices count:vcount texCoords:nil count:0 vIndices:indices tcIndices:NULL count:icount polySize:psize];
+    BAAssertActiveContext();
+    return [BAActiveContext meshWithName:aName vertices:vertices count:vcount indices:indices count:icount polySize:psize];
 }
 
 + (BAMesh *)meshWithName:(NSString *)aName {
-	BOOL create = YES;
-	return [self meshWithName:aName create:&create];
+    BAAssertActiveContext();
+    return [BAActiveContext meshWithName:aName];
 }
 
 + (BAMesh *)meshWithURL:(NSURL *)url {
-	return nil;
+    BAAssertActiveContext();
+    return [BAActiveContext meshWithURL:url];
 }
 
 + (BAMesh *)meshWithPolygons:(NSSet *)polygonsSet {
-	
-	BOOL create = YES;
-	BAMesh *mesh = [self meshWithName:nil create:&create];
-
-	mesh.polygons = polygonsSet;
-	
-#if TARGET_OS_IPHONE
-    mesh.typeValue = GL_TRIANGLES;
-    
-#else
-	switch ([[(BAPolygon *)[polygonsSet anyObject] points] count]) {
-		case 3:
-			mesh.typeValue = GL_TRIANGLES;
-			break;
-		case 4:
-			mesh.typeValue = GL_QUADS;
-			break;
-		default:
-			mesh.typeValue = GL_POLYGON;
-			break;
-	}
-#endif
-	
-	return mesh;
+	BAAssertActiveContext();
+    return [BAActiveContext meshWithName:nil polygons:polygonsSet];
 }
 
 + (BAMesh *)meshWithTriangles:(BATriangle *)tris count:(NSUInteger)count {
-	
-	BOOL create = YES;
-	BAMesh *mesh = [self meshWithName:nil create:&create];
-	NSMutableSet *polygons = [NSMutableSet setWithCapacity:count];
-	
-	for(NSUInteger i=0; i<count; ++i)
-		[polygons addObject:[BAPolygon polygonWithTriangle:tris[i]]];
-	
-	mesh.polygons = polygons;
-
-	return mesh;
+	BAAssertActiveContext();
+    return [BAActiveContext meshWithName:nil triangles:tris count:count];
 }
 
 + (BAMesh *)meshWithQuads:(BAQuad *)quads count:(NSUInteger)count {
-	
-	BOOL create = YES;
-	BAMesh *mesh = [self meshWithName:nil create:&create];
-	NSMutableSet *polygons = [NSMutableSet setWithCapacity:count];
-	
-	for(NSUInteger i=0; i<count; ++i)
-		[polygons addObject:[BAPolygon polygonWithQuad:quads[i]]];
-	
-	mesh.polygons = polygons;
-	
-	return mesh;
+	BAAssertActiveContext();
+    return [BAActiveContext meshWithName:nil quads:quads count:count];
 }
 
 
 #pragma mark New
 + (BAMesh *)findMeshWithName:(NSString *)aName {
-	return [self meshWithName:aName create:NULL];
+    BAAssertActiveContext();
+	return [BAActiveContext findMeshWithName:aName];
 }
 
 
@@ -433,8 +383,10 @@ static inline NSUInteger copyNormalData(BATuple *vertex, BATuple *normal, GLfloa
 	
 	// Make an interleaved array of vertices, normals, texture coordinates and/or colour values
 	rawVertices = malloc(rawVertsSize);
+    
+    BOOL doDrawNormals = drawNormals;
 	
-	if(drawNormals) {
+	if(doDrawNormals) {
 		rawNormalsSize = sizeof(GLfloat)*count*2*3;
 		rawNormals = malloc(rawVertsSize);
 	}
@@ -456,7 +408,7 @@ static inline NSUInteger copyNormalData(BATuple *vertex, BATuple *normal, GLfloa
 			while((points[2] = [iter nextObject])) {
 				for(NSUInteger j = 0; j<3; ++j) {
 					i_v += copyVertexData(points[j], &rawVertices[i_v]);
-					if(drawNormals)
+					if(doDrawNormals)
 						i_n += copyNormalData([points[j] vertex], [points[j] normal], &rawNormals[i_n]);
 				}
 				points[1] = points[2];
@@ -481,17 +433,17 @@ static inline NSUInteger copyNormalData(BATuple *vertex, BATuple *normal, GLfloa
 	NSAssert(i_v == (count*elementsPerVertex), @"WTF");
 	
 	NSData *vertexData = [NSData dataWithBytesNoCopy:rawVertices length:rawVertsSize freeWhenDone:YES];
-	BAResource *vertexResource = [BAResource resourceWithType:VertexResourceType data:vertexData];
+	BAResource *vertexResource = [self.managedObjectContext resourceWithType:VertexResourceType data:vertexData];
 	
 	[self addResourcesObject:vertexResource];
     [self prepareVertexBuffer];
 	
-	if(drawNormals) {
+	if(doDrawNormals) {
 
 		NSAssert(i_n==count*2*3, @"fail");
 		
 		vertexData = [NSData dataWithBytesNoCopy:rawNormals length:rawNormalsSize freeWhenDone:YES];
-		vertexResource = [BAResource resourceWithType:NormalResourceType data:vertexData];
+		vertexResource = [self.managedObjectContext resourceWithType:NormalResourceType data:vertexData];
 		
 		[self addResourcesObject:vertexResource];
 		[self prepareNormalBuffer];
@@ -521,18 +473,18 @@ static inline NSUInteger copyNormalData(BATuple *vertex, BATuple *normal, GLfloa
 			BATuple *newPoint = [pointMap objectForKey:tupleID];
 			
 			if(!newPoint) {
-				newPoint = [BATuple tupleWithPoint:[vertex pointf]];
+				newPoint = [self.managedObjectContext tupleWithPoint:[vertex pointf]];
 				[newPoint applyTransform:transform];
 				[pointMap setObject:newPoint forKey:tupleID];
 			}
 			
-			[newPoints addObject:[BAPoint pointWithVertex:newPoint index:[point indexValue]]];
+			[newPoints addObject:[[self managedObjectContext] pointWithVertex:newPoint index:[point indexValue]]];
 		}
 		
-		[newPolys addObject:[BAPolygon polygonWithPoints:newPoints]];
+		[newPolys addObject:[self.managedObjectContext polygonWithPoints:newPoints]];
 	}
 	
-	return [BAMesh meshWithPolygons:newPolys];
+	return [[self managedObjectContext] meshWithName:[self.name stringByAppendingString:@" copy"] polygons:newPolys];
 }
 
 - (BAMesh *)applyMatrixTransform:(BAMatrix4x4f)transform {
@@ -625,6 +577,148 @@ static inline NSUInteger copyNormalData(BATuple *vertex, BATuple *normal, GLfloa
 
 #if ! TARGET_OS_IPHONE
 + (BAMesh *)boxWithWidth:(double)w depth:(double)d height:(double)h {
+	BAAssertActiveContext();
+    return [BAActiveContext boxMeshWithWidth:w depth:d height:h];
+}
+#endif
+
+// unit Platonic solids
++ (BAMesh *)tetrahedron {
+    BAAssertActiveContext();
+    return [BAActiveContext tetrahedronMesh];
+}
+
+#if ! TARGET_OS_IPHONE
++ (BAMesh *)cube {
+	BAAssertActiveContext();
+    return [BAActiveContext cubeMesh];
+}
+#endif
+
++ (BAMesh *)octahedron {
+	BAAssertActiveContext();
+    return [BAActiveContext octahedronMesh];
+}
+
+#if ! TARGET_OS_IPHONE
++ (BAMesh *)dodecahedron {
+	BAAssertActiveContext();
+    return [BAActiveContext dodecahedronMesh];
+}
+#endif
+
++ (BAMesh *)icosahedron {
+    BAAssertActiveContext();
+    return [BAActiveContext icosahedronMesh];
+}
+
+@end
+
+
+@implementation NSManagedObjectContext (BAMeshCreating)
+
+- (BAMesh *)findMeshWithName:(NSString *)aName {
+    return [self objectForEntityNamed:[BAMesh entityName] matchingValue:aName forKey:@"name"];
+}
+
+- (BAMesh *)meshWithName:(NSString *)aName {
+    
+    BAMesh *mesh = [self findMeshWithName:aName];
+    
+    if(!mesh) {
+        mesh = [BAMesh insertInManagedObjectContext:self];
+		mesh.typeValue = GL_TRIANGLES;
+    }
+
+	return mesh;
+}
+
+- (BAMesh *)meshWithName:(NSString *)aName polygons:(NSSet *)polygonsSet {
+	
+	BAMesh *mesh = [self meshWithName:aName];
+    
+	mesh.polygons = polygonsSet;
+	
+#if TARGET_OS_IPHONE
+    mesh.typeValue = GL_TRIANGLES;
+    
+#else
+	switch ([[(BAPolygon *)[polygonsSet anyObject] points] count]) {
+		case 3:
+			mesh.typeValue = GL_TRIANGLES;
+			break;
+		case 4:
+			mesh.typeValue = GL_QUADS;
+			break;
+		default:
+			mesh.typeValue = GL_POLYGON;
+			break;
+	}
+#endif
+	
+	return mesh;
+}
+
+- (BAMesh *)meshWithName:(NSString *)aName
+                vertices:(BAPointf *)vertices count:(NSUInteger)vcount
+               texCoords:(BAPointf *)texCoords count:(NSUInteger)tcCount
+                vIndices:(NSUInteger *)indices tcIndices:(NSUInteger *)tcIndices count:(NSUInteger)icount
+                polySize:(NSUInteger)psize {
+	
+	BAMesh *mesh = [self meshWithName:aName];
+	
+		// FIXME: need to make this automatic
+    [mesh setPolygons:[self polygonsWithSize:psize
+                                    vertices:vertices ? [self tuplesWithPointArray:vertices count:vcount] : nil
+                                   texCoords:texCoords ? [self tuplesWithPointArray:texCoords count:tcCount] : nil
+                                     indices:indices
+                                   tcIndices:tcIndices
+                                       count:icount]];
+    mesh.dirtyValue = YES;
+    mesh.hasNormalsValue = YES;
+	
+	return mesh;
+}
+
+- (BAMesh *)meshWithName:(NSString *)aName
+                vertices:(BAPointf *)vertices count:(NSUInteger)vcount
+                 indices:(NSUInteger *)indices count:(NSUInteger)icount
+                polySize:(NSUInteger)psize {
+	return [self meshWithName:aName vertices:vertices count:vcount texCoords:nil count:0 vIndices:indices tcIndices:NULL count:icount polySize:psize];
+}
+
+- (BAMesh *)meshWithURL:(NSURL *)url {
+	return nil;
+}
+
+- (BAMesh *)meshWithName:(NSString *)aName triangles:(BATriangle *)tris count:(NSUInteger)count {
+	
+	BAMesh *mesh = [self meshWithName:aName];
+	NSMutableSet *polygons = [NSMutableSet setWithCapacity:count];
+	
+	for(NSUInteger i=0; i<count; ++i)
+		[polygons addObject:[self polygonWithTriangle:tris[i]]];
+	
+	mesh.polygons = polygons;
+    
+	return mesh;
+}
+
+- (BAMesh *)meshWithName:(NSString *)aName quads:(BAQuad *)quads count:(NSUInteger)count {
+	
+	BAMesh *mesh = [self meshWithName:aName];
+	NSMutableSet *polygons = [NSMutableSet setWithCapacity:count];
+	
+	for(NSUInteger i=0; i<count; ++i)
+		[polygons addObject:[self polygonWithQuad:quads[i]]];
+	
+	mesh.polygons = polygons;
+	
+	return mesh;
+}
+
+#if ! TARGET_OS_IPHONE
+- (BAMesh *)boxMeshWithWidth:(double)w depth:(double)d height:(double)h {
 	
 	double x2 = w*0.5f, y2 = h*0.5f, z2 = d*0.5f, x1 = -x2, y1 = -y2, z1 = -z2;
 	BAPointf points[] = {
@@ -638,7 +732,7 @@ static inline NSUInteger copyNormalData(BATuple *vertex, BATuple *normal, GLfloa
 		{ x2, y2, z2 }
 	};
 	NSUInteger indices[] = { 0,1,3,2, 0,2,6,4, 0,4,5,1, 1,5,7,3, 2,3,7,6, 4,6,7,5 };
-	BAMesh *box = [self meshWithName:nil vertices:points count:8 indices:indices count:6 polySize:4];
+	BAMesh *box = [self meshWithName:@"Box" vertices:points count:8 indices:indices count:6 polySize:4];
 	
 	box.typeValue = GL_QUADS;
 	
@@ -647,15 +741,15 @@ static inline NSUInteger copyNormalData(BATuple *vertex, BATuple *normal, GLfloa
 #endif
 
 // unit Platonic solids
-+ (BAMesh *)tetrahedron {
-
+- (BAMesh *)tetrahedronMesh {
+    
 	BAMesh *tetrahedron = [self findMeshWithName:@"BAMesh:tetrahedron"];
 	
 	if(!tetrahedron) {
 		
 		BAPointf points[] = {p000, p101, p011, p110};
 		NSUInteger indices[] = {0,1,2, 0,2,3, 0,3,1, 1,3,2};
-
+        
 		tetrahedron = [self meshWithName:@"BAMesh:tetrahedron" vertices:points count:4 indices:indices count:4 polySize:3];
 	}
 	
@@ -663,7 +757,7 @@ static inline NSUInteger copyNormalData(BATuple *vertex, BATuple *normal, GLfloa
 }
 
 #if ! TARGET_OS_IPHONE
-+ (BAMesh *)cube {
+- (BAMesh *)cubeMesh {
 	
 	BAMesh *cube = [self findMeshWithName:@"BAMesh:cube"];
 	
@@ -680,7 +774,7 @@ static inline NSUInteger copyNormalData(BATuple *vertex, BATuple *normal, GLfloa
 }
 #endif
 
-+ (BAMesh *)octahedron {
+- (BAMesh *)octahedronMesh {
 	
 	BAMesh *octahedron = [self findMeshWithName:@"BAMesh:octahedron"];
 	
@@ -696,7 +790,7 @@ static inline NSUInteger copyNormalData(BATuple *vertex, BATuple *normal, GLfloa
 }
 
 #if ! TARGET_OS_IPHONE
-+ (BAMesh *)dodecahedron {
+- (BAMesh *)dodecahedronMesh {
 	
 	BAMesh *dodecahedron = [self findMeshWithName:@"BAMesh:dodecahedron"];
 	
@@ -716,8 +810,8 @@ static inline NSUInteger copyNormalData(BATuple *vertex, BATuple *normal, GLfloa
 }
 #endif
 
-+ (BAMesh *)icosahedron {
-
+- (BAMesh *)icosahedronMesh {
+    
 	BAMesh *icosahedron = [self findMeshWithName:@"BAMesh:icosahedron"];
 	
 	if(!icosahedron) {
@@ -737,8 +831,10 @@ static inline NSUInteger copyNormalData(BATuple *vertex, BATuple *normal, GLfloa
 
 
 // other interesting shapes
-+ (BAMesh *)rhombicDodecahedron {
+#if 0
+- (BAMesh *)rhombicDodecahedronMesh {
 	return nil;
 }
+#endif
 
 @end

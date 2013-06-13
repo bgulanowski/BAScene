@@ -26,15 +26,6 @@
 
 + (void)setLastInterval:(NSTimeInterval)interval;
 
-+ (BAProp *)propWithName:(NSString *)aName create:(BOOL*)create;
-+ (BAProp *)propWithName:(NSString *)aName;
-// This calls the above and will clobber existing prototype/xform if a prop already exists by that name
-+ (BAProp *)propWithName:(NSString *)aName prototype:(BAPrototype *)proto transform:(BATransform *)xform;
-+ (BAProp *)propWithName:(NSString *)aName prototype:(BAPrototype *)proto; // calls the above with new default transform
-+ (BAProp *)propWithName:(NSString *)aName byMergingProps:(NSSet *)props;
-
-+ (BAProp *)findPropWithName:(NSString *)aName;
-
 - (GLfloat)distanceForCameraLocation:(BAPointf)cloc;
 - (GLfloat)zDistanceForCameraLocation:(BAPointf)cloc;
 
@@ -43,5 +34,31 @@
 
 - (void)recalculateBounds;
 - (void)loadBounds;
+
+@end
+
+
+@interface BAProp (BAPropDeprecated)
+
++ (BAProp *)findPropWithName:(NSString *)aName DEPRECATED_ATTRIBUTE;
+
++ (BAProp *)propWithName:(NSString *)aName create:(BOOL*)create DEPRECATED_ATTRIBUTE;
++ (BAProp *)propWithName:(NSString *)aName DEPRECATED_ATTRIBUTE;
++ (BAProp *)propWithName:(NSString *)aName prototype:(BAPrototype *)proto transform:(BATransform *)xform DEPRECATED_ATTRIBUTE;
++ (BAProp *)propWithName:(NSString *)aName prototype:(BAPrototype *)proto DEPRECATED_ATTRIBUTE;
++ (BAProp *)propWithName:(NSString *)aName byMergingProps:(NSSet *)props DEPRECATED_ATTRIBUTE;
+
+@end
+
+
+@interface NSManagedObjectContext (BAPropCreating)
+
+- (BAProp *)findPropWithName:(NSString *)aName;
+
+- (BAProp *)propWithName:(NSString *)aName;
+// This calls the above and will clobber existing prototype/xform if a prop already exists by that name
+- (BAProp *)propWithName:(NSString *)aName prototype:(BAPrototype *)proto transform:(BATransform *)xform;
+- (BAProp *)propWithName:(NSString *)aName prototype:(BAPrototype *)proto; // calls the above with new default transform
+- (BAProp *)propWithName:(NSString *)aName byMergingProps:(NSSet *)props;
 
 @end

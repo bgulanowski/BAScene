@@ -19,12 +19,12 @@
 #pragma mark NSMutableCopying
 - (id)mutableCopyWithZone:(NSZone *)zone {
 	
-	BAPrototype *prototype = [[self class] prototypeWithName:nil];
+	BAPrototype *prototype = [self.managedObjectContext prototypeWithName:nil];
 	NSMutableSet *newPrototypeMeshes = [NSMutableSet setWithCapacity:[self.prototypeMeshes count]];
 	
 	for(BAPrototypeMesh *prototypeMesh in self.prototypeMeshes) {
 		
-		BAPrototypeMesh *newPrototypeMesh = [BAPrototypeMesh prototypeMesh];
+		BAPrototypeMesh *newPrototypeMesh = [self.managedObjectContext prototypeMesh];
 		
 		newPrototypeMesh.mesh = [[prototypeMesh.mesh mutableCopyWithZone:zone] autorelease];
 		[newPrototypeMeshes addObject:newPrototypeMesh];
@@ -38,34 +38,28 @@
 
 #pragma mark Factories
 + (BAPrototype *)prototypeWithName:(NSString *)aName create:(BOOL*)create {
-	return [BAActiveContext objectForEntityNamed:@"Prototype" matchingValue:aName forKey:@"name" create:create];
+    BAAssertActiveContext();
+    if(create && *create)
+        return [BAActiveContext prototypeWithName:aName];
+    else
+        return [BAActiveContext findPrototypeWithName:aName];
 }
 
 + (BAPrototype *)prototypeWithName:(NSString *)aName {
-	BOOL create = YES;
-	return [self prototypeWithName:aName create:&create];
+    BAAssertActiveContext();
+    return [BAActiveContext prototypeWithName:aName];
 }
 
 + (BAPrototype *)prototypeWithName:(NSString *)aName mesh:(BAMesh *)mesh {
-	
-	BOOL create = YES;
-	BAPrototype *proto = [self prototypeWithName:aName create:&create];
-	
-	if(create) {
-		
-		BAPrototypeMesh *pm = [BAPrototypeMesh prototypeMesh];
-		
-		pm.mesh = mesh;
-		[proto addPrototypeMeshesObject:pm];
-	}
-	
-	return proto;
+	BAAssertActiveContext();
+    return [BAActiveContext prototypeWithName:aName mesh:mesh];
 }
 
 
 #pragma mark New
 + (BAPrototype *)findPrototypeWithName:(NSString *)aName {
-	return [self prototypeWithName:aName create:NULL];
+    BAAssertActiveContext();
+	return [BAActiveContext findPrototypeWithName:aName];
 }
 
 
@@ -81,38 +75,64 @@
 
 @end
 
-@implementation BAPrototype (BAPrototypeFactories)
+@implementation NSManagedObjectContext (BAPrototypeCreating)
 
-+ (BAPrototype *)platonicSolidNamed:(NSString *)name {
+- (BAPrototype *)findPrototypeWithName:(NSString *)aName {
+    return [self objectForEntityNamed:[BAPrototype entityName] matchingValue:aName forKey:@"name"];
+}
+
+- (BAPrototype *)prototypeWithName:(NSString *)aName {
+    
+    BAPrototype *proto = [self findPrototypeWithName:aName];
+    
+    if(!proto)
+        proto = [BAPrototype insertInManagedObjectContext:self];
+    
+    return proto;
+}
+
+- (BAPrototype *)prototypeWithName:(NSString *)aName mesh:(BAMesh *)mesh {
 	
-	NSString *protoName = [NSString stringWithFormat:@"BAPrototype:%@", name];
-	BAPrototype *proto = [self findPrototypeWithName:protoName];
-	
-	if(!proto)
-		proto = [self prototypeWithName:protoName mesh:objc_msgSend([BAMesh class], NSSelectorFromString(name))];
+	BAPrototype *proto = [self prototypeWithName:aName];		
+    BAPrototypeMesh *pm = [self prototypeMesh];
+    
+    pm.mesh = mesh;
+    [proto addPrototypeMeshesObject:pm];
 	
 	return proto;
 }
 
-+ (BAPrototype *)tetrahedron {
+- (BAPrototype *)platonicSolidNamed:(NSString *)name {
+	
+	NSString *protoName = [NSString stringWithFormat:@"BAPrototype:%@", name];
+	BAPrototype *proto = [self findPrototypeWithName:protoName];
+    
+    SEL meshSelector = NSSelectorFromString([name stringByAppendingString:@"Mesh"]);
+	
+	if(!proto)
+		proto = [self prototypeWithName:protoName mesh:objc_msgSend(self, meshSelector)];
+	
+	return proto;
+}
+
+- (BAPrototype *)tetrahedron {
 	return [self platonicSolidNamed:@"tetrahedron"];
 }
 
-+ (BAPrototype *)cube {
+- (BAPrototype *)cube {
 	return [self platonicSolidNamed:@"cube"];
 }
 
-+ (BAPrototype *)octahedron {
+- (BAPrototype *)octahedron {
 	return [self platonicSolidNamed:@"octahedron"];
 }
 
-+ (BAPrototype *)dodecahedron {
+- (BAPrototype *)dodecahedron {
 	return [self platonicSolidNamed:@"dodecahedron"];
 }
 
-+ (BAPrototype *)icosahedron {
+- (BAPrototype *)icosahedron {
 	return [self platonicSolidNamed:@"icosahedron"];
 }
-
 
 @end

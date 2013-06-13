@@ -38,12 +38,8 @@
 
 #pragma mark Factory
 + (BAPrototypeMesh *)prototypeMesh {
-	
-	BAPrototypeMesh *pm = (BAPrototypeMesh *)[self insertObject];
-	
-	pm.transform = [BATransform transform];
-	
-	return pm;
+	BAAssertActiveContext();
+    return [BAActiveContext prototypeMesh];
 }
 
 
@@ -69,6 +65,17 @@
     BARegionf r = [self.mesh bounds];
     
     return BATransformRegionf(r, m);
+}
+
+@end
+
+
+@implementation NSManagedObjectContext (BAPrototypeMeshCreating)
+
+- (BAPrototypeMesh *)prototypeMesh {
+    BAPrototypeMesh *pm = (BAPrototypeMesh *)[BAPrototypeMesh insertInManagedObjectContext:self];
+	pm.transform = [self transform];
+	return pm;
 }
 
 @end

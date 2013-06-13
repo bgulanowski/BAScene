@@ -59,18 +59,6 @@ extern BOOL drawNormals;
 
 @property (readonly) NSArray *orderedPoints;
 
-+ (BAMesh *)meshWithName:(NSString *)aName create:(BOOL*)create;
-+ (BAMesh *)meshWithName:(NSString *)aName;
-+ (BAMesh *)meshWithPolygons:(NSSet *)polygons; // BAPolygon instances
-+ (BAMesh *)meshWithName:(NSString *)aName vertices:(BAPointf *)vertices count:(NSUInteger)vcount texCoords:(BAPointf *)texCoords count:(NSUInteger)tcCount vIndices:(NSUInteger *)indices tcIndices:(NSUInteger *)tcIndices count:(NSUInteger)icount polySize:(NSUInteger)psize;
-+ (BAMesh *)meshWithName:(NSString *)aName vertices:(BAPointf *)vertices count:(NSUInteger)vcount indices:(NSUInteger *)indices count:(NSUInteger)icount polySize:(NSUInteger)psize;
-+ (BAMesh *)meshWithTriangles:(BATriangle *)tris count:(NSUInteger)count;
-+ (BAMesh *)meshWithQuads:(BAQuad *)quads count:(NSUInteger)count;
-
-+ (BAMesh *)meshWithURL:(NSURL *)url;
-
-+ (BAMesh *)findMeshWithName:(NSString *)aName;
-
 - (BOOL)saveToURL:(NSURL *)url error:(NSError **)perror;
 
 - (BOOL)containsPointX:(double)x y:(double)y z:(double)z;
@@ -86,7 +74,19 @@ extern BOOL drawNormals;
 
 @end
 
-@interface BAMesh (BAMeshFactory)
+
+@interface BAMesh (BAMeshDeprecated)
+
++ (BAMesh *)findMeshWithName:(NSString *)aName DEPRECATED_ATTRIBUTE;
++ (BAMesh *)meshWithName:(NSString *)aName create:(BOOL*)create DEPRECATED_ATTRIBUTE;
++ (BAMesh *)meshWithName:(NSString *)aName DEPRECATED_ATTRIBUTE;
++ (BAMesh *)meshWithPolygons:(NSSet *)polygons DEPRECATED_ATTRIBUTE; // BAPolygon instances
++ (BAMesh *)meshWithName:(NSString *)aName vertices:(BAPointf *)vertices count:(NSUInteger)vcount texCoords:(BAPointf *)texCoords count:(NSUInteger)tcCount vIndices:(NSUInteger *)indices tcIndices:(NSUInteger *)tcIndices count:(NSUInteger)icount polySize:(NSUInteger)psize DEPRECATED_ATTRIBUTE;
++ (BAMesh *)meshWithName:(NSString *)aName vertices:(BAPointf *)vertices count:(NSUInteger)vcount indices:(NSUInteger *)indices count:(NSUInteger)icount polySize:(NSUInteger)psize DEPRECATED_ATTRIBUTE;
++ (BAMesh *)meshWithTriangles:(BATriangle *)tris count:(NSUInteger)count DEPRECATED_ATTRIBUTE;
++ (BAMesh *)meshWithQuads:(BAQuad *)quads count:(NSUInteger)count DEPRECATED_ATTRIBUTE;
+
++ (BAMesh *)meshWithURL:(NSURL *)url DEPRECATED_ATTRIBUTE;
 
 // unit Platonic solids
 + (BAMesh *)tetrahedron;
@@ -99,10 +99,47 @@ extern BOOL drawNormals;
 + (BAMesh *)dodecahedron;
 #endif
 
+@end
+
+
+@interface NSManagedObjectContext (BAMeshCreating)
+
+- (BAMesh *)findMeshWithName:(NSString *)aName;
+
+- (BAMesh *)meshWithName:(NSString *)aName;
+
+- (BAMesh *)meshWithName:(NSString *)aName polygons:(NSSet *)polygons; // BAPolygon instances
+
+- (BAMesh *)meshWithName:(NSString *)aName
+                vertices:(BAPointf *)vertices count:(NSUInteger)vcount
+               texCoords:(BAPointf *)texCoords count:(NSUInteger)tcCount
+                vIndices:(NSUInteger *)indices tcIndices:(NSUInteger *)tcIndices count:(NSUInteger)icount
+                polySize:(NSUInteger)psize;
+
+- (BAMesh *)meshWithName:(NSString *)aName
+                vertices:(BAPointf *)vertices count:(NSUInteger)vcount
+                 indices:(NSUInteger *)indices count:(NSUInteger)icount
+                polySize:(NSUInteger)psize;
+
+- (BAMesh *)meshWithName:(NSString *)aName triangles:(BATriangle *)tris count:(NSUInteger)count;
+- (BAMesh *)meshWithName:(NSString *)aName quads:(BAQuad *)quads count:(NSUInteger)count;
+
+- (BAMesh *)meshWithURL:(NSURL *)url;
+
+// unit Platonic solids
+- (BAMesh *)tetrahedronMesh;
+- (BAMesh *)octahedronMesh;
+- (BAMesh *)icosahedronMesh;
+
+#if ! TARGET_OS_IPHONE
+- (BAMesh *)boxMeshWithWidth:(double)w depth:(double)d height:(double)h;
+- (BAMesh *)cubeMesh;
+- (BAMesh *)dodecahedronMesh;
+#endif
+
 #if 0
 // other interesting shapes
-+ (BAMesh *)rhombicDodecahedron;
+- (BAMesh *)rhombicDodecahedron;
 #endif
 
 @end
-

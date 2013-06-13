@@ -37,9 +37,14 @@
 	return [[data retain] autorelease];
 }
 
-+ (BAResource *)resourceWithType:(int)aType data:(NSData *)sourceData {
+@end
+
+
+@implementation NSManagedObjectContext (BAResourceCreating)
+
+- (BAResource *)resourceWithType:(int)aType data:(NSData *)sourceData {
 	
-	BAResource *res = (BAResource *)[self insertObject];
+	BAResource *res = (BAResource *)[BAResource insertInManagedObjectContext:self];
 	
 	res.data = sourceData;
 	res.typeValue = aType;
@@ -49,11 +54,11 @@
 	return res;
 }
 
-+ (BAResource *)resourceWithType:(int)aType uniqueID:(NSData *)uuid {
+- (BAResource *)resourceWithType:(int)aType uniqueID:(NSData *)uuid {
 	
 	NSPredicate *pred = [NSPredicate predicateWithFormat:@"%K=%d and %K=%@", @"type", aType, @"uniqueID", uuid];
 	
-	return [BAActiveContext objectForEntityNamed:[self entityName] matchingPredicate:pred];
+	return [self objectForEntityNamed:[BAResource entityName] matchingPredicate:pred];
 }
 
 @end

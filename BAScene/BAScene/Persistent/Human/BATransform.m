@@ -9,9 +9,16 @@
 #import "BATransform.h"
 
 
+@interface BATransform ()
+@property (nonatomic, readwrite) BAMatrix4x4f transform;
+@property (nonatomic, readwrite) BOOL dirty;
+@end
+
+
 @implementation BATransform
 
 @dynamic transform;
+@synthesize dirty;
 
 static GLfloat BA_IDENTITY_MATRIX[16] = {
 	1,0,0,0,
@@ -42,6 +49,10 @@ static GLfloat BA_IDENTITY_MATRIX[16] = {
 	return transform;
 }
 
+- (void)setTransform:(BAMatrix4x4f)newTransform {
+    transform = newTransform;
+}
+
 - (NSData *)transformData {
 	return BAMatrix4x4Dataf(transform);
 }
@@ -49,51 +60,38 @@ static GLfloat BA_IDENTITY_MATRIX[16] = {
 
 #pragma mark Factories
 + (BATransform *)transform {
-	return (BATransform *)[self insertObject];
+    BAAssertActiveContext();
+	return [BAActiveContext transform];
 }
 
 + (BATransform *)transformWithMatrix4x4f:(BAMatrix4x4f)matrix {
-	BATransform *xform = [self transform];
-	xform->transform = matrix;
-	return xform;
+    BAAssertActiveContext();
+    return [BAActiveContext transformWithMatrix4x4f:matrix];
 }
 
 + (BATransform *)transformWithMatrixData:(NSData *)matrixData {
-	return [self transformWithMatrix4x4f:BAMatrix4x4WithDataf(matrixData)];
+    BAAssertActiveContext();
+	return [BAActiveContext transformWithMatrixData:matrixData];
 }
 
 + (BATransform *)translationWithX:(double)x y:(double)y z:(double)z {
-	
-	BATransform *xform = [self transform];
-	
-	xform.lxValue = x, xform.lyValue = y, xform.lzValue = z;
-	xform->dirty = YES;
-	
-	return xform;
+    BAAssertActiveContext();
+	return [BAActiveContext translationWithX:x y:y z:z];
 }
 
 + (BATransform *)translationWithLocation:(BALocationf)location {
-	return [self translationWithX:location.p.x y:location.p.y z:location.p.z];
+    BAAssertActiveContext();
+    return [BAActiveContext translationWithLocation:location];
 }
 
 + (BATransform *)rotationWithX:(double)x y:(double)y z:(double)z {
-	
-	BATransform *xform = [self transform];
-	
-	xform.rxValue = x, xform.ryValue = y, xform.rzValue = z;
-	xform->dirty = YES;
-	
-	return xform;
+    BAAssertActiveContext();
+    return [BAActiveContext rotationWithX:x y:y z:z];
 }
 
 + (BATransform *)scaleWithX:(double)x y:(double)y z:(double)z {
-	
-	BATransform *xform = [self transform];
-	
-	xform.sxValue = x, xform.syValue = y, xform.szValue = z;
-	xform->dirty = YES;
-	
-	return xform;
+    BAAssertActiveContext();
+    return [BAActiveContext scaleWithX:x y:y z:z];
 }
 
 
@@ -197,6 +195,59 @@ static GLfloat BA_IDENTITY_MATRIX[16] = {
 
 - (BALocationf)location {
 	return BAMakeLocationf(self.lxValue, self.lyValue, self.lzValue, 1.0f);
+}
+
+@end
+
+
+@implementation NSManagedObjectContext (BATransformCreating)
+
+- (BATransform *)transform {
+	return (BATransform *)[BATransform insertInManagedObjectContext:self];
+}
+
+- (BATransform *)transformWithMatrix4x4f:(BAMatrix4x4f)matrix {
+	BATransform *xform = [self transform];
+	xform.transform = matrix;
+	return xform;
+}
+
+- (BATransform *)transformWithMatrixData:(NSData *)matrixData {
+	return [self transformWithMatrix4x4f:BAMatrix4x4WithDataf(matrixData)];
+}
+
+- (BATransform *)translationWithX:(double)x y:(double)y z:(double)z {
+	
+	BATransform *xform = [self transform];
+	
+	xform.lxValue = x, xform.lyValue = y, xform.lzValue = z;
+	xform.dirty = YES;
+	
+	return xform;
+}
+
+- (BATransform *)translationWithLocation:(BALocationf)location {
+	return [self translationWithX:location.p.x y:location.p.y z:location.p.z];
+}
+
+- (BATransform *)rotationWithX:(double)x y:(double)y z:(double)z {
+	
+	BATransform *xform = [self transform];
+	
+	xform.rxValue = x, xform.ryValue = y, xform.rzValue = z;
+	xform.dirty = YES;
+	
+	return xform;
+}
+
+- (BATransform *)scaleWithX:(double)x y:(double)y z:(double)z {
+	
+	BATransform *xform = [self transform];
+	
+	xform.sxValue = x, xform.syValue = y, xform.szValue = z;
+	xform.dirty = YES;
+	
+	return xform;
 }
 
 @end

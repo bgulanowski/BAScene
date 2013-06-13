@@ -24,11 +24,6 @@ typedef enum {
 
 @interface BATuple : _BATuple<NSMutableCopying> {}
 
-+ (BATuple *)tupleWithPoint:(BAPointf)point;
-+ (BATuple *)tupleWithPoint4f:(BAPoint4f)point;
-+ (BATuple *)tupleWithX:(double)x y:(double)y z:(double)z;
-+ (NSArray *)tuplesWithPointArray:(BAPointf *)points count:(NSUInteger)count;
-
 - (void)takeValuesFromPoint:(BAPointf)point;
 - (void)takeValuesFromPoint4f:(BAPoint4f)point;
 - (BAPointf)pointf;
@@ -38,5 +33,25 @@ typedef enum {
 
 - (id)applyTransform:(BATransform *)transform;
 - (BATuple *)transformedTuple:(BATransform *)transform;
+
+@end
+
+
+@interface BATuple (BATupleDeprecated)
+
++ (BATuple *)tupleWithPoint:(BAPointf)point DEPRECATED_ATTRIBUTE;
++ (BATuple *)tupleWithPoint4f:(BAPoint4f)point DEPRECATED_ATTRIBUTE;
++ (BATuple *)tupleWithX:(double)x y:(double)y z:(double)z DEPRECATED_ATTRIBUTE;
++ (NSArray *)tuplesWithPointArray:(BAPointf *)points count:(NSUInteger)count DEPRECATED_ATTRIBUTE;
+
+@end
+
+
+@interface NSManagedObjectContext (BATupleCreating)
+
+- (BATuple *)tupleWithPoint:(BAPointf)point;
+- (BATuple *)tupleWithPoint4f:(BAPoint4f)point;
+- (BATuple *)tupleWithX:(double)x y:(double)y z:(double)z;
+- (NSArray *)tuplesWithPointArray:(BAPointf *)points count:(NSUInteger)count;
 
 @end

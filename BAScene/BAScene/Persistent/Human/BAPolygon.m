@@ -45,7 +45,7 @@ NSArray *vertexSort;
 - (id)mutableCopyWithZone:(NSZone *)zone {
 	
 	NSMutableSet *newPoints = [NSMutableSet setWithCapacity:[self.points count]];
-	BAPolygon *polygon = [[self class] polygon];
+	BAPolygon *polygon = [[self managedObjectContext] polygon];
 
 	for(BAPoint *point in self.points)
 		[newPoints addObject:[[point mutableCopyWithZone:zone] autorelease]];
@@ -59,68 +59,41 @@ NSArray *vertexSort;
 }
 
 
-#pragma mark Factories
+#pragma mark - Factories (DEPRECATED)
 + (BAPolygon *)polygon {
-	return (BAPolygon *)[self insertObject];
+    BAAssertActiveContext();
+    return [BAActiveContext polygon];
 }
 
 + (BAPolygon *)polygonWithPoints:(NSSet *)points {
-	
-	BAPolygon *poly = [self polygon];
-	
-	[poly setPoints:points];
-	[poly makeNormals];
-	
-	return poly;
+	BAAssertActiveContext();
+    return [BAActiveContext polygonWithPoints:points];
 }
 
 + (NSSet *)polygonsWithSize:(NSUInteger)size vertices:(NSArray *)vertices texCoords:(NSArray *)texCoords indices:(NSUInteger *)indices tcIndices:(NSUInteger *)tcIndices count:(NSUInteger)count {
-	
-	NSMutableSet *result = [NSMutableSet set];
-	
-	for(NSUInteger i=0;i<count;++i)
-		[result addObject:[self polygonWithPoints:[BAPoint pointsWithWithVertices:[vertices objectsWithIndexArray:indices + i*size count:size]
-																		texCoords:[texCoords objectsWithIndexArray:tcIndices + i*size count:size]
-																			count:size]]];
-	
-	return result;
+	BAAssertActiveContext();
+    return [BAActiveContext polygonsWithSize:size vertices:vertices texCoords:texCoords indices:indices tcIndices:tcIndices count:count];
 }
 
 + (NSSet *)polygonsWithSize:(NSUInteger)size vertices:(NSArray *)vertices indices:(NSUInteger *)indices count:(NSUInteger)count {
-	return [self polygonsWithSize:size vertices:vertices texCoords:nil indices:indices tcIndices:NULL count:count];
+    BAAssertActiveContext();
+    return [BAActiveContext polygonsWithSize:size vertices:vertices indices:indices count:count];
 }
 
 + (BAPolygon *)polygonWithTriangle:(BATriangle)tri {
-	
-	BAPolygon *poly = [self polygon];
-	
-	[poly addPointWithX:tri.a.x y:tri.a.y z:tri.a.z index:0];
-	[poly addPointWithX:tri.b.x y:tri.b.y z:tri.b.z index:1];
-	[poly addPointWithX:tri.c.x y:tri.c.y z:tri.c.z index:2];
-	
-	[poly makeNormals];
-
-	return poly;
+	BAAssertActiveContext();
+    return [BAActiveContext polygonWithTriangle:tri];
 }
 
 + (BAPolygon *)polygonWithQuad:(BAQuad)quad {
-	
-	BAPolygon *poly = [self polygon];
-	
-	[poly addPointWithX:quad.a.x y:quad.a.y z:quad.a.z index:0];
-	[poly addPointWithX:quad.b.x y:quad.b.y z:quad.b.z index:1];
-	[poly addPointWithX:quad.c.x y:quad.c.y z:quad.c.z index:2];
-	[poly addPointWithX:quad.d.x y:quad.d.y z:quad.d.z index:3];
-	
-	[poly makeNormals];
-
-	return poly;
+	BAAssertActiveContext();
+    return [BAActiveContext polygonWithQuad:quad];
 }
 
 - (void)addPointWithX:(double)x y:(double)y z:(double)z index:(UInt16)index {
 	
-	BATuple *point = [BATuple tupleWithX:x y:y z:z];
-	BAPoint *pointIndex = [BAPoint pointWithVertex:point index:index];
+	BATuple *point = [self.managedObjectContext tupleWithX:x y:y z:z];
+	BAPoint *pointIndex = [self.managedObjectContext pointWithVertex:point index:index];
 	
 	pointIndex.polygon = self;
 }
@@ -191,7 +164,7 @@ NSArray *vertexSort;
 	BAPoint *p0 = [points objectAtIndex:0], *p1 = [points objectAtIndex:1], *p2 = [points objectAtIndex:2];
 	BAVector3 normal = BANormalizeVector3(BACrossProductVectors3(BASubtractVectors3([[p0 vertex] pointf], [[p2 vertex] pointf]),
 																 BASubtractVectors3([[p1 vertex] pointf], [[p0 vertex] pointf])));
-	BATuple *tuple = [BATuple tupleWithPoint:normal];
+	BATuple *tuple = [self.managedObjectContext tupleWithPoint:normal];
 	
 	[tuple addNPoints:[NSSet setWithArray:points]];
 }
@@ -216,5 +189,68 @@ NSArray *vertexSort;
 - (BAPolygon *)transformedPolygon:(BATransform *)transform {
 	return [(BAPolygon *)[[self mutableCopy] autorelease] applyTransform:transform];
 }
+
+@end
+
+
+@implementation NSManagedObjectContext (BAPolygonCreating)
+
+- (BAPolygon *)polygon {
+	return (BAPolygon *)[BAPolygon insertInManagedObjectContext:self];
+}
+
+- (BAPolygon *)polygonWithPoints:(NSSet *)points {
+	
+	BAPolygon *poly = [self polygon];
+	
+	[poly setPoints:points];
+	[poly makeNormals];
+	
+	return poly;
+}
+
+- (NSSet *)polygonsWithSize:(NSUInteger)size vertices:(NSArray *)vertices texCoords:(NSArray *)texCoords indices:(NSUInteger *)indices tcIndices:(NSUInteger *)tcIndices count:(NSUInteger)count {
+	
+	NSMutableSet *result = [NSMutableSet set];
+	
+	for(NSUInteger i=0;i<count;++i)
+		[result addObject:[self polygonWithPoints:[self pointsWithWithVertices:[vertices objectsWithIndexArray:indices + i*size count:size]
+                                                                     texCoords:[texCoords objectsWithIndexArray:tcIndices + i*size count:size]
+                                                                         count:size]]];
+	
+	return result;
+}
+
+- (NSSet *)polygonsWithSize:(NSUInteger)size vertices:(NSArray *)vertices indices:(NSUInteger *)indices count:(NSUInteger)count {
+	return [self polygonsWithSize:size vertices:vertices texCoords:nil indices:indices tcIndices:NULL count:count];
+}
+
+- (BAPolygon *)polygonWithTriangle:(BATriangle)tri {
+	
+	BAPolygon *poly = [self polygon];
+	
+	[poly addPointWithX:tri.a.x y:tri.a.y z:tri.a.z index:0];
+	[poly addPointWithX:tri.b.x y:tri.b.y z:tri.b.z index:1];
+	[poly addPointWithX:tri.c.x y:tri.c.y z:tri.c.z index:2];
+	
+	[poly makeNormals];
+    
+	return poly;
+}
+
+- (BAPolygon *)polygonWithQuad:(BAQuad)quad {
+	
+	BAPolygon *poly = [self polygon];
+	
+	[poly addPointWithX:quad.a.x y:quad.a.y z:quad.a.z index:0];
+	[poly addPointWithX:quad.b.x y:quad.b.y z:quad.b.z index:1];
+	[poly addPointWithX:quad.c.x y:quad.c.y z:quad.c.z index:2];
+	[poly addPointWithX:quad.d.x y:quad.d.y z:quad.d.z index:3];
+	
+	[poly makeNormals];
+    
+	return poly;
+}
+
 
 @end

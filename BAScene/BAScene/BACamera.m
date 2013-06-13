@@ -101,7 +101,6 @@ void compareMatrices(BAMatrix4x4f a, BAMatrix4x4f b);
         self.cullingOn = YES;
         self.depthOn = YES;
         self.frontMode = self.backMode = BAPolygonModeToGL(BAPolygonModeFill);
-        self.container = [[NSClassFromString(@"BAStage") performSelector:NSSelectorFromString(@"stage")] retain];
 	}
 	return self;
 }
@@ -118,8 +117,6 @@ void compareMatrices(BAMatrix4x4f a, BAMatrix4x4f b);
         drawDelegate = delegate;
         self.container = [drawDelegate propContainer];
     }
-    if(!container)
-        self.container = [NSClassFromString(@"BAStage") performSelector:NSSelectorFromString(@"stage")];
 }
 
 - (GLfloat)xLoc { return -matrix.i[12]; }

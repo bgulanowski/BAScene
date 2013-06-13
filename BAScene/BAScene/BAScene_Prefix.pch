@@ -3,6 +3,11 @@
 //
 
 #ifdef __OBJC__
+
+    #ifndef BAAssertActiveContext
+    #define BAAssertActiveContext() NSAssert(BAActiveContext != nil, @"Active context must be set before invoking %@", NSStringFromSelector(_cmd))
+    #endif
+
     #import <Cocoa/Cocoa.h>
     #import <CoreData/CoreData.h>
     #import <OpenGL/gl.h>

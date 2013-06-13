@@ -19,9 +19,6 @@
 @property (readonly) BARegionf region;
 @property (retain) NSMutableDictionary *userData;
 
-+ (BAPartition *)rootPartitionWithDimension:(GLfloat)dim;
-+ (BAPartition *)rootPartition;
-
 - (void)subdivide;
 
 - (void)addProp:(BAProp *)aProp;
@@ -34,5 +31,22 @@
 
 - (BOOL)containsCamera:(BACamera *)camera;
 - (BAPartition *)partitionForCamera:(BACamera *)camera;
+
+@end
+
+
+@interface BAPartition (BAPartitionDeprecated)
+
++ (BAPartition *)rootPartitionWithDimension:(GLfloat)dim DEPRECATED_ATTRIBUTE;
++ (BAPartition *)rootPartition DEPRECATED_ATTRIBUTE;
+
+@end
+
+
+@interface NSManagedObjectContext (BAPartitionCreating)
+
+- (BAPartition *)partitionWithDimension:(GLfloat)dim location:(BALocationf)loc parent:(BAPartition *)parent;
+- (BAPartition *)rootPartitionWithDimension:(GLfloat)dim;
+- (BAPartition *)rootPartition;
 
 @end

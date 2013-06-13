@@ -20,8 +20,16 @@
 - (void)addGroup:(BAGroup *)aGroup;
 - (void)removeGroup:(BAGroup *)aGroup;
 
-+ (BAStage *)stage; // returns unique instance
-
 - (void)update:(NSTimeInterval)interval;
 
+@end
+
+
+@interface BAStage (BAStageDeprecated)
++ (BAStage *)stage DEPRECATED_ATTRIBUTE;
+@end
+
+
+@interface NSManagedObjectContext (BAStageCreating)
+- (BAStage *)stage; // returns unique instance
 @end

@@ -17,6 +17,10 @@ static NSString *kBARootPartitionName = @"BAScene:RootPartition";
 //static NSString *kBARootPartitionVolumeName = @"BAScene:RootPartitionVolume";
 
 
+@interface BAPartition ()
+@property (nonatomic, readwrite) BARegionf region;
+@end
+
 @implementation BAPartition
 
 @synthesize region, userData;
@@ -34,31 +38,18 @@ static NSString *kBARootPartitionName = @"BAScene:RootPartition";
 }
 
 + (BAPartition *)partitionWithDimension:(GLfloat)dim location:(BALocationf)loc parent:(BAPartition *)parent {
-		
-	BAPartition *partition = (BAPartition *)[self insertObject];
-	
-	double d_2 = dim * 0.5f;
-	
-	partition.supergroup = parent;
-	partition.dimensionValue = dim;
-	partition.location = [BATuple tupleWithPoint4f:loc.p];
-	partition->region = BAMakeRegionf(loc.p.x - d_2, loc.p.y - d_2, loc.p.z - d_2, dim, dim, dim);
-	
-	return partition;
+    BAAssertActiveContext();
+    return [BAActiveContext partitionWithDimension:dim location:loc parent:parent];
 }
 
 + (BAPartition *)rootPartitionWithDimension:(GLfloat)dim {
-
-	BAPartition *root = [BAActiveContext objectForEntityNamed:[self entityName] matchingValue:kBARootPartitionName forKey:@"name"];
-	
-	if(!root)
-		root = [self partitionWithDimension:dim location:BAMakeLocationf(0, 0, 0, 1.0f) parent:nil];
-	
-	return root;
+    BAAssertActiveContext();
+    return [BAActiveContext rootPartitionWithDimension:dim];
 }
 
 + (BAPartition *)rootPartition {
-	return [self rootPartitionWithDimension:(GLfloat)(1<<16)];
+    BAAssertActiveContext();
+    return [BAActiveContext rootPartition];
 }
 
 - (void)subdivide {
@@ -122,6 +113,39 @@ static NSString *kBARootPartitionName = @"BAScene:RootPartition";
 - (BAPartition *)partitionForCamera:(BACamera *)camera {
     BAPoint4f l = [camera location];
 	return [self partitionForPointX:l.x y:l.y z:l.z];
+}
+
+@end
+
+
+@implementation NSManagedObjectContext (BAPartitionCreating)
+
+- (BAPartition *)partitionWithDimension:(GLfloat)dim location:(BALocationf)loc parent:(BAPartition *)parent {
+    
+	BAPartition *partition = (BAPartition *)[BAPartition insertInManagedObjectContext:self];
+	
+	double d_2 = dim * 0.5f;
+	
+	partition.supergroup = parent;
+	partition.dimensionValue = dim;
+	partition.location = [self tupleWithPoint4f:loc.p];
+	partition.region = BAMakeRegionf(loc.p.x - d_2, loc.p.y - d_2, loc.p.z - d_2, dim, dim, dim);
+	
+	return partition;
+}
+
+- (BAPartition *)rootPartitionWithDimension:(GLfloat)dim {
+    
+	BAPartition *root = [BAActiveContext objectForEntityNamed:[BAPartition entityName] matchingValue:kBARootPartitionName forKey:@"name"];
+	
+	if(!root)
+		root = [self partitionWithDimension:dim location:BAMakeLocationf(0, 0, 0, 1.0f) parent:nil];
+	
+	return root;
+}
+
+- (BAPartition *)rootPartition {
+	return [self rootPartitionWithDimension:(GLfloat)(1<<16)];
 }
 
 @end

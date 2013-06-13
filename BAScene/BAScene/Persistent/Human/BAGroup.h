@@ -21,9 +21,6 @@
 @property (nonatomic, readonly) BAProp *mergedProp;
 @property (nonatomic) BARegionf bounds;
 
-+ (BAGroup *)groupWithSuperGroup:(BAGroup *)aSupergroup;
-+ (BAGroup *)findGroupWithName:(NSString *)aName;
-
 - (void)update:(NSTimeInterval)interval;
 - (void)updateProps:(NSTimeInterval)interval;
 - (void)compileProps;
@@ -31,5 +28,20 @@
 - (void)flattenPropsWithBlock:(BOOL(^)(BAProp *prop))block;
 - (void)loadBounds;
 - (void)recalculateBounds;
+
+@end
+
+@interface BAGroup (BAGroupDeprecated)
+
++ (BAGroup *)groupWithSuperGroup:(BAGroup *)aSupergroup DEPRECATED_ATTRIBUTE;
++ (BAGroup *)findGroupWithName:(NSString *)aName DEPRECATED_ATTRIBUTE;
+
+@end
+
+
+@interface NSManagedObjectContext (BAGroupCreating)
+
+- (BAGroup *)groupWithSuperGroup:(BAGroup *)aSupergroup;
+- (BAGroup *)findGroupWithName:(NSString *)aName;
 
 @end

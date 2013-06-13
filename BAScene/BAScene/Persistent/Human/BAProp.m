@@ -77,60 +77,38 @@ static NSTimeInterval gInterval = 0;
 
 #pragma mark Factories
 + (BAProp *)propWithName:(NSString *)aName create:(BOOL*)create {
-
-	BAProp *prop = [BAActiveContext objectForEntityNamed:@"Prop" matchingValue:aName forKey:@"name" create:create];
-	
-	if(create && *create)
-		prop.transform = [BATransform transform];
-	
-	return prop;
+    BAAssertActiveContext();
+    if(create && *create)
+        return [BAActiveContext propWithName:aName];
+    else
+        return [BAActiveContext findPropWithName:aName];
 }
 
 + (BAProp *)propWithName:(NSString *)aName {
-	BOOL create = YES;
-	return [self propWithName:aName create:&create];
+    BAAssertActiveContext();
+    return [BAActiveContext propWithName:aName];
 }
 
 + (BAProp *)propWithName:(NSString *)aName prototype:(BAPrototype *)proto transform:(BATransform *)xform {
-	
-	BOOL create = YES;
-	BAProp *prop = [self propWithName:aName create:&create];
-	
-	if(create) {
-		prop.prototype = proto;
-		prop.transform = xform;
-	}
-	
-	return prop;
+	BAAssertActiveContext();
+    return [BAActiveContext propWithName:aName prototype:proto transform:xform];
 }
 
 + (BAProp *)propWithName:(NSString *)aName prototype:(BAPrototype *)proto {
-	return [self propWithName:aName prototype:proto transform:[BATransform transform]];
+    BAAssertActiveContext();
+	return [BAActiveContext propWithName:aName prototype:proto];
 }
 
 + (BAProp *)propWithName:(NSString *)aName byMergingProps:(NSSet *)props {
-	
-    NSManagedObjectContext *context = [[props anyObject] managedObjectContext];
-	BAMesh *mesh = [BAMesh meshWithName:nil];
-	
-	for(BAProp *prop in props) {
-		for(BAMesh *xMesh in [prop transformedMeshes]) {
-			[mesh addPolygons:xMesh.polygons]; // sets mesh relation of all polys to the new mesh; xmesh will have no polys
-			[context deleteObject:xMesh];
-		}
-	}
-    
-    if([[[[mesh.polygons anyObject] points] anyObject] normal] != nil)
-        mesh.hasNormalsValue = YES;
-
-	
-	return [self propWithName:aName prototype:[BAPrototype prototypeWithName:nil mesh:mesh]];
+	BAAssertActiveContext();
+    return [BAActiveContext propWithName:aName byMergingProps:props];
 }
 
 
 #pragma mark New
 + (BAProp *)findPropWithName:(NSString *)aName {
-	return [self propWithName:aName create:NULL];
+    BAAssertActiveContext();
+    return [BAActiveContext findPropWithName:aName];
 }
 
 - (void)update {
@@ -182,7 +160,64 @@ static NSTimeInterval gInterval = 0;
 
 - (void)recalculateBounds {
     
+    // TODO: WTF?
+}
+
+@end
+
+
+@implementation NSManagedObjectContext (BAPropCreating)
+
+- (BAProp *)findPropWithName:(NSString *)aName {
+	return [self objectForEntityNamed:[BAProp entityName] matchingValue:aName forKey:@"name"];
+}
+
+- (BAProp *)propWithName:(NSString *)aName {
     
+    BAProp *prop = [self findPropWithName:aName];
+
+	if(!prop) {
+        prop = [BAProp insertInManagedObjectContext:self];
+        prop.transform = [self transform];
+    }
+	
+	return prop;
+}
+
+- (BAProp *)propWithName:(NSString *)aName prototype:(BAPrototype *)proto transform:(BATransform *)xform {
+	
+	BOOL create = YES;
+	BAProp *prop = [self propWithName:aName];
+	
+	if(create) {
+		prop.prototype = proto;
+		prop.transform = xform;
+	}
+	
+	return prop;
+}
+
+- (BAProp *)propWithName:(NSString *)aName prototype:(BAPrototype *)proto {
+	return [self propWithName:aName prototype:proto transform:[self transform]];
+}
+
+- (BAProp *)propWithName:(NSString *)aName byMergingProps:(NSSet *)props {
+	
+    NSManagedObjectContext *context = [[props anyObject] managedObjectContext];
+	BAMesh *mesh = [self meshWithName:aName];
+	
+	for(BAProp *prop in props) {
+		for(BAMesh *xMesh in [prop transformedMeshes]) {
+			[mesh addPolygons:xMesh.polygons]; // sets mesh relation of all polys to the new mesh; xmesh will have no polys
+			[context deleteObject:xMesh];
+		}
+	}
+    
+    if([[[[mesh.polygons anyObject] points] anyObject] normal] != nil)
+        mesh.hasNormalsValue = YES;
+    
+	
+	return [self propWithName:aName prototype:[self prototypeWithName:nil mesh:mesh]];
 }
 
 @end

@@ -41,7 +41,7 @@
 #pragma mark Derived Accessors
 - (BAProp *)mergedProp {
     if(!_mergedProp && self.mergedPropName)
-        _mergedProp = [BAProp findPropWithName:self.mergedPropName];
+        _mergedProp = [self.managedObjectContext findPropWithName:self.mergedPropName];
     return _mergedProp;
 }
 
@@ -93,16 +93,13 @@
 #pragma mark New
 
 + (BAGroup *)groupWithSuperGroup:(BAGroup *)aSupergroup {
-	
-	BAGroup *group = (BAGroup *)[self insertObject];
-	
-	group.supergroup = aSupergroup;
-	
-	return group;
+	BAAssertActiveContext();
+    return [BAActiveContext groupWithSuperGroup:aSupergroup];
 }
 
 + (BAGroup *)findGroupWithName:(NSString *)aName {
-	return [BAActiveContext objectForEntityNamed:[self entityName] matchingValue:aName forKey:@"name"];
+	BAAssertActiveContext();
+    return [BAActiveContext findGroupWithName:aName];
 }
 
 - (void)update:(NSTimeInterval)interval {
@@ -144,7 +141,7 @@
         CFRelease(uuid);
     }
     
-    BAProp *merged = [BAProp propWithName:uuidString byMergingProps:newProps];
+    BAProp *merged = [self.managedObjectContext propWithName:uuidString byMergingProps:newProps];
     
 	merged.group = self;
 }
@@ -196,6 +193,24 @@
         [self recalculateBounds];
     
     boundsLoaded = YES;
+}
+
+@end
+
+
+@implementation NSManagedObjectContext (BAGroupCreating)
+
+- (BAGroup *)findGroupWithName:(NSString *)aName {
+	return [self objectForEntityNamed:[BAGroup entityName] matchingValue:aName forKey:@"name"];
+}
+
+- (BAGroup *)groupWithSuperGroup:(BAGroup *)aSupergroup {
+    
+	BAGroup *group = (BAGroup *)[BAGroup insertInManagedObjectContext:self];
+	
+	group.supergroup = aSupergroup;
+	
+	return group;
 }
 
 @end

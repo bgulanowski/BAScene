@@ -15,7 +15,20 @@
 
 @property (nonatomic, retain) NSData *data;
 
-+ (BAResource *)resourceWithType:(int)aType data:(NSData *)sourceData; // always creates a new resource
-+ (BAResource *)resourceWithType:(int)aType uniqueID:(NSData *)uuid; // always searches for existing resource
+@end
+
+
+@interface BAResource (BAResourceDeprecated)
+
++ (BAResource *)resourceWithType:(int)aType data:(NSData *)sourceData DEPRECATED_ATTRIBUTE;
++ (BAResource *)resourceWithType:(int)aType uniqueID:(NSData *)uuid DEPRECATED_ATTRIBUTE;
+
+@end
+
+
+@interface NSManagedObjectContext (BAResourceCreating)
+
+- (BAResource *)resourceWithType:(int)aType data:(NSData *)sourceData; // always creates a new resource
+- (BAResource *)resourceWithType:(int)aType uniqueID:(NSData *)uuid; // always searches for existing resource
 
 @end
