@@ -25,6 +25,30 @@
         dispatch_retain(updateQueue);
 }
 
+- (void)addActiveCamerasObject:(BACamera *)camera {
+    dispatch_async(updateQueue ?: dispatch_get_main_queue(), ^{
+        [_activeCameras addObject:camera];
+    });
+}
+
+- (void)removeActiveCamerasObject:(BACamera *)camera {
+    dispatch_async(updateQueue ?: dispatch_get_main_queue(), ^{
+        [_activeCameras removeObject:camera];
+    });
+}
+
+- (void)removeActiveCameras:(NSSet *)objects {
+    dispatch_async(updateQueue ?: dispatch_get_main_queue(), ^{
+        [_activeCameras minusSet:objects];
+    });
+}
+
+- (void)addActiveCameras:(NSSet *)objects {
+    dispatch_async(updateQueue ?: dispatch_get_main_queue(), ^{
+        [_activeCameras unionSet:objects];
+    });
+}
+
 
 #pragma mark - NSObject
 
@@ -37,6 +61,7 @@
 	self = [super init];
 	if(self) {
         self.model = [[self class] sceneModel];
+        _activeCameras = [[NSMutableSet alloc] init];
 	}
 	return self;
 }
@@ -72,6 +97,14 @@
     });
 }
 
+- (void)startUpdates {
+    [self startUpdates:^BOOL(BAScene *scene, NSTimeInterval interval) {
+        for (BACamera *camera in self.activeCameras)
+            [camera update:interval];
+        return [scene update:interval];
+    }];
+}
+
 - (void)pauseUpdates {
     if(timer)
         dispatch_suspend(timer);
@@ -89,6 +122,8 @@
         updateToken = 0;
     }
 }
+
+- (BOOL)update:(NSTimeInterval)interval { return NO; }
 
 
 #pragma mark - BACoreDataManager

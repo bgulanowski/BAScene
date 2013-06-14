@@ -29,6 +29,7 @@
 
 
 @interface BAScene : BACoreDataManager {
+    NSMutableSet *_activeCameras;
     NSTimeInterval _lastUpdate;
     dispatch_queue_t updateQueue;
     dispatch_once_t  updateToken;
@@ -37,12 +38,23 @@
 
 @property (nonatomic, readonly) NSTimeInterval lastUpdate;
 @property (nonatomic, assign) dispatch_queue_t updateQueue;
+@property (readonly) NSSet *activeCameras;
+
+- (void)addActiveCamerasObject:(BACamera *)camera;
+- (void)removeActiveCamerasObject:(BACamera *)camera;
+- (void)removeActiveCameras:(NSSet *)objects;
+- (void)addActiveCameras:(NSSet *)objects;
 
 // updateBlock should return YES to stop updates
 - (void)startUpdates:(BOOL (^)(BAScene *scene, NSTimeInterval interval))updateBlock;
+// invokes update: on each camera returned by -activeCameras and on self
+- (void)startUpdates;
 - (void)pauseUpdates;
 - (void)resumeUpdates;
 - (void)cancelUpdates;
+
+// subclasses should override to update contents of scene; return YES to cancel updates
+- (BOOL)update:(NSTimeInterval)interval;
 
 + (NSManagedObjectModel *)sceneModel;
 
