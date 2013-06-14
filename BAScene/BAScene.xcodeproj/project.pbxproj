@@ -31,7 +31,7 @@
 		4E08E1E4136AFB4900F01674 /* NSIndexSet+BAAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E08E1E2136AFB4900F01674 /* NSIndexSet+BAAdditions.m */; };
 		4E08E1E5136AFB4900F01674 /* NSIndexSet+BAAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E08E1E1136AFB4900F01674 /* NSIndexSet+BAAdditions.h */; };
 		4E08E1E6136AFB4900F01674 /* NSIndexSet+BAAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E08E1E2136AFB4900F01674 /* NSIndexSet+BAAdditions.m */; };
-		4E122FC4121AD8F600EC0D92 /* _BAGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834D9711691D7800306C0A /* _BAGroup.h */; };
+		4E122FC4121AD8F600EC0D92 /* _BAPropGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834D9711691D7800306C0A /* _BAPropGroup.h */; };
 		4E122FC5121AD8F600EC0D92 /* _BAMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834D9911691D7800306C0A /* _BAMesh.h */; };
 		4E122FC6121AD8F600EC0D92 /* _BAPartition.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834D9B11691D7800306C0A /* _BAPartition.h */; };
 		4E122FC8121AD8F600EC0D92 /* _BAPoint.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834D9F11691D7800306C0A /* _BAPoint.h */; };
@@ -45,7 +45,7 @@
 		4E122FD0121AD8F600EC0D92 /* BACamera.h in Headers */ = {isa = PBXBuildFile; fileRef = B67412850FAF9F44001E3C0D /* BACamera.h */; };
 		4E122FD1121AD8F600EC0D92 /* BACameraSetup.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EBBD433117B253300B7315B /* BACameraSetup.h */; };
 		4E122FD2121AD8F600EC0D92 /* BAColor.h in Headers */ = {isa = PBXBuildFile; fileRef = B67412870FAF9F44001E3C0D /* BAColor.h */; };
-		4E122FD3121AD8F600EC0D92 /* BAGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E1B6D750FD1E75C00AE4803 /* BAGroup.h */; };
+		4E122FD3121AD8F600EC0D92 /* BAPropGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E1B6D750FD1E75C00AE4803 /* BAPropGroup.h */; };
 		4E122FD4121AD8F600EC0D92 /* BAMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E1B6D580FD1E26F00AE4803 /* BAMesh.h */; };
 		4E122FD5121AD8F600EC0D92 /* BAMeshEditor.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E944E7110A07C9500ECE62C /* BAMeshEditor.h */; };
 		4E122FD6121AD8F600EC0D92 /* BAPartition.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E1B6E4E0FD413D300AE4803 /* BAPartition.h */; };
@@ -73,8 +73,8 @@
 		4E12306D121ADD2600EC0D92 /* BAScene.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* BAScene.framework */; };
 		4E1B6D5B0FD1E2FC00AE4803 /* BAMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E1B6D580FD1E26F00AE4803 /* BAMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4E1B6D5C0FD1E2FD00AE4803 /* BAMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6D590FD1E26F00AE4803 /* BAMesh.m */; };
-		4E1B6D7F0FD1E95500AE4803 /* BAGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6D760FD1E75C00AE4803 /* BAGroup.m */; };
-		4E1B6D800FD1E95600AE4803 /* BAGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E1B6D750FD1E75C00AE4803 /* BAGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E1B6D7F0FD1E95500AE4803 /* BAPropGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6D760FD1E75C00AE4803 /* BAPropGroup.m */; };
+		4E1B6D800FD1E95600AE4803 /* BAPropGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E1B6D750FD1E75C00AE4803 /* BAPropGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4E1B6D870FD1EB3700AE4803 /* BAProp.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E1B6D660FD1E3E900AE4803 /* BAProp.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4E1B6D880FD1EB3700AE4803 /* BAProp.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6D670FD1E3E900AE4803 /* BAProp.m */; };
 		4E1B6D890FD1EB3800AE4803 /* BAPrototype.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E1B6D610FD1E3CB00AE4803 /* BAPrototype.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -85,7 +85,7 @@
 		4E1B6E500FD413D300AE4803 /* BAPartition.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E1B6E4E0FD413D300AE4803 /* BAPartition.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4E1B6E510FD413D300AE4803 /* BAPartition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6E4F0FD413D300AE4803 /* BAPartition.m */; };
 		4E21DF891066C26D00511C91 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E21DF881066C26D00511C91 /* OpenGL.framework */; };
-		4E2957751217389C00DB9320 /* _BAGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834D9811691D7800306C0A /* _BAGroup.m */; };
+		4E2957751217389C00DB9320 /* _BAPropGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834D9811691D7800306C0A /* _BAPropGroup.m */; };
 		4E2957761217389C00DB9320 /* _BAMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834D9A11691D7800306C0A /* _BAMesh.m */; };
 		4E2957771217389E00DB9320 /* _BAPartition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834D9C11691D7800306C0A /* _BAPartition.m */; };
 		4E2957791217389F00DB9320 /* _BAPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834DA011691D7800306C0A /* _BAPoint.m */; };
@@ -99,7 +99,7 @@
 		4E295781121738A700DB9320 /* BACamera.m in Sources */ = {isa = PBXBuildFile; fileRef = B67412860FAF9F44001E3C0D /* BACamera.m */; };
 		4E295782121738AA00DB9320 /* BACameraSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBBD434117B253300B7315B /* BACameraSetup.m */; };
 		4E295784121738AF00DB9320 /* BAColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B67412880FAF9F44001E3C0D /* BAColor.m */; };
-		4E295785121738B000DB9320 /* BAGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6D760FD1E75C00AE4803 /* BAGroup.m */; };
+		4E295785121738B000DB9320 /* BAPropGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6D760FD1E75C00AE4803 /* BAPropGroup.m */; };
 		4E295786121738B100DB9320 /* BAMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6D590FD1E26F00AE4803 /* BAMesh.m */; };
 		4E295787121738B200DB9320 /* BAMeshEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E944E7210A07C9500ECE62C /* BAMeshEditor.m */; };
 		4E295788121738B500DB9320 /* BAPartition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6E4F0FD413D300AE4803 /* BAPartition.m */; };
@@ -128,10 +128,10 @@
 		4E3E9F5B1347D1C40016C8EA /* libscene.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E2957621217381000DB9320 /* libscene.a */; };
 		4E3E9F761347D2C60016C8EA /* BAVoxelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E58596B1345FCC100A8D0BB /* BAVoxelArray.m */; };
 		4E3E9F771347D2C70016C8EA /* BAResourceStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDEE12CE36950083CCFC /* BAResourceStorage.m */; };
-		4E3E9F781347D2C70016C8EA /* BAResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDE212CE30020083CCFC /* BAResource.m */; };
+		4E3E9F781347D2C70016C8EA /* BASceneResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDE212CE30020083CCFC /* BASceneResource.m */; };
 		4E3E9F791347D2CA0016C8EA /* _BAColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDD212CE2FEF0083CCFC /* _BAColor.m */; };
 		4E3E9F7A1347D2CB0016C8EA /* _BALight.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDD412CE2FEF0083CCFC /* _BALight.m */; };
-		4E3E9F7B1347D2CC0016C8EA /* _BAResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDD612CE2FEF0083CCFC /* _BAResource.m */; };
+		4E3E9F7B1347D2CC0016C8EA /* _BASceneResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDD612CE2FEF0083CCFC /* _BASceneResource.m */; };
 		4E3E9F7C1347D2CE0016C8EA /* BALight.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDE012CE30020083CCFC /* BALight.m */; };
 		4E3E9F8C1347D33C0016C8EA /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E21DF881066C26D00511C91 /* OpenGL.framework */; };
 		4E3FE5AC13324E4800626212 /* BAColorTester.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FE5A513324AD700626212 /* BAColorTester.m */; };
@@ -146,8 +146,8 @@
 		4E71138D1055A963002B54BB /* BAScene.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 4E71138C1055A963002B54BB /* BAScene.rtf */; };
 		4E7FBBD31132CF4500965767 /* BAGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E7FBBD11132CF4500965767 /* BAGeometry.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4E7FBBD41132CF4500965767 /* BAGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7FBBD21132CF4500965767 /* BAGeometry.m */; };
-		4E834DAD11691D7800306C0A /* _BAGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834D9711691D7800306C0A /* _BAGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4E834DAE11691D7800306C0A /* _BAGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834D9811691D7800306C0A /* _BAGroup.m */; };
+		4E834DAD11691D7800306C0A /* _BAPropGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834D9711691D7800306C0A /* _BAPropGroup.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4E834DAE11691D7800306C0A /* _BAPropGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834D9811691D7800306C0A /* _BAPropGroup.m */; };
 		4E834DAF11691D7800306C0A /* _BAMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834D9911691D7800306C0A /* _BAMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4E834DB011691D7800306C0A /* _BAMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834D9A11691D7800306C0A /* _BAMesh.m */; };
 		4E834DB111691D7800306C0A /* _BAPartition.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834D9B11691D7800306C0A /* _BAPartition.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -200,12 +200,12 @@
 		4EFEDDD812CE2FEF0083CCFC /* _BAColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDD212CE2FEF0083CCFC /* _BAColor.m */; };
 		4EFEDDD912CE2FEF0083CCFC /* _BALight.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EFEDDD312CE2FEF0083CCFC /* _BALight.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4EFEDDDA12CE2FEF0083CCFC /* _BALight.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDD412CE2FEF0083CCFC /* _BALight.m */; };
-		4EFEDDDB12CE2FEF0083CCFC /* _BAResource.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EFEDDD512CE2FEF0083CCFC /* _BAResource.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4EFEDDDC12CE2FEF0083CCFC /* _BAResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDD612CE2FEF0083CCFC /* _BAResource.m */; };
+		4EFEDDDB12CE2FEF0083CCFC /* _BASceneResource.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EFEDDD512CE2FEF0083CCFC /* _BASceneResource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4EFEDDDC12CE2FEF0083CCFC /* _BASceneResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDD612CE2FEF0083CCFC /* _BASceneResource.m */; };
 		4EFEDDE312CE30020083CCFC /* BALight.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EFEDDDF12CE30020083CCFC /* BALight.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4EFEDDE412CE30020083CCFC /* BALight.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDE012CE30020083CCFC /* BALight.m */; };
-		4EFEDDE512CE30020083CCFC /* BAResource.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EFEDDE112CE30020083CCFC /* BAResource.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4EFEDDE612CE30020083CCFC /* BAResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDE212CE30020083CCFC /* BAResource.m */; };
+		4EFEDDE512CE30020083CCFC /* BASceneResource.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EFEDDE112CE30020083CCFC /* BASceneResource.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4EFEDDE612CE30020083CCFC /* BASceneResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDE212CE30020083CCFC /* BASceneResource.m */; };
 		4EFEDDEF12CE36950083CCFC /* BAResourceStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EFEDDED12CE36950083CCFC /* BAResourceStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4EFEDDF012CE36950083CCFC /* BAResourceStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDEE12CE36950083CCFC /* BAResourceStorage.m */; };
 		84A591B7176900B100C7F7B6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A591B51769009200C7F7B6 /* CoreData.framework */; };
@@ -291,7 +291,7 @@
 			dstPath = "BAScene SDK/Headers";
 			dstSubfolderSpec = 16;
 			files = (
-				4E122FC4121AD8F600EC0D92 /* _BAGroup.h in Headers */,
+				4E122FC4121AD8F600EC0D92 /* _BAPropGroup.h in Headers */,
 				4E122FC5121AD8F600EC0D92 /* _BAMesh.h in Headers */,
 				4E122FC6121AD8F600EC0D92 /* _BAPartition.h in Headers */,
 				4E122FC8121AD8F600EC0D92 /* _BAPoint.h in Headers */,
@@ -305,7 +305,7 @@
 				4E122FD0121AD8F600EC0D92 /* BACamera.h in Headers */,
 				4E122FD1121AD8F600EC0D92 /* BACameraSetup.h in Headers */,
 				4E122FD2121AD8F600EC0D92 /* BAColor.h in Headers */,
-				4E122FD3121AD8F600EC0D92 /* BAGroup.h in Headers */,
+				4E122FD3121AD8F600EC0D92 /* BAPropGroup.h in Headers */,
 				4E122FD4121AD8F600EC0D92 /* BAMesh.h in Headers */,
 				4E122FD5121AD8F600EC0D92 /* BAMeshEditor.h in Headers */,
 				4E122FD6121AD8F600EC0D92 /* BAPartition.h in Headers */,
@@ -369,8 +369,8 @@
 		4E1B6D620FD1E3CB00AE4803 /* BAPrototype.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAPrototype.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		4E1B6D660FD1E3E900AE4803 /* BAProp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAProp.h; sourceTree = "<group>"; };
 		4E1B6D670FD1E3E900AE4803 /* BAProp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAProp.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		4E1B6D750FD1E75C00AE4803 /* BAGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAGroup.h; sourceTree = "<group>"; };
-		4E1B6D760FD1E75C00AE4803 /* BAGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAGroup.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		4E1B6D750FD1E75C00AE4803 /* BAPropGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAPropGroup.h; sourceTree = "<group>"; };
+		4E1B6D760FD1E75C00AE4803 /* BAPropGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAPropGroup.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		4E1B6DA80FD21CAE00AE4803 /* BAPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAPoint.h; sourceTree = "<group>"; };
 		4E1B6DA90FD21CAE00AE4803 /* BAPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAPoint.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		4E1B6E3E0FD3FFC400AE4803 /* BAStage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAStage.h; sourceTree = "<group>"; };
@@ -398,8 +398,8 @@
 		4E71138C1055A963002B54BB /* BAScene.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = BAScene.rtf; sourceTree = "<group>"; };
 		4E7FBBD11132CF4500965767 /* BAGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAGeometry.h; sourceTree = "<group>"; };
 		4E7FBBD21132CF4500965767 /* BAGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAGeometry.m; sourceTree = "<group>"; };
-		4E834D9711691D7800306C0A /* _BAGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BAGroup.h; sourceTree = "<group>"; };
-		4E834D9811691D7800306C0A /* _BAGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BAGroup.m; sourceTree = "<group>"; };
+		4E834D9711691D7800306C0A /* _BAPropGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BAPropGroup.h; sourceTree = "<group>"; };
+		4E834D9811691D7800306C0A /* _BAPropGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BAPropGroup.m; sourceTree = "<group>"; };
 		4E834D9911691D7800306C0A /* _BAMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BAMesh.h; sourceTree = "<group>"; };
 		4E834D9A11691D7800306C0A /* _BAMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BAMesh.m; sourceTree = "<group>"; };
 		4E834D9B11691D7800306C0A /* _BAPartition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BAPartition.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
@@ -449,12 +449,12 @@
 		4EFEDDD212CE2FEF0083CCFC /* _BAColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BAColor.m; sourceTree = "<group>"; };
 		4EFEDDD312CE2FEF0083CCFC /* _BALight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BALight.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		4EFEDDD412CE2FEF0083CCFC /* _BALight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BALight.m; sourceTree = "<group>"; };
-		4EFEDDD512CE2FEF0083CCFC /* _BAResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BAResource.h; sourceTree = "<group>"; };
-		4EFEDDD612CE2FEF0083CCFC /* _BAResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BAResource.m; sourceTree = "<group>"; };
+		4EFEDDD512CE2FEF0083CCFC /* _BASceneResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BASceneResource.h; sourceTree = "<group>"; };
+		4EFEDDD612CE2FEF0083CCFC /* _BASceneResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BASceneResource.m; sourceTree = "<group>"; };
 		4EFEDDDF12CE30020083CCFC /* BALight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BALight.h; sourceTree = "<group>"; };
 		4EFEDDE012CE30020083CCFC /* BALight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BALight.m; sourceTree = "<group>"; };
-		4EFEDDE112CE30020083CCFC /* BAResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAResource.h; sourceTree = "<group>"; };
-		4EFEDDE212CE30020083CCFC /* BAResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAResource.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		4EFEDDE112CE30020083CCFC /* BASceneResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BASceneResource.h; sourceTree = "<group>"; };
+		4EFEDDE212CE30020083CCFC /* BASceneResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BASceneResource.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		4EFEDDED12CE36950083CCFC /* BAResourceStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAResourceStorage.h; sourceTree = "<group>"; };
 		4EFEDDEE12CE36950083CCFC /* BAResourceStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAResourceStorage.m; sourceTree = "<group>"; };
 		84A591B51769009200C7F7B6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -666,8 +666,8 @@
 			children = (
 				B67412870FAF9F44001E3C0D /* BAColor.h */,
 				B67412880FAF9F44001E3C0D /* BAColor.m */,
-				4E1B6D750FD1E75C00AE4803 /* BAGroup.h */,
-				4E1B6D760FD1E75C00AE4803 /* BAGroup.m */,
+				4E1B6D750FD1E75C00AE4803 /* BAPropGroup.h */,
+				4E1B6D760FD1E75C00AE4803 /* BAPropGroup.m */,
 				4EFEDDDF12CE30020083CCFC /* BALight.h */,
 				4EFEDDE012CE30020083CCFC /* BALight.m */,
 				4E1B6D580FD1E26F00AE4803 /* BAMesh.h */,
@@ -686,8 +686,8 @@
 				4E1B6D620FD1E3CB00AE4803 /* BAPrototype.m */,
 				4EB89944117A8503005F8C4C /* BAPrototypeMesh.h */,
 				4EB89945117A8503005F8C4C /* BAPrototypeMesh.m */,
-				4EFEDDE112CE30020083CCFC /* BAResource.h */,
-				4EFEDDE212CE30020083CCFC /* BAResource.m */,
+				4EFEDDE112CE30020083CCFC /* BASceneResource.h */,
+				4EFEDDE212CE30020083CCFC /* BASceneResource.m */,
 				B674125A0FAF99F9001E3C0D /* BAScenePref.h */,
 				B674125B0FAF99F9001E3C0D /* BAScenePref.m */,
 				4E1B6E3E0FD3FFC400AE4803 /* BAStage.h */,
@@ -703,8 +703,8 @@
 			children = (
 				4EFEDDD112CE2FEF0083CCFC /* _BAColor.h */,
 				4EFEDDD212CE2FEF0083CCFC /* _BAColor.m */,
-				4E834D9711691D7800306C0A /* _BAGroup.h */,
-				4E834D9811691D7800306C0A /* _BAGroup.m */,
+				4E834D9711691D7800306C0A /* _BAPropGroup.h */,
+				4E834D9811691D7800306C0A /* _BAPropGroup.m */,
 				4EFEDDD312CE2FEF0083CCFC /* _BALight.h */,
 				4EFEDDD412CE2FEF0083CCFC /* _BALight.m */,
 				4E834D9911691D7800306C0A /* _BAMesh.h */,
@@ -721,8 +721,8 @@
 				4E834DA611691D7800306C0A /* _BAPrototype.m */,
 				4EB8993E117A84F4005F8C4C /* _BAPrototypeMesh.h */,
 				4EB8993F117A84F4005F8C4C /* _BAPrototypeMesh.m */,
-				4EFEDDD512CE2FEF0083CCFC /* _BAResource.h */,
-				4EFEDDD612CE2FEF0083CCFC /* _BAResource.m */,
+				4EFEDDD512CE2FEF0083CCFC /* _BASceneResource.h */,
+				4EFEDDD612CE2FEF0083CCFC /* _BASceneResource.m */,
 				4E834DA711691D7800306C0A /* _BAScenePref.h */,
 				4E834DA811691D7800306C0A /* _BAScenePref.m */,
 				4E834DA911691D7800306C0A /* _BAStage.h */,
@@ -845,7 +845,7 @@
 				B674132F0FAFA6D3001E3C0D /* BAScenePref.h in Headers */,
 				B67413730FB06269001E3C0D /* BASceneView.h in Headers */,
 				4E1B6D5B0FD1E2FC00AE4803 /* BAMesh.h in Headers */,
-				4E1B6D800FD1E95600AE4803 /* BAGroup.h in Headers */,
+				4E1B6D800FD1E95600AE4803 /* BAPropGroup.h in Headers */,
 				4E1B6D870FD1EB3700AE4803 /* BAProp.h in Headers */,
 				4E1B6D890FD1EB3800AE4803 /* BAPrototype.h in Headers */,
 				4E1B6DAA0FD21CAE00AE4803 /* BAPoint.h in Headers */,
@@ -856,7 +856,7 @@
 				4E944E7310A07C9500ECE62C /* BAMeshEditor.h in Headers */,
 				4E7FBBD31132CF4500965767 /* BAGeometry.h in Headers */,
 				4E573C32113FF3BB004EE087 /* BASceneTypes.h in Headers */,
-				4E834DAD11691D7800306C0A /* _BAGroup.h in Headers */,
+				4E834DAD11691D7800306C0A /* _BAPropGroup.h in Headers */,
 				4E834DAF11691D7800306C0A /* _BAMesh.h in Headers */,
 				4E834DB111691D7800306C0A /* _BAPartition.h in Headers */,
 				4E834DB511691D7800306C0A /* _BAPoint.h in Headers */,
@@ -873,9 +873,9 @@
 				4EBBD474117B289100B7315B /* BAViewController.h in Headers */,
 				4EFEDDD712CE2FEF0083CCFC /* _BAColor.h in Headers */,
 				4EFEDDD912CE2FEF0083CCFC /* _BALight.h in Headers */,
-				4EFEDDDB12CE2FEF0083CCFC /* _BAResource.h in Headers */,
+				4EFEDDDB12CE2FEF0083CCFC /* _BASceneResource.h in Headers */,
 				4EFEDDE312CE30020083CCFC /* BALight.h in Headers */,
-				4EFEDDE512CE30020083CCFC /* BAResource.h in Headers */,
+				4EFEDDE512CE30020083CCFC /* BASceneResource.h in Headers */,
 				4EFEDDEF12CE36950083CCFC /* BAResourceStorage.h in Headers */,
 				4E4F2C1E12CFACC90095AD3F /* BATexture.h in Headers */,
 				4E58596C1345FCC100A8D0BB /* BAVoxelArray.h in Headers */,
@@ -1037,7 +1037,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E2957751217389C00DB9320 /* _BAGroup.m in Sources */,
+				4E2957751217389C00DB9320 /* _BAPropGroup.m in Sources */,
 				4E2957761217389C00DB9320 /* _BAMesh.m in Sources */,
 				4E2957771217389E00DB9320 /* _BAPartition.m in Sources */,
 				4E2957791217389F00DB9320 /* _BAPoint.m in Sources */,
@@ -1051,7 +1051,7 @@
 				4E295781121738A700DB9320 /* BACamera.m in Sources */,
 				4E295782121738AA00DB9320 /* BACameraSetup.m in Sources */,
 				4E295784121738AF00DB9320 /* BAColor.m in Sources */,
-				4E295785121738B000DB9320 /* BAGroup.m in Sources */,
+				4E295785121738B000DB9320 /* BAPropGroup.m in Sources */,
 				4E295786121738B100DB9320 /* BAMesh.m in Sources */,
 				4E295787121738B200DB9320 /* BAMeshEditor.m in Sources */,
 				4E295788121738B500DB9320 /* BAPartition.m in Sources */,
@@ -1074,10 +1074,10 @@
 				4E29579B121738C700DB9320 /* BAViewController.m in Sources */,
 				4E3E9F761347D2C60016C8EA /* BAVoxelArray.m in Sources */,
 				4E3E9F771347D2C70016C8EA /* BAResourceStorage.m in Sources */,
-				4E3E9F781347D2C70016C8EA /* BAResource.m in Sources */,
+				4E3E9F781347D2C70016C8EA /* BASceneResource.m in Sources */,
 				4E3E9F791347D2CA0016C8EA /* _BAColor.m in Sources */,
 				4E3E9F7A1347D2CB0016C8EA /* _BALight.m in Sources */,
-				4E3E9F7B1347D2CC0016C8EA /* _BAResource.m in Sources */,
+				4E3E9F7B1347D2CC0016C8EA /* _BASceneResource.m in Sources */,
 				4E3E9F7C1347D2CE0016C8EA /* BALight.m in Sources */,
 				4E91CE181349F25E00B90712 /* BATexture.m in Sources */,
 				4E91CEC41349F80A00B90712 /* BAScene.xcdatamodel in Sources */,
@@ -1110,7 +1110,7 @@
 				B67413300FAFA6D4001E3C0D /* BAScenePref.m in Sources */,
 				B67413740FB06269001E3C0D /* BASceneView.m in Sources */,
 				4E1B6D5C0FD1E2FD00AE4803 /* BAMesh.m in Sources */,
-				4E1B6D7F0FD1E95500AE4803 /* BAGroup.m in Sources */,
+				4E1B6D7F0FD1E95500AE4803 /* BAPropGroup.m in Sources */,
 				4E1B6D880FD1EB3700AE4803 /* BAProp.m in Sources */,
 				4E1B6D8A0FD1EB3800AE4803 /* BAPrototype.m in Sources */,
 				4E1B6DAB0FD21CAE00AE4803 /* BAPoint.m in Sources */,
@@ -1121,7 +1121,7 @@
 				4E944E7410A07C9500ECE62C /* BAMeshEditor.m in Sources */,
 				4E7FBBD41132CF4500965767 /* BAGeometry.m in Sources */,
 				4E573C33113FF3BB004EE087 /* BASceneTypes.m in Sources */,
-				4E834DAE11691D7800306C0A /* _BAGroup.m in Sources */,
+				4E834DAE11691D7800306C0A /* _BAPropGroup.m in Sources */,
 				4E834DB011691D7800306C0A /* _BAMesh.m in Sources */,
 				4E834DB211691D7800306C0A /* _BAPartition.m in Sources */,
 				4E834DB611691D7800306C0A /* _BAPoint.m in Sources */,
@@ -1138,9 +1138,9 @@
 				4EC7C9E81198FBA500D1E2ED /* BASceneConstants.m in Sources */,
 				4EFEDDD812CE2FEF0083CCFC /* _BAColor.m in Sources */,
 				4EFEDDDA12CE2FEF0083CCFC /* _BALight.m in Sources */,
-				4EFEDDDC12CE2FEF0083CCFC /* _BAResource.m in Sources */,
+				4EFEDDDC12CE2FEF0083CCFC /* _BASceneResource.m in Sources */,
 				4EFEDDE412CE30020083CCFC /* BALight.m in Sources */,
-				4EFEDDE612CE30020083CCFC /* BAResource.m in Sources */,
+				4EFEDDE612CE30020083CCFC /* BASceneResource.m in Sources */,
 				4EFEDDF012CE36950083CCFC /* BAResourceStorage.m in Sources */,
 				4E4F2C1F12CFACC90095AD3F /* BATexture.m in Sources */,
 				4E58596D1345FCC100A8D0BB /* BAVoxelArray.m in Sources */,

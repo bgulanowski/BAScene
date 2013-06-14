@@ -190,6 +190,7 @@ static NSTimeInterval gInterval = 0;
 	BAProp *prop = [self propWithName:aName];
 	
 	if(create) {
+        prop.name = aName;
 		prop.prototype = proto;
 		prop.transform = xform;
 	}

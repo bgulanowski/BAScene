@@ -6,7 +6,7 @@
 
 @class BAPolygon;
 @class BAPrototypeMesh;
-@class BAResource;
+@class BASceneResource;
 
 
 
@@ -146,8 +146,8 @@
 
 - (void)addResources:(NSSet*)value_;
 - (void)removeResources:(NSSet*)value_;
-- (void)addResourcesObject:(BAResource*)value_;
-- (void)removeResourcesObject:(BAResource*)value_;
+- (void)addResourcesObject:(BASceneResource*)value_;
+- (void)removeResourcesObject:(BASceneResource*)value_;
 
 @end
 

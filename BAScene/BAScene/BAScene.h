@@ -22,7 +22,7 @@
 #import <BAScene/BAPartition.h>
 #import <BAScene/BAPrototype.h>
 #import <BAScene/BAProp.h>
-#import <BAScene/BAGroup.h>
+#import <BAScene/BAPropGroup.h>
 #import <BAScene/BAStage.h>
 #import <BAScene/BAScenePref.h>
 #import <BAScene/BATransform.h>

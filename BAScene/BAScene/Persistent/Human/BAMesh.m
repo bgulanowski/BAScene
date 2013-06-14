@@ -18,7 +18,7 @@
 #import "BATexture.h"
 #import "BATransform.h"
 #import "BASceneConstants.h"
-#import "BAResource.h"
+#import "BASceneResource.h"
 
 
 BOOL drawNormals = NO;
@@ -273,7 +273,7 @@ return _ivar_;\
 	if(0 != vertexBuffer)
 		return;
 		
-	BAResource *vertexResource = [[self.resources filteredSetUsingPredicate:vertexResourcePredicate] anyObject];
+	BASceneResource *vertexResource = [[self.resources filteredSetUsingPredicate:vertexResourcePredicate] anyObject];
 	
 	if(!vertexResource)
 		return;
@@ -302,7 +302,7 @@ return _ivar_;\
 	if(!predicate)
 		predicate = [[NSPredicate predicateWithFormat:@"type=%d", NormalResourceType] retain];
 	
-	BAResource *vertexResource = [[self.resources filteredSetUsingPredicate:predicate] anyObject];
+	BASceneResource *vertexResource = [[self.resources filteredSetUsingPredicate:predicate] anyObject];
 	
 	// create vertex buffer objects
 	glGenBuffers(1, &normalBuffer);
@@ -433,7 +433,7 @@ static inline NSUInteger copyNormalData(BATuple *vertex, BATuple *normal, GLfloa
 	NSAssert(i_v == (count*elementsPerVertex), @"WTF");
 	
 	NSData *vertexData = [NSData dataWithBytesNoCopy:rawVertices length:rawVertsSize freeWhenDone:YES];
-	BAResource *vertexResource = [self.managedObjectContext resourceWithType:VertexResourceType data:vertexData];
+	BASceneResource *vertexResource = [self.managedObjectContext resourceWithType:VertexResourceType data:vertexData];
 	
 	[self addResourcesObject:vertexResource];
     [self prepareVertexBuffer];

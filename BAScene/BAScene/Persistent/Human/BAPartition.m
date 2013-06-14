@@ -138,8 +138,10 @@ static NSString *kBARootPartitionName = @"BAScene:RootPartition";
     
 	BAPartition *root = [BAActiveContext objectForEntityNamed:[BAPartition entityName] matchingValue:kBARootPartitionName forKey:@"name"];
 	
-	if(!root)
+	if(!root) {
 		root = [self partitionWithDimension:dim location:BAMakeLocationf(0, 0, 0, 1.0f) parent:nil];
+        root.name = kBARootPartitionName;
+    }
 	
 	return root;
 }

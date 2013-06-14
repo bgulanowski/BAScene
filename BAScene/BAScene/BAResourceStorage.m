@@ -8,7 +8,7 @@
 
 #import "BAResourceStorage.h"
 
-#import "BAResource.h"
+#import "BASceneResource.h"
 
 
 BAResourceStorage *ResourceStorage = nil;
@@ -74,7 +74,7 @@ BAResourceStorage *ResourceStorage = nil;
 		NSLog(@"Stored %lu bytes of %@ data for %@", (unsigned long)[data length], [self nameForType:type], uuid);
 }
 
-- (void)storeDataForResource:(BAResource *)aResource {
+- (void)storeDataForResource:(BASceneResource *)aResource {
 	[self storeData:aResource.data type:aResource.typeValue uniqueID:aResource.uniqueID];
 }
 

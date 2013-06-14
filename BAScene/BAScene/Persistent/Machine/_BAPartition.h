@@ -2,7 +2,7 @@
 // Make changes to BAPartition.h instead.
 
 #import <CoreData/CoreData.h>
-#import "BAGroup.h"
+#import "BAPropGroup.h"
 
 @class BATuple;
 @class BAStage;
@@ -13,7 +13,7 @@
 @interface BAPartitionID : NSManagedObjectID {}
 @end
 
-@interface _BAPartition : BAGroup {}
+@interface _BAPartition : BAPropGroup {}
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;

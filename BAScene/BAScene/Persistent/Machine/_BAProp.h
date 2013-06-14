@@ -5,7 +5,7 @@
 
 
 @class BAColor;
-@class BAGroup;
+@class BAPropGroup;
 @class BAPrototype;
 @class BATransform;
 
@@ -48,7 +48,7 @@
 
 
 
-@property (nonatomic, retain) BAGroup* group;
+@property (nonatomic, retain) BAPropGroup* group;
 
 //- (BOOL)validateGroup:(id*)value_ error:(NSError**)error_;
 
@@ -96,8 +96,8 @@
 
 
 
-- (BAGroup*)primitiveGroup;
-- (void)setPrimitiveGroup:(BAGroup*)value;
+- (BAPropGroup*)primitiveGroup;
+- (void)setPrimitiveGroup:(BAPropGroup*)value;
 
 
 

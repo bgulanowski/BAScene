@@ -7,7 +7,7 @@
 //
 
 
-@class BAResourceStorage, BAResource;
+@class BAResourceStorage, BASceneResource;
 
 extern BAResourceStorage *ResourceStorage;
 
@@ -22,7 +22,7 @@ extern BAResourceStorage *ResourceStorage;
 - (id)initWitRoot:(NSString *)path;
 
 - (void)storeData:(NSData *)data type:(int)type uniqueID:(NSString *)uuid;
-- (void)storeDataForResource:(BAResource *)aResource;
+- (void)storeDataForResource:(BASceneResource *)aResource;
 - (NSData *)retrieveDataWithType:(int)type uniqueID:(NSString *)uuid;
 
 @end

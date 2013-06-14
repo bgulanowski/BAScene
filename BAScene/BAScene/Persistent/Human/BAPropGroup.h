@@ -1,17 +1,17 @@
 //
-//  BAGroup.h
+//  BAPropGroup.h
 //  BAScene
 //
 //  Created by Brent Gulanowski on 30/05/09.
 //  Copyright 2009 Bored Astronaut. All rights reserved.
 //
 
-#import <BAScene/_BAGroup.h>
+#import <BAScene/_BAPropGroup.h>
 
 #import <BAScene/BACamera.h>
 
 
-@interface BAGroup : _BAGroup<BAPropContainer> {
+@interface BAPropGroup : _BAPropGroup<BAPropContainer> {
     BAProp *_mergedProp;
     BARegionf bounds;
     BOOL boundsLoaded;
@@ -31,17 +31,17 @@
 
 @end
 
-@interface BAGroup (BAGroupDeprecated)
+@interface BAPropGroup (BAGroupDeprecated)
 
-+ (BAGroup *)groupWithSuperGroup:(BAGroup *)aSupergroup DEPRECATED_ATTRIBUTE;
-+ (BAGroup *)findGroupWithName:(NSString *)aName DEPRECATED_ATTRIBUTE;
++ (BAPropGroup *)groupWithSuperGroup:(BAPropGroup *)aSupergroup DEPRECATED_ATTRIBUTE;
++ (BAPropGroup *)findGroupWithName:(NSString *)aName DEPRECATED_ATTRIBUTE;
 
 @end
 
 
 @interface NSManagedObjectContext (BAGroupCreating)
 
-- (BAGroup *)groupWithSuperGroup:(BAGroup *)aSupergroup;
-- (BAGroup *)findGroupWithName:(NSString *)aName;
+- (BAPropGroup *)groupWithSuperGroup:(BAPropGroup *)aSupergroup;
+- (BAPropGroup *)findGroupWithName:(NSString *)aName;
 
 @end

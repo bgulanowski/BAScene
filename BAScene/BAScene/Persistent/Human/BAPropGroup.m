@@ -1,5 +1,5 @@
 //
-//  BAGroup.m
+//  BAPropGroup.m
 //  BAScene
 //
 //  Created by Brent Gulanowski on 30/05/09.
@@ -7,13 +7,13 @@
 //
 
 
-#import "BAGroup.h"
+#import "BAPropGroup.h"
 
 #import "BAProp.h"
 #import "BAMesh.h"
 
 
-@interface BAGroup ()
+@interface BAPropGroup ()
 
 @property (nonatomic, readwrite) BAProp *mergedProp;
 
@@ -22,7 +22,7 @@
 @end
 
 
-@implementation BAGroup
+@implementation BAPropGroup
 
 @synthesize mergedProp=_mergedProp;
 @dynamic bounds;
@@ -76,7 +76,7 @@
 #pragma mark Private
 - (void)collectProps:(NSMutableSet *)set filterWithBlock:(BOOL(^)(BAProp *prop))block {
 	
-	for(BAGroup *subgroup in self.subgroups)
+	for(BAPropGroup *subgroup in self.subgroups)
 		[subgroup collectProps:set filterWithBlock:block];
 	
 	if(self.flattenedValue)
@@ -92,12 +92,12 @@
 
 #pragma mark New
 
-+ (BAGroup *)groupWithSuperGroup:(BAGroup *)aSupergroup {
++ (BAPropGroup *)groupWithSuperGroup:(BAPropGroup *)aSupergroup {
 	BAAssertActiveContext();
     return [BAActiveContext groupWithSuperGroup:aSupergroup];
 }
 
-+ (BAGroup *)findGroupWithName:(NSString *)aName {
++ (BAPropGroup *)findGroupWithName:(NSString *)aName {
 	BAAssertActiveContext();
     return [BAActiveContext findGroupWithName:aName];
 }
@@ -113,7 +113,7 @@
 	if([self.subgroups count] > 0)
 		[self update:interval];
 	else
-		for(BAGroup *subgroup in [[self subgroups] objectEnumerator]) {
+		for(BAPropGroup *subgroup in [[self subgroups] objectEnumerator]) {
 			[subgroup updateProps:interval];
 		}
 //    boundsDirty = YES;
@@ -200,13 +200,13 @@
 
 @implementation NSManagedObjectContext (BAGroupCreating)
 
-- (BAGroup *)findGroupWithName:(NSString *)aName {
-	return [self objectForEntityNamed:[BAGroup entityName] matchingValue:aName forKey:@"name"];
+- (BAPropGroup *)findGroupWithName:(NSString *)aName {
+	return [self objectForEntityNamed:[BAPropGroup entityName] matchingValue:aName forKey:@"name"];
 }
 
-- (BAGroup *)groupWithSuperGroup:(BAGroup *)aSupergroup {
+- (BAPropGroup *)groupWithSuperGroup:(BAPropGroup *)aSupergroup {
     
-	BAGroup *group = (BAGroup *)[BAGroup insertInManagedObjectContext:self];
+	BAPropGroup *group = (BAPropGroup *)[BAPropGroup insertInManagedObjectContext:self];
 	
 	group.supergroup = aSupergroup;
 	

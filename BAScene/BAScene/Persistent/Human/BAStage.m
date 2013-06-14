@@ -9,7 +9,7 @@
 #import "BAStage.h"
 
 #import "BAPartition.h"
-#import "BAGroup.h"
+#import "BAPropGroup.h"
 
 
 @implementation BAStage
@@ -30,11 +30,11 @@
 	[self.partitionRoot removeProp:aProp];
 }
 
-- (void)addGroup:(BAGroup *)aGroup {
+- (void)addGroup:(BAPropGroup *)aGroup {
 	[self.partitionRoot addSubgroupsObject:aGroup];
 }
 
-- (void)removeGroup:(BAGroup *)aGroup {
+- (void)removeGroup:(BAPropGroup *)aGroup {
 	[self.partitionRoot removeSubgroupsObject:aGroup];
 }
 

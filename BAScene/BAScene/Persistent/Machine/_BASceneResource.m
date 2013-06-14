@@ -1,29 +1,29 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
 // Make changes to BAResource.m instead.
 
-#import "_BAResource.h"
+#import "_BASceneResource.h"
 
-@implementation BAResourceID
+@implementation BASceneResourceID
 @end
 
-@implementation _BAResource
+@implementation _BASceneResource
 
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
 	NSParameterAssert(moc_);
-	return [NSEntityDescription insertNewObjectForEntityForName:@"Resource" inManagedObjectContext:moc_];
+	return [NSEntityDescription insertNewObjectForEntityForName:@"SceneResource" inManagedObjectContext:moc_];
 }
 
 + (NSString*)entityName {
-	return @"Resource";
+	return @"SceneResource";
 }
 
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_ {
 	NSParameterAssert(moc_);
-	return [NSEntityDescription entityForName:@"Resource" inManagedObjectContext:moc_];
+	return [NSEntityDescription entityForName:@"SceneResource" inManagedObjectContext:moc_];
 }
 
-- (BAResourceID*)objectID {
-	return (BAResourceID*)[super objectID];
+- (BASceneResourceID*)objectID {
+	return (BASceneResourceID*)[super objectID];
 }
 
 + (NSSet *)keyPathsForValuesAffectingValueForKey:(NSString *)key {

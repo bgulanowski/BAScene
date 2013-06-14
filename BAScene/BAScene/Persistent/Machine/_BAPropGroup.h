@@ -5,22 +5,17 @@
 
 
 @class BAProp;
-@class BAGroup;
-@class BAGroup;
+@class BAPropGroup;
 
 
-
-
-
-
-@interface BAGroupID : NSManagedObjectID {}
+@interface BAPropGroupID : NSManagedObjectID {}
 @end
 
-@interface _BAGroup : NSManagedObject {}
+@interface _BAPropGroup : NSManagedObject {}
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-- (BAGroupID*)objectID;
+- (BAPropGroupID*)objectID;
 
 
 
@@ -76,7 +71,7 @@
 
 
 
-@property (nonatomic, retain) BAGroup* supergroup;
+@property (nonatomic, retain) BAPropGroup* supergroup;
 
 //- (BOOL)validateSupergroup:(id*)value_ error:(NSError**)error_;
 
@@ -85,7 +80,7 @@
 
 @end
 
-@interface _BAGroup (CoreDataGeneratedAccessors)
+@interface _BAPropGroup (CoreDataGeneratedAccessors)
 
 - (void)addProps:(NSSet*)value_;
 - (void)removeProps:(NSSet*)value_;
@@ -94,12 +89,12 @@
 
 - (void)addSubgroups:(NSSet*)value_;
 - (void)removeSubgroups:(NSSet*)value_;
-- (void)addSubgroupsObject:(BAGroup*)value_;
-- (void)removeSubgroupsObject:(BAGroup*)value_;
+- (void)addSubgroupsObject:(BAPropGroup*)value_;
+- (void)removeSubgroupsObject:(BAPropGroup*)value_;
 
 @end
 
-@interface _BAGroup (CoreDataGeneratedPrimitiveAccessors)
+@interface _BAPropGroup (CoreDataGeneratedPrimitiveAccessors)
 
 
 - (NSData*)primitiveBoundsData;
@@ -140,8 +135,8 @@
 
 
 
-- (BAGroup*)primitiveSupergroup;
-- (void)setPrimitiveSupergroup:(BAGroup*)value;
+- (BAPropGroup*)primitiveSupergroup;
+- (void)setPrimitiveSupergroup:(BAPropGroup*)value;
 
 
 @end

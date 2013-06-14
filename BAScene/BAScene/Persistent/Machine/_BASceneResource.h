@@ -10,14 +10,14 @@
 
 
 
-@interface BAResourceID : NSManagedObjectID {}
+@interface BASceneResourceID : NSManagedObjectID {}
 @end
 
-@interface _BAResource : NSManagedObject {}
+@interface _BASceneResource : NSManagedObject {}
 + (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_;
 + (NSString*)entityName;
 + (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_;
-- (BAResourceID*)objectID;
+- (BASceneResourceID*)objectID;
 
 
 
@@ -64,11 +64,11 @@
 
 @end
 
-@interface _BAResource (CoreDataGeneratedAccessors)
+@interface _BASceneResource (CoreDataGeneratedAccessors)
 
 @end
 
-@interface _BAResource (CoreDataGeneratedPrimitiveAccessors)
+@interface _BASceneResource (CoreDataGeneratedPrimitiveAccessors)
 
 
 - (NSNumber*)primitiveType;

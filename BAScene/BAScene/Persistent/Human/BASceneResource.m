@@ -1,17 +1,17 @@
 //
-//  BAResource.m
+//  BASceneResource.m
 //  BAScene
 //
 //  Created by Brent Gulanowski on 31/12/10.
 //  Copyright 2008-2011 Bored Astronaut. All rights reserved.
 //
 
-#import "BAResource.h"
+#import "BASceneResource.h"
 
 #import "BAResourceStorage.h"
 
 
-@implementation BAResource
+@implementation BASceneResource
 
 @synthesize data;
 
@@ -42,9 +42,9 @@
 
 @implementation NSManagedObjectContext (BAResourceCreating)
 
-- (BAResource *)resourceWithType:(int)aType data:(NSData *)sourceData {
+- (BASceneResource *)resourceWithType:(int)aType data:(NSData *)sourceData {
 	
-	BAResource *res = (BAResource *)[BAResource insertInManagedObjectContext:self];
+	BASceneResource *res = (BASceneResource *)[BASceneResource insertInManagedObjectContext:self];
 	
 	res.data = sourceData;
 	res.typeValue = aType;
@@ -54,11 +54,11 @@
 	return res;
 }
 
-- (BAResource *)resourceWithType:(int)aType uniqueID:(NSData *)uuid {
+- (BASceneResource *)resourceWithType:(int)aType uniqueID:(NSData *)uuid {
 	
 	NSPredicate *pred = [NSPredicate predicateWithFormat:@"%K=%d and %K=%@", @"type", aType, @"uniqueID", uuid];
 	
-	return [self objectForEntityNamed:[BAResource entityName] matchingPredicate:pred];
+	return [self objectForEntityNamed:[BASceneResource entityName] matchingPredicate:pred];
 }
 
 @end

@@ -11,14 +11,14 @@
 #import <BAScene/BACamera.h>
 
 
-@class BAProp, BAGroup;
+@class BAProp, BAPropGroup;
 
 @interface BAStage : _BAStage<BACameraDrawDelegate, BAPropContainer> {}
 
 - (void)addProp:(BAProp *)aProp;
 - (void)removeProp:(BAProp *)aProp;
-- (void)addGroup:(BAGroup *)aGroup;
-- (void)removeGroup:(BAGroup *)aGroup;
+- (void)addGroup:(BAPropGroup *)aGroup;
+- (void)removeGroup:(BAPropGroup *)aGroup;
 
 - (void)update:(NSTimeInterval)interval;
 
