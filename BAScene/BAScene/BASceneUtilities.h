@@ -904,7 +904,7 @@ static inline BARegioni BAInsetRegioni(BARegioni region, NSInteger offset) {
 
 static inline BARegionf BAMakeRegionf(GLfloat x, GLfloat y, GLfloat z, GLfloat w, GLfloat h, GLfloat d) {
 	BARegionf region;
-	region.origin.p = BAMakePoint4f(x, y, z, w);
+	region.origin.p = BAMakePoint4f(x, y, z, 1.f);
 	region.volume.s = BAMakeSizef(w, h, d);
 	return region;
 }
