@@ -1,29 +1,72 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
+// This template requires Bored Astronaut Core Data Additions (BAAdditions)
 // Make changes to BAColor.m instead.
 
 #import "_BAColor.h"
+
+
+@implementation NSManagedObjectContext (BAColorConveniences)
+
+- (BAColor *)findBAColorWithID:(BAColorID *)objectID {
+    return (BAColor *)[self objectWithID:objectID];
+}
+
+- (BAColor *)insertBAColor {
+	return [NSEntityDescription insertNewObjectForEntityForName:@"Color" inManagedObjectContext:self];
+}
+
+- (NSUInteger)countOfColorObjectsWithPredicate:(NSPredicate *)predicate {
+    
+    __strong static NSFetchRequest *fetch;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        fetch = [NSFetchRequest fetchRequestWithEntityName:@"Color"];
+    });
+    
+    fetch.predicate = predicate;
+    
+    NSError *error = nil;
+    NSUInteger result = [self countForFetchRequest:fetch error:&error];
+    
+    if(result == NSNotFound) {
+        NSLog(@"Count of Color objects failed; error: %@", error);
+        return 0;
+    }
+    
+    return result;
+}
+
+- (NSUInteger)countOfColorObjectsWithValue:(id)value forKey:(NSString *)key {
+    return [self countOfColorObjectsWithPredicate:[NSPredicate predicateWithFormat:@"%K = %@", key, value]];
+}
+
+- (NSUInteger)countOfColorObjects {
+    return [self countOfColorObjectsWithPredicate:nil];
+}
+
+@end
 
 @implementation BAColorID
 @end
 
 @implementation _BAColor
 
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
++ (id)insertInManagedObjectContext:(NSManagedObjectContext *)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription insertNewObjectForEntityForName:@"Color" inManagedObjectContext:moc_];
 }
 
-+ (NSString*)entityName {
++ (NSString *)entityName {
 	return @"Color";
 }
 
-+ (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_ {
++ (NSEntityDescription *)entityInManagedObjectContext:(NSManagedObjectContext *)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription entityForName:@"Color" inManagedObjectContext:moc_];
 }
 
-- (BAColorID*)objectID {
-	return (BAColorID*)[super objectID];
+- (BAColorID *)objectID {
+	return (BAColorID *)[super objectID];
 }
 
 + (NSSet *)keyPathsForValuesAffectingValueForKey:(NSString *)key {
@@ -50,11 +93,7 @@
 }
 
 
-
-
 @dynamic a;
-
-
 
 - (float)aValue {
 	NSNumber *result = [self a];
@@ -74,13 +113,7 @@
 	[self setPrimitiveA:[NSNumber numberWithFloat:value_]];
 }
 
-
-
-
-
 @dynamic b;
-
-
 
 - (float)bValue {
 	NSNumber *result = [self b];
@@ -100,13 +133,7 @@
 	[self setPrimitiveB:[NSNumber numberWithFloat:value_]];
 }
 
-
-
-
-
 @dynamic g;
-
-
 
 - (float)gValue {
 	NSNumber *result = [self g];
@@ -126,13 +153,7 @@
 	[self setPrimitiveG:[NSNumber numberWithFloat:value_]];
 }
 
-
-
-
-
 @dynamic r;
-
-
 
 - (float)rValue {
 	NSNumber *result = [self r];
@@ -153,44 +174,38 @@
 }
 
 
-
-
-
 @dynamic points;
 
-	
-- (NSMutableSet*)pointsSet {
+- (NSMutableSet *)pointsSet {
 	[self willAccessValueForKey:@"points"];
-	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"points"];
+  
+	NSMutableSet *result = (NSMutableSet *)[self mutableSetValueForKey:@"points"];
+  
 	[self didAccessValueForKey:@"points"];
 	return result;
 }
-	
 
 @dynamic props;
 
-	
-- (NSMutableSet*)propsSet {
+- (NSMutableSet *)propsSet {
 	[self willAccessValueForKey:@"props"];
-	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"props"];
+  
+	NSMutableSet *result = (NSMutableSet *)[self mutableSetValueForKey:@"props"];
+  
 	[self didAccessValueForKey:@"props"];
 	return result;
 }
-	
 
 @dynamic prototypeMeshes;
 
-	
-- (NSMutableSet*)prototypeMeshesSet {
+- (NSMutableSet *)prototypeMeshesSet {
 	[self willAccessValueForKey:@"prototypeMeshes"];
-	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"prototypeMeshes"];
+  
+	NSMutableSet *result = (NSMutableSet *)[self mutableSetValueForKey:@"prototypeMeshes"];
+  
 	[self didAccessValueForKey:@"prototypeMeshes"];
 	return result;
 }
-	
-
-
-
 
 
 @end

@@ -1,29 +1,72 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
+// This template requires Bored Astronaut Core Data Additions (BAAdditions)
 // Make changes to BAPolygon.m instead.
 
 #import "_BAPolygon.h"
+
+
+@implementation NSManagedObjectContext (BAPolygonConveniences)
+
+- (BAPolygon *)findBAPolygonWithID:(BAPolygonID *)objectID {
+    return (BAPolygon *)[self objectWithID:objectID];
+}
+
+- (BAPolygon *)insertBAPolygon {
+	return [NSEntityDescription insertNewObjectForEntityForName:@"Polygon" inManagedObjectContext:self];
+}
+
+- (NSUInteger)countOfPolygonObjectsWithPredicate:(NSPredicate *)predicate {
+    
+    __strong static NSFetchRequest *fetch;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        fetch = [NSFetchRequest fetchRequestWithEntityName:@"Polygon"];
+    });
+    
+    fetch.predicate = predicate;
+    
+    NSError *error = nil;
+    NSUInteger result = [self countForFetchRequest:fetch error:&error];
+    
+    if(result == NSNotFound) {
+        NSLog(@"Count of Polygon objects failed; error: %@", error);
+        return 0;
+    }
+    
+    return result;
+}
+
+- (NSUInteger)countOfPolygonObjectsWithValue:(id)value forKey:(NSString *)key {
+    return [self countOfPolygonObjectsWithPredicate:[NSPredicate predicateWithFormat:@"%K = %@", key, value]];
+}
+
+- (NSUInteger)countOfPolygonObjects {
+    return [self countOfPolygonObjectsWithPredicate:nil];
+}
+
+@end
 
 @implementation BAPolygonID
 @end
 
 @implementation _BAPolygon
 
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
++ (id)insertInManagedObjectContext:(NSManagedObjectContext *)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription insertNewObjectForEntityForName:@"Polygon" inManagedObjectContext:moc_];
 }
 
-+ (NSString*)entityName {
++ (NSString *)entityName {
 	return @"Polygon";
 }
 
-+ (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_ {
++ (NSEntityDescription *)entityInManagedObjectContext:(NSManagedObjectContext *)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription entityForName:@"Polygon" inManagedObjectContext:moc_];
 }
 
-- (BAPolygonID*)objectID {
-	return (BAPolygonID*)[super objectID];
+- (BAPolygonID *)objectID {
+	return (BAPolygonID *)[super objectID];
 }
 
 + (NSSet *)keyPathsForValuesAffectingValueForKey:(NSString *)key {
@@ -46,11 +89,7 @@
 }
 
 
-
-
 @dynamic a;
-
-
 
 - (double)aValue {
 	NSNumber *result = [self a];
@@ -70,13 +109,7 @@
 	[self setPrimitiveA:[NSNumber numberWithDouble:value_]];
 }
 
-
-
-
-
 @dynamic b;
-
-
 
 - (double)bValue {
 	NSNumber *result = [self b];
@@ -96,13 +129,7 @@
 	[self setPrimitiveB:[NSNumber numberWithDouble:value_]];
 }
 
-
-
-
-
 @dynamic c;
-
-
 
 - (double)cValue {
 	NSNumber *result = [self c];
@@ -123,26 +150,18 @@
 }
 
 
-
-
-
 @dynamic mesh;
-
-	
 
 @dynamic points;
 
-	
-- (NSMutableSet*)pointsSet {
+- (NSMutableSet *)pointsSet {
 	[self willAccessValueForKey:@"points"];
-	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"points"];
+  
+	NSMutableSet *result = (NSMutableSet *)[self mutableSetValueForKey:@"points"];
+  
 	[self didAccessValueForKey:@"points"];
 	return result;
 }
-	
-
-
-
 
 
 @end

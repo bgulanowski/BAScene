@@ -1,29 +1,72 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
+// This template requires Bored Astronaut Core Data Additions (BAAdditions)
 // Make changes to BATransform.m instead.
 
 #import "_BATransform.h"
+
+
+@implementation NSManagedObjectContext (BATransformConveniences)
+
+- (BATransform *)findBATransformWithID:(BATransformID *)objectID {
+    return (BATransform *)[self objectWithID:objectID];
+}
+
+- (BATransform *)insertBATransform {
+	return [NSEntityDescription insertNewObjectForEntityForName:@"Transform" inManagedObjectContext:self];
+}
+
+- (NSUInteger)countOfTransformObjectsWithPredicate:(NSPredicate *)predicate {
+    
+    __strong static NSFetchRequest *fetch;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        fetch = [NSFetchRequest fetchRequestWithEntityName:@"Transform"];
+    });
+    
+    fetch.predicate = predicate;
+    
+    NSError *error = nil;
+    NSUInteger result = [self countForFetchRequest:fetch error:&error];
+    
+    if(result == NSNotFound) {
+        NSLog(@"Count of Transform objects failed; error: %@", error);
+        return 0;
+    }
+    
+    return result;
+}
+
+- (NSUInteger)countOfTransformObjectsWithValue:(id)value forKey:(NSString *)key {
+    return [self countOfTransformObjectsWithPredicate:[NSPredicate predicateWithFormat:@"%K = %@", key, value]];
+}
+
+- (NSUInteger)countOfTransformObjects {
+    return [self countOfTransformObjectsWithPredicate:nil];
+}
+
+@end
 
 @implementation BATransformID
 @end
 
 @implementation _BATransform
 
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
++ (id)insertInManagedObjectContext:(NSManagedObjectContext *)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription insertNewObjectForEntityForName:@"Transform" inManagedObjectContext:moc_];
 }
 
-+ (NSString*)entityName {
++ (NSString *)entityName {
 	return @"Transform";
 }
 
-+ (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_ {
++ (NSEntityDescription *)entityInManagedObjectContext:(NSManagedObjectContext *)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription entityForName:@"Transform" inManagedObjectContext:moc_];
 }
 
-- (BATransformID*)objectID {
-	return (BATransformID*)[super objectID];
+- (BATransformID *)objectID {
+	return (BATransformID *)[super objectID];
 }
 
 + (NSSet *)keyPathsForValuesAffectingValueForKey:(NSString *)key {
@@ -70,11 +113,7 @@
 }
 
 
-
-
 @dynamic lx;
-
-
 
 - (double)lxValue {
 	NSNumber *result = [self lx];
@@ -94,13 +133,7 @@
 	[self setPrimitiveLx:[NSNumber numberWithDouble:value_]];
 }
 
-
-
-
-
 @dynamic ly;
-
-
 
 - (double)lyValue {
 	NSNumber *result = [self ly];
@@ -120,13 +153,7 @@
 	[self setPrimitiveLy:[NSNumber numberWithDouble:value_]];
 }
 
-
-
-
-
 @dynamic lz;
-
-
 
 - (double)lzValue {
 	NSNumber *result = [self lz];
@@ -146,13 +173,7 @@
 	[self setPrimitiveLz:[NSNumber numberWithDouble:value_]];
 }
 
-
-
-
-
 @dynamic rx;
-
-
 
 - (double)rxValue {
 	NSNumber *result = [self rx];
@@ -172,13 +193,7 @@
 	[self setPrimitiveRx:[NSNumber numberWithDouble:value_]];
 }
 
-
-
-
-
 @dynamic ry;
-
-
 
 - (double)ryValue {
 	NSNumber *result = [self ry];
@@ -198,13 +213,7 @@
 	[self setPrimitiveRy:[NSNumber numberWithDouble:value_]];
 }
 
-
-
-
-
 @dynamic rz;
-
-
 
 - (double)rzValue {
 	NSNumber *result = [self rz];
@@ -224,13 +233,7 @@
 	[self setPrimitiveRz:[NSNumber numberWithDouble:value_]];
 }
 
-
-
-
-
 @dynamic sx;
-
-
 
 - (double)sxValue {
 	NSNumber *result = [self sx];
@@ -250,13 +253,7 @@
 	[self setPrimitiveSx:[NSNumber numberWithDouble:value_]];
 }
 
-
-
-
-
 @dynamic sy;
-
-
 
 - (double)syValue {
 	NSNumber *result = [self sy];
@@ -276,13 +273,7 @@
 	[self setPrimitiveSy:[NSNumber numberWithDouble:value_]];
 }
 
-
-
-
-
 @dynamic sz;
-
-
 
 - (double)szValue {
 	NSNumber *result = [self sz];
@@ -303,19 +294,9 @@
 }
 
 
-
-
-
 @dynamic prop;
 
-	
-
 @dynamic protypeMesh;
-
-	
-
-
-
 
 
 @end

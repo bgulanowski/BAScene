@@ -1,29 +1,74 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
+// This template requires Bored Astronaut Core Data Additions (BAAdditions)
 // Make changes to <$managedObjectClassName$>.m instead.
 
-#import <<$frameworkName$>/_<$managedObjectClassName$>.h>
+#import "_<$managedObjectClassName$>.h"
+
+
+@implementation NSManagedObjectContext (<$managedObjectClassName$>Conveniences)
+
+- (<$managedObjectClassName$> *)find<$managedObjectClassName$>WithID:(<$managedObjectClassName$>ID *)objectID {
+    return (<$managedObjectClassName$> *)[self objectWithID:objectID];
+}
+
+- (<$managedObjectClassName$> *)insert<$managedObjectClassName$> {
+	<$if hasUUID$>_<$managedObjectClassName$> *new = [NSEntityDescription insertNewObjectForEntityForName:@"<$name$>" inManagedObjectContext:self];
+    [new setValue:[BAUUID UUID] forKey:@"uuid"];
+    return (<$managedObjectClassName$> *)new;<$else$>return [NSEntityDescription insertNewObjectForEntityForName:@"<$name$>" inManagedObjectContext:self];<$endif$>
+}
+
+- (NSUInteger)countOf<$name$>ObjectsWithPredicate:(NSPredicate *)predicate {
+    
+    __strong static NSFetchRequest *fetch;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        fetch = [NSFetchRequest fetchRequestWithEntityName:@"<$name$>"];
+    });
+    
+    fetch.predicate = predicate;
+    
+    NSError *error = nil;
+    NSUInteger result = [self countForFetchRequest:fetch error:&error];
+    
+    if(result == NSNotFound) {
+        NSLog(@"Count of <$name$> objects failed; error: %@", error);
+        return 0;
+    }
+    
+    return result;
+}
+
+- (NSUInteger)countOf<$name$>ObjectsWithValue:(id)value forKey:(NSString *)key {
+    return [self countOf<$name$>ObjectsWithPredicate:[NSPredicate predicateWithFormat:@"%K = %@", key, value]];
+}
+
+- (NSUInteger)countOf<$name$>Objects {
+    return [self countOf<$name$>ObjectsWithPredicate:nil];
+}
+
+@end
 
 @implementation <$managedObjectClassName$>ID
 @end
 
 @implementation _<$managedObjectClassName$>
 
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
++ (id)insertInManagedObjectContext:(NSManagedObjectContext *)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription insertNewObjectForEntityForName:@"<$name$>" inManagedObjectContext:moc_];
 }
 
-+ (NSString*)entityName {
++ (NSString *)entityName {
 	return @"<$name$>";
 }
 
-+ (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_ {
++ (NSEntityDescription *)entityInManagedObjectContext:(NSManagedObjectContext *)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription entityForName:@"<$name$>" inManagedObjectContext:moc_];
 }
 
-- (<$managedObjectClassName$>ID*)objectID {
-	return (<$managedObjectClassName$>ID*)[super objectID];
+- (<$managedObjectClassName$>ID *)objectID {
+	return (<$managedObjectClassName$>ID *)[super objectID];
 }
 
 + (NSSet *)keyPathsForValuesAffectingValueForKey:(NSString *)key {
@@ -36,67 +81,65 @@
 
 	return keyPaths;
 }
+<$foreach Attribute noninheritedAttributes do$><$if Attribute.hasDefinedAttributeType$>
 
-<$foreach Attribute noninheritedAttributes do$>
-<$if Attribute.hasDefinedAttributeType$>
-
-@dynamic <$Attribute.name$>;
-
-<$if Attribute.hasScalarAttributeType$>
+@dynamic <$Attribute.name$>;<$if Attribute.hasScalarAttributeType$>
 
 - (<$Attribute.scalarAttributeType$>)<$Attribute.name$>Value {
 	NSNumber *result = [self <$Attribute.name$>];
-	return [result <$Attribute.scalarAttributeType.camelCaseString$>Value];
+	return [result <$Attribute.scalarAccessorMethodName$>];
 }
 
 - (void)set<$Attribute.name.initialCapitalString$>Value:(<$Attribute.scalarAttributeType$>)value_ {
-	[self set<$Attribute.name.initialCapitalString$>:[NSNumber numberWith<$Attribute.scalarAttributeType.camelCaseString.initialCapitalString$>:value_]];
+	[self set<$Attribute.name.initialCapitalString$>:[NSNumber <$Attribute.scalarFactoryMethodName$>value_]];
 }
 
 - (<$Attribute.scalarAttributeType$>)primitive<$Attribute.name.initialCapitalString$>Value {
 	NSNumber *result = [self primitive<$Attribute.name.initialCapitalString$>];
-	return [result <$Attribute.scalarAttributeType.camelCaseString$>Value];
+	return [result <$Attribute.scalarAccessorMethodName$>];
 }
 
 - (void)setPrimitive<$Attribute.name.initialCapitalString$>Value:(<$Attribute.scalarAttributeType$>)value_ {
-	[self setPrimitive<$Attribute.name.initialCapitalString$>:[NSNumber numberWith<$Attribute.scalarAttributeType.camelCaseString.initialCapitalString$>:value_]];
-}
-<$endif$>
-<$endif$>
-<$endforeach do$>
+	[self setPrimitive<$Attribute.name.initialCapitalString$>:[NSNumber <$Attribute.scalarFactoryMethodName$>value_]];
+}<$endif$><$if Attribute.isFetchKey$>
 
+- (<$Attribute.fetchClassName$> *)<$Attribute.fetchName$> {
+    if(self.<$Attribute.name$> != nil)
+        return [self.managedObjectContext objectForEntityNamed:@"<$Attribute.fetchEntityName$>" matchingValue:self.<$Attribute.name$> forKey:@"uuid"];
+    else
+        return nil;
+}<$endif$><$endif$><$endforeach do$>
 <$foreach Relationship noninheritedRelationships do$>
-@dynamic <$Relationship.name$>;
 
-	<$if Relationship.isToMany$>
-- (NSMutableSet*)<$Relationship.name$>Set {
+@dynamic <$Relationship.name$>;<$if Relationship.isToMany$>
+
+- (<$Relationship.mutableCollectionClassName$> *)<$Relationship.name$>Set {
 	[self willAccessValueForKey:@"<$Relationship.name$>"];
-	NSMutableSet *result = [self mutableSetValueForKey:@"<$Relationship.name$>"];
+  <$if Relationship.jr_isOrdered$>
+	<$Relationship.mutableCollectionClassName$> *result = (<$Relationship.mutableCollectionClassName$> *)[self mutableOrderedSetValueForKey:@"<$Relationship.name$>"];
+  <$else$>
+	<$Relationship.mutableCollectionClassName$> *result = (<$Relationship.mutableCollectionClassName$> *)[self mutableSetValueForKey:@"<$Relationship.name$>"];
+  <$endif$>
 	[self didAccessValueForKey:@"<$Relationship.name$>"];
 	return result;
-}
-	<$endif$>
-<$endforeach do$>
+}<$endif$><$endforeach do$><$foreach FetchedProperty noninheritedFetchedProperties do$>
 
-<$foreach FetchedProperty noninheritedFetchedProperties do$>
-@dynamic <$FetchedProperty.name$>;
-<$endforeach do$>
+@dynamic <$FetchedProperty.name$>;<$if FetchedProperty.isSingular$>
+- (<$FetchedProperty.fetchRequest.entity.managedObjectClassName$> *)<$FetchedProperty.singularForm$> {
+    return [self.<$FetchedProperty.name$> lastObject];
+}<$endif$><$endforeach do$>
+<$foreach FetchRequest prettyFetchRequests do$><$if FetchRequest.singleResult$>
 
-<$foreach FetchRequest prettyFetchRequests do$>
-<$if FetchRequest.singleResult$>
-+ (id)fetch<$FetchRequest.name.initialCapitalString$>:(NSManagedObjectContext*)moc_ <$foreach Binding FetchRequest.bindings do2$><$Binding.name$>:(<$Binding.type$>)<$Binding.name$>_ <$endforeach do2$>{
++ (id)fetch<$FetchRequest.name.initialCapitalString$>:(NSManagedObjectContext *)moc_ <$foreach Binding FetchRequest.bindings do2$><$Binding.name$>:(<$Binding.type$>)<$Binding.name$>_ <$endforeach do2$>{
 	NSError *error = nil;
 	id result = [self fetch<$FetchRequest.name.initialCapitalString$>:moc_ <$foreach Binding FetchRequest.bindings do2$><$Binding.name$>:<$Binding.name$>_ <$endforeach do2$>error:&error];
 	if (error) {
-#if TARGET_OS_IPHONE
 		NSLog(@"error: %@", error);
-#else
-		[NSApp presentError:error];
-#endif
 	}
 	return result;
 }
-+ (id)fetch<$FetchRequest.name.initialCapitalString$>:(NSManagedObjectContext*)moc_ <$foreach Binding FetchRequest.bindings do2$><$Binding.name$>:(<$Binding.type$>)<$Binding.name$>_ <$endforeach do2$>error:(NSError**)error_ {
+
++ (id)fetch<$FetchRequest.name.initialCapitalString$>:(NSManagedObjectContext *)moc_ <$foreach Binding FetchRequest.bindings do2$><$Binding.name$>:(<$Binding.type$>)<$Binding.name$>_ <$endforeach do2$>error:(NSError **)error_ {
 	NSParameterAssert(moc_);
 	NSError *error = nil;
 	
@@ -120,14 +163,14 @@
 	if (!error) {
 		switch ([results count]) {
 			case 0:
-				//	Nothing found matching the fetch request. That's cool, though: we'll just return nil.
+				result = nil;
 				break;
 			case 1:
 				result = [results objectAtIndex:0];
 				break;
 			default:
 				NSLog(@"WARN fetch request <$FetchRequest.name$>: 0 or 1 objects expected, %u found (substitutionVariables:%@, results:%@)",
-					[results count],
+					(unsigned)[results count],
 					substitutionVariables,
 					results);
 		}
@@ -135,21 +178,18 @@
 	
 	if (error_) *error_ = error;
 	return result;
-}
-<$else$>
-+ (NSArray*)fetch<$FetchRequest.name.initialCapitalString$>:(NSManagedObjectContext*)moc_ <$foreach Binding FetchRequest.bindings do2$><$Binding.name$>:(<$Binding.type$>)<$Binding.name$>_ <$endforeach do2$>{
+}<$else$>
+
++ (NSArray *)fetch<$FetchRequest.name.initialCapitalString$>:(NSManagedObjectContext *)moc_ sortDescriptors:(NSArray *)sortDescriptors <$foreach Binding FetchRequest.bindings do2$><$Binding.name$>:(<$Binding.type$>)<$Binding.name$>_ <$endforeach do2$>{
 	NSError *error = nil;
-	NSArray *result = [self fetch<$FetchRequest.name.initialCapitalString$>:moc_ <$foreach Binding FetchRequest.bindings do2$><$Binding.name$>:<$Binding.name$>_ <$endforeach do2$>error:&error];
-	if (error) {
-#if TARGET_OS_IPHONE
+	NSArray *result = [self fetch<$FetchRequest.name.initialCapitalString$>:moc_ sortDescriptors:sortDescriptors <$foreach Binding FetchRequest.bindings do2$><$Binding.name$>:<$Binding.name$>_ <$endforeach do2$>error:&error];
+	if (error)
 		NSLog(@"error: %@", error);
-#else
-		[NSApp presentError:error];
-#endif
-	}
+
 	return result;
 }
-+ (NSArray*)fetch<$FetchRequest.name.initialCapitalString$>:(NSManagedObjectContext*)moc_ <$foreach Binding FetchRequest.bindings do2$><$Binding.name$>:(<$Binding.type$>)<$Binding.name$>_ <$endforeach do2$>error:(NSError**)error_ {
+
++ (NSArray *)fetch<$FetchRequest.name.initialCapitalString$>:(NSManagedObjectContext *)moc_ sortDescriptors:(NSArray *)sortDescriptors <$foreach Binding FetchRequest.bindings do2$><$Binding.name$>:(<$Binding.type$>)<$Binding.name$>_ <$endforeach do2$>error:(NSError **)error_ {
 	NSParameterAssert(moc_);
 	NSError *error = nil;
 	
@@ -166,11 +206,12 @@
 	NSFetchRequest *fetchRequest = [model fetchRequestFromTemplateWithName:@"<$FetchRequest.name$>"
 													 substitutionVariables:substitutionVariables];
 	NSAssert(fetchRequest, @"Can't find fetch request named \"<$FetchRequest.name$>\".");
-	
+
+    [fetchRequest setSortDescriptors:sortDescriptors];
+
 	NSArray *result = [moc_ executeFetchRequest:fetchRequest error:&error];
 	if (error_) *error_ = error;
 	return result;
-}
-<$endif$>
-<$endforeach do$>
+}<$endif$><$endforeach do$>
+
 @end

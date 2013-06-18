@@ -1,29 +1,72 @@
 // DO NOT EDIT. This file is machine-generated and constantly overwritten.
+// This template requires Bored Astronaut Core Data Additions (BAAdditions)
 // Make changes to BAMesh.m instead.
 
 #import "_BAMesh.h"
+
+
+@implementation NSManagedObjectContext (BAMeshConveniences)
+
+- (BAMesh *)findBAMeshWithID:(BAMeshID *)objectID {
+    return (BAMesh *)[self objectWithID:objectID];
+}
+
+- (BAMesh *)insertBAMesh {
+	return [NSEntityDescription insertNewObjectForEntityForName:@"Mesh" inManagedObjectContext:self];
+}
+
+- (NSUInteger)countOfMeshObjectsWithPredicate:(NSPredicate *)predicate {
+    
+    __strong static NSFetchRequest *fetch;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        fetch = [NSFetchRequest fetchRequestWithEntityName:@"Mesh"];
+    });
+    
+    fetch.predicate = predicate;
+    
+    NSError *error = nil;
+    NSUInteger result = [self countForFetchRequest:fetch error:&error];
+    
+    if(result == NSNotFound) {
+        NSLog(@"Count of Mesh objects failed; error: %@", error);
+        return 0;
+    }
+    
+    return result;
+}
+
+- (NSUInteger)countOfMeshObjectsWithValue:(id)value forKey:(NSString *)key {
+    return [self countOfMeshObjectsWithPredicate:[NSPredicate predicateWithFormat:@"%K = %@", key, value]];
+}
+
+- (NSUInteger)countOfMeshObjects {
+    return [self countOfMeshObjectsWithPredicate:nil];
+}
+
+@end
 
 @implementation BAMeshID
 @end
 
 @implementation _BAMesh
 
-+ (id)insertInManagedObjectContext:(NSManagedObjectContext*)moc_ {
++ (id)insertInManagedObjectContext:(NSManagedObjectContext *)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription insertNewObjectForEntityForName:@"Mesh" inManagedObjectContext:moc_];
 }
 
-+ (NSString*)entityName {
++ (NSString *)entityName {
 	return @"Mesh";
 }
 
-+ (NSEntityDescription*)entityInManagedObjectContext:(NSManagedObjectContext*)moc_ {
++ (NSEntityDescription *)entityInManagedObjectContext:(NSManagedObjectContext *)moc_ {
 	NSParameterAssert(moc_);
 	return [NSEntityDescription entityForName:@"Mesh" inManagedObjectContext:moc_];
 }
 
-- (BAMeshID*)objectID {
-	return (BAMeshID*)[super objectID];
+- (BAMeshID *)objectID {
+	return (BAMeshID *)[super objectID];
 }
 
 + (NSSet *)keyPathsForValuesAffectingValueForKey:(NSString *)key {
@@ -58,11 +101,7 @@
 }
 
 
-
-
 @dynamic dirty;
-
-
 
 - (BOOL)dirtyValue {
 	NSNumber *result = [self dirty];
@@ -82,13 +121,7 @@
 	[self setPrimitiveDirty:[NSNumber numberWithBool:value_]];
 }
 
-
-
-
-
 @dynamic hasNormals;
-
-
 
 - (BOOL)hasNormalsValue {
 	NSNumber *result = [self hasNormals];
@@ -108,13 +141,7 @@
 	[self setPrimitiveHasNormals:[NSNumber numberWithBool:value_]];
 }
 
-
-
-
-
 @dynamic hasTexture;
-
-
 
 - (BOOL)hasTextureValue {
 	NSNumber *result = [self hasTexture];
@@ -134,46 +161,29 @@
 	[self setPrimitiveHasTexture:[NSNumber numberWithBool:value_]];
 }
 
-
-
-
-
 @dynamic level;
 
-
-
-- (short)levelValue {
+- (int16_t)levelValue {
 	NSNumber *result = [self level];
 	return [result shortValue];
 }
 
-- (void)setLevelValue:(short)value_ {
+- (void)setLevelValue:(int16_t)value_ {
 	[self setLevel:[NSNumber numberWithShort:value_]];
 }
 
-- (short)primitiveLevelValue {
+- (int16_t)primitiveLevelValue {
 	NSNumber *result = [self primitiveLevel];
 	return [result shortValue];
 }
 
-- (void)setPrimitiveLevelValue:(short)value_ {
+- (void)setPrimitiveLevelValue:(int16_t)value_ {
 	[self setPrimitiveLevel:[NSNumber numberWithShort:value_]];
 }
 
-
-
-
-
 @dynamic name;
 
-
-
-
-
-
 @dynamic sharedNormals;
-
-
 
 - (BOOL)sharedNormalsValue {
 	NSNumber *result = [self sharedNormals];
@@ -193,71 +203,59 @@
 	[self setPrimitiveSharedNormals:[NSNumber numberWithBool:value_]];
 }
 
-
-
-
-
 @dynamic type;
 
-
-
-- (short)typeValue {
+- (int16_t)typeValue {
 	NSNumber *result = [self type];
 	return [result shortValue];
 }
 
-- (void)setTypeValue:(short)value_ {
+- (void)setTypeValue:(int16_t)value_ {
 	[self setType:[NSNumber numberWithShort:value_]];
 }
 
-- (short)primitiveTypeValue {
+- (int16_t)primitiveTypeValue {
 	NSNumber *result = [self primitiveType];
 	return [result shortValue];
 }
 
-- (void)setPrimitiveTypeValue:(short)value_ {
+- (void)setPrimitiveTypeValue:(int16_t)value_ {
 	[self setPrimitiveType:[NSNumber numberWithShort:value_]];
 }
 
 
-
-
-
 @dynamic polygons;
 
-	
-- (NSMutableSet*)polygonsSet {
+- (NSMutableSet *)polygonsSet {
 	[self willAccessValueForKey:@"polygons"];
-	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"polygons"];
+  
+	NSMutableSet *result = (NSMutableSet *)[self mutableSetValueForKey:@"polygons"];
+  
 	[self didAccessValueForKey:@"polygons"];
 	return result;
 }
-	
 
 @dynamic prototypeMeshes;
 
-	
-- (NSMutableSet*)prototypeMeshesSet {
+- (NSMutableSet *)prototypeMeshesSet {
 	[self willAccessValueForKey:@"prototypeMeshes"];
-	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"prototypeMeshes"];
+  
+	NSMutableSet *result = (NSMutableSet *)[self mutableSetValueForKey:@"prototypeMeshes"];
+  
 	[self didAccessValueForKey:@"prototypeMeshes"];
 	return result;
 }
-	
 
 @dynamic resources;
 
-	
-- (NSMutableSet*)resourcesSet {
+- (NSMutableSet *)resourcesSet {
 	[self willAccessValueForKey:@"resources"];
-	NSMutableSet *result = (NSMutableSet*)[self mutableSetValueForKey:@"resources"];
+  
+	NSMutableSet *result = (NSMutableSet *)[self mutableSetValueForKey:@"resources"];
+  
 	[self didAccessValueForKey:@"resources"];
 	return result;
 }
-	
-
-
-
 
 
 @end
