@@ -19,6 +19,7 @@
 @end
 
 
+@class BAPartition;
 @class BAStage;
 @class BATuple;
 
@@ -56,6 +57,7 @@
 
 
 // Fetched Properties
+@property (nonatomic, readonly) NSArray *children;
 
 // Fetch Requests
 

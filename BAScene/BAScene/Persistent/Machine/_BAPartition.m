@@ -130,5 +130,7 @@
 
 @dynamic stage;
 
+@dynamic children;
+
 
 @end
