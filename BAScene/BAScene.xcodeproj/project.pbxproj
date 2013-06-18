@@ -460,6 +460,10 @@
 		84A591B51769009200C7F7B6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		84A591B81769011100C7F7B6 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		84A591BA1769017F00C7F7B6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		84F8BCB71770B7F100F6643D /* human.h.motemplate */ = {isa = PBXFileReference; lastKnownFileType = text; path = human.h.motemplate; sourceTree = "<group>"; };
+		84F8BCB81770B7F100F6643D /* human.m.motemplate */ = {isa = PBXFileReference; lastKnownFileType = text; path = human.m.motemplate; sourceTree = "<group>"; };
+		84F8BCB91770B7F100F6643D /* machine.h.motemplate */ = {isa = PBXFileReference; lastKnownFileType = text; path = machine.h.motemplate; sourceTree = "<group>"; };
+		84F8BCBA1770B7F100F6643D /* machine.m.motemplate */ = {isa = PBXFileReference; lastKnownFileType = text; path = machine.m.motemplate; sourceTree = "<group>"; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* BAScene.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BAScene.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B67411920FAF5E2C001E3C0D /* BAScene.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = BAScene.xcdatamodel; sourceTree = "<group>"; };
@@ -760,6 +764,18 @@
 			name = "Other files";
 			sourceTree = "<group>";
 		};
+		84F8BCB61770B7F100F6643D /* mogenerator templates */ = {
+			isa = PBXGroup;
+			children = (
+				84F8BCB71770B7F100F6643D /* human.h.motemplate */,
+				84F8BCB81770B7F100F6643D /* human.m.motemplate */,
+				84F8BCB91770B7F100F6643D /* machine.h.motemplate */,
+				84F8BCBA1770B7F100F6643D /* machine.m.motemplate */,
+			);
+			name = "mogenerator templates";
+			path = "../../../mogenerator templates";
+			sourceTree = "<group>";
+		};
 		B67411C10FAF62D7001E3C0D /* BASceneTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -790,6 +806,7 @@
 			isa = PBXGroup;
 			children = (
 				B67411920FAF5E2C001E3C0D /* BAScene.xcdatamodel */,
+				84F8BCB61770B7F100F6643D /* mogenerator templates */,
 				4E834D9211691D5B00306C0A /* Machine */,
 				4E823ABC11711FC70002DC98 /* Human */,
 			);
