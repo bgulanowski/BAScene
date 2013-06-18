@@ -49,7 +49,6 @@
 
 @interface NSManagedObjectContext (BAPolygonCreating)
 
-- (BAPolygon *)polygon;
 - (BAPolygon *)polygonWithPoints:(NSSet *)indices;
 - (NSSet *)polygonsWithSize:(NSUInteger)size vertices:(NSArray *)vertices texCoords:(NSArray *)texCoords indices:(NSUInteger *)indices tcIndices:(NSUInteger *)tcIndices count:(NSUInteger)count;
 - (NSSet *)polygonsWithSize:(NSUInteger)size vertices:(NSArray *)vertices indices:(NSUInteger *)indices count:(NSUInteger)count;

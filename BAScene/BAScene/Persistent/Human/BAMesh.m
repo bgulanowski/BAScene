@@ -623,11 +623,12 @@ static inline NSUInteger copyNormalData(BATuple *vertex, BATuple *normal, GLfloa
 
 - (BAMesh *)meshWithName:(NSString *)aName {
     
-    BAMesh *mesh = [self findMeshWithName:aName];
+    BAMesh *mesh = [aName length] ? [self findMeshWithName:aName] : nil;
     
     if(!mesh) {
-        mesh = [BAMesh insertInManagedObjectContext:self];
+        mesh = [self insertBAMesh];
 		mesh.typeValue = GL_TRIANGLES;
+        mesh.name = aName;
     }
 
 	return mesh;

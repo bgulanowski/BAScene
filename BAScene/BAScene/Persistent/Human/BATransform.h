@@ -49,7 +49,6 @@
 
 @interface NSManagedObjectContext (BATransformCreating)
 
-- (BATransform *)transform;
 // The following 2 methods do not work as desired -- requires decomposing the matrix into separate translation, rotation and scale elements
 - (BATransform *)transformWithMatrix4x4f:(BAMatrix4x4f)matrix;
 - (BATransform *)transformWithMatrixData:(NSData *)matrixData;

@@ -74,7 +74,7 @@
 	BAStage *stage = [self objectForEntityNamed:[BAStage entityName] matchingPredicate:nil];
 	
 	if(nil == stage)
-		stage = (BAStage *)[BAStage insertInManagedObjectContext:self];
+		stage = [self insertBAStage];
 	
 	return stage;
 }

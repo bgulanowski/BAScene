@@ -83,10 +83,12 @@
 
 - (BAPrototype *)prototypeWithName:(NSString *)aName {
     
-    BAPrototype *proto = [self findPrototypeWithName:aName];
+    BAPrototype *proto = [aName length] ? [self findPrototypeWithName:aName] : nil;
     
-    if(!proto)
-        proto = [BAPrototype insertInManagedObjectContext:self];
+    if(!proto) {
+        proto = [self insertBAPrototype];
+        proto.name = aName;
+    }
     
     return proto;
 }

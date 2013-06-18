@@ -70,7 +70,7 @@
 
 - (BATuple *)tupleWithPoint:(BAPointf)point {
 	
-	BATuple *tuple = (BATuple *)[BATuple insertInManagedObjectContext:self];
+	BATuple *tuple = [self insertBATuple];
 	
 	[tuple takeValuesFromPoint:point];
 	
@@ -79,7 +79,7 @@
 
 - (BATuple *)tupleWithPoint4f:(BAPoint4f)point {
 	
-	BATuple *tuple = (BATuple *)[BATuple insertInManagedObjectContext:self];
+	BATuple *tuple = [self insertBATuple];
 	
 	[tuple takeValuesFromPoint4f:point];
 	

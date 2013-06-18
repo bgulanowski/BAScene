@@ -120,7 +120,7 @@
 
 - (BAColor *)colorWithRed:(GLfloat)red green:(GLfloat)green blue:(GLfloat)blue alpha:(GLfloat)alpha {
     
-    BAColor *color = [BAColor insertInManagedObjectContext:self];
+    BAColor *color = [self insertBAColor];
     
 	color.rValue = red;
 	color.gValue = green;

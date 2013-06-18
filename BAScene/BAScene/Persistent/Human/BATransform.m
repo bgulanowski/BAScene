@@ -61,7 +61,7 @@ static GLfloat BA_IDENTITY_MATRIX[16] = {
 #pragma mark Factories
 + (BATransform *)transform {
     BAAssertActiveContext();
-	return [BAActiveContext transform];
+	return [BAActiveContext insertBATransform];
 }
 
 + (BATransform *)transformWithMatrix4x4f:(BAMatrix4x4f)matrix {
@@ -202,12 +202,8 @@ static GLfloat BA_IDENTITY_MATRIX[16] = {
 
 @implementation NSManagedObjectContext (BATransformCreating)
 
-- (BATransform *)transform {
-	return (BATransform *)[BATransform insertInManagedObjectContext:self];
-}
-
 - (BATransform *)transformWithMatrix4x4f:(BAMatrix4x4f)matrix {
-	BATransform *xform = [self transform];
+	BATransform *xform = [self insertBATransform];
 	xform.transform = matrix;
 	return xform;
 }
@@ -218,7 +214,7 @@ static GLfloat BA_IDENTITY_MATRIX[16] = {
 
 - (BATransform *)translationWithX:(double)x y:(double)y z:(double)z {
 	
-	BATransform *xform = [self transform];
+	BATransform *xform = [self insertBATransform];
 	
 	xform.lxValue = x, xform.lyValue = y, xform.lzValue = z;
 	xform.dirty = YES;
@@ -232,7 +228,7 @@ static GLfloat BA_IDENTITY_MATRIX[16] = {
 
 - (BATransform *)rotationWithX:(double)x y:(double)y z:(double)z {
 	
-	BATransform *xform = [self transform];
+	BATransform *xform = [self insertBATransform];
 	
 	xform.rxValue = x, xform.ryValue = y, xform.rzValue = z;
 	xform.dirty = YES;
@@ -242,7 +238,7 @@ static GLfloat BA_IDENTITY_MATRIX[16] = {
 
 - (BATransform *)scaleWithX:(double)x y:(double)y z:(double)z {
 	
-	BATransform *xform = [self transform];
+	BATransform *xform = [self insertBATransform];
 	
 	xform.sxValue = x, xform.syValue = y, xform.szValue = z;
 	xform.dirty = YES;

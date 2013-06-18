@@ -44,7 +44,7 @@
 
 - (BASceneResource *)resourceWithType:(int)aType data:(NSData *)sourceData {
 	
-	BASceneResource *res = (BASceneResource *)[BASceneResource insertInManagedObjectContext:self];
+	BASceneResource *res = [self insertBASceneResource];
 	
 	res.data = sourceData;
 	res.typeValue = aType;

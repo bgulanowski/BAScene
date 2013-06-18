@@ -206,7 +206,7 @@
 
 - (BAPropGroup *)groupWithSuperGroup:(BAPropGroup *)aSupergroup {
     
-	BAPropGroup *group = (BAPropGroup *)[BAPropGroup insertInManagedObjectContext:self];
+	BAPropGroup *group = [self insertBAPropGroup];
 	
 	group.supergroup = aSupergroup;
 	

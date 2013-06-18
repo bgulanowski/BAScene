@@ -122,7 +122,7 @@ static NSString *kBARootPartitionName = @"BAScene:RootPartition";
 
 - (BAPartition *)partitionWithDimension:(GLfloat)dim location:(BALocationf)loc parent:(BAPartition *)parent {
     
-	BAPartition *partition = (BAPartition *)[BAPartition insertInManagedObjectContext:self];
+	BAPartition *partition = [self insertBAPartition];
 	
 	double d_2 = dim * 0.5f;
 	

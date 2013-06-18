@@ -101,6 +101,7 @@
     [self startUpdates:^BOOL(BAScene *scene, NSTimeInterval interval) {
         for (BACamera *camera in self.activeCameras)
             [camera update:interval];
+        [self.context.stage update:interval];
         return [scene update:interval];
     }];
 }

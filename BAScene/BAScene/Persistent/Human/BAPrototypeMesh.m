@@ -52,7 +52,6 @@
 	
 	NSMutableSet *results = [NSMutableSet setWithCapacity:[self.mesh.polygons count]];
 	
-	
 	for(BAPolygon *poly in self.mesh.polygons)
 		[results addObject:[poly transformedPolygon:self.transform]];
 	
@@ -73,8 +72,8 @@
 @implementation NSManagedObjectContext (BAPrototypeMeshCreating)
 
 - (BAPrototypeMesh *)prototypeMesh {
-    BAPrototypeMesh *pm = (BAPrototypeMesh *)[BAPrototypeMesh insertInManagedObjectContext:self];
-	pm.transform = [self transform];
+    BAPrototypeMesh *pm = [self insertBAPrototypeMesh];
+	pm.transform = [self insertBATransform];
 	return pm;
 }
 

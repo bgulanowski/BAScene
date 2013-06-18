@@ -174,11 +174,12 @@ static NSTimeInterval gInterval = 0;
 
 - (BAProp *)propWithName:(NSString *)aName {
     
-    BAProp *prop = [self findPropWithName:aName];
+    BAProp *prop = [aName length] ? [self findPropWithName:aName] : nil;
 
 	if(!prop) {
-        prop = [BAProp insertInManagedObjectContext:self];
-        prop.transform = [self transform];
+        prop = [self insertBAProp];
+        prop.transform = [self insertBATransform];
+        prop.name = aName;
     }
 	
 	return prop;
@@ -186,20 +187,17 @@ static NSTimeInterval gInterval = 0;
 
 - (BAProp *)propWithName:(NSString *)aName prototype:(BAPrototype *)proto transform:(BATransform *)xform {
 	
-	BOOL create = YES;
-	BAProp *prop = [self propWithName:aName];
+	BAProp *prop = [self insertBAProp];
 	
-	if(create) {
-        prop.name = aName;
-		prop.prototype = proto;
-		prop.transform = xform;
-	}
+    prop.name = aName;
+    prop.prototype = proto;
+    prop.transform = xform;
 	
 	return prop;
 }
 
 - (BAProp *)propWithName:(NSString *)aName prototype:(BAPrototype *)proto {
-	return [self propWithName:aName prototype:proto transform:[self transform]];
+	return [self propWithName:aName prototype:proto transform:[self insertBATransform]];
 }
 
 - (BAProp *)propWithName:(NSString *)aName byMergingProps:(NSSet *)props {

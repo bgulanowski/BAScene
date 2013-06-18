@@ -66,7 +66,7 @@
 
 - (BAPoint *)pointWithVertex:(BATuple *)vert texCoord:(BATuple *)texC index:(UInt16)newIndex {
 	
-	BAPoint *point = (BAPoint *)[BAPoint insertInManagedObjectContext:self];
+	BAPoint *point = [self insertBAPoint];
 	
 	point.indexValue = newIndex;
 	point.vertex = vert;

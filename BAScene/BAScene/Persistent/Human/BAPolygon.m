@@ -45,7 +45,7 @@ NSArray *vertexSort;
 - (id)mutableCopyWithZone:(NSZone *)zone {
 	
 	NSMutableSet *newPoints = [NSMutableSet setWithCapacity:[self.points count]];
-	BAPolygon *polygon = [[self managedObjectContext] polygon];
+	BAPolygon *polygon = [[self managedObjectContext] insertBAPolygon];
 
 	for(BAPoint *point in self.points)
 		[newPoints addObject:[[point mutableCopyWithZone:zone] autorelease]];
@@ -62,7 +62,7 @@ NSArray *vertexSort;
 #pragma mark - Factories (DEPRECATED)
 + (BAPolygon *)polygon {
     BAAssertActiveContext();
-    return [BAActiveContext polygon];
+    return [BAActiveContext insertBAPolygon];
 }
 
 + (BAPolygon *)polygonWithPoints:(NSSet *)points {
@@ -195,13 +195,9 @@ NSArray *vertexSort;
 
 @implementation NSManagedObjectContext (BAPolygonCreating)
 
-- (BAPolygon *)polygon {
-	return (BAPolygon *)[BAPolygon insertInManagedObjectContext:self];
-}
-
 - (BAPolygon *)polygonWithPoints:(NSSet *)points {
 	
-	BAPolygon *poly = [self polygon];
+	BAPolygon *poly = [self insertBAPolygon];
 	
 	[poly setPoints:points];
 	[poly makeNormals];
@@ -227,7 +223,7 @@ NSArray *vertexSort;
 
 - (BAPolygon *)polygonWithTriangle:(BATriangle)tri {
 	
-	BAPolygon *poly = [self polygon];
+	BAPolygon *poly = [self insertBAPolygon];
 	
 	[poly addPointWithX:tri.a.x y:tri.a.y z:tri.a.z index:0];
 	[poly addPointWithX:tri.b.x y:tri.b.y z:tri.b.z index:1];
@@ -240,7 +236,7 @@ NSArray *vertexSort;
 
 - (BAPolygon *)polygonWithQuad:(BAQuad)quad {
 	
-	BAPolygon *poly = [self polygon];
+	BAPolygon *poly = [self insertBAPolygon];
 	
 	[poly addPointWithX:quad.a.x y:quad.a.y z:quad.a.z index:0];
 	[poly addPointWithX:quad.b.x y:quad.b.y z:quad.b.z index:1];
