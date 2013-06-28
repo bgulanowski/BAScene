@@ -13,6 +13,7 @@
 
 @implementation BAScene
 
+@synthesize activeCameras=_activeCameras;
 @synthesize lastUpdate=_lastUpdate;
 @synthesize updateQueue;
 
