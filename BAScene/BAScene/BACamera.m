@@ -95,6 +95,7 @@ void compareMatrices(BAMatrix4x4f a, BAMatrix4x4f b);
 	if(self) {
 		self.focus = BAMakePointf(0, 0, 0);
 		self.bgColor = BAMakeColorf(0, 0, 0.1f, 1.0f);
+		self.lightColor = BAMakeColorf(1.f, 1.f, 1.f, 1.f);
 		self.exposures = 1;
         matrix = (BAMatrix4x4f)BAIdentityMatrix4x4f;
         self.lightsOn = YES;
