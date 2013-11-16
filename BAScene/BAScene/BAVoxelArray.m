@@ -7,7 +7,7 @@
 //
 
 #import "BAVoxelArray.h"
-
+#import <BAFoundation/BANoise.h>
 
 @implementation BAVoxelArray
 
@@ -89,8 +89,9 @@
 	for(double z = minZ; z<maxZ; ++z) {
 		for(double y = minY; y<maxY; ++y) {
 			for(double x = minX; x<maxX; ++x) {
-				if([nm blendX:x*scale.s.w Y:y*scale.s.h Z:z*scale.s.d octaves:bits persistence:1.0/1.75f function:3]>0)
+				if ([nm evaluateX:x*scale.s.w Y:y*scale.s.h Z:z*scale.s.d]) {
 					[va setBit:i];
+				}
 				i++;
 			}
 		}

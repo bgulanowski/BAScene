@@ -8,9 +8,9 @@
 
 #import <BAFoundation/BABitArray.h>
 
-#import <BAFoundation/BANoiseMaker.h>
 #import <BAScene/BASceneTypes.h>
 
+@protocol BANoise;
 
 @interface BAVoxelArray : BABitArray<NSCopying> {
 
