@@ -13,11 +13,13 @@
 
 @implementation BAScene
 
+@synthesize stage=_stage;
 @synthesize activeCameras=_activeCameras;
 @synthesize lastUpdate=_lastUpdate;
 @synthesize updateQueue;
 
 #pragma mark - Accessors
+
 - (void)setUpdateQueue:(dispatch_queue_t)newQueue {
     if(updateQueue)
         dispatch_release(updateQueue);
@@ -50,6 +52,15 @@
     });
 }
 
+- (BAStage *)stage {
+	if (!_stage) {
+		@synchronized(self) {
+			if(!_stage)
+				_stage = self.context.stage;
+		}
+	}
+	return _stage;
+}
 
 #pragma mark - NSObject
 
@@ -62,6 +73,7 @@
 	self = [super init];
 	if(self) {
         self.model = [[self class] sceneModel];
+		self.stage = [self.context stage];
         _activeCameras = [[NSMutableSet alloc] init];
 	}
 	return self;
@@ -102,7 +114,7 @@
     [self startUpdates:^BOOL(BAScene *scene, NSTimeInterval interval) {
         for (BACamera *camera in self.activeCameras)
             [camera update:interval];
-        [self.context.stage update:interval];
+        [self.stage update:interval];
         return [scene update:interval];
     }];
 }
