@@ -30,11 +30,15 @@ static NSString *kBARootPartitionName = @"BAScene:RootPartition";
     [super dealloc];
 }
 
-- (void)awakeFromFetch {
-	double d = self.dimensionValue;
-	region.origin.p = [self.location point4f];
-	region.volume.s = BAMakeSizef(d, d, d);
+- (void)prepareTransientValues {
+	double d = self.dimensionValue, d_2 = d*0.5f;
+	BAPoint4f loc = [self.location point4f];
+	region = BAMakeRegionf(loc.x - d_2, loc.y - d_2, loc.z - d_2, d, d, d);
     self.userData = [NSMutableDictionary dictionary];
+}
+
+- (void)awakeFromFetch {
+	[self prepareTransientValues];
 }
 
 + (BAPartition *)partitionWithDimension:(GLfloat)dim location:(BALocationf)loc parent:(BAPartition *)parent {
@@ -124,12 +128,11 @@ static NSString *kBARootPartitionName = @"BAScene:RootPartition";
     
 	BAPartition *partition = [self insertBAPartition];
 	
-	double d_2 = dim * 0.5f;
-	
 	partition.supergroup = parent;
 	partition.dimensionValue = dim;
 	partition.location = [self tupleWithPoint4f:loc.p];
-	partition.region = BAMakeRegionf(loc.p.x - d_2, loc.p.y - d_2, loc.p.z - d_2, dim, dim, dim);
+	
+	[partition prepareTransientValues];
 	
 	return partition;
 }
@@ -139,7 +142,7 @@ static NSString *kBARootPartitionName = @"BAScene:RootPartition";
 	BAPartition *root = [BAActiveContext objectForEntityNamed:[BAPartition entityName] matchingValue:kBARootPartitionName forKey:@"name"];
 	
 	if(!root) {
-		root = [self partitionWithDimension:dim location:BAMakeLocationf(0, 0, 0, 1.0f) parent:nil];
+		root = [self partitionWithDimension:dim location:BAMakeLocationf(0.f, 0.f, 0.f, 1.0f) parent:nil];
         root.name = kBARootPartitionName;
     }
 	

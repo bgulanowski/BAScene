@@ -14,13 +14,7 @@
 
 @implementation BAStage
 
-#pragma mark NSManagedObject
-- (void)awakeFromInsert {
-	// do stuff when you're first created
-	self.partitionRoot = [self.managedObjectContext rootPartition];
-	
-//	NSManagedObject *light = [BALight insertObject];
-}
+#pragma mark - NSManagedObject
 
 - (void)addProp:(BAProp *)aProp {
 	[self.partitionRoot addProp:aProp];
@@ -39,10 +33,16 @@
 }
 
 
-#pragma mark New
+#pragma mark - New
 + (BAStage *)stage {
 	BAAssertActiveContext();
     return [BAActiveContext stage];
+}
+
+- (void)createPartionRoot {
+	if (!self.partitionRoot) {
+		self.partitionRoot = [self.managedObjectContext rootPartition];
+	}
 }
 
 
