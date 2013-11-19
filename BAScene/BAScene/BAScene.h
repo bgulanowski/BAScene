@@ -29,6 +29,7 @@
 
 
 @interface BAScene : BACoreDataManager {
+	BAStage *_stage;
     NSMutableSet *_activeCameras;
     NSTimeInterval _lastUpdate;
     dispatch_queue_t updateQueue;
