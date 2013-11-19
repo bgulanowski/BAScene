@@ -89,7 +89,7 @@
 	for(double z = minZ; z<maxZ; ++z) {
 		for(double y = minY; y<maxY; ++y) {
 			for(double x = minX; x<maxX; ++x) {
-				if ([nm evaluateX:x*scale.s.w Y:y*scale.s.h Z:z*scale.s.d]) {
+				if ([nm evaluateX:x*scale.s.w Y:y*scale.s.h Z:z*scale.s.d] > 0) {
 					[va setBit:i];
 				}
 				i++;
