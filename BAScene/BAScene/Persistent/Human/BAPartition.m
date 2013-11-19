@@ -147,7 +147,7 @@ static NSString *kBARootPartitionName = @"BAScene:RootPartition";
 }
 
 - (BAPartition *)rootPartition {
-	return [self rootPartitionWithDimension:(GLfloat)(1<<16)];
+	return [self rootPartitionWithDimension:(GLfloat)(1<<8)];
 }
 
 @end
