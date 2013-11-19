@@ -11,6 +11,8 @@
 
 #define BAActiveContext [NSManagedObjectContext activeContext]
 
+#define BAAssertActiveContext() NSAssert(BAActiveContext != nil, @"Active context must be set before invoking %@", NSStringFromSelector(_cmd))
+
 
 @interface NSManagedObjectContext (BAAdditions)
 

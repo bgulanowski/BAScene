@@ -29,6 +29,7 @@ extern NSString *kBADateTransformerName;
 @property (readonly) NSString *stringRepresentation;
 @property (readonly) NSString *listString;
 
++ (NSManagedObject *)insertObjectInManagedObjectContext:(NSManagedObjectContext *)context;
 + (NSManagedObject *)insertObject;
 
 + (NSString *)entityName;

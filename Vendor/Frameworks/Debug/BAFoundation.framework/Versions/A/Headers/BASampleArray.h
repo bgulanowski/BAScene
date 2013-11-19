@@ -8,13 +8,29 @@
 
 #import <Foundation/Foundation.h>
 
-@interface BASampleArray : NSObject {
+@protocol BASampleArray <NSObject>
+
+- (id)initWithPower:(NSUInteger)power order:(NSUInteger)order size:(NSUInteger)size;
+
+- (void)sample:(UInt8 *)sample atIndex:(NSUInteger)index;
+- (void)setSample:(UInt8 *)sample atIndex:(NSUInteger)index;
+- (void)sample:(UInt8 *)sample atCoordinates:(uint32_t *)coordinates;
+- (void)setSample:(UInt8 *)sample atCoordinates:(uint32_t *)coordinates;
+
+@optional
+- (void)readSamples:(UInt8 *)samples range:(NSRange)range;
+- (void)writeSamples:(UInt8 *)samples range:(NSRange)range;
+
+@end
+
+@interface BASampleArray : NSObject<NSCoding, NSCopying, BASampleArray> {
     
     UInt8 *_samples;
     
     NSUInteger _power; // the number of dimensions
     NSUInteger _order; // samples per dimension - the same in all dimensions
     NSUInteger _size;  // bytes per sample, starting at 1
+    NSUInteger _count;
 }
 
 // These are immutable
@@ -25,12 +41,7 @@
 @property (nonatomic, readonly) NSUInteger size;
 @property (nonatomic, readonly) NSUInteger count;
 
-- (id)initWithPower:(NSUInteger)power order:(NSUInteger)order size:(NSUInteger)size;
-
-- (void)sample:(UInt8 *)sample atIndex:(NSUInteger)index;
-- (void)setSample:(UInt8 *)sample atIndex:(NSUInteger)index;
-- (void)sample:(UInt8 *)sample atCoordinates:(NSUInteger *)coordinates;
-- (void)setSample:(UInt8 *)sample atCoordinates:(NSUInteger *)coordinates;
+- (BOOL)isEqualToSampleArray:(BASampleArray *)other;
 
 - (UInt32)pageSampleAtX:(NSUInteger)x y:(NSUInteger)y;
 - (void)setPageSample:(UInt32)sample atX:(NSUInteger)x y:(NSUInteger)y;

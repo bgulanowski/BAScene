@@ -6,17 +6,11 @@
 //  Copyright 2011 Bored Astronaut. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <BAFoundation/BANoise.h>
 
 
-@protocol BANoise <NSObject>
+// THIS CLASS IS OBSOLETE - use BANoise instead
 
-- (double)evaluateX:(double)x Y:(double)y Z:(double)z;
-- (double)blendX:(double)x Y:(double)y Z:(double)z octaves:(unsigned)octave_count persistence:(double)persistence function:(int)func;
-
-@end
-
-#define BA_NOISE_RANDOM_STATE_SIZE 32
 
 /*
  * By necessity, this class invokes srandom(), but random()
@@ -26,16 +20,20 @@
  * your state, if necessary.
  */
 @interface BANoiseMaker : NSObject<BANoise> {
-
-	int p[512];
-//    char randomState[BA_NOISE_RANDOM_STATE_SIZE]; // we'll need this if we adopt NSCoding
-    unsigned seed;
+    NSData *data;
+	int *p;
 }
 
-//@property (nonatomic) unsigned dimensions;
+
 
 - (id)init; // uses Perlin's permute
 - (id)initWithSeed:(unsigned)seed; // designated initializer; use 0 for Perlin's permute
+
+- (double)blendX:(double)x Y:(double)y Z:(double)z octaves:(unsigned)octave_count persistence:(double)persistence;
+
+- (double *)blendX:(double)x Y:(double)y Z:(double)z
+             width:(unsigned)w height:(unsigned)h depth:(unsigned)d
+         increment:(double)increment octaves:(unsigned)octave_count persistence:(double)persistence;
 
 // generates a new random seed by first seeding with the current time
 + (BANoiseMaker *)randomNoise;

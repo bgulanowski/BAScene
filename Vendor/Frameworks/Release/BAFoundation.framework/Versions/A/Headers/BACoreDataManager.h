@@ -15,7 +15,6 @@
 	NSManagedObjectContext *context;
     NSManagedObjectContext *editingContext;
 	
-    NSTimer *scheduledSaveTimer;
 	NSURL *storeURL;
     
     dispatch_once_t editorToken;
