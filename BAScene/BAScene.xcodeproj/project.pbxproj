@@ -457,6 +457,7 @@
 		4EFEDDE212CE30020083CCFC /* BASceneResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BASceneResource.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		4EFEDDED12CE36950083CCFC /* BAResourceStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAResourceStorage.h; sourceTree = "<group>"; };
 		4EFEDDEE12CE36950083CCFC /* BAResourceStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAResourceStorage.m; sourceTree = "<group>"; };
+		84357C02183AF22700664A68 /* BAFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BAFoundation.framework; path = ../Vendor/Frameworks/Release/BAFoundation.framework; sourceTree = "<group>"; };
 		84A591B51769009200C7F7B6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		84A591B81769011100C7F7B6 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		84A591BA1769017F00C7F7B6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -570,6 +571,7 @@
 		0867D69AFE84028FC02AAC07 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				84357C02183AF22700664A68 /* BAFoundation.framework */,
 				84A591BA1769017F00C7F7B6 /* Cocoa.framework */,
 				84A591B51769009200C7F7B6 /* CoreData.framework */,
 				84A591B81769011100C7F7B6 /* CoreVideo.framework */,
