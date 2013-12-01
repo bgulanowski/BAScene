@@ -33,7 +33,11 @@
 #define BAUInt unsigned long
 #define NAN_OFFSET LONG_MAX+1  // -1 signed long
 #define ULPS_DELTA 0x0fff
+#ifdef FLT_EPSILON
 #define EPSILON FLT_EPSILON
+#else
+#define EPSILON __FLT_EPSILON__
+#endif
 //#endif
 
 
