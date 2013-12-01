@@ -191,7 +191,9 @@ static GLfloat BA_IDENTITY_MATRIX[16] = {
 - (void)apply {
 	if(dirty)
 		[self rebuild];
+#if ! TARGET_OS_IPHONE
 	glMultMatrixf( transform.i );
+#endif
 }
 
 - (BALocationf)location {
