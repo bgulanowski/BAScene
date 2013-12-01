@@ -17,7 +17,7 @@
 #import <OpenGL/glu.h>
 #endif
 
-
+#if ! TARGET_OS_IPHONE
 static inline GLenum BAPolygonModeToGL(BAPolygonMode mode) {
     
     switch (mode) {
@@ -45,6 +45,7 @@ static inline NSString *BAStringForGLPolygonMode(GLenum mode) {
         default:       return @"Fill";  break;
     }    
 }
+#endif
 
 NSString *BACameraOptionsToString(BACameraOptions options) {
     NSMutableArray *optionNames = [NSMutableArray array];
@@ -58,9 +59,11 @@ NSString *BACameraOptionsToString(BACameraOptions options) {
     if(options.cullOn) [optionNames addObject:@"CULL"];
     if(options.depthOn) [optionNames addObject:@"DEPTH"];
     
+#if ! TARGET_OS_IPHONE
     [optionNames addObject:[NSString stringWithFormat:@"FRONT FACE:%@", BAStringForGLPolygonMode(BAPolygonModeToGL(options.frontMode))]];
     [optionNames addObject:[NSString stringWithFormat:@"BACK FACE:%@", BAStringForGLPolygonMode(BAPolygonModeToGL(options.backMode))]];
-    
+#endif
+	
     return [optionNames componentsJoinedByString:@", "];
 }
 
@@ -101,7 +104,9 @@ void compareMatrices(BAMatrix4x4f a, BAMatrix4x4f b);
         self.lightsOn = YES;
         self.cullingOn = YES;
         self.depthOn = YES;
+#if ! TARGET_OS_IPHONE
         self.frontMode = self.backMode = BAPolygonModeToGL(BAPolygonModeFill);
+#endif
 	}
 	return self;
 }
@@ -244,6 +249,7 @@ void compareMatrices(BAMatrix4x4f a, BAMatrix4x4f b);
     changes.blurOn = YES;
 }
 
+#if ! TARGET_OS_IPHONE
 - (GLenum)frontMode {
     return BAPolygonModeToGL(options.frontMode);
 }
@@ -262,7 +268,6 @@ void compareMatrices(BAMatrix4x4f a, BAMatrix4x4f b);
     changes.backMode = 1;
 }
 
-#if ! TARGET_OS_IPHONE
 - (BOOL)isFrontLineModeOn {
     return options.frontMode == BAPolygonModeLine;
 }
@@ -476,9 +481,10 @@ void compareMatrices(BAMatrix4x4f a, BAMatrix4x4f b) {
     if(changes.cullOn)   options.cullOn   ? glEnable(GL_CULL_FACE)  : glDisable(GL_CULL_FACE);
     if(changes.depthOn)  options.depthOn  ? glEnable(GL_DEPTH_TEST) : glDisable(GL_DEPTH_TEST);
     
+#if ! TARGET_OS_IPHONE
     if(changes.frontMode) glPolygonMode(GL_FRONT, self.frontMode);
     if(changes.backMode)  glPolygonMode(GL_BACK, self.backMode);
-    
+#endif
     if(colorChanges.background) glClearColor(bgColor.c.r, bgColor.c.g, bgColor.c.b, 1.0f);
     
     
@@ -490,6 +496,7 @@ void compareMatrices(BAMatrix4x4f a, BAMatrix4x4f b) {
     colorChanges = (BACameraColorChanges) {};
 }
 
+#if ! TARGET_OS_IPHONE
 - (void)paintBlur {
     
     BOOL reEnableLighting = self.lightsOn;
@@ -524,6 +531,7 @@ void compareMatrices(BAMatrix4x4f a, BAMatrix4x4f b) {
     if(reEnableDepth)
         self.depthOn = YES;
 }
+#endif
 
 #define BASendKeyValueUpdates(key) \
 do {\
@@ -679,6 +687,7 @@ do {\
     
 #define STRING(bool) ((bool)?@"YES":@"NO")
     
+#if ! TARGET_OS_IPHONE
     GLboolean lightingOn;
     GLboolean cullingOn;
     GLboolean depthOn;
@@ -700,6 +709,7 @@ do {\
     NSLog(@"Depth test: %@", STRING(depthOn));
     NSLog(@"Front mode: %@", BAStringForGLPolygonMode(polygonModes[0]));
     NSLog(@"Back mode:  %@", BAStringForGLPolygonMode(polygonModes[1]));
+#endif
 }
 
 @end

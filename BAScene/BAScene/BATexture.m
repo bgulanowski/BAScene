@@ -83,7 +83,9 @@
 	glBindTexture(type, name);
     glTexParameteri(type, GL_TEXTURE_MIN_FILTER, minFilter);
     glTexParameteri(type, GL_TEXTURE_MAG_FILTER, magFilter);
+#if ! TARGET_OS_IPHONE
 	glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, mode );
+#endif
 }
 
 - (void)updateWithData:(NSData *)data region:(BARegioni)region {
@@ -91,6 +93,7 @@
                     GL_RGBA, GL_UNSIGNED_BYTE, [data bytes]);
 }
 
+#if ! TARGET_OS_IPHONE
 - (void)updateWithSubImage:(NSImage *)image location:(BALocationi)location {
     
     NSBitmapImageRep *bitmap = [image textureBitmap];
@@ -102,6 +105,7 @@
     
     [self updateWithData:data region:region];
 }
+#endif
 
 - (void)updateTexelAtX:(GLuint)x y:(GLuint)y color:(BAColori)color {
     glTexSubImage2D(type, 0, x, y, 1, 1, GL_RGBA, GL_UNSIGNED_BYTE, (GLvoid *)&color);

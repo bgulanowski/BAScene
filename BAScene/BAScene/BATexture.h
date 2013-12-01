@@ -38,7 +38,6 @@
 - (void)configureParameters;
 
 - (void)updateWithData:(NSData *)data region:(BARegioni)region;
-- (void)updateWithSubImage:(NSImage *)image location:(BALocationi)location;
 - (void)updateTexelAtX:(GLuint)x y:(GLuint)y color:(BAColori)color;
 
 + (BATexture *)textureWithWidth:(GLuint)w height:(GLuint)h depth:(GLuint)d data:(NSData *)data;
@@ -46,6 +45,7 @@
 + (BATexture *)randomTextureWithWidth:(GLuint)w height:(GLuint)h;
 + (BATexture *)gradientTextureWithWidth:(GLuint)w height:(GLuint)h;
 #if ! TARGET_OS_IPHONE
+- (void)updateWithSubImage:(NSImage *)image location:(BALocationi)location;
 + (BATexture *)textureWithBitmap:(NSBitmapImageRep *)bitmap;
 + (BATexture *)textureWithImage:(NSImage *)image;
 + (BATexture *)textureWithFile:(NSString *)path;
