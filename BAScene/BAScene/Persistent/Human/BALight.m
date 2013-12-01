@@ -1,4 +1,4 @@
-#import "BALight.h"
+#import <BAScene/BALight.h>
 
 @implementation BALight
 

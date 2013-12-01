@@ -6,9 +6,9 @@
 //  Copyright 2008-2011 Bored Astronaut. All rights reserved.
 //
 
-#import "BASceneResource.h"
+#import <BAScene/BASceneResource.h>
 
-#import "BAResourceStorage.h"
+#import <BAScene/BAResourceStorage.h>
 
 
 @implementation BASceneResource

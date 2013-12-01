@@ -6,7 +6,7 @@
 //  Copyright 2010 Bored Astronaut. All rights reserved.
 //
 
-#import "BAViewController.h"
+#import <BAScene/BAViewController.h>
 
 
 @implementation BAViewController

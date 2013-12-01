@@ -1,10 +1,10 @@
-#import "BAPrototypeMesh.h"
+#import <BAScene/BAPrototypeMesh.h>
 
-#import "BAColor.h"
-#import "BAMesh.h"
-#import "BAPolygon.h"
-#import "BATransform.h"
-#import "BASceneUtilities.h"
+#import <BAScene/BAColor.h>
+#import <BAScene/BAMesh.h>
+#import <BAScene/BAPolygon.h>
+#import <BAScene/BATransform.h>
+#import <BAScene/BASceneUtilities.h>
 
 
 @implementation BAPrototypeMesh

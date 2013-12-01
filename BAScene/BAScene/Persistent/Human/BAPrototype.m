@@ -6,10 +6,10 @@
 //  Copyright 2009 Bored Astronaut. All rights reserved.
 //
 
-#import "BAPrototype.h"
+#import <BAScene/BAPrototype.h>
 
-#import "BAMesh.h"
-#import "BAPrototypeMesh.h"
+#import <BAScene/BAMesh.h>
+#import <BAScene/BAPrototypeMesh.h>
 
 #import <objc/message.h>
 

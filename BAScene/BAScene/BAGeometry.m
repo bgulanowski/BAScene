@@ -6,7 +6,7 @@
 //  Copyright 2010 Bored Astronaut. All rights reserved.
 //
 
-#import "BAGeometry.h"
+#import <BAScene/BAGeometry.h>
 
 
 @implementation BAGeometry

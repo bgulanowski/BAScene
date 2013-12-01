@@ -6,10 +6,10 @@
 //  Copyright 2008 Bored Astronaut. All rights reserved.
 //
 
-#import "BASceneView.h"
+#import <BAScene/BASceneView.h>
 
-#import "BACamera.h"
-#import "BASceneConstants.h"
+#import <BAScene/BACamera.h>
+#import <BAScene/BASceneConstants.h>
 
 
 CVReturn BASceneViewDisplayLink(CVDisplayLinkRef displayLink,

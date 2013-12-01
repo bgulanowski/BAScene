@@ -9,7 +9,7 @@
 
 #import <BAScene/_BATransform.h>
 
-#import "BASceneTypes.h"
+#import <BAScene/BASceneTypes.h>
 
 @interface BATransform : _BATransform {
 	BOOL dirty;

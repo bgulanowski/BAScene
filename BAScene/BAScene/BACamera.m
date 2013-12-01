@@ -6,9 +6,9 @@
 //  Copyright 2008 Bored Astronaut. All rights reserved.
 //
 
-#import "BACamera.h"
+#import <BAScene/BACamera.h>
 
-#import "BASceneUtilities.h"
+#import <BAScene/BASceneUtilities.h>
 
 #import <math.h>
 

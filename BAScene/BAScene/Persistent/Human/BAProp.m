@@ -6,16 +6,17 @@
 //  Copyright 2009 Bored Astronaut. All rights reserved.
 //
 
-#import "BAProp.h"
+#import <BAScene/BAProp.h>
 
-#import "BAColor.h"
-#import "BAPoint.h"
-#import "BAPolygon.h"
-#import "BAPrototype.h"
-#import "BAPrototypeMesh.h"
-#import "BATransform.h"
-#import "BAMesh.h"
+#import <BAScene/BAColor.h>
+#import <BAScene/BAPoint.h>
+#import <BAScene/BAPolygon.h>
+#import <BAScene/BAPrototype.h>
+#import <BAScene/BAPrototypeMesh.h>
+#import <BAScene/BATransform.h>
+#import <BAScene/BAMesh.h>
 
+#import <BAScene/BASceneUtilities.h>
 
 static NSTimeInterval gInterval = 0;
 

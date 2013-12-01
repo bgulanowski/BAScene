@@ -6,8 +6,9 @@
 //  Copyright 2010 Bored Astronaut. All rights reserved.
 //
 
-#import "BATexture.h"
+#import <BAScene/BATexture.h>
 
+#import <BAScene/BASceneUtilities.h>
 
 @implementation BATexture
 

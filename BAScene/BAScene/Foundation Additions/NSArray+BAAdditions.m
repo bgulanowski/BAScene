@@ -6,7 +6,7 @@
 //  Copyright 2011 Bored Astronaut. All rights reserved.
 //
 
-#import "NSArray+BAAdditions.h"
+#import <BAScene/NSArray+BAAdditions.h>
 
 
 @implementation NSArray (BAAdditions)

@@ -6,7 +6,7 @@
 //  Copyright 2009 Bored Astronaut. All rights reserved.
 //
 
-#import "BASceneUtilities.h"
+#import <BAScene/BASceneUtilities.h>
 
 
 const NSUInteger BANotFound = NSNotFound;

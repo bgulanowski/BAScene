@@ -6,8 +6,11 @@
 //  Copyright 2011 Bored Astronaut. All rights reserved.
 //
 
-#import "BAVoxelArray.h"
+#import <BAScene/BAVoxelArray.h>
 #import <BAFoundation/BANoise.h>
+#import <BAFoundation/BAFunctions.h>
+
+#import <BAScene/BASceneUtilities.h>
 
 @implementation BAVoxelArray
 

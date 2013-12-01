@@ -6,14 +6,16 @@
 //  Copyright 2008 Bored Astronaut. All rights reserved.
 //
 
-#import "BAPolygon.h"
+#import <BAScene/BAPolygon.h>
 
-#import "BAColor.h"
-#import "BAMesh.h"
-#import "BATuple.h"
-#import "BAPoint.h"
+#import <BAScene/BAColor.h>
+#import <BAScene/BAMesh.h>
+#import <BAScene/BATuple.h>
+#import <BAScene/BAPoint.h>
 
-#import "NSArray+BAAdditions.h"
+#import <BAScene/BASceneUtilities.h>
+
+#import <BAScene/NSArray+BAAdditions.h>
 
 
 @interface BAPolygon ()

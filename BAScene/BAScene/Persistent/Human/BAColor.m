@@ -6,8 +6,9 @@
 //  Copyright 2008 Bored Astronaut. All rights reserved.
 //
 
-#import "BAColor.h"
+#import <BAScene/BAColor.h>
 
+#import <BAScene/BASceneUtilities.h>
 
 #if TARGET_OS_IPHONE
 #define NSColor UIColor

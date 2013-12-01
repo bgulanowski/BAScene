@@ -6,8 +6,9 @@
 //  Copyright 2008 Bored Astronaut. All rights reserved.
 //
 
-#import "BATransform.h"
+#import <BAScene/BATransform.h>
 
+#import <BAScene/BASceneUtilities.h>
 
 @interface BATransform ()
 @property (nonatomic, readwrite) BAMatrix4x4f transform;

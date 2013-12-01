@@ -6,12 +6,13 @@
 //  Copyright 2009 Bored Astronaut. All rights reserved.
 //
 
-#import "BAPartition.h"
+#import <BAScene/BAPartition.h>
 
-#import "BACamera.h"
-#import "BAMesh.h"
-#import "BATuple.h"
+#import <BAScene/BACamera.h>
+#import <BAScene/BAMesh.h>
+#import <BAScene/BATuple.h>
 
+#import <BAScene/BASceneUtilities.h>
 
 static NSString *kBARootPartitionName = @"BAScene:RootPartition";
 //static NSString *kBARootPartitionVolumeName = @"BAScene:RootPartitionVolume";

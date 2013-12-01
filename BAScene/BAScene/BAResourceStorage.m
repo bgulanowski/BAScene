@@ -6,9 +6,9 @@
 //  Copyright 2010 Bored Astronaut. All rights reserved.
 //
 
-#import "BAResourceStorage.h"
+#import <BAScene/BAResourceStorage.h>
 
-#import "BASceneResource.h"
+#import <BAScene/BASceneResource.h>
 
 
 BAResourceStorage *ResourceStorage = nil;

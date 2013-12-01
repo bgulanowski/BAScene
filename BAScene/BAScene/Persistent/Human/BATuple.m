@@ -6,9 +6,10 @@
 //  Copyright 2009 Bored Astronaut. All rights reserved.
 //
 
-#import "BATuple.h"
+#import <BAScene/BATuple.h>
 
-#import "BATransform.h"
+#import <BAScene/BASceneUtilities.h>
+#import <BAScene/BATransform.h>
 
 #import <BAFoundation/NSManagedObject+BAAdditions.h>
 

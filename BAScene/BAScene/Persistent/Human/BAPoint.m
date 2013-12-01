@@ -6,9 +6,9 @@
 //  Copyright 2009 Bored Astronaut. All rights reserved.
 //
 
-#import "BAPoint.h"
+#import <BAScene/BAPoint.h>
 
-#import "BATuple.h"
+#import <BAScene/BATuple.h>
 
 
 @implementation BAPoint

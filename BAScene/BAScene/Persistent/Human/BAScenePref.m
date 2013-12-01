@@ -6,7 +6,7 @@
 //  Copyright 2008 Bored Astronaut. All rights reserved.
 //
 
-#import "BAScenePref.h"
+#import <BAScene/BAScenePref.h>
 
 
 @implementation BAScenePref

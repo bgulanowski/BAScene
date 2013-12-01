@@ -6,20 +6,21 @@
 //  Copyright 2009 Bored Astronaut. All rights reserved.
 //
 
-#import "BAMesh.h"
+#import <BAScene/BAMesh.h>
 
-#import "BATuple.h"
-#import "BAPoint.h"
-#import "BAProp.h"
-#import "BAPrototype.h"
-#import "BAPrototypeMesh.h"
-#import "BAPolygon.h"
-#import "BASceneTypes.h"
-#import "BATexture.h"
-#import "BATransform.h"
-#import "BASceneConstants.h"
-#import "BASceneResource.h"
+#import <BAScene/BATuple.h>
+#import <BAScene/BAPoint.h>
+#import <BAScene/BAProp.h>
+#import <BAScene/BAPrototype.h>
+#import <BAScene/BAPrototypeMesh.h>
+#import <BAScene/BAPolygon.h>
+#import <BAScene/BASceneTypes.h>
+#import <BAScene/BATexture.h>
+#import <BAScene/BATransform.h>
+#import <BAScene/BASceneConstants.h>
+#import <BAScene/BASceneResource.h>
 
+#import <BAScene/BASceneUtilities.h>
 
 BOOL drawNormals = NO;
 
@@ -503,6 +504,7 @@ static inline NSUInteger copyNormalData(BATuple *vertex, BATuple *normal, GLfloa
 	
 	if([self.resources count] > 0) {
 		
+#if ! TARGET_OS_IPHONE
 		GLuint stride = (3+((GLuint)self.hasNormalsValue*3)+((GLuint)self.hasTextureValue*2)) * sizeof(GLfloat);
 		
 		glEnableClientState(GL_VERTEX_ARRAY);
@@ -510,7 +512,6 @@ static inline NSUInteger copyNormalData(BATuple *vertex, BATuple *normal, GLfloa
 			glEnableClientState(GL_NORMAL_ARRAY);
 		if(self.hasTextureValue)
 			glEnableClientState(GL_TEXTURE_COORD_ARRAY);
-		
 		glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
 		glVertexPointer(3, GL_FLOAT, stride, NULL);
 
@@ -518,7 +519,8 @@ static inline NSUInteger copyNormalData(BATuple *vertex, BATuple *normal, GLfloa
 			glNormalPointer(GL_FLOAT, stride, (void*)(sizeof(GLfloat)*3));
 		if(self.hasTextureValue)
 			glTexCoordPointer(2, GL_FLOAT, stride, (void*)(sizeof(GLfloat)*(self.hasNormalsValue ? 6 : 3)));
-		
+#endif
+	
 #if TARGET_OS_IPHONE
 		glDrawArrays(GL_TRIANGLES, 0, count);
 #else
@@ -526,6 +528,7 @@ static inline NSUInteger copyNormalData(BATuple *vertex, BATuple *normal, GLfloa
 #endif
         glBindBuffer(GL_ARRAY_BUFFER, 0);
         
+#if ! TARGET_OS_IPHONE
 		if(self.hasTextureValue)
 			glDisableClientState(GL_TEXTURE_COORD_ARRAY);
 		if(self.hasNormalsValue)
@@ -539,6 +542,7 @@ static inline NSUInteger copyNormalData(BATuple *vertex, BATuple *normal, GLfloa
 		}
         
 		glDisableClientState( GL_VERTEX_ARRAY );
+#endif
 	}
 	else {
 #if ! TARGET_OS_IPHONE

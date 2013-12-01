@@ -7,11 +7,12 @@
 //
 
 
-#import "BAPropGroup.h"
+#import <BAScene/BAPropGroup.h>
 
-#import "BAProp.h"
-#import "BAMesh.h"
+#import <BAScene/BAProp.h>
+#import <BAScene/BAMesh.h>
 
+#import <BAScene/BASceneUtilities.h>
 
 @interface BAPropGroup ()
 

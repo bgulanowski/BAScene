@@ -6,7 +6,7 @@
 //  Copyright 2010 Bored Astronaut. All rights reserved.
 //
 
-#import "BASceneUtilities.h"
+#import <BAScene/BASceneUtilities.h>
 
 
 #define scanGLfloat scanFloat

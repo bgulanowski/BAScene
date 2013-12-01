@@ -6,10 +6,10 @@
 //  Copyright 2009 Bored Astronaut. All rights reserved.
 //
 
-#import "BAStage.h"
+#import <BAScene/BAStage.h>
 
-#import "BAPartition.h"
-#import "BAPropGroup.h"
+#import <BAScene/BAPartition.h>
+#import <BAScene/BAPropGroup.h>
 
 
 @implementation BAStage
