@@ -7,12 +7,253 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B67CD18813F8045E006772BE /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B67CD18713F8045E006772BE /* Foundation.framework */; };
-		B67CD18E13F8045E006772BE /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B67CD18C13F8045E006772BE /* InfoPlist.strings */; };
+		84AECA00184BB945002AC8D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B67CD18713F8045E006772BE /* Foundation.framework */; };
+		84AECA0D184BB946002AC8D0 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AEC9E5184BB91A002AC8D0 /* XCTest.framework */; };
+		84AECA0E184BB946002AC8D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B67CD18713F8045E006772BE /* Foundation.framework */; };
+		84AECA0F184BB946002AC8D0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AEC9E8184BB91A002AC8D0 /* UIKit.framework */; };
+		84AECA12184BB946002AC8D0 /* libBAScene.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AEC9FF184BB945002AC8D0 /* libBAScene.a */; };
+		84AECA61184BB9A2002AC8D0 /* BAScene.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA22184BB9A1002AC8D0 /* BAScene.xcdatamodel */; };
+		84AECA62184BB9A2002AC8D0 /* BAColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA25184BB9A1002AC8D0 /* BAColor.m */; };
+		84AECA63184BB9A2002AC8D0 /* BALight.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA27184BB9A1002AC8D0 /* BALight.m */; };
+		84AECA64184BB9A2002AC8D0 /* BAMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA29184BB9A1002AC8D0 /* BAMesh.m */; };
+		84AECA65184BB9A2002AC8D0 /* BAPartition.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA2B184BB9A1002AC8D0 /* BAPartition.m */; };
+		84AECA66184BB9A2002AC8D0 /* BAPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA2D184BB9A1002AC8D0 /* BAPoint.m */; };
+		84AECA67184BB9A2002AC8D0 /* BAPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA2F184BB9A1002AC8D0 /* BAPolygon.m */; };
+		84AECA68184BB9A2002AC8D0 /* BAProp.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA31184BB9A1002AC8D0 /* BAProp.m */; };
+		84AECA69184BB9A2002AC8D0 /* BAPropGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA33184BB9A1002AC8D0 /* BAPropGroup.m */; };
+		84AECA6A184BB9A2002AC8D0 /* BAPrototype.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA35184BB9A1002AC8D0 /* BAPrototype.m */; };
+		84AECA6B184BB9A2002AC8D0 /* BAPrototypeMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA37184BB9A1002AC8D0 /* BAPrototypeMesh.m */; };
+		84AECA6C184BB9A2002AC8D0 /* BAScenePref.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA39184BB9A1002AC8D0 /* BAScenePref.m */; };
+		84AECA6D184BB9A2002AC8D0 /* BASceneResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA3B184BB9A1002AC8D0 /* BASceneResource.m */; };
+		84AECA6E184BB9A2002AC8D0 /* BAStage.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA3D184BB9A1002AC8D0 /* BAStage.m */; };
+		84AECA6F184BB9A2002AC8D0 /* BATransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA3F184BB9A1002AC8D0 /* BATransform.m */; };
+		84AECA70184BB9A2002AC8D0 /* BATuple.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA41184BB9A1002AC8D0 /* BATuple.m */; };
+		84AECA71184BB9A2002AC8D0 /* _BAColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA44184BB9A2002AC8D0 /* _BAColor.m */; };
+		84AECA72184BB9A2002AC8D0 /* _BALight.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA46184BB9A2002AC8D0 /* _BALight.m */; };
+		84AECA73184BB9A2002AC8D0 /* _BAMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA48184BB9A2002AC8D0 /* _BAMesh.m */; };
+		84AECA74184BB9A2002AC8D0 /* _BAPartition.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA4A184BB9A2002AC8D0 /* _BAPartition.m */; };
+		84AECA75184BB9A2002AC8D0 /* _BAPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA4C184BB9A2002AC8D0 /* _BAPoint.m */; };
+		84AECA76184BB9A2002AC8D0 /* _BAPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA4E184BB9A2002AC8D0 /* _BAPolygon.m */; };
+		84AECA77184BB9A2002AC8D0 /* _BAProp.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA50184BB9A2002AC8D0 /* _BAProp.m */; };
+		84AECA78184BB9A2002AC8D0 /* _BAPropGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA52184BB9A2002AC8D0 /* _BAPropGroup.m */; };
+		84AECA79184BB9A2002AC8D0 /* _BAPrototype.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA54184BB9A2002AC8D0 /* _BAPrototype.m */; };
+		84AECA7A184BB9A2002AC8D0 /* _BAPrototypeMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA56184BB9A2002AC8D0 /* _BAPrototypeMesh.m */; };
+		84AECA7B184BB9A2002AC8D0 /* _BAScenePref.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA58184BB9A2002AC8D0 /* _BAScenePref.m */; };
+		84AECA7C184BB9A2002AC8D0 /* _BASceneResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA5A184BB9A2002AC8D0 /* _BASceneResource.m */; };
+		84AECA7D184BB9A2002AC8D0 /* _BAStage.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA5C184BB9A2002AC8D0 /* _BAStage.m */; };
+		84AECA7E184BB9A2002AC8D0 /* _BATransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA5E184BB9A2002AC8D0 /* _BATransform.m */; };
+		84AECA7F184BB9A2002AC8D0 /* _BATuple.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA60184BB9A2002AC8D0 /* _BATuple.m */; };
+		84AECA96184BB9CF002AC8D0 /* BACamera.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA81184BB9CF002AC8D0 /* BACamera.m */; };
+		84AECA97184BB9CF002AC8D0 /* BAGeometry.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA83184BB9CF002AC8D0 /* BAGeometry.m */; };
+		84AECA98184BB9CF002AC8D0 /* BAResourceStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA85184BB9CF002AC8D0 /* BAResourceStorage.m */; };
+		84AECA99184BB9CF002AC8D0 /* BAScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA87184BB9CF002AC8D0 /* BAScene.m */; };
+		84AECA9A184BB9CF002AC8D0 /* BASceneConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA89184BB9CF002AC8D0 /* BASceneConstants.m */; };
+		84AECA9B184BB9CF002AC8D0 /* BASceneTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA8B184BB9CF002AC8D0 /* BASceneTypes.m */; };
+		84AECA9C184BB9CF002AC8D0 /* BASceneUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA8D184BB9CF002AC8D0 /* BASceneUtilities.m */; };
+		84AECA9E184BB9CF002AC8D0 /* BATexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA91184BB9CF002AC8D0 /* BATexture.m */; };
+		84AECAA0184BB9CF002AC8D0 /* BAVoxelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA95184BB9CF002AC8D0 /* BAVoxelArray.m */; };
+		84AECAA4184BBA9E002AC8D0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AECAA1184BBA9E002AC8D0 /* CoreGraphics.framework */; };
+		84AECAA5184BBA9E002AC8D0 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AECAA2184BBA9E002AC8D0 /* CoreVideo.framework */; };
+		84AECAA6184BBA9E002AC8D0 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84AECAA3184BBA9E002AC8D0 /* OpenGLES.framework */; };
+		84AECAA8184BBB0D002AC8D0 /* BACamera.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA80184BB9CF002AC8D0 /* BACamera.h */; };
+		84AECAA9184BBB0D002AC8D0 /* BAGeometry.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA82184BB9CF002AC8D0 /* BAGeometry.h */; };
+		84AECAAA184BBB0D002AC8D0 /* BAResourceStorage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA84184BB9CF002AC8D0 /* BAResourceStorage.h */; };
+		84AECAAB184BBB0D002AC8D0 /* BAScene.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA86184BB9CF002AC8D0 /* BAScene.h */; };
+		84AECAAC184BBB0D002AC8D0 /* BASceneConstants.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA88184BB9CF002AC8D0 /* BASceneConstants.h */; };
+		84AECAAD184BBB0D002AC8D0 /* BASceneTypes.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA8A184BB9CF002AC8D0 /* BASceneTypes.h */; };
+		84AECAAE184BBB0D002AC8D0 /* BASceneUtilities.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA8C184BB9CF002AC8D0 /* BASceneUtilities.h */; };
+		84AECAB0184BBB0D002AC8D0 /* BATexture.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA90184BB9CF002AC8D0 /* BATexture.h */; };
+		84AECAB2184BBB0D002AC8D0 /* BAVoxelArray.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA94184BB9CF002AC8D0 /* BAVoxelArray.h */; };
+		84AECAB3184BBB0D002AC8D0 /* BAColor.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA24184BB9A1002AC8D0 /* BAColor.h */; };
+		84AECAB4184BBB0D002AC8D0 /* BALight.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA26184BB9A1002AC8D0 /* BALight.h */; };
+		84AECAB5184BBB0D002AC8D0 /* BAMesh.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA28184BB9A1002AC8D0 /* BAMesh.h */; };
+		84AECAB6184BBB0D002AC8D0 /* BAPartition.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA2A184BB9A1002AC8D0 /* BAPartition.h */; };
+		84AECAB7184BBB0D002AC8D0 /* BAPoint.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA2C184BB9A1002AC8D0 /* BAPoint.h */; };
+		84AECAB8184BBB0D002AC8D0 /* BAPolygon.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA2E184BB9A1002AC8D0 /* BAPolygon.h */; };
+		84AECAB9184BBB0D002AC8D0 /* BAProp.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA30184BB9A1002AC8D0 /* BAProp.h */; };
+		84AECABA184BBB0D002AC8D0 /* BAPropGroup.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA32184BB9A1002AC8D0 /* BAPropGroup.h */; };
+		84AECABB184BBB0D002AC8D0 /* BAPrototype.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA34184BB9A1002AC8D0 /* BAPrototype.h */; };
+		84AECABC184BBB0D002AC8D0 /* BAPrototypeMesh.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA36184BB9A1002AC8D0 /* BAPrototypeMesh.h */; };
+		84AECABD184BBB0D002AC8D0 /* BAScenePref.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA38184BB9A1002AC8D0 /* BAScenePref.h */; };
+		84AECABE184BBB0D002AC8D0 /* BASceneResource.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA3A184BB9A1002AC8D0 /* BASceneResource.h */; };
+		84AECABF184BBB0D002AC8D0 /* BAStage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA3C184BB9A1002AC8D0 /* BAStage.h */; };
+		84AECAC0184BBB0D002AC8D0 /* BATransform.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA3E184BB9A1002AC8D0 /* BATransform.h */; };
+		84AECAC1184BBB0D002AC8D0 /* BATuple.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA40184BB9A1002AC8D0 /* BATuple.h */; };
+		84AECAC2184BBB0D002AC8D0 /* _BAColor.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA43184BB9A2002AC8D0 /* _BAColor.h */; };
+		84AECAC3184BBB0D002AC8D0 /* _BALight.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA45184BB9A2002AC8D0 /* _BALight.h */; };
+		84AECAC4184BBB0D002AC8D0 /* _BAMesh.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA47184BB9A2002AC8D0 /* _BAMesh.h */; };
+		84AECAC5184BBB0D002AC8D0 /* _BAPartition.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA49184BB9A2002AC8D0 /* _BAPartition.h */; };
+		84AECAC6184BBB0D002AC8D0 /* _BAPoint.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA4B184BB9A2002AC8D0 /* _BAPoint.h */; };
+		84AECAC7184BBB0D002AC8D0 /* _BAPolygon.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA4D184BB9A2002AC8D0 /* _BAPolygon.h */; };
+		84AECAC8184BBB0D002AC8D0 /* _BAProp.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA4F184BB9A2002AC8D0 /* _BAProp.h */; };
+		84AECAC9184BBB0D002AC8D0 /* _BAPropGroup.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA51184BB9A2002AC8D0 /* _BAPropGroup.h */; };
+		84AECACA184BBB0D002AC8D0 /* _BAPrototype.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA53184BB9A2002AC8D0 /* _BAPrototype.h */; };
+		84AECACB184BBB0D002AC8D0 /* _BAPrototypeMesh.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA55184BB9A2002AC8D0 /* _BAPrototypeMesh.h */; };
+		84AECACC184BBB0D002AC8D0 /* _BAScenePref.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA57184BB9A2002AC8D0 /* _BAScenePref.h */; };
+		84AECACD184BBB0D002AC8D0 /* _BASceneResource.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA59184BB9A2002AC8D0 /* _BASceneResource.h */; };
+		84AECACE184BBB0D002AC8D0 /* _BAStage.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA5B184BB9A2002AC8D0 /* _BAStage.h */; };
+		84AECACF184BBB0D002AC8D0 /* _BATransform.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA5D184BB9A2002AC8D0 /* _BATransform.h */; };
+		84AECAD0184BBB0D002AC8D0 /* _BATuple.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECA5F184BB9A2002AC8D0 /* _BATuple.h */; };
+		84AECAF2184BC218002AC8D0 /* NSArray+BAAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECAEF184BC218002AC8D0 /* NSArray+BAAdditions.m */; };
+		84AECAF3184BC218002AC8D0 /* NSIndexSet+BAAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECAF1184BC218002AC8D0 /* NSIndexSet+BAAdditions.m */; };
+		84AECAF4184BC224002AC8D0 /* NSArray+BAAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECAEE184BC218002AC8D0 /* NSArray+BAAdditions.h */; };
+		84AECAF5184BC224002AC8D0 /* NSIndexSet+BAAdditions.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 84AECAF0184BC218002AC8D0 /* NSIndexSet+BAAdditions.h */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		84AECA10184BB946002AC8D0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B67CD17813F8045E006772BE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84AEC9FE184BB945002AC8D0;
+			remoteInfo = BAScene;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		84AEC9FD184BB945002AC8D0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				84AECAF4184BC224002AC8D0 /* NSArray+BAAdditions.h in CopyFiles */,
+				84AECAF5184BC224002AC8D0 /* NSIndexSet+BAAdditions.h in CopyFiles */,
+				84AECAA8184BBB0D002AC8D0 /* BACamera.h in CopyFiles */,
+				84AECAA9184BBB0D002AC8D0 /* BAGeometry.h in CopyFiles */,
+				84AECAAA184BBB0D002AC8D0 /* BAResourceStorage.h in CopyFiles */,
+				84AECAAB184BBB0D002AC8D0 /* BAScene.h in CopyFiles */,
+				84AECAAC184BBB0D002AC8D0 /* BASceneConstants.h in CopyFiles */,
+				84AECAAD184BBB0D002AC8D0 /* BASceneTypes.h in CopyFiles */,
+				84AECAAE184BBB0D002AC8D0 /* BASceneUtilities.h in CopyFiles */,
+				84AECAB0184BBB0D002AC8D0 /* BATexture.h in CopyFiles */,
+				84AECAB2184BBB0D002AC8D0 /* BAVoxelArray.h in CopyFiles */,
+				84AECAB3184BBB0D002AC8D0 /* BAColor.h in CopyFiles */,
+				84AECAB4184BBB0D002AC8D0 /* BALight.h in CopyFiles */,
+				84AECAB5184BBB0D002AC8D0 /* BAMesh.h in CopyFiles */,
+				84AECAB6184BBB0D002AC8D0 /* BAPartition.h in CopyFiles */,
+				84AECAB7184BBB0D002AC8D0 /* BAPoint.h in CopyFiles */,
+				84AECAB8184BBB0D002AC8D0 /* BAPolygon.h in CopyFiles */,
+				84AECAB9184BBB0D002AC8D0 /* BAProp.h in CopyFiles */,
+				84AECABA184BBB0D002AC8D0 /* BAPropGroup.h in CopyFiles */,
+				84AECABB184BBB0D002AC8D0 /* BAPrototype.h in CopyFiles */,
+				84AECABC184BBB0D002AC8D0 /* BAPrototypeMesh.h in CopyFiles */,
+				84AECABD184BBB0D002AC8D0 /* BAScenePref.h in CopyFiles */,
+				84AECABE184BBB0D002AC8D0 /* BASceneResource.h in CopyFiles */,
+				84AECABF184BBB0D002AC8D0 /* BAStage.h in CopyFiles */,
+				84AECAC0184BBB0D002AC8D0 /* BATransform.h in CopyFiles */,
+				84AECAC1184BBB0D002AC8D0 /* BATuple.h in CopyFiles */,
+				84AECAC2184BBB0D002AC8D0 /* _BAColor.h in CopyFiles */,
+				84AECAC3184BBB0D002AC8D0 /* _BALight.h in CopyFiles */,
+				84AECAC4184BBB0D002AC8D0 /* _BAMesh.h in CopyFiles */,
+				84AECAC5184BBB0D002AC8D0 /* _BAPartition.h in CopyFiles */,
+				84AECAC6184BBB0D002AC8D0 /* _BAPoint.h in CopyFiles */,
+				84AECAC7184BBB0D002AC8D0 /* _BAPolygon.h in CopyFiles */,
+				84AECAC8184BBB0D002AC8D0 /* _BAProp.h in CopyFiles */,
+				84AECAC9184BBB0D002AC8D0 /* _BAPropGroup.h in CopyFiles */,
+				84AECACA184BBB0D002AC8D0 /* _BAPrototype.h in CopyFiles */,
+				84AECACB184BBB0D002AC8D0 /* _BAPrototypeMesh.h in CopyFiles */,
+				84AECACC184BBB0D002AC8D0 /* _BAScenePref.h in CopyFiles */,
+				84AECACD184BBB0D002AC8D0 /* _BASceneResource.h in CopyFiles */,
+				84AECACE184BBB0D002AC8D0 /* _BAStage.h in CopyFiles */,
+				84AECACF184BBB0D002AC8D0 /* _BATransform.h in CopyFiles */,
+				84AECAD0184BBB0D002AC8D0 /* _BATuple.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		B67CD18413F8045E006772BE /* BAScene.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework.static; includeInIndex = 0; path = BAScene.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		84AEC9E5184BB91A002AC8D0 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		84AEC9E8184BB91A002AC8D0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		84AEC9FF184BB945002AC8D0 /* libBAScene.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBAScene.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		84AECA0C184BB946002AC8D0 /* BASceneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BASceneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84AECA22184BB9A1002AC8D0 /* BAScene.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BAScene.xcdatamodel; sourceTree = "<group>"; };
+		84AECA24184BB9A1002AC8D0 /* BAColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAColor.h; sourceTree = "<group>"; };
+		84AECA25184BB9A1002AC8D0 /* BAColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BAColor.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		84AECA26184BB9A1002AC8D0 /* BALight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BALight.h; sourceTree = "<group>"; };
+		84AECA27184BB9A1002AC8D0 /* BALight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BALight.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		84AECA28184BB9A1002AC8D0 /* BAMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAMesh.h; sourceTree = "<group>"; };
+		84AECA29184BB9A1002AC8D0 /* BAMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BAMesh.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		84AECA2A184BB9A1002AC8D0 /* BAPartition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAPartition.h; sourceTree = "<group>"; };
+		84AECA2B184BB9A1002AC8D0 /* BAPartition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BAPartition.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		84AECA2C184BB9A1002AC8D0 /* BAPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAPoint.h; sourceTree = "<group>"; };
+		84AECA2D184BB9A1002AC8D0 /* BAPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BAPoint.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		84AECA2E184BB9A1002AC8D0 /* BAPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAPolygon.h; sourceTree = "<group>"; };
+		84AECA2F184BB9A1002AC8D0 /* BAPolygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BAPolygon.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		84AECA30184BB9A1002AC8D0 /* BAProp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAProp.h; sourceTree = "<group>"; };
+		84AECA31184BB9A1002AC8D0 /* BAProp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BAProp.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		84AECA32184BB9A1002AC8D0 /* BAPropGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAPropGroup.h; sourceTree = "<group>"; };
+		84AECA33184BB9A1002AC8D0 /* BAPropGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BAPropGroup.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		84AECA34184BB9A1002AC8D0 /* BAPrototype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAPrototype.h; sourceTree = "<group>"; };
+		84AECA35184BB9A1002AC8D0 /* BAPrototype.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BAPrototype.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		84AECA36184BB9A1002AC8D0 /* BAPrototypeMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAPrototypeMesh.h; sourceTree = "<group>"; };
+		84AECA37184BB9A1002AC8D0 /* BAPrototypeMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = BAPrototypeMesh.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		84AECA38184BB9A1002AC8D0 /* BAScenePref.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAScenePref.h; sourceTree = "<group>"; };
+		84AECA39184BB9A1002AC8D0 /* BAScenePref.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAScenePref.m; sourceTree = "<group>"; };
+		84AECA3A184BB9A1002AC8D0 /* BASceneResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BASceneResource.h; sourceTree = "<group>"; };
+		84AECA3B184BB9A1002AC8D0 /* BASceneResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BASceneResource.m; sourceTree = "<group>"; };
+		84AECA3C184BB9A1002AC8D0 /* BAStage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAStage.h; sourceTree = "<group>"; };
+		84AECA3D184BB9A1002AC8D0 /* BAStage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAStage.m; sourceTree = "<group>"; };
+		84AECA3E184BB9A1002AC8D0 /* BATransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BATransform.h; sourceTree = "<group>"; };
+		84AECA3F184BB9A1002AC8D0 /* BATransform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BATransform.m; sourceTree = "<group>"; };
+		84AECA40184BB9A1002AC8D0 /* BATuple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BATuple.h; sourceTree = "<group>"; };
+		84AECA41184BB9A1002AC8D0 /* BATuple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BATuple.m; sourceTree = "<group>"; };
+		84AECA43184BB9A2002AC8D0 /* _BAColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BAColor.h; sourceTree = "<group>"; };
+		84AECA44184BB9A2002AC8D0 /* _BAColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BAColor.m; sourceTree = "<group>"; };
+		84AECA45184BB9A2002AC8D0 /* _BALight.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = _BALight.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		84AECA46184BB9A2002AC8D0 /* _BALight.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BALight.m; sourceTree = "<group>"; };
+		84AECA47184BB9A2002AC8D0 /* _BAMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BAMesh.h; sourceTree = "<group>"; };
+		84AECA48184BB9A2002AC8D0 /* _BAMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BAMesh.m; sourceTree = "<group>"; };
+		84AECA49184BB9A2002AC8D0 /* _BAPartition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = _BAPartition.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		84AECA4A184BB9A2002AC8D0 /* _BAPartition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BAPartition.m; sourceTree = "<group>"; };
+		84AECA4B184BB9A2002AC8D0 /* _BAPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BAPoint.h; sourceTree = "<group>"; };
+		84AECA4C184BB9A2002AC8D0 /* _BAPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BAPoint.m; sourceTree = "<group>"; };
+		84AECA4D184BB9A2002AC8D0 /* _BAPolygon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BAPolygon.h; sourceTree = "<group>"; };
+		84AECA4E184BB9A2002AC8D0 /* _BAPolygon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BAPolygon.m; sourceTree = "<group>"; };
+		84AECA4F184BB9A2002AC8D0 /* _BAProp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BAProp.h; sourceTree = "<group>"; };
+		84AECA50184BB9A2002AC8D0 /* _BAProp.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BAProp.m; sourceTree = "<group>"; };
+		84AECA51184BB9A2002AC8D0 /* _BAPropGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BAPropGroup.h; sourceTree = "<group>"; };
+		84AECA52184BB9A2002AC8D0 /* _BAPropGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BAPropGroup.m; sourceTree = "<group>"; };
+		84AECA53184BB9A2002AC8D0 /* _BAPrototype.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BAPrototype.h; sourceTree = "<group>"; };
+		84AECA54184BB9A2002AC8D0 /* _BAPrototype.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BAPrototype.m; sourceTree = "<group>"; };
+		84AECA55184BB9A2002AC8D0 /* _BAPrototypeMesh.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BAPrototypeMesh.h; sourceTree = "<group>"; };
+		84AECA56184BB9A2002AC8D0 /* _BAPrototypeMesh.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BAPrototypeMesh.m; sourceTree = "<group>"; };
+		84AECA57184BB9A2002AC8D0 /* _BAScenePref.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BAScenePref.h; sourceTree = "<group>"; };
+		84AECA58184BB9A2002AC8D0 /* _BAScenePref.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BAScenePref.m; sourceTree = "<group>"; };
+		84AECA59184BB9A2002AC8D0 /* _BASceneResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BASceneResource.h; sourceTree = "<group>"; };
+		84AECA5A184BB9A2002AC8D0 /* _BASceneResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BASceneResource.m; sourceTree = "<group>"; };
+		84AECA5B184BB9A2002AC8D0 /* _BAStage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BAStage.h; sourceTree = "<group>"; };
+		84AECA5C184BB9A2002AC8D0 /* _BAStage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BAStage.m; sourceTree = "<group>"; };
+		84AECA5D184BB9A2002AC8D0 /* _BATransform.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BATransform.h; sourceTree = "<group>"; };
+		84AECA5E184BB9A2002AC8D0 /* _BATransform.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BATransform.m; sourceTree = "<group>"; };
+		84AECA5F184BB9A2002AC8D0 /* _BATuple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _BATuple.h; sourceTree = "<group>"; };
+		84AECA60184BB9A2002AC8D0 /* _BATuple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = _BATuple.m; sourceTree = "<group>"; };
+		84AECA80184BB9CF002AC8D0 /* BACamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BACamera.h; path = ../../BAScene/BAScene/BACamera.h; sourceTree = "<group>"; };
+		84AECA81184BB9CF002AC8D0 /* BACamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = BACamera.m; path = ../../BAScene/BAScene/BACamera.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		84AECA82184BB9CF002AC8D0 /* BAGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BAGeometry.h; path = ../../BAScene/BAScene/BAGeometry.h; sourceTree = "<group>"; };
+		84AECA83184BB9CF002AC8D0 /* BAGeometry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; name = BAGeometry.m; path = ../../BAScene/BAScene/BAGeometry.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		84AECA84184BB9CF002AC8D0 /* BAResourceStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BAResourceStorage.h; path = ../../BAScene/BAScene/BAResourceStorage.h; sourceTree = "<group>"; };
+		84AECA85184BB9CF002AC8D0 /* BAResourceStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BAResourceStorage.m; path = ../../BAScene/BAScene/BAResourceStorage.m; sourceTree = "<group>"; };
+		84AECA86184BB9CF002AC8D0 /* BAScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BAScene.h; path = ../../BAScene/BAScene/BAScene.h; sourceTree = "<group>"; };
+		84AECA87184BB9CF002AC8D0 /* BAScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BAScene.m; path = ../../BAScene/BAScene/BAScene.m; sourceTree = "<group>"; };
+		84AECA88184BB9CF002AC8D0 /* BASceneConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BASceneConstants.h; path = ../../BAScene/BAScene/BASceneConstants.h; sourceTree = "<group>"; };
+		84AECA89184BB9CF002AC8D0 /* BASceneConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BASceneConstants.m; path = ../../BAScene/BAScene/BASceneConstants.m; sourceTree = "<group>"; };
+		84AECA8A184BB9CF002AC8D0 /* BASceneTypes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BASceneTypes.h; path = ../../BAScene/BAScene/BASceneTypes.h; sourceTree = "<group>"; };
+		84AECA8B184BB9CF002AC8D0 /* BASceneTypes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BASceneTypes.m; path = ../../BAScene/BAScene/BASceneTypes.m; sourceTree = "<group>"; };
+		84AECA8C184BB9CF002AC8D0 /* BASceneUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BASceneUtilities.h; path = ../../BAScene/BAScene/BASceneUtilities.h; sourceTree = "<group>"; };
+		84AECA8D184BB9CF002AC8D0 /* BASceneUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BASceneUtilities.m; path = ../../BAScene/BAScene/BASceneUtilities.m; sourceTree = "<group>"; };
+		84AECA90184BB9CF002AC8D0 /* BATexture.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BATexture.h; path = ../../BAScene/BAScene/BATexture.h; sourceTree = "<group>"; };
+		84AECA91184BB9CF002AC8D0 /* BATexture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BATexture.m; path = ../../BAScene/BAScene/BATexture.m; sourceTree = "<group>"; };
+		84AECA94184BB9CF002AC8D0 /* BAVoxelArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BAVoxelArray.h; path = ../../BAScene/BAScene/BAVoxelArray.h; sourceTree = "<group>"; };
+		84AECA95184BB9CF002AC8D0 /* BAVoxelArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BAVoxelArray.m; path = ../../BAScene/BAScene/BAVoxelArray.m; sourceTree = "<group>"; };
+		84AECAA1184BBA9E002AC8D0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		84AECAA2184BBA9E002AC8D0 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		84AECAA3184BBA9E002AC8D0 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		84AECAEE184BC218002AC8D0 /* NSArray+BAAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSArray+BAAdditions.h"; sourceTree = "<group>"; };
+		84AECAEF184BC218002AC8D0 /* NSArray+BAAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSArray+BAAdditions.m"; sourceTree = "<group>"; };
+		84AECAF0184BC218002AC8D0 /* NSIndexSet+BAAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSIndexSet+BAAdditions.h"; sourceTree = "<group>"; };
+		84AECAF1184BC218002AC8D0 /* NSIndexSet+BAAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSIndexSet+BAAdditions.m"; sourceTree = "<group>"; };
 		B67CD18713F8045E006772BE /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B67CD18B13F8045E006772BE /* BAScene-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BAScene-Info.plist"; sourceTree = "<group>"; };
 		B67CD18D13F8045E006772BE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -20,17 +261,128 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		B67CD17F13F8045E006772BE /* Frameworks */ = {
+		84AEC9FC184BB945002AC8D0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B67CD18813F8045E006772BE /* Foundation.framework in Frameworks */,
+				84AECAA4184BBA9E002AC8D0 /* CoreGraphics.framework in Frameworks */,
+				84AECAA5184BBA9E002AC8D0 /* CoreVideo.framework in Frameworks */,
+				84AECAA6184BBA9E002AC8D0 /* OpenGLES.framework in Frameworks */,
+				84AECA00184BB945002AC8D0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84AECA09184BB946002AC8D0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84AECA0D184BB946002AC8D0 /* XCTest.framework in Frameworks */,
+				84AECA0F184BB946002AC8D0 /* UIKit.framework in Frameworks */,
+				84AECA0E184BB946002AC8D0 /* Foundation.framework in Frameworks */,
+				84AECA12184BB946002AC8D0 /* libBAScene.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		84AECA21184BB9A1002AC8D0 /* Persistent */ = {
+			isa = PBXGroup;
+			children = (
+				84AECA22184BB9A1002AC8D0 /* BAScene.xcdatamodel */,
+				84AECA23184BB9A1002AC8D0 /* Human */,
+				84AECA42184BB9A1002AC8D0 /* Machine */,
+			);
+			name = Persistent;
+			path = ../../BAScene/BAScene/Persistent;
+			sourceTree = "<group>";
+		};
+		84AECA23184BB9A1002AC8D0 /* Human */ = {
+			isa = PBXGroup;
+			children = (
+				84AECA24184BB9A1002AC8D0 /* BAColor.h */,
+				84AECA25184BB9A1002AC8D0 /* BAColor.m */,
+				84AECA26184BB9A1002AC8D0 /* BALight.h */,
+				84AECA27184BB9A1002AC8D0 /* BALight.m */,
+				84AECA28184BB9A1002AC8D0 /* BAMesh.h */,
+				84AECA29184BB9A1002AC8D0 /* BAMesh.m */,
+				84AECA2A184BB9A1002AC8D0 /* BAPartition.h */,
+				84AECA2B184BB9A1002AC8D0 /* BAPartition.m */,
+				84AECA2C184BB9A1002AC8D0 /* BAPoint.h */,
+				84AECA2D184BB9A1002AC8D0 /* BAPoint.m */,
+				84AECA2E184BB9A1002AC8D0 /* BAPolygon.h */,
+				84AECA2F184BB9A1002AC8D0 /* BAPolygon.m */,
+				84AECA30184BB9A1002AC8D0 /* BAProp.h */,
+				84AECA31184BB9A1002AC8D0 /* BAProp.m */,
+				84AECA32184BB9A1002AC8D0 /* BAPropGroup.h */,
+				84AECA33184BB9A1002AC8D0 /* BAPropGroup.m */,
+				84AECA34184BB9A1002AC8D0 /* BAPrototype.h */,
+				84AECA35184BB9A1002AC8D0 /* BAPrototype.m */,
+				84AECA36184BB9A1002AC8D0 /* BAPrototypeMesh.h */,
+				84AECA37184BB9A1002AC8D0 /* BAPrototypeMesh.m */,
+				84AECA38184BB9A1002AC8D0 /* BAScenePref.h */,
+				84AECA39184BB9A1002AC8D0 /* BAScenePref.m */,
+				84AECA3A184BB9A1002AC8D0 /* BASceneResource.h */,
+				84AECA3B184BB9A1002AC8D0 /* BASceneResource.m */,
+				84AECA3C184BB9A1002AC8D0 /* BAStage.h */,
+				84AECA3D184BB9A1002AC8D0 /* BAStage.m */,
+				84AECA3E184BB9A1002AC8D0 /* BATransform.h */,
+				84AECA3F184BB9A1002AC8D0 /* BATransform.m */,
+				84AECA40184BB9A1002AC8D0 /* BATuple.h */,
+				84AECA41184BB9A1002AC8D0 /* BATuple.m */,
+			);
+			path = Human;
+			sourceTree = "<group>";
+		};
+		84AECA42184BB9A1002AC8D0 /* Machine */ = {
+			isa = PBXGroup;
+			children = (
+				84AECA43184BB9A2002AC8D0 /* _BAColor.h */,
+				84AECA44184BB9A2002AC8D0 /* _BAColor.m */,
+				84AECA45184BB9A2002AC8D0 /* _BALight.h */,
+				84AECA46184BB9A2002AC8D0 /* _BALight.m */,
+				84AECA47184BB9A2002AC8D0 /* _BAMesh.h */,
+				84AECA48184BB9A2002AC8D0 /* _BAMesh.m */,
+				84AECA49184BB9A2002AC8D0 /* _BAPartition.h */,
+				84AECA4A184BB9A2002AC8D0 /* _BAPartition.m */,
+				84AECA4B184BB9A2002AC8D0 /* _BAPoint.h */,
+				84AECA4C184BB9A2002AC8D0 /* _BAPoint.m */,
+				84AECA4D184BB9A2002AC8D0 /* _BAPolygon.h */,
+				84AECA4E184BB9A2002AC8D0 /* _BAPolygon.m */,
+				84AECA4F184BB9A2002AC8D0 /* _BAProp.h */,
+				84AECA50184BB9A2002AC8D0 /* _BAProp.m */,
+				84AECA51184BB9A2002AC8D0 /* _BAPropGroup.h */,
+				84AECA52184BB9A2002AC8D0 /* _BAPropGroup.m */,
+				84AECA53184BB9A2002AC8D0 /* _BAPrototype.h */,
+				84AECA54184BB9A2002AC8D0 /* _BAPrototype.m */,
+				84AECA55184BB9A2002AC8D0 /* _BAPrototypeMesh.h */,
+				84AECA56184BB9A2002AC8D0 /* _BAPrototypeMesh.m */,
+				84AECA57184BB9A2002AC8D0 /* _BAScenePref.h */,
+				84AECA58184BB9A2002AC8D0 /* _BAScenePref.m */,
+				84AECA59184BB9A2002AC8D0 /* _BASceneResource.h */,
+				84AECA5A184BB9A2002AC8D0 /* _BASceneResource.m */,
+				84AECA5B184BB9A2002AC8D0 /* _BAStage.h */,
+				84AECA5C184BB9A2002AC8D0 /* _BAStage.m */,
+				84AECA5D184BB9A2002AC8D0 /* _BATransform.h */,
+				84AECA5E184BB9A2002AC8D0 /* _BATransform.m */,
+				84AECA5F184BB9A2002AC8D0 /* _BATuple.h */,
+				84AECA60184BB9A2002AC8D0 /* _BATuple.m */,
+			);
+			path = Machine;
+			sourceTree = "<group>";
+		};
+		84AECAED184BC218002AC8D0 /* Foundation Additions */ = {
+			isa = PBXGroup;
+			children = (
+				84AECAEE184BC218002AC8D0 /* NSArray+BAAdditions.h */,
+				84AECAEF184BC218002AC8D0 /* NSArray+BAAdditions.m */,
+				84AECAF0184BC218002AC8D0 /* NSIndexSet+BAAdditions.h */,
+				84AECAF1184BC218002AC8D0 /* NSIndexSet+BAAdditions.m */,
+			);
+			name = "Foundation Additions";
+			path = "../../BAScene/BAScene/Foundation Additions";
+			sourceTree = "<group>";
+		};
 		B67CD17613F8045E006772BE = {
 			isa = PBXGroup;
 			children = (
@@ -43,7 +395,8 @@
 		B67CD18513F8045E006772BE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B67CD18413F8045E006772BE /* BAScene.framework */,
+				84AEC9FF184BB945002AC8D0 /* libBAScene.a */,
+				84AECA0C184BB946002AC8D0 /* BASceneTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -51,7 +404,12 @@
 		B67CD18613F8045E006772BE /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84AECAA1184BBA9E002AC8D0 /* CoreGraphics.framework */,
+				84AECAA2184BBA9E002AC8D0 /* CoreVideo.framework */,
+				84AECAA3184BBA9E002AC8D0 /* OpenGLES.framework */,
 				B67CD18713F8045E006772BE /* Foundation.framework */,
+				84AEC9E5184BB91A002AC8D0 /* XCTest.framework */,
+				84AEC9E8184BB91A002AC8D0 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -59,6 +417,26 @@
 		B67CD18913F8045E006772BE /* BAScene */ = {
 			isa = PBXGroup;
 			children = (
+				84AECAED184BC218002AC8D0 /* Foundation Additions */,
+				84AECA80184BB9CF002AC8D0 /* BACamera.h */,
+				84AECA81184BB9CF002AC8D0 /* BACamera.m */,
+				84AECA82184BB9CF002AC8D0 /* BAGeometry.h */,
+				84AECA83184BB9CF002AC8D0 /* BAGeometry.m */,
+				84AECA84184BB9CF002AC8D0 /* BAResourceStorage.h */,
+				84AECA85184BB9CF002AC8D0 /* BAResourceStorage.m */,
+				84AECA86184BB9CF002AC8D0 /* BAScene.h */,
+				84AECA87184BB9CF002AC8D0 /* BAScene.m */,
+				84AECA88184BB9CF002AC8D0 /* BASceneConstants.h */,
+				84AECA89184BB9CF002AC8D0 /* BASceneConstants.m */,
+				84AECA8A184BB9CF002AC8D0 /* BASceneTypes.h */,
+				84AECA8B184BB9CF002AC8D0 /* BASceneTypes.m */,
+				84AECA8C184BB9CF002AC8D0 /* BASceneUtilities.h */,
+				84AECA8D184BB9CF002AC8D0 /* BASceneUtilities.m */,
+				84AECA90184BB9CF002AC8D0 /* BATexture.h */,
+				84AECA91184BB9CF002AC8D0 /* BATexture.m */,
+				84AECA94184BB9CF002AC8D0 /* BAVoxelArray.h */,
+				84AECA95184BB9CF002AC8D0 /* BAVoxelArray.m */,
+				84AECA21184BB9A1002AC8D0 /* Persistent */,
 				B67CD18A13F8045E006772BE /* Supporting Files */,
 			);
 			path = BAScene;
@@ -76,27 +454,14 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		B67CD18013F8045E006772BE /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
-		B67CD18313F8045E006772BE /* BAScene */ = {
+		84AEC9FE184BB945002AC8D0 /* BAScene */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B67CD19213F8045E006772BE /* Build configuration list for PBXNativeTarget "BAScene" */;
+			buildConfigurationList = 84AECA1B184BB946002AC8D0 /* Build configuration list for PBXNativeTarget "BAScene" */;
 			buildPhases = (
-				B67CD17D13F8045E006772BE /* ShellScript */,
-				B67CD17E13F8045E006772BE /* Sources */,
-				B67CD17F13F8045E006772BE /* Frameworks */,
-				B67CD18013F8045E006772BE /* Headers */,
-				B67CD18113F8045E006772BE /* Resources */,
-				B67CD18213F8045E006772BE /* ShellScript */,
+				84AEC9FD184BB945002AC8D0 /* CopyFiles */,
+				84AEC9FB184BB945002AC8D0 /* Sources */,
+				84AEC9FC184BB945002AC8D0 /* Frameworks */,
 			);
 			buildRules = (
 			);
@@ -104,8 +469,26 @@
 			);
 			name = BAScene;
 			productName = BAScene;
-			productReference = B67CD18413F8045E006772BE /* BAScene.framework */;
-			productType = "com.apple.product-type.framework.static";
+			productReference = 84AEC9FF184BB945002AC8D0 /* libBAScene.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		84AECA0B184BB946002AC8D0 /* BASceneTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84AECA1E184BB946002AC8D0 /* Build configuration list for PBXNativeTarget "BASceneTests" */;
+			buildPhases = (
+				84AECA08184BB946002AC8D0 /* Sources */,
+				84AECA09184BB946002AC8D0 /* Frameworks */,
+				84AECA0A184BB946002AC8D0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84AECA11184BB946002AC8D0 /* PBXTargetDependency */,
+			);
+			name = BASceneTests;
+			productName = BASceneTests;
+			productReference = 84AECA0C184BB946002AC8D0 /* BASceneTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -116,7 +499,7 @@
 				LastUpgradeCheck = 0420;
 				ORGANIZATIONNAME = "Marketcircle Inc";
 			};
-			buildConfigurationList = B67CD17B13F8045E006772BE /* Build configuration list for PBXProject "BAScene" */;
+			buildConfigurationList = B67CD17B13F8045E006772BE /* Build configuration list for PBXProject "BAScene-iOS" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -128,53 +511,73 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B67CD18313F8045E006772BE /* BAScene */,
+				84AEC9FE184BB945002AC8D0 /* BAScene */,
+				84AECA0B184BB946002AC8D0 /* BASceneTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		B67CD18113F8045E006772BE /* Resources */ = {
+		84AECA0A184BB946002AC8D0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B67CD18E13F8045E006772BE /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		B67CD17D13F8045E006772BE /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n    # Nothing for the slave script to do\n    exit 0\nfi\nset -u\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\n    UFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find platform name from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\n\tUFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find sdk version  from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\n    UFW_OTHER_PLATFORM=iphonesimulator\nelse\n    UFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\n    UFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\n    echo \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\n    exit 1\nfi\n\n\n# Short-circuit if all binaries are up to date\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n   [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n   [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\n   [[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && \\\n   [[ -f \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && \\\n   [[ ! \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\nthen\n    exit 0\nfi\n\n\n# Clean other platform if needed\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]]\nthen\n\techo \"Platform \\\"$UFW_SDK_PLATFORM\\\" was cleaned recently. Cleaning \\\"$UFW_OTHER_PLATFORM\\\" as well\"\n\techo xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\n\txcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" clean\nfi\n\n\n# Make sure we are building from fresh binaries\n\nrm -rf \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nrm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nrm -rf \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\n";
-		};
-		B67CD18213F8045E006772BE /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "set -e\n\nset +u\nif [[ $UFW_MASTER_SCRIPT_RUNNING ]]\nthen\n    # Nothing for the slave script to do\n    exit 0\nfi\nset -u\nexport UFW_MASTER_SCRIPT_RUNNING=1\n\n\n# Functions\n\n## List files in the specified directory, storing to the specified array.\n#\n# @param $1 The path to list\n# @param $2 The name of the array to fill\n#\n##\nlist_files ()\n{\n    filelist=$(ls \"$1\")\n    while read line\n    do\n        eval \"$2[\\${#$2[*]}]=\\\"\\$line\\\"\"\n    done <<< \"$filelist\"\n}\n\n\n# Sanity check\n\nif [[ ! -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]]\nthen\n    echo \"Framework target \\\"${TARGET_NAME}\\\" had no source files to build from. Make sure your source files have the correct target membership\"\n    exit 1\nfi\n\n\n# Gather information\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\n    UFW_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find platform name from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\n    UFW_SDK_VERSION=${BASH_REMATCH[1]}\nelse\n    echo \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\n    exit 1\nfi\n\nif [[ \"$UFW_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\n    UFW_OTHER_PLATFORM=iphonesimulator\nelse\n    UFW_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$UFW_SDK_PLATFORM$ ]]\nthen\n    UFW_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${UFW_OTHER_PLATFORM}\"\nelse\n    echo \"Could not find $UFW_SDK_PLATFORM in $BUILT_PRODUCTS_DIR\"\n    exit 1\nfi\n\n\n# Short-circuit if all binaries are up to date.\n# We already checked the other platform in the prerun script.\n\nif [[ -f \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" ]] && [[ -f \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]] && [[ ! \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -nt \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/${EXECUTABLE_PATH}\" ]]\nthen\n    exit 0\nfi\n\n\n# Make sure the other platform gets built\n\necho \"Build other platform\"\n\necho xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\nxcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${UFW_OTHER_PLATFORM}${UFW_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" CONFIGURATION_TEMP_DIR=\"${PROJECT_TEMP_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\" $ACTION\n\n\n# Build the fat static library binary\n\necho \"Create universal static library\"\n\necho \"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n\"$PLATFORM_DEVELOPER_BIN_DIR/libtool\" -static \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" \"${UFW_OTHER_BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\" -o \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\"\n\necho mv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\nmv \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}.temp\" \"${BUILT_PRODUCTS_DIR}/${EXECUTABLE_PATH}\"\n\n\n# Build embedded framework structure\n\necho \"Build Embedded Framework\"\n\necho rm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\nrm -rf \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework\"\necho mkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources\"\necho cp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\ncp -a \"${BUILT_PRODUCTS_DIR}/${WRAPPER_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/\"\n\ndeclare -a UFW_FILE_LIST\nlist_files \"${BUILT_PRODUCTS_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}\" UFW_FILE_LIST\nfor filename in \"${UFW_FILE_LIST[@]}\"\ndo\n    if [[ \"${filename}\" != \"Info.plist\" ]] && [[ ! \"${filename}\" =~ .*\\.lproj$ ]]\n    then\n        echo ln -sf \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\n        ln -sf \"../${WRAPPER_NAME}/Resources/${filename}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.embeddedframework/Resources/${filename}\"\n    fi\ndone\n\n\n# Replace other platform's framework with a copy of this one (so that both have the same universal binary)\n\necho \"Copy from $UFW_SDK_PLATFORM to $UFW_OTHER_PLATFORM\"\n\necho rm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\nrm -rf \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\necho cp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\ncp -a \"${BUILD_DIR}/${CONFIGURATION}-${UFW_SDK_PLATFORM}\" \"${BUILD_DIR}/${CONFIGURATION}-${UFW_OTHER_PLATFORM}\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
-		B67CD17E13F8045E006772BE /* Sources */ = {
+		84AEC9FB184BB945002AC8D0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84AECA98184BB9CF002AC8D0 /* BAResourceStorage.m in Sources */,
+				84AECAF2184BC218002AC8D0 /* NSArray+BAAdditions.m in Sources */,
+				84AECA79184BB9A2002AC8D0 /* _BAPrototype.m in Sources */,
+				84AECA9E184BB9CF002AC8D0 /* BATexture.m in Sources */,
+				84AECA97184BB9CF002AC8D0 /* BAGeometry.m in Sources */,
+				84AECA62184BB9A2002AC8D0 /* BAColor.m in Sources */,
+				84AECA70184BB9A2002AC8D0 /* BATuple.m in Sources */,
+				84AECA61184BB9A2002AC8D0 /* BAScene.xcdatamodel in Sources */,
+				84AECA63184BB9A2002AC8D0 /* BALight.m in Sources */,
+				84AECA65184BB9A2002AC8D0 /* BAPartition.m in Sources */,
+				84AECA64184BB9A2002AC8D0 /* BAMesh.m in Sources */,
+				84AECA6E184BB9A2002AC8D0 /* BAStage.m in Sources */,
+				84AECA7A184BB9A2002AC8D0 /* _BAPrototypeMesh.m in Sources */,
+				84AECAF3184BC218002AC8D0 /* NSIndexSet+BAAdditions.m in Sources */,
+				84AECA6F184BB9A2002AC8D0 /* BATransform.m in Sources */,
+				84AECA77184BB9A2002AC8D0 /* _BAProp.m in Sources */,
+				84AECA67184BB9A2002AC8D0 /* BAPolygon.m in Sources */,
+				84AECA66184BB9A2002AC8D0 /* BAPoint.m in Sources */,
+				84AECA9A184BB9CF002AC8D0 /* BASceneConstants.m in Sources */,
+				84AECA75184BB9A2002AC8D0 /* _BAPoint.m in Sources */,
+				84AECA71184BB9A2002AC8D0 /* _BAColor.m in Sources */,
+				84AECA9C184BB9CF002AC8D0 /* BASceneUtilities.m in Sources */,
+				84AECA6D184BB9A2002AC8D0 /* BASceneResource.m in Sources */,
+				84AECA99184BB9CF002AC8D0 /* BAScene.m in Sources */,
+				84AECA9B184BB9CF002AC8D0 /* BASceneTypes.m in Sources */,
+				84AECA6A184BB9A2002AC8D0 /* BAPrototype.m in Sources */,
+				84AECA96184BB9CF002AC8D0 /* BACamera.m in Sources */,
+				84AECA6B184BB9A2002AC8D0 /* BAPrototypeMesh.m in Sources */,
+				84AECA76184BB9A2002AC8D0 /* _BAPolygon.m in Sources */,
+				84AECA78184BB9A2002AC8D0 /* _BAPropGroup.m in Sources */,
+				84AECA69184BB9A2002AC8D0 /* BAPropGroup.m in Sources */,
+				84AECA7E184BB9A2002AC8D0 /* _BATransform.m in Sources */,
+				84AECA7B184BB9A2002AC8D0 /* _BAScenePref.m in Sources */,
+				84AECA7F184BB9A2002AC8D0 /* _BATuple.m in Sources */,
+				84AECA72184BB9A2002AC8D0 /* _BALight.m in Sources */,
+				84AECA6C184BB9A2002AC8D0 /* BAScenePref.m in Sources */,
+				84AECA7D184BB9A2002AC8D0 /* _BAStage.m in Sources */,
+				84AECA74184BB9A2002AC8D0 /* _BAPartition.m in Sources */,
+				84AECAA0184BB9CF002AC8D0 /* BAVoxelArray.m in Sources */,
+				84AECA7C184BB9A2002AC8D0 /* _BASceneResource.m in Sources */,
+				84AECA68184BB9A2002AC8D0 /* BAProp.m in Sources */,
+				84AECA73184BB9A2002AC8D0 /* _BAMesh.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84AECA08184BB946002AC8D0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -182,6 +585,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84AECA11184BB946002AC8D0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84AEC9FE184BB945002AC8D0 /* BAScene */;
+			targetProxy = 84AECA10184BB946002AC8D0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B67CD18C13F8045E006772BE /* InfoPlist.strings */ = {
@@ -195,12 +606,151 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		84AECA1C184BB946002AC8D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DSTROOT = /tmp/BAScene.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BAScene/BAScene-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		84AECA1D184BB946002AC8D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				DSTROOT = /tmp/BAScene.dst;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BAScene/BAScene-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		84AECA1F184BB946002AC8D0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BAScene/BAScene-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "BASceneTests/BASceneTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		84AECA20184BB946002AC8D0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BAScene/BAScene-Prefix.pch";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = "BASceneTests/BASceneTests-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
 		B67CD19013F8045E006772BE /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -214,6 +764,10 @@
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(BUILD_DIR)/include/BAScene",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 			};
@@ -224,53 +778,44 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(BUILD_DIR)/include/BAScene",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+				);
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		B67CD19313F8045E006772BE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_VERSION = A;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BAScene/BAScene-Prefix.pch";
-				INFOPLIST_FILE = "BAScene/BAScene-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = framework;
-			};
-			name = Debug;
-		};
-		B67CD19413F8045E006772BE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_VERSION = A;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BAScene/BAScene-Prefix.pch";
-				INFOPLIST_FILE = "BAScene/BAScene-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				WRAPPER_EXTENSION = framework;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B67CD17B13F8045E006772BE /* Build configuration list for PBXProject "BAScene" */ = {
+		84AECA1B184BB946002AC8D0 /* Build configuration list for PBXNativeTarget "BAScene" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84AECA1C184BB946002AC8D0 /* Debug */,
+				84AECA1D184BB946002AC8D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84AECA1E184BB946002AC8D0 /* Build configuration list for PBXNativeTarget "BASceneTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84AECA1F184BB946002AC8D0 /* Debug */,
+				84AECA20184BB946002AC8D0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B67CD17B13F8045E006772BE /* Build configuration list for PBXProject "BAScene-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B67CD19013F8045E006772BE /* Debug */,
@@ -278,14 +823,6 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
-		};
-		B67CD19213F8045E006772BE /* Build configuration list for PBXNativeTarget "BAScene" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				B67CD19313F8045E006772BE /* Debug */,
-				B67CD19413F8045E006772BE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
