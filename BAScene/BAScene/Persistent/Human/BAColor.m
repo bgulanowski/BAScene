@@ -13,11 +13,11 @@
 #if TARGET_OS_IPHONE
 #define NSColor UIColor
 
-@interface UIColor (SceneKitAdditions)
+@interface UIColor (BASceneAdditions)
 + (UIColor *)colorWithDeviceHue:(GLfloat)hue saturation:(GLfloat)saturation brightness:(GLfloat)brightness alpha:(GLfloat)alpha;
 @end
 
-@implementation UIColor (SceneKitAdditions)
+@implementation UIColor (BASceneAdditions)
 + (UIColor *)colorWithDeviceHue:(GLfloat)hue saturation:(GLfloat)saturation brightness:(GLfloat)brightness alpha:(GLfloat)alpha {
     return [self colorWithHue:hue saturation:saturation brightness:brightness alpha:alpha];
 }
