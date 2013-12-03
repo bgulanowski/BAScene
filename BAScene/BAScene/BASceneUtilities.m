@@ -8,6 +8,7 @@
 
 #import <BAScene/BASceneUtilities.h>
 
+#import "BASceneOpenGL.h"
 
 const NSUInteger BANotFound = NSNotFound;
 

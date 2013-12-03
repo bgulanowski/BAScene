@@ -10,6 +10,8 @@
 
 #import <BAScene/BASceneUtilities.h>
 
+#import "BASceneOpenGL.h"
+
 @implementation BATexture
 
 @synthesize size, minFilter, magFilter, mode, type;

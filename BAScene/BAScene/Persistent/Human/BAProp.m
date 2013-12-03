@@ -18,6 +18,8 @@
 
 #import <BAScene/BASceneUtilities.h>
 
+#import "BASceneOpenGL.h"
+
 static NSTimeInterval gInterval = 0;
 
 @implementation BAProp

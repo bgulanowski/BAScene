@@ -17,6 +17,7 @@
 
 #import <BAScene/NSArray+BAAdditions.h>
 
+#import "BASceneOpenGL.h"
 
 @interface BAPolygon ()
 

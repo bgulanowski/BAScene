@@ -11,6 +11,8 @@
 
 #import <BAScene/BASceneTypes.h>
 
+@class BACamera;
+
 @interface BATransform : _BATransform {
 	BOOL dirty;
 	BAMatrix4x4f transform;

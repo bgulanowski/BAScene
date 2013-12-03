@@ -10,6 +10,8 @@
 
 #import <BAScene/BASceneUtilities.h>
 
+#import "BASceneOpenGL.h"
+
 #if TARGET_OS_IPHONE
 #define NSColor UIColor
 

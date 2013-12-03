@@ -7,12 +7,6 @@
 //
 
 
-#if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
-#import <OpenGLES/ES1/gl.h>
-#else
-#import <OpenGL/gl.h>
-#endif
-
 #import <BAScene/_BAColor.h>
 #import <BAScene/BASceneTypes.h>
 
@@ -26,8 +20,8 @@
 
 @interface BAColor (BAColorDeprecated)
 
-+ (BAColor *)colorWithRed:(GLfloat)red green:(GLfloat)green blue:(GLfloat)blue alpha:(GLfloat)alpha DEPRECATED_ATTRIBUTE;
-+ (BAColor *)colorWithRed:(GLfloat)red green:(GLfloat)green blue:(GLfloat)blue DEPRECATED_ATTRIBUTE;
++ (BAColor *)colorWithRed:(float)red green:(float)green blue:(float)blue alpha:(float)alpha DEPRECATED_ATTRIBUTE;
++ (BAColor *)colorWithRed:(float)red green:(float)green blue:(float)blue DEPRECATED_ATTRIBUTE;
 + (BAColor *)colorWithColor:(BAColorf)color DEPRECATED_ATTRIBUTE;
 
 + (BAColor *)randomColor DEPRECATED_ATTRIBUTE;
@@ -39,8 +33,8 @@
 
 @interface NSManagedObjectContext (BAColorCreating)
 
-- (BAColor *)colorWithRed:(GLfloat)red green:(GLfloat)green blue:(GLfloat)blue alpha:(GLfloat)alpha;
-- (BAColor *)colorWithRed:(GLfloat)red green:(GLfloat)green blue:(GLfloat)blue;
+- (BAColor *)colorWithRed:(float)red green:(float)green blue:(float)blue alpha:(float)alpha;
+- (BAColor *)colorWithRed:(float)red green:(float)green blue:(float)blue;
 - (BAColor *)colorWithColor:(BAColorf)color;
 
 - (BAColor *)randomColor;

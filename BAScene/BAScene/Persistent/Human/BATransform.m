@@ -10,6 +10,8 @@
 
 #import <BAScene/BASceneUtilities.h>
 
+#import "BASceneOpenGL.h"
+
 @interface BATransform ()
 @property (nonatomic, readwrite) BAMatrix4x4f transform;
 @property (nonatomic, readwrite) BOOL dirty;

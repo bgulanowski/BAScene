@@ -6,6 +6,7 @@
 #import <BAScene/BATransform.h>
 #import <BAScene/BASceneUtilities.h>
 
+#import "BASceneOpenGL.h"
 
 @implementation BAPrototypeMesh
 

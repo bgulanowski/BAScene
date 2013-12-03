@@ -11,6 +11,7 @@
 #import <BAScene/BACamera.h>
 #import <BAScene/BASceneConstants.h>
 
+#import "BASceneOpenGL.h"
 
 CVReturn BASceneViewDisplayLink(CVDisplayLinkRef displayLink,
                                 const CVTimeStamp *inNow,
