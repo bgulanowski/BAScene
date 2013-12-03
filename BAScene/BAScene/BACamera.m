@@ -473,6 +473,10 @@ void compareMatrices(BAMatrix4x4f a, BAMatrix4x4f b) {
 	glEnable(GL_NORMALIZE);
 }
 
+- (void)applyTransform:(BATransform *)transform {
+	// TODO: update the model-view matrix with transform
+}
+
 - (void)update:(NSTimeInterval)interval {
     
     // All the rates are units per second; update the postion and orientation in light of the change

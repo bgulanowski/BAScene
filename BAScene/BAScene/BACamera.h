@@ -54,7 +54,7 @@ typedef struct BACameraValueChanges {
 } BACameraColorChanges;
 
 
-@class BACamera, BAColor;
+@class BACamera, BAColor, BATransform;
 
 @protocol BAPropContainer<NSObject>
 - (NSArray *)sortedPropsForCamera:(BACamera *)camera;
@@ -194,6 +194,8 @@ typedef struct BACameraValueChanges {
 
 // rotate relative to the current rotation in absolute values
 -(void)rotateX:(GLfloat)x y:(GLfloat)y;
+
+- (void)applyTransform:(BATransform *)transform;
 
 - (void)setup;
 - (void)update:(NSTimeInterval)interval;
