@@ -190,7 +190,7 @@ static GLfloat BA_IDENTITY_MATRIX[16] = {
 	dirty = NO;
 }
 
-- (void)apply {
+- (void)applyWithCamera:(BACamera *)camera {
 	if(dirty)
 		[self rebuild];
 	glMultMatrixf( transform.i );

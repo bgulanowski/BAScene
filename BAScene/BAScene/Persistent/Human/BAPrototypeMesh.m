@@ -21,7 +21,7 @@
 #pragma mark BAVisible
 - (void)paintForCamera:(BACamera *)camera {
 	glPushMatrix();
-	[self.transform apply];
+	[self.transform applyWithCamera:camera];
 	if(hasColor && appliesColor) {
         BAColorf colorValues = self.color->values;
         glColor4f(colorValues.c.r, colorValues.c.g, colorValues.c.b, colorValues.c.a);

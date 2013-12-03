@@ -30,7 +30,7 @@
 - (void)rebuild;
 - (void)reset;
 
-- (void)apply;
+- (void)applyWithCamera:(BACamera *)camera;
 
 @end
 
