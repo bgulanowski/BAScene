@@ -316,7 +316,11 @@ void compareMatrices(BAMatrix4x4f a, BAMatrix4x4f b);
     colorChanges.shine = YES;
 }
 
-#if ! TARGET_OS_IPHONE && ! TARGET_IPHONE_SIMULATOR
+#if TARGET_OS_IPHONE
+- (UIColor *)uibgColor {
+}
+
+#else
 - (NSColor *)nsbgColor {
 	return [NSColor colorWithCalibratedRed:bgColor.c.r green:bgColor.c.g blue:bgColor.c.b alpha:bgColor.c.a];
 }
@@ -364,7 +368,7 @@ void compareMatrices(BAMatrix4x4f a, BAMatrix4x4f b);
 	}
 	blurOn = flag;
 }
-*/
+#endif
 
 - (void)setLightX:(GLfloat)lightX {
     lightLoc.p.x = lightX;
@@ -604,10 +608,10 @@ do {\
     
     glLoadMatrixf(m.i);
 
-    
-//	if(blurOn && blur > 0)
-//		glAccum(GL_RETURN, blur);
-/*
+#if 0
+	if(blurOn && blur > 0)
+		glAccum(GL_RETURN, blur);
+
 	{
 		
 		GLint viewport[4];
@@ -625,7 +629,8 @@ do {\
 			glBindFramebuffer(GL_FRAMEBUFFER, 0);
 		}
 	}
-*/	
+#endif
+	
 #if ! TARGET_OS_IPHONE
 	if(options.testOn) {
 		static GLUquadric *quad = NULL;
@@ -722,7 +727,7 @@ do {\
 }
 
 #if TARGET_OS_IPHONE
-/*
+#if 0
 + (Class)classForContext:(EAGLContext *)context {
 	Class BACameraClass = self;
 	switch ([context ba_profile]) {
@@ -741,7 +746,8 @@ do {\
 	Class BACameraClass = [self classForContext:context];
 	return [[[BACameraClass alloc] init] autorelease];
 }
-*/
+#endif
+
 #else
 + (Class)classForContext:(NSOpenGLContext *)context {
 	
