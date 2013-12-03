@@ -12,9 +12,6 @@
  */
 
 
-#import <CoreVideo/CoreVideo.h>
-
-
 @class BACamera;
 
 @interface BASceneView : NSOpenGLView {

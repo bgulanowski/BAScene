@@ -208,5 +208,11 @@ typedef struct BACameraValueChanges {
 - (void)logCameraState;
 - (void)logGLState;
 
+#if TARGET_OS_IPHONE
++ (BACamera *)cameraForContext:(EAGLContext *)context;
+#else
++ (BACamera *)cameraForContext:(NSOpenGLContext *)context;
+#endif
+
 @end
 

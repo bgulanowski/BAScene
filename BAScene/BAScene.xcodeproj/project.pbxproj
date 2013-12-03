@@ -219,6 +219,21 @@
 		84A591C11769019100C7F7B6 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A591B81769011100C7F7B6 /* CoreVideo.framework */; };
 		84A591C21769019D00C7F7B6 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E21DF881066C26D00511C91 /* OpenGL.framework */; };
 		84A591C31769019D00C7F7B6 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E21DF881066C26D00511C91 /* OpenGL.framework */; };
+		84F9A21D184D4F67004E31E4 /* BACameraGL2.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F9A21B184D4F67004E31E4 /* BACameraGL2.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84F9A21E184D4F67004E31E4 /* BACameraGL2.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9A21C184D4F67004E31E4 /* BACameraGL2.m */; };
+		84F9A221184D4F74004E31E4 /* BACameraGL3.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F9A21F184D4F74004E31E4 /* BACameraGL3.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84F9A223184D4F74004E31E4 /* BACameraGL3.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9A220184D4F74004E31E4 /* BACameraGL3.m */; };
+		84F9A224184D4F74004E31E4 /* BACameraGL3.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9A220184D4F74004E31E4 /* BACameraGL3.m */; };
+		84F9A225184D4F7A004E31E4 /* BACameraGL2.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9A21C184D4F67004E31E4 /* BACameraGL2.m */; };
+		84F9A228184D5296004E31E4 /* BACameraGL1.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F9A226184D5296004E31E4 /* BACameraGL1.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84F9A22A184D5296004E31E4 /* BACameraGL1.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9A227184D5296004E31E4 /* BACameraGL1.m */; };
+		84F9A22B184D5296004E31E4 /* BACameraGL1.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9A227184D5296004E31E4 /* BACameraGL1.m */; };
+		84F9A22C184D552E004E31E4 /* BACameraGL3.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F9A21F184D4F74004E31E4 /* BACameraGL3.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84F9A22D184D5534004E31E4 /* BACameraGL1.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F9A226184D5296004E31E4 /* BACameraGL1.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84F9A22E184D5539004E31E4 /* BACameraGL2.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F9A21B184D4F67004E31E4 /* BACameraGL2.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84F9A232184D9F90004E31E4 /* NSOpenGLContext+BAScene.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F9A230184D9F90004E31E4 /* NSOpenGLContext+BAScene.h */; };
+		84F9A233184D9F90004E31E4 /* NSOpenGLContext+BAScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9A231184D9F90004E31E4 /* NSOpenGLContext+BAScene.m */; };
+		84F9A234184D9F94004E31E4 /* NSOpenGLContext+BAScene.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9A231184D9F90004E31E4 /* NSOpenGLContext+BAScene.m */; };
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		B67411A60FAF61EA001E3C0D /* BASceneUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = B67411A40FAF61EA001E3C0D /* BASceneUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B67411D40FAF63D6001E3C0D /* BAPropTester.m in Sources */ = {isa = PBXBuildFile; fileRef = B67411C50FAF62F6001E3C0D /* BAPropTester.m */; };
@@ -465,6 +480,15 @@
 		84F8BCB81770B7F100F6643D /* human.m.motemplate */ = {isa = PBXFileReference; lastKnownFileType = text; path = human.m.motemplate; sourceTree = "<group>"; };
 		84F8BCB91770B7F100F6643D /* machine.h.motemplate */ = {isa = PBXFileReference; lastKnownFileType = text; path = machine.h.motemplate; sourceTree = "<group>"; };
 		84F8BCBA1770B7F100F6643D /* machine.m.motemplate */ = {isa = PBXFileReference; lastKnownFileType = text; path = machine.m.motemplate; sourceTree = "<group>"; };
+		84F9A21B184D4F67004E31E4 /* BACameraGL2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BACameraGL2.h; sourceTree = "<group>"; };
+		84F9A21C184D4F67004E31E4 /* BACameraGL2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BACameraGL2.m; sourceTree = "<group>"; };
+		84F9A21F184D4F74004E31E4 /* BACameraGL3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BACameraGL3.h; sourceTree = "<group>"; };
+		84F9A220184D4F74004E31E4 /* BACameraGL3.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BACameraGL3.m; sourceTree = "<group>"; };
+		84F9A226184D5296004E31E4 /* BACameraGL1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BACameraGL1.h; sourceTree = "<group>"; };
+		84F9A227184D5296004E31E4 /* BACameraGL1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BACameraGL1.m; sourceTree = "<group>"; };
+		84F9A22F184D5715004E31E4 /* BASceneOpenGL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BASceneOpenGL.h; sourceTree = "<group>"; };
+		84F9A230184D9F90004E31E4 /* NSOpenGLContext+BAScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSOpenGLContext+BAScene.h"; sourceTree = "<group>"; };
+		84F9A231184D9F90004E31E4 /* NSOpenGLContext+BAScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSOpenGLContext+BAScene.m"; sourceTree = "<group>"; };
 		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DC2EF5B0486A6940098B216 /* BAScene.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BAScene.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B67411920FAF5E2C001E3C0D /* BAScene.xcdatamodel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = wrapper.xcdatamodel; path = BAScene.xcdatamodel; sourceTree = "<group>"; };
@@ -595,12 +619,13 @@
 			children = (
 				4E4F2C1912CFACA80095AD3F /* Rendering */,
 				4E1B6D340FD1898200AE4803 /* Support */,
-				B67412840FAF9F44001E3C0D /* Archived */,
 				B67411E30FAF6B3C001E3C0D /* Persistent */,
 				4E1B6D330FD1897500AE4803 /* View */,
 				B67412650FAF9CFB001E3C0D /* BAAdditions */,
 				32C88DFF0371C24200C91783 /* Other Sources */,
 				089C1665FE841158C02AAC07 /* Resources */,
+				84F9A230184D9F90004E31E4 /* NSOpenGLContext+BAScene.h */,
+				84F9A231184D9F90004E31E4 /* NSOpenGLContext+BAScene.m */,
 			);
 			path = BAScene;
 			sourceTree = "<group>";
@@ -650,10 +675,19 @@
 		4E4F2C1912CFACA80095AD3F /* Rendering */ = {
 			isa = PBXGroup;
 			children = (
+				B67412850FAF9F44001E3C0D /* BACamera.h */,
+				B67412860FAF9F44001E3C0D /* BACamera.m */,
+				84F9A226184D5296004E31E4 /* BACameraGL1.h */,
+				84F9A227184D5296004E31E4 /* BACameraGL1.m */,
+				84F9A21B184D4F67004E31E4 /* BACameraGL2.h */,
+				84F9A21C184D4F67004E31E4 /* BACameraGL2.m */,
+				84F9A21F184D4F74004E31E4 /* BACameraGL3.h */,
+				84F9A220184D4F74004E31E4 /* BACameraGL3.m */,
 				4E7FBBD11132CF4500965767 /* BAGeometry.h */,
 				4E7FBBD21132CF4500965767 /* BAGeometry.m */,
 				4E4F2C1C12CFACC90095AD3F /* BATexture.h */,
 				4E4F2C1D12CFACC90095AD3F /* BATexture.m */,
+				84F9A22F184D5715004E31E4 /* BASceneOpenGL.h */,
 			);
 			name = Rendering;
 			sourceTree = "<group>";
@@ -827,15 +861,6 @@
 			path = "Foundation Additions";
 			sourceTree = "<group>";
 		};
-		B67412840FAF9F44001E3C0D /* Archived */ = {
-			isa = PBXGroup;
-			children = (
-				B67412850FAF9F44001E3C0D /* BACamera.h */,
-				B67412860FAF9F44001E3C0D /* BACamera.m */,
-			);
-			name = Archived;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -844,9 +869,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E91CE171349F25D00B90712 /* BATexture.h in Headers */,
+				84F9A22D184D5534004E31E4 /* BACameraGL1.h in Headers */,
+				84F9A22C184D552E004E31E4 /* BACameraGL3.h in Headers */,
 				4E2A090D1361B40800EDD4A4 /* _BATuple.h in Headers */,
 				4E08E1E5136AFB4900F01674 /* NSIndexSet+BAAdditions.h in Headers */,
 				4EA450FF136C4CF40081218A /* NSArray+BAAdditions.h in Headers */,
+				84F9A22E184D5539004E31E4 /* BACameraGL2.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -858,6 +886,7 @@
 				B67411F50FAF6CB9001E3C0D /* BATuple.h in Headers */,
 				B67413250FAFA6C7001E3C0D /* BACamera.h in Headers */,
 				B67413270FAFA6C8001E3C0D /* BAColor.h in Headers */,
+				84F9A21D184D4F67004E31E4 /* BACameraGL2.h in Headers */,
 				B67413290FAFA6C9001E3C0D /* BAScene.h in Headers */,
 				B674132B0FAFA6CA001E3C0D /* BAPolygon.h in Headers */,
 				B674132D0FAFA6D2001E3C0D /* BATransform.h in Headers */,
@@ -878,6 +907,7 @@
 				4E834DAD11691D7800306C0A /* _BAPropGroup.h in Headers */,
 				4E834DAF11691D7800306C0A /* _BAMesh.h in Headers */,
 				4E834DB111691D7800306C0A /* _BAPartition.h in Headers */,
+				84F9A221184D4F74004E31E4 /* BACameraGL3.h in Headers */,
 				4E834DB511691D7800306C0A /* _BAPoint.h in Headers */,
 				4E834DB711691D7800306C0A /* _BAPolygon.h in Headers */,
 				4E834DB911691D7800306C0A /* _BAProp.h in Headers */,
@@ -889,12 +919,14 @@
 				4EB89940117A84F4005F8C4C /* _BAPrototypeMesh.h in Headers */,
 				4EB89946117A8503005F8C4C /* BAPrototypeMesh.h in Headers */,
 				4EBBD435117B253300B7315B /* BACameraSetup.h in Headers */,
+				84F9A228184D5296004E31E4 /* BACameraGL1.h in Headers */,
 				4EBBD474117B289100B7315B /* BAViewController.h in Headers */,
 				4EFEDDD712CE2FEF0083CCFC /* _BAColor.h in Headers */,
 				4EFEDDD912CE2FEF0083CCFC /* _BALight.h in Headers */,
 				4EFEDDDB12CE2FEF0083CCFC /* _BASceneResource.h in Headers */,
 				4EFEDDE312CE30020083CCFC /* BALight.h in Headers */,
 				4EFEDDE512CE30020083CCFC /* BASceneResource.h in Headers */,
+				84F9A232184D9F90004E31E4 /* NSOpenGLContext+BAScene.h in Headers */,
 				4EFEDDEF12CE36950083CCFC /* BAResourceStorage.h in Headers */,
 				4E4F2C1E12CFACC90095AD3F /* BATexture.h in Headers */,
 				4E58596C1345FCC100A8D0BB /* BAVoxelArray.h in Headers */,
@@ -1058,14 +1090,18 @@
 			files = (
 				4E2957751217389C00DB9320 /* _BAPropGroup.m in Sources */,
 				4E2957761217389C00DB9320 /* _BAMesh.m in Sources */,
+				84F9A22B184D5296004E31E4 /* BACameraGL1.m in Sources */,
 				4E2957771217389E00DB9320 /* _BAPartition.m in Sources */,
 				4E2957791217389F00DB9320 /* _BAPoint.m in Sources */,
 				4E29577A121738A000DB9320 /* _BAPolygon.m in Sources */,
 				4E29577B121738A100DB9320 /* _BAProp.m in Sources */,
 				4E29577C121738A200DB9320 /* _BAPrototype.m in Sources */,
+				84F9A234184D9F94004E31E4 /* NSOpenGLContext+BAScene.m in Sources */,
+				84F9A225184D4F7A004E31E4 /* BACameraGL2.m in Sources */,
 				4E29577D121738A300DB9320 /* _BAPrototypeMesh.m in Sources */,
 				4E29577E121738A300DB9320 /* _BAScenePref.m in Sources */,
 				4E29577F121738A500DB9320 /* _BAStage.m in Sources */,
+				84F9A224184D4F74004E31E4 /* BACameraGL3.m in Sources */,
 				4E295780121738A500DB9320 /* _BATransform.m in Sources */,
 				4E295781121738A700DB9320 /* BACamera.m in Sources */,
 				4E295782121738AA00DB9320 /* BACameraSetup.m in Sources */,
@@ -1125,6 +1161,7 @@
 				B67413280FAFA6C9001E3C0D /* BAColor.m in Sources */,
 				B674132A0FAFA6CA001E3C0D /* BAScene.m in Sources */,
 				B674132C0FAFA6CB001E3C0D /* BAPolygon.m in Sources */,
+				84F9A21E184D4F67004E31E4 /* BACameraGL2.m in Sources */,
 				B674132E0FAFA6D3001E3C0D /* BATransform.m in Sources */,
 				B67413300FAFA6D4001E3C0D /* BAScenePref.m in Sources */,
 				B67413740FB06269001E3C0D /* BASceneView.m in Sources */,
@@ -1133,6 +1170,7 @@
 				4E1B6D880FD1EB3700AE4803 /* BAProp.m in Sources */,
 				4E1B6D8A0FD1EB3800AE4803 /* BAPrototype.m in Sources */,
 				4E1B6DAB0FD21CAE00AE4803 /* BAPoint.m in Sources */,
+				84F9A223184D4F74004E31E4 /* BACameraGL3.m in Sources */,
 				4E1B6E410FD3FFC400AE4803 /* BAStage.m in Sources */,
 				4E1B6E510FD413D300AE4803 /* BAPartition.m in Sources */,
 				4E944E5510A06B7400ECE62C /* BAPointsList.m in Sources */,
@@ -1156,8 +1194,10 @@
 				4EBBD475117B289100B7315B /* BAViewController.m in Sources */,
 				4EC7C9E81198FBA500D1E2ED /* BASceneConstants.m in Sources */,
 				4EFEDDD812CE2FEF0083CCFC /* _BAColor.m in Sources */,
+				84F9A22A184D5296004E31E4 /* BACameraGL1.m in Sources */,
 				4EFEDDDA12CE2FEF0083CCFC /* _BALight.m in Sources */,
 				4EFEDDDC12CE2FEF0083CCFC /* _BASceneResource.m in Sources */,
+				84F9A233184D9F90004E31E4 /* NSOpenGLContext+BAScene.m in Sources */,
 				4EFEDDE412CE30020083CCFC /* BALight.m in Sources */,
 				4EFEDDE612CE30020083CCFC /* BASceneResource.m in Sources */,
 				4EFEDDF012CE36950083CCFC /* BAResourceStorage.m in Sources */,

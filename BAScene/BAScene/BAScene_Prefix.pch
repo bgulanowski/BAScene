@@ -10,6 +10,9 @@
 
     #import <Cocoa/Cocoa.h>
     #import <CoreData/CoreData.h>
+	#import <CoreVideo/CoreVideo.h>
+
 	#import <BAFoundation/NSManagedObjectContext+BAAdditions.h>
 	#import <BAFoundation/NSManagedObject+BAAdditions.h>
+
 #endif

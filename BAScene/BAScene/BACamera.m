@@ -9,12 +9,19 @@
 #import <BAScene/BACamera.h>
 
 #import <BAScene/BASceneUtilities.h>
+#import <BASCene/NSOpenGLContext+BAScene.h>
 
 #import <math.h>
 
 
-#if ! TARGET_OS_IPHONE
+#if TARGET_OS_IPHONE
+#else
+
 #import <OpenGL/glu.h>
+
+#import <BAScene/BACameraGL1.h>
+#import <BAScene/BACameraGL2.h>
+#import <BAScene/BACameraGL3.h>
 #endif
 
 #if ! TARGET_OS_IPHONE
@@ -711,5 +718,29 @@ do {\
     NSLog(@"Back mode:  %@", BAStringForGLPolygonMode(polygonModes[1]));
 #endif
 }
+
+#if TARGET_OS_IPHONE
++ (BACamera *)cameraForContext:(EAGLContext *)context {
+	
+}
+
+#else
++ (BACamera *)cameraForContext:(NSOpenGLContext *)context {
+	
+	Class BACameraClass = self;
+	
+	switch ([context ba_profile]) {
+		case kCGLOGLPVersion_Legacy:
+			BACameraClass = [BACameraGL2 class]; break;
+		case kCGLOGLPVersion_GL3_Core:
+		case kCGLOGLPVersion_GL4_Core:
+			BACameraClass = [BACameraGL3 class]; break;
+		default:
+			BACameraClass = [BACameraGL1 class]; break;
+	}
+	
+	return [[[BACameraClass alloc] init] autorelease];
+}
+#endif
 
 @end
