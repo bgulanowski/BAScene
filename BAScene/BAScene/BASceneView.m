@@ -37,11 +37,11 @@ CVReturn BASceneViewDisplayLink(CVDisplayLinkRef displayLink,
 #pragma mark - Private
 
 CVReturn BASceneViewDisplayLink(CVDisplayLinkRef displayLink,
-          const CVTimeStamp *inNow,
-          const CVTimeStamp *inOutputTime,
-          CVOptionFlags flagsIn,
-          CVOptionFlags *flagsOut,
-          void *sceneView) {
+								const CVTimeStamp *inNow,
+								const CVTimeStamp *inOutputTime,
+								CVOptionFlags flagsIn,
+								CVOptionFlags *flagsOut,
+								void *sceneView) {
     
     NSAutoreleasePool *pool = [NSAutoreleasePool new];
     [(BASceneView *)sceneView captureScene];
