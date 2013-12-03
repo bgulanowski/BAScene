@@ -259,21 +259,21 @@ void compareMatrices(BAMatrix4x4f a, BAMatrix4x4f b);
 }
 
 #if ! TARGET_OS_IPHONE
-- (GLenum)frontMode {
-    return BAPolygonModeToGL(options.frontMode);
+- (BAPolygonMode)frontMode {
+    return options.frontMode;
 }
 
-- (void)setFrontMode:(GLenum)frontMode {
-    options.frontMode = BAPolygonModeFromGL(frontMode);
+- (void)setFrontMode:(BAPolygonMode)frontMode {
+    options.frontMode = frontMode;
     changes.frontMode = 1;
 }
 
-- (GLenum)backMode {
-    return BAPolygonModeToGL(options.backMode);
+- (BAPolygonMode)backMode {
+    return options.backMode;
 }
 
-- (void)setBackMode:(GLenum)backMode {
-    options.backMode = BAPolygonModeFromGL(backMode);
+- (void)setBackMode:(BAPolygonMode)backMode {
+    options.backMode = backMode;
     changes.backMode = 1;
 }
 
@@ -491,8 +491,8 @@ void compareMatrices(BAMatrix4x4f a, BAMatrix4x4f b) {
     if(changes.depthOn)  options.depthOn  ? glEnable(GL_DEPTH_TEST) : glDisable(GL_DEPTH_TEST);
     
 #if ! TARGET_OS_IPHONE
-    if(changes.frontMode) glPolygonMode(GL_FRONT, self.frontMode);
-    if(changes.backMode)  glPolygonMode(GL_BACK, self.backMode);
+    if(changes.frontMode) glPolygonMode(GL_FRONT, BAPolygonModeToGL(self.frontMode));
+    if(changes.backMode)  glPolygonMode(GL_BACK, BAPolygonModeToGL(self.backMode));
 #endif
     if(colorChanges.background) glClearColor(bgColor.c.r, bgColor.c.g, bgColor.c.b, 1.0f);
     

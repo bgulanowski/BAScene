@@ -37,10 +37,8 @@ typedef struct BACameraOptionFlags {
     unsigned int lightsOn:1;
     unsigned int cullOn:1;
     unsigned int depthOn:1;
-#if ! TARGET_OS_IPHONE
     BAPolygonMode frontMode:2;
     BAPolygonMode backMode:2;
-#endif
     unsigned int reserved2:9;
 } BACameraOptions;
 
@@ -148,11 +146,8 @@ typedef struct BACameraValueChanges {
 @property(nonatomic,assign) GLfloat yRotRate;
 @property(nonatomic,assign) GLfloat zRotRate;
 
-#if ! TARGET_OS_IPHONE
-// GL_POINT, GL_LINE or GL_FILL
-@property (nonatomic) GLenum frontMode;
-@property (nonatomic) GLenum backMode;
-#endif
+@property (nonatomic) BAPolygonMode frontMode;
+@property (nonatomic) BAPolygonMode backMode;
 
 @property (nonatomic) BAPointf focus;
 @property (nonatomic) GLfloat blur;
