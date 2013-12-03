@@ -12,6 +12,7 @@
 #import <BAScene/BASceneConstants.h>
 
 #import "BASceneOpenGL.h"
+#import "BACameraPrivate.h"
 
 CVReturn BASceneViewDisplayLink(CVDisplayLinkRef displayLink,
                                 const CVTimeStamp *inNow,
@@ -69,7 +70,12 @@ CVReturn BASceneViewDisplayLink(CVDisplayLinkRef displayLink,
 		self.movementRate = 5;
         self.drawInBackground = YES;
         
-		[self setCamera:[[[[[self class] cameraClass] alloc] init] autorelease]];
+		Class cameraClass = [[self class] cameraClass];
+		
+		if(!cameraClass)
+			cameraClass = [BACamera classForContext:[self openGLContext]];
+		
+		[self setCamera:[[[cameraClass alloc] init] autorelease]];
         
         [[self openGLContext] makeCurrentContext];
         [camera setup];
@@ -408,8 +414,6 @@ static Class gCameraClass = nil;
 }
 
 + (Class)cameraClass {
-	if(nil == gCameraClass)
-		return [BACamera class];
 	return gCameraClass;
 }
 

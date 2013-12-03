@@ -11,6 +11,8 @@
 #import <BAScene/BASceneUtilities.h>
 #import <BASCene/NSOpenGLContext+BAScene.h>
 
+#import "BACameraPrivate.h"
+
 #import <math.h>
 
 
@@ -720,15 +722,9 @@ do {\
 }
 
 #if TARGET_OS_IPHONE
-+ (BACamera *)cameraForContext:(EAGLContext *)context {
-	
-}
-
-#else
-+ (BACamera *)cameraForContext:(NSOpenGLContext *)context {
-	
+/*
++ (Class)classForContext:(EAGLContext *)context {
 	Class BACameraClass = self;
-	
 	switch ([context ba_profile]) {
 		case kCGLOGLPVersion_Legacy:
 			BACameraClass = [BACameraGL2 class]; break;
@@ -738,7 +734,32 @@ do {\
 		default:
 			BACameraClass = [BACameraGL1 class]; break;
 	}
+	return BACameraClass;
+}
+
++ (BACamera *)cameraForContext:(EAGLContext *)context {
+	Class BACameraClass = [self classForContext:context];
+	return [[[BACameraClass alloc] init] autorelease];
+}
+*/
+#else
++ (Class)classForContext:(NSOpenGLContext *)context {
 	
+	Class BACameraClass = self;
+	switch ([context ba_profile]) {
+		case kCGLOGLPVersion_Legacy:
+			BACameraClass = [BACameraGL2 class]; break;
+		case kCGLOGLPVersion_GL3_Core:
+		case kCGLOGLPVersion_GL4_Core:
+			BACameraClass = [BACameraGL3 class]; break;
+		default:
+			BACameraClass = [BACameraGL1 class]; break;
+	}
+	return BACameraClass;
+}
+
++ (BACamera *)cameraForContext:(NSOpenGLContext *)context {
+	Class BACameraClass = [self classForContext:context];
 	return [[[BACameraClass alloc] init] autorelease];
 }
 #endif
