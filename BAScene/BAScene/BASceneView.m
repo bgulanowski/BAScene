@@ -350,23 +350,30 @@ CVReturn BASceneViewDisplayLink(CVDisplayLinkRef displayLink,
 - (void)mouseLook {
 	
     BOOL dragging = YES;
+	NSWindow *window = [self window];
 	
     while(dragging) {
+		static NSUInteger eventMask = NSLeftMouseUpMask | NSLeftMouseDraggedMask | NSKeyDownMask | NSKeyUpMask;
+		NSEvent *event = [window nextEventMatchingMask:eventMask untilDate:nil inMode:NSDefaultRunLoopMode dequeue:YES];
 		
-		NSEvent *event = [[self window] nextEventMatchingMask:NSLeftMouseUpMask | NSLeftMouseDraggedMask | NSKeyDownMask | NSKeyUpMask];
-		NSEventType type = [event type];
-		
-		if(NSKeyDown == type)
-			[self keyDown:event];
-		else if(NSKeyUp == type)
-			[self keyUp:event];
-		else if(NSLeftMouseUp == type)
-			dragging = NO;
-		else {
-			[self.camera rotateX:[event deltaY]*0.4 y:[event deltaX]*0.3];
+		if (!event)
+			continue;
+
+		switch ([event type]) {
+			case NSKeyDown:
+				[self keyDown:event];
+				break;
+			case NSKeyUp:
+				[self keyUp:event];
+				break;
+			case NSLeftMouseUp:
+				dragging = NO;
+				break;
+			default:
+				[self.camera rotateX:[event deltaY]*0.4 y:[event deltaX]*0.3];
+				[self setNeedsDisplay:YES];
+				break;
 		}
-        
-        [self setNeedsDisplay:YES];
     }
 }
 
