@@ -39,7 +39,7 @@
     return [BAActiveContext stage];
 }
 
-- (void)createPartionRoot {
+- (void)createPartitionRoot {
 	if (!self.partitionRoot) {
 		self.partitionRoot = [self.managedObjectContext rootPartition];
 	}
