@@ -8,11 +8,10 @@
 
 #import <BAScene/BASceneView.h>
 
-#import <BAScene/BACamera.h>
+#import <BAScene/BACamera+Creation.h>
 #import <BAScene/BASceneConstants.h>
 
 #import "BASceneOpenGL.h"
-#import "BACameraPrivate.h"
 
 CVReturn BASceneViewDisplayLink(CVDisplayLinkRef displayLink,
                                 const CVTimeStamp *inNow,
@@ -73,7 +72,7 @@ CVReturn BASceneViewDisplayLink(CVDisplayLinkRef displayLink,
 		Class cameraClass = [[self class] cameraClass];
 		
 		if(!cameraClass)
-			cameraClass = [BACamera classForContext:[self openGLContext]];
+			cameraClass = [BACamera classForGLContext:[self openGLContext]];
 		
 		[self setCamera:[[[cameraClass alloc] init] autorelease]];
         
