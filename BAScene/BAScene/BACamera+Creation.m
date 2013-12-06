@@ -18,6 +18,7 @@
 
 + (Class)classForGLContext:(NSOpenGLContext *)context {
 	
+#if 0
 	Class BACameraClass = self;
 	switch ([context ba_profile]) {
 		case kCGLOGLPVersion_Legacy:
@@ -29,15 +30,13 @@
 			BACameraClass = [BACameraGL1 class]; break;
 	}
 	return BACameraClass;
+#else
+	return [BACameraGL1 class];
+#endif
 }
 
 + (BACamera *)cameraForGLContext:(NSOpenGLContext *)context {
-	Class BACameraClass =
-#if 0
-	[self classForGLContext:context];
-#else
-	[BACameraGL1 class];
-#endif
+	Class BACameraClass = [self classForGLContext:context];
 	return [[[BACameraClass alloc] init] autorelease];
 }
 
