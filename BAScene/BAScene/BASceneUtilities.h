@@ -3,7 +3,7 @@
 //  BAScene
 //
 //  Created by Brent Gulanowski on 5/4/09.
-//  Copyright 2009 Bored Astronaut. All rights reserved.
+//  Copyright (c) 2009-2014 Bored Astronaut. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
