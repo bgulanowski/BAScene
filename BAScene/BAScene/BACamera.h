@@ -42,7 +42,7 @@ typedef struct BACameraOptionFlags {
     unsigned int reserved2:9;
 } BACameraOptions;
 
-
+extern NSString *BAStringForPolygonMode(GLenum mode);
 extern NSString *BACameraOptionsToString(BACameraOptions options);
 
 typedef struct BACameraValueChanges {
@@ -156,7 +156,11 @@ typedef struct BACameraValueChanges {
 @property (nonatomic) BAColorf lightColor;
 @property (nonatomic) BAColorf lightShine;
 
-#if ! TARGET_OS_IPHONE
+#if TARGET_OS_IPHONE
+@property (nonatomic, assign) UIColor *uibgColor;
+@property (nonatomic, assign) UIColor *uilColor;
+@property (nonatomic, assign) UIColor *uilShine;
+#else
 @property (nonatomic, assign) NSColor *nsbgColor;
 @property (nonatomic, assign) NSColor *nslColor;
 @property (nonatomic, assign) NSColor *nslShine;
@@ -205,11 +209,4 @@ typedef struct BACameraValueChanges {
 - (void)logCameraState;
 - (void)logGLState;
 
-#if TARGET_OS_IPHONE
-+ (BACamera *)cameraForContext:(EAGLContext *)context;
-#else
-+ (BACamera *)cameraForContext:(NSOpenGLContext *)context;
-#endif
-
 @end
-
