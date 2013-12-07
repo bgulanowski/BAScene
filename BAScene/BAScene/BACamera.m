@@ -14,7 +14,7 @@
 
 #import "BACamera+Creation.h"
 
-NSString *BAStringForPolygonMode(GLenum mode) {
+NSString *BAStringForPolygonMode(BAPolygonMode mode) {
     switch (mode) {
         case BAPolygonModePoint: return @"Point"; break;
         case BAPolygonModeLine:  return @"Line";  break;

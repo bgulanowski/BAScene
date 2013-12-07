@@ -42,7 +42,7 @@ typedef struct BACameraOptionFlags {
     unsigned int reserved2:9;
 } BACameraOptions;
 
-extern NSString *BAStringForPolygonMode(GLenum mode);
+extern NSString *BAStringForPolygonMode(BAPolygonMode mode);
 extern NSString *BACameraOptionsToString(BACameraOptions options);
 
 typedef struct BACameraValueChanges {
