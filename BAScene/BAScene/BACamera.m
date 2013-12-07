@@ -43,9 +43,6 @@ NSString *BACameraOptionsToString(BACameraOptions options) {
 }
 
 
-void compareMatrices(BAMatrix4x4f a, BAMatrix4x4f b);
-
-
 @interface BACamera ()
 @property (nonatomic, retain) id<BAPropContainer>container;
 @end
@@ -231,7 +228,6 @@ void compareMatrices(BAMatrix4x4f a, BAMatrix4x4f b);
     changes.blurOn = YES;
 }
 
-#if ! TARGET_OS_IPHONE
 - (BAPolygonMode)frontMode {
     return options.frontMode;
 }
@@ -267,7 +263,6 @@ void compareMatrices(BAMatrix4x4f a, BAMatrix4x4f b);
     options.backMode = flag ? BAPolygonModeLine : BAPolygonModeFill;
     changes.backMode = 1;
 }
-#endif
 
 - (void)setBgColor:(BAColorf)aColor {
     bgColor = aColor;
@@ -289,59 +284,12 @@ void compareMatrices(BAMatrix4x4f a, BAMatrix4x4f b);
     colorChanges.shine = YES;
 }
 
-#if TARGET_OS_IPHONE
-- (UIColor *)uibgColor {
-}
-
-#else
-- (NSColor *)nsbgColor {
-	return [NSColor colorWithCalibratedRed:bgColor.c.r green:bgColor.c.g blue:bgColor.c.b alpha:bgColor.c.a];
-}
-
-- (void)setNsbgColor:(NSColor *)aColor {
-	[self setBgColor:[aColor BAColorf]];
-}
-
-- (NSColor *)nslColor {
-    return [NSColor colorWithCalibratedRed:lightColor.c.r green:lightColor.c.g blue:lightColor.c.b alpha:1];
-}
-
-- (void)setNslColor:(NSColor *)aColor {
-    [self setLightColor:[aColor BAColorf]];
-}
-
-- (NSColor *)nslShine {
-    return [NSColor colorWithCalibratedRed:lightShine.c.r green:lightShine.c.g blue:lightShine.c.b alpha:1];
-}
-- (void)setNslShine:(NSColor *)aColor {
-    [self setLightShine:[aColor BAColorf]];
-}
-#endif
-
 - (void)setBlur:(GLfloat)val {
     if(val > 1 || val < 0)
         blur = 0;
     else
         blur = val;
 }
-
-#if 0
-- (void)setBlurOn:(BOOL)flag {
-    if(flag && !blurBuffer) {
-        glGenFramebuffers(1, &blurBuffer);
-        glGenTextures(1, &blurTexture);
-        glBindTexture(GL_TEXTURE_2D, blurTexture);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-        
-        GLint viewport[4];
-        glGetIntegerv(GL_VIEWPORT, viewport);
-        
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, viewport[2], viewport[3], 0, GL_RGBA, GL_UNSIGNED_BYTE, NULL);
-    }
-    blurOn = flag;
-}
-#endif
 
 - (void)setLightX:(GLfloat)lightX {
     lightLoc.p.x = lightX;
@@ -382,11 +330,6 @@ void compareMatrices(BAMatrix4x4f a, BAMatrix4x4f b);
 
 - (void)translateX:(GLfloat)dx y:(GLfloat)dy z:(GLfloat)dz {
     matrix = BAMultiplyMatrix4x4f(BATranslationMatrix4x4f(BAMakePointf(-dx, -dy, -dz)), matrix);
-}
-
-void compareMatrices(BAMatrix4x4f a, BAMatrix4x4f b) {
-    if(!BAEqualMatrices4x4f(a, b))
-        NSLog(@"expected:\n%@\nactual:\n%@", BAStringFromMatrix4x4f(a), BAStringFromMatrix4x4f(b));
 }
 
 -(void)rotateX:(GLfloat)xDeg y:(GLfloat)yDeg {

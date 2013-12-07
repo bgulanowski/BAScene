@@ -208,6 +208,10 @@
 		4EFEDDE612CE30020083CCFC /* BASceneResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDE212CE30020083CCFC /* BASceneResource.m */; };
 		4EFEDDEF12CE36950083CCFC /* BAResourceStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EFEDDED12CE36950083CCFC /* BAResourceStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4EFEDDF012CE36950083CCFC /* BAResourceStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDEE12CE36950083CCFC /* BAResourceStorage.m */; };
+		8436946F18529B9E001BAE43 /* BACamera+NSColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 8436946D18529B9E001BAE43 /* BACamera+NSColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8436947018529B9E001BAE43 /* BACamera+NSColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 8436946D18529B9E001BAE43 /* BACamera+NSColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8436947118529B9E001BAE43 /* BACamera+NSColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8436946E18529B9E001BAE43 /* BACamera+NSColor.m */; };
+		8436947218529B9E001BAE43 /* BACamera+NSColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8436946E18529B9E001BAE43 /* BACamera+NSColor.m */; };
 		84A591B7176900B100C7F7B6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A591B51769009200C7F7B6 /* CoreData.framework */; };
 		84A591B91769011200C7F7B6 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A591B81769011100C7F7B6 /* CoreVideo.framework */; };
 		84A591BB1769017F00C7F7B6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A591BA1769017F00C7F7B6 /* Cocoa.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -477,6 +481,8 @@
 		4EFEDDED12CE36950083CCFC /* BAResourceStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAResourceStorage.h; sourceTree = "<group>"; };
 		4EFEDDEE12CE36950083CCFC /* BAResourceStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAResourceStorage.m; sourceTree = "<group>"; };
 		84357C02183AF22700664A68 /* BAFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BAFoundation.framework; path = ../Vendor/Frameworks/Release/BAFoundation.framework; sourceTree = "<group>"; };
+		8436946D18529B9E001BAE43 /* BACamera+NSColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BACamera+NSColor.h"; sourceTree = "<group>"; };
+		8436946E18529B9E001BAE43 /* BACamera+NSColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BACamera+NSColor.m"; sourceTree = "<group>"; };
 		84A591B51769009200C7F7B6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		84A591B81769011100C7F7B6 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		84A591BA1769017F00C7F7B6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -683,6 +689,8 @@
 				B67412860FAF9F44001E3C0D /* BACamera.m */,
 				84F9A3ED18519542004E31E4 /* BACamera+Creation.h */,
 				84F9A3E81851908A004E31E4 /* BACamera+Creation.m */,
+				8436946D18529B9E001BAE43 /* BACamera+NSColor.h */,
+				8436946E18529B9E001BAE43 /* BACamera+NSColor.m */,
 				84F9A226184D5296004E31E4 /* BACameraGL1.h */,
 				84F9A227184D5296004E31E4 /* BACameraGL1.m */,
 				84F9A21B184D4F67004E31E4 /* BACameraGL2.h */,
@@ -878,6 +886,7 @@
 			files = (
 				4E91CE171349F25D00B90712 /* BATexture.h in Headers */,
 				84F9A22D184D5534004E31E4 /* BACameraGL1.h in Headers */,
+				8436947018529B9E001BAE43 /* BACamera+NSColor.h in Headers */,
 				84F9A22C184D552E004E31E4 /* BACameraGL3.h in Headers */,
 				4E2A090D1361B40800EDD4A4 /* _BATuple.h in Headers */,
 				4E08E1E5136AFB4900F01674 /* NSIndexSet+BAAdditions.h in Headers */,
@@ -923,6 +932,7 @@
 				4E834DBB11691D7800306C0A /* _BAPrototype.h in Headers */,
 				4E834DBD11691D7800306C0A /* _BAScenePref.h in Headers */,
 				4E834DBF11691D7800306C0A /* _BAStage.h in Headers */,
+				8436946F18529B9E001BAE43 /* BACamera+NSColor.h in Headers */,
 				4E834DC111691D7800306C0A /* _BATransform.h in Headers */,
 				4E058A95117641B100BED553 /* BASceneConstants.h in Headers */,
 				4EB89940117A84F4005F8C4C /* _BAPrototypeMesh.h in Headers */,
@@ -1112,6 +1122,7 @@
 				4E29577D121738A300DB9320 /* _BAPrototypeMesh.m in Sources */,
 				4E29577E121738A300DB9320 /* _BAScenePref.m in Sources */,
 				4E29577F121738A500DB9320 /* _BAStage.m in Sources */,
+				8436947218529B9E001BAE43 /* BACamera+NSColor.m in Sources */,
 				84F9A224184D4F74004E31E4 /* BACameraGL3.m in Sources */,
 				4E295780121738A500DB9320 /* _BATransform.m in Sources */,
 				4E295781121738A700DB9320 /* BACamera.m in Sources */,
@@ -1195,6 +1206,7 @@
 				4E834DB611691D7800306C0A /* _BAPoint.m in Sources */,
 				4E834DB811691D7800306C0A /* _BAPolygon.m in Sources */,
 				4E834DBA11691D7800306C0A /* _BAProp.m in Sources */,
+				8436947118529B9E001BAE43 /* BACamera+NSColor.m in Sources */,
 				4E834DBC11691D7800306C0A /* _BAPrototype.m in Sources */,
 				4E834DBE11691D7800306C0A /* _BAScenePref.m in Sources */,
 				4E834DC011691D7800306C0A /* _BAStage.m in Sources */,
