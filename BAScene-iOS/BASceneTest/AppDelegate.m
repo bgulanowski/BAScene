@@ -11,6 +11,8 @@
 #import "BAViewController.h"
 #import "BASceneView.h"
 
+#import <BAScene/BAScene.h>
+
 @implementation AppDelegate
 
 @synthesize window = _window;

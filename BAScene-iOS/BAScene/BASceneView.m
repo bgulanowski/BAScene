@@ -76,6 +76,7 @@
 			running = YES;
 		}
 		
+		[EAGLContext setCurrentContext:glContext];
 		[camera updateViewPortWithSize:self.bounds.size];
 	}
 }
