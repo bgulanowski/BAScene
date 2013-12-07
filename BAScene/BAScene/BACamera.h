@@ -194,7 +194,7 @@ typedef struct BACameraValueChanges {
 // rotate relative to the current rotation in absolute values
 -(void)rotateX:(GLfloat)x y:(GLfloat)y;
 
-- (void)applyTransform:(BATransform *)transform;
+- (void)applyViewTransform:(BAMatrix4x4f * const)transform;
 
 - (void)setup;
 - (void)update:(NSTimeInterval)interval;

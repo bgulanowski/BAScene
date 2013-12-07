@@ -353,7 +353,7 @@ NSString *BACameraOptionsToString(BACameraOptions options) {
 	NSLog(@"Unimplemented method %@", NSStringFromSelector(_cmd));
 }
 
-- (void)applyTransform:(BATransform *)transform {
+- (void)applyViewTransform:(BAMatrix4x4f * const)transform {
 	NSLog(@"Unimplemented method %@", NSStringFromSelector(_cmd));
 }
 

@@ -8,6 +8,7 @@
 
 #import <BAScene/BATransform.h>
 
+#import <BAScene/BACamera.h>
 #import <BAScene/BASceneUtilities.h>
 
 #import "BASceneOpenGL.h"
@@ -193,7 +194,7 @@ static GLfloat BA_IDENTITY_MATRIX[16] = {
 - (void)applyWithCamera:(BACamera *)camera {
 	if(dirty)
 		[self rebuild];
-	glMultMatrixf( transform.i );
+	[camera applyViewTransform:&transform];
 }
 
 - (BALocationf)location {

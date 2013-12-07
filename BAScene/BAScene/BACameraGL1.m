@@ -59,8 +59,8 @@ static inline BAPolygonMode BAPolygonModeFromGL(GLenum mode) {
 	glEnable(GL_NORMALIZE);
 }
 
-- (void)applyTransform:(BATransform *)transform {
-	
+- (void)applyViewTransform:(BAMatrix4x4f * const)transform {
+	glMultMatrixf( transform->i );
 }
 
 - (void)updateGLState {
