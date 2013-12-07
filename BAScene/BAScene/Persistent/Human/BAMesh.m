@@ -22,7 +22,6 @@
 
 #import <BAScene/BASceneUtilities.h>
 
-#import "BASceneOpenGL.h"
 
 BOOL drawNormals = NO;
 
