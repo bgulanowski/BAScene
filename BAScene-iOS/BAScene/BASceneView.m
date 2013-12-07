@@ -24,7 +24,6 @@
     glContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES1];    
     [EAGLContext setCurrentContext:glContext];
     
-    
     CAEAGLLayer *layer = (CAEAGLLayer *)self.layer;
     
     layer.opaque = YES;
@@ -37,13 +36,12 @@
 
     [glContext renderbufferStorage:GL_RENDERBUFFER fromDrawable:layer];
     glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, colorRenderbuffer);
-    
-
+	
     camera = [[BACamera alloc] init];
     [camera setup];
     camera.zLoc = 10.0f;
     camera.bgColor = BAMakeColorf(0.2f, 0.1f, 0.1f, 1.0f);
-//    camera.lightsOn = NO;
+    camera.lightsOn = NO;
 }
 
 + (Class)layerClass {
@@ -54,8 +52,7 @@
     [EAGLContext setCurrentContext:glContext];
 
     glBindRenderbuffer(GL_RENDERBUFFER, colorRenderbuffer);
-    glColor4f(0.5f, 0.5f, 0.9f, 1.0f);
-
+//    glColor4f(0.5f, 0.5f, 0.9f, 1.0f);
     [camera capture];
     
     glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer);

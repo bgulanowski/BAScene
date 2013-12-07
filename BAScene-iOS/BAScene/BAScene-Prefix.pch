@@ -6,9 +6,6 @@
 
 #ifdef __OBJC__
 	#import <UIKit/UIKit.h>
-	#import <OpenGLES/ES1/gl.h>
-
 	#import <BAFoundation/NSManagedObjectContext+BAAdditions.h>
 	#import <BAFoundation/NSManagedObject+BAAdditions.h>
-
 #endif

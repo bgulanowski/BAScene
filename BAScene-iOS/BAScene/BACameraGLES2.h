@@ -1,13 +1,13 @@
 //
-//  BACameralGLES2.m
+//  BACameralGLES2.h
 //  BAScene-iOS
 //
 //  Created by Brent Gulanowski on 12/2/2013.
 //  Copyright (c) 2013 Marketcircle Inc. All rights reserved.
 //
 
-#import "BACameralGLES2.h"
+#import <BAScene/BACamera.h>
 
-@implementation BACameralGLES2
+@interface BACameraGLES2 : BACamera
 
 @end

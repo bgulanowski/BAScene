@@ -12,7 +12,11 @@
 
 #import <math.h>
 
-#import "BACamera+Creation.h"
+#if TARGET_OS_IPHONE
+#import <BAScene/BACamera+EAGLCreation.h>
+#else
+#import <BAScene/BACamera+Creation.h>
+#endif
 
 NSString *BAStringForPolygonMode(BAPolygonMode mode) {
     switch (mode) {
@@ -417,28 +421,5 @@ do {\
 - (void)logGLState {
 	NSLog(@"Unimplemented method %@", NSStringFromSelector(_cmd));
 }
-
-#if TARGET_OS_IPHONE
-#if 0
-+ (Class)classForEAGLContext:(EAGLContext *)context {
-	Class BACameraClass = self;
-	switch ([context ba_profile]) {
-		case kCGLOGLPVersion_Legacy:
-			BACameraClass = [BACameraESGL2 class]; break;
-		case kCGLOGLPVersion_GL3_Core:
-		case kCGLOGLPVersion_GL4_Core:
-			BACameraClass = [BACameraESGL3 class]; break;
-		default:
-			BACameraClass = [BACameraESGL1 class]; break;
-	}
-	return BACameraClass;
-}
-
-+ (BACamera *)cameraForEAGLContext:(EAGLContext *)context {
-	Class BACameraClass = [self classForEAGLContext:context];
-	return [[[BACameraClass alloc] init] autorelease];
-}
-#endif
-#endif
 
 @end
