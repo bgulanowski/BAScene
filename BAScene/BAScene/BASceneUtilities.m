@@ -158,6 +158,21 @@ BAMatrix4x4f BAMatrixInverse4x4f(BAMatrix4x4f m) {
     return result;
 }
 
+BAMatrix4x4f BAMatrixFocus(BAPoint4f eye, BAPoint4f focus) {
+	
+	BAVector3 e3 = BAMakePointf(eye.x - focus.x, eye.y - focus.y, eye.z - focus.z);
+	BAVector3 Z = BANormalizeVector3(e3);
+	BAVector3 X = BANormalizeVector3(BACrossProductVectors3(BAMakePointf(0, 1, 0), Z));
+	BAVector3 Y = BANormalizeVector3(BACrossProductVectors3(Z, X));
+	
+	BAMatrix4x4f m;
+	m.v[0] = BAMakePoint4f(X.x, Y.x, Z.x, 0);
+	m.v[1] = BAMakePoint4f(X.y, Y.y, Z.y, 0);
+	m.v[2] = BAMakePoint4f(X.z, Y.z, Z.z, 0);
+	m.v[3] = BAMakePoint4f(-BADotProductVectors3(X, e3), -BADotProductVectors3(Y, e3), -BADotProductVectors3(Z, e3), 1);
+	return m;
+}
+
 
 #define BAUnionRegionT(_BARegionType_, _BAPrimitiveType_, _suffix_) {\
 \

@@ -534,6 +534,7 @@ static inline GLfloat BAMatrixDeterminant4x4f(BAMatrix4x4f m) {
 
 extern BAMatrix3x3f BAMatrixInverse3x3f(BAMatrix3x3f m);
 extern BAMatrix4x4f BAMatrixInverse4x4f(BAMatrix4x4f m);
+extern BAMatrix4x4f BAMatrixFocus(BAPoint4f eye, BAPoint4f focus);
 
 #define BAVectorTransform( _v_, _a_, _m_, _c_ ) do {\
 	GLfloat *_pv_ = (GLfloat *)&_v_;\
