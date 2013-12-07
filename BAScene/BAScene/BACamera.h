@@ -101,7 +101,7 @@ typedef struct BACameraValueChanges {
 	GLfloat yRotRate;
 	GLfloat zRotRate;
 
-	BAPointf focus;
+	BAPoint4f focus;
     
 	BAColorf bgColor;
 	BAColorf lightColor;
@@ -149,7 +149,7 @@ typedef struct BACameraValueChanges {
 @property (nonatomic) BAPolygonMode frontMode;
 @property (nonatomic) BAPolygonMode backMode;
 
-@property (nonatomic) BAPointf focus;
+@property (nonatomic) BAPoint4f focus;
 @property (nonatomic) GLfloat blur;
 
 @property (nonatomic) BAColorf bgColor;

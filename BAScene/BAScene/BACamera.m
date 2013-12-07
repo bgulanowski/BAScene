@@ -89,6 +89,13 @@ NSString *BACameraOptionsToString(BACameraOptions options) {
         self.cullingOn = YES;
         self.depthOn = YES;
         self.frontMode = self.backMode = BAPolygonModeFill;
+		self.lightColor = BAMakeColorf(0.5f, 0.5f, 0.5f, 1.0f);
+		self.lightShine = BAMakeColorf(0.8f, 0.8f, 0.8f, 1.0f);
+		
+		BALocationf loc;
+		
+		loc.p = BAMakePoint4f(0, 0, 0, 1);
+		self.lightLoc = loc;
 	}
 	return self;
 }

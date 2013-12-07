@@ -42,15 +42,7 @@ static inline BAPolygonMode BAPolygonModeFromGL(GLenum mode) {
 	glEnable(GL_COLOR_MATERIAL);
     glClearDepth(1.0);
 	glColorMaterial(GL_FRONT_AND_BACK, GL_AMBIENT_AND_DIFFUSE);
-	
-	self.lightColor = BAMakeColorf(0.5f, 0.5f, 0.5f, 1.0f);
-	self.lightShine = BAMakeColorf(0.8f, 0.8f, 0.8f, 1.0f);
-	
-	BALocationf loc;
-	
-	loc.p = BAMakePoint4f(0, 0, 0, 1);
-	self.lightLoc = loc;
-	
+		
 	GLfloat diffuse[4]  = { 0.5f, 0.5f, 0.5f, 1.0f};
     
 	glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse);
@@ -100,20 +92,8 @@ static inline BAPolygonMode BAPolygonModeFromGL(GLenum mode) {
     
     BAMatrix4x4f m;
     
-    if(options.revolveOn) {
-        
-        BAPoint4f e = [self location];
-        
-        BAVector3 e3 = BAMakePointf(e.x, e.y, e.z);
-        BAVector3 Z = BANormalizeVector3(e3);
-        BAVector3 X = BANormalizeVector3(BACrossProductVectors3(BAMakePointf(0, 1, 0), Z));
-        BAVector3 Y = BANormalizeVector3(BACrossProductVectors3(Z, X));
-        
-        m.v[0] = BAMakePoint4f(X.x, Y.x, Z.x, 0);
-        m.v[1] = BAMakePoint4f(X.y, Y.y, Z.y, 0);
-        m.v[2] = BAMakePoint4f(X.z, Y.z, Z.z, 0);
-        m.v[3] = BAMakePoint4f(-BADotProductVectors3(X, e3), -BADotProductVectors3(Y, e3), -BADotProductVectors3(Z, e3), 1);
-    }
+    if(options.revolveOn)
+        m = BAMatrixFocus(self.location, self.focus);
     else
         m = matrix;
     
