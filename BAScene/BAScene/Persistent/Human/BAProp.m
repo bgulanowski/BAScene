@@ -18,7 +18,9 @@
 
 #import <BAScene/BASceneUtilities.h>
 
-#import "BASceneOpenGL.h"
+#if TARGET_OS_IPHONE
+#import <OpenGLES/ES1/gl.h>
+#endif
 
 static NSTimeInterval gInterval = 0;
 
@@ -42,16 +44,16 @@ static NSTimeInterval gInterval = 0;
 
 #pragma mark BAVisible
 - (void)paintForCamera:(BACamera *)camera {
-	glPushMatrix();
 	[self.transform applyWithCamera:camera];
+
 	if(hasColor) {
         BAColorf colorValues = self.color->values;
         glColor4f(colorValues.c.r, colorValues.c.g, colorValues.c.b, colorValues.c.a);
     }
+
 	for(BAPrototypeMesh *pm in self.prototype.prototypeMeshes)
 		pm->appliesColor = !hasColor;
 	[self.prototype paintForCamera:camera];
-	glPopMatrix();
 }
 
 - (void)setColor:(BAColor *)aColor {

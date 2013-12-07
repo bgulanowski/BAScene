@@ -505,6 +505,12 @@ static inline NSUInteger copyNormalData(BATuple *vertex, BATuple *normal, GLfloa
 	
 	if([self.resources count] > 0) {
 		
+#if 0
+//		[camera ]
+#else
+#if TARGET_OS_IPHONE
+		glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
+#else
 		GLuint stride = (3+((GLuint)self.hasNormalsValue*3)+((GLuint)self.hasTextureValue*2)) * sizeof(GLfloat);
 		
 		glEnableClientState(GL_VERTEX_ARRAY);
@@ -519,6 +525,7 @@ static inline NSUInteger copyNormalData(BATuple *vertex, BATuple *normal, GLfloa
 			glNormalPointer(GL_FLOAT, stride, (void*)(sizeof(GLfloat)*3));
 		if(self.hasTextureValue)
 			glTexCoordPointer(2, GL_FLOAT, stride, (void*)(sizeof(GLfloat)*(self.hasNormalsValue ? 6 : 3)));
+#endif
 	
 #if TARGET_OS_IPHONE
 		glDrawArrays(GL_TRIANGLES, 0, count);
@@ -527,6 +534,7 @@ static inline NSUInteger copyNormalData(BATuple *vertex, BATuple *normal, GLfloa
 #endif
         glBindBuffer(GL_ARRAY_BUFFER, 0);
         
+#if ! TARGET_OS_IPHONE
 		if(self.hasTextureValue)
 			glDisableClientState(GL_TEXTURE_COORD_ARRAY);
 		if(self.hasNormalsValue)
@@ -540,6 +548,8 @@ static inline NSUInteger copyNormalData(BATuple *vertex, BATuple *normal, GLfloa
 		}
         
 		glDisableClientState( GL_VERTEX_ARRAY );
+#endif
+#endif
 	}
 	else {
 #if ! TARGET_OS_IPHONE

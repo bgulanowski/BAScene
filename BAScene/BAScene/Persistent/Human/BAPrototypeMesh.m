@@ -6,7 +6,9 @@
 #import <BAScene/BATransform.h>
 #import <BAScene/BASceneUtilities.h>
 
-#import "BASceneOpenGL.h"
+#if TARGET_OS_IPHONE
+#import <OpenGLES/ES1/gl.h>
+#endif
 
 @implementation BAPrototypeMesh
 
@@ -20,15 +22,15 @@
 
 #pragma mark BAVisible
 - (void)paintForCamera:(BACamera *)camera {
-	glPushMatrix();
 	[self.transform applyWithCamera:camera];
+
 	if(hasColor && appliesColor) {
         BAColorf colorValues = self.color->values;
         glColor4f(colorValues.c.r, colorValues.c.g, colorValues.c.b, colorValues.c.a);
     }
-//	self.mesh->appliesColor = appliesColor && !hasColor && !self.mesh.texture;
+
+	self.mesh->appliesColor = appliesColor && !hasColor && !self.mesh.texture;
 	[self.mesh paintForCamera:camera];
-	glPopMatrix();
 }
 
 - (void)setColor:(BAColor *)aColor {
