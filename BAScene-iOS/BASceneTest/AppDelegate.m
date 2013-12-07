@@ -33,7 +33,6 @@
 	BAProp *ico = [context propWithName:@"ico" prototype:[context icosahedron]];
 
 	ico.color = [context colorWithColor:BAMakeColorf(1, 1, 1, 1)];
-	[[[ico.prototype.prototypeMeshes anyObject] mesh] compile];
 	[self.scene.stage addProp:ico];
 }
 
@@ -53,6 +52,9 @@
 	
 	BASceneView *sceneView = (BASceneView *)self.viewController.view;
 	BACamera *camera = sceneView.camera;
+	
+	[EAGLContext setCurrentContext:sceneView.glContext];
+	[self.scene.stage.partitionRoot compileProps];
 	
 	camera.drawDelegate = self.scene.stage;
 	[self.scene addActiveCamerasObject:camera];
