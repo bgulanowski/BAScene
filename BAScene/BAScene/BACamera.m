@@ -71,16 +71,16 @@ NSString *BACameraOptionsToString(BACameraOptions options) {
 - (id)init {
 	self = [super init];
 	if([self isMemberOfClass:[BACamera class]]) {
-		SEL selector =
+		SEL selector;
 #if TARGET_OS_IPHONE
-		@selector();
+		selector = @selector(cameraForEAGLContext:);
 #else
-		@selector(cameraForGLContext:);
+		selector = @selector(cameraForGLContext:);
 #endif
 		NSLog(@"BACamera is an abstract class. Create cameras with %@", NSStringFromSelector(selector));
 	}
 	if(self) {
-		self.focus = BAMakePointf(0, 0, 0);
+		self.focus = BAMakePoint4f(0, 0, 0, 0);
 		self.bgColor = BAMakeColorf(0, 0, 0.1f, 1.0f);
 		self.lightColor = BAMakeColorf(1.f, 1.f, 1.f, 1.f);
 		self.exposures = 1;
@@ -363,7 +363,15 @@ NSString *BACameraOptionsToString(BACameraOptions options) {
 	NSLog(@"Unimplemented method %@", NSStringFromSelector(_cmd));
 }
 
+- (void)updateViewPortWithSize:(CGSize)size {
+	NSLog(@"Unimplemented method %@", NSStringFromSelector(_cmd));
+}
+
 - (void)applyViewTransform:(BAMatrix4x4f * const)transform {
+	NSLog(@"Unimplemented method %@", NSStringFromSelector(_cmd));
+}
+
+- (void)submitMeshWithVertices:(GLfloat)vertices hasColors:(BOOL)hasColors hasNormals:(BOOL)hasNormals {
 	NSLog(@"Unimplemented method %@", NSStringFromSelector(_cmd));
 }
 

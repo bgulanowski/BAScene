@@ -194,9 +194,12 @@ typedef struct BACameraValueChanges {
 // rotate relative to the current rotation in absolute values
 -(void)rotateX:(GLfloat)x y:(GLfloat)y;
 
+// These can only be called during -paintWithCamera:
 - (void)applyViewTransform:(BAMatrix4x4f * const)transform;
+- (void)submitMeshWithVertices:(GLfloat)vertices hasColors:(BOOL)hasColors hasNormals:(BOOL)hasNormals;
 
 - (void)setup;
+- (void)updateViewPortWithSize:(CGSize)size;
 - (void)update:(NSTimeInterval)interval;
 - (void)capture;
 - (void)stop;
