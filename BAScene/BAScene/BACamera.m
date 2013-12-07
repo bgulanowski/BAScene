@@ -9,7 +9,6 @@
 #import <BAScene/BACamera.h>
 
 #import <BAScene/BASceneUtilities.h>
-#import <BASCene/NSOpenGLContext+BAScene.h>
 
 #import <math.h>
 
