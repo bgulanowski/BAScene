@@ -8,7 +8,7 @@
 
 #import <BAScene/BASceneView.h>
 
-#import <BAScene/BACamera.h>
+#import <BAScene/BACamera+EAGLCreation.h>
 #import <BAScene/BASceneUtilities.h>
 #import <CoreVideo/CoreVideo.h>
 
@@ -40,7 +40,7 @@
     [glContext renderbufferStorage:GL_RENDERBUFFER fromDrawable:layer];
     glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, colorRenderbuffer);
 	
-    camera = [[BACamera alloc] init];
+    camera = [[BACamera cameraForEAGLContext:glContext] retain];
     [camera setup];
     camera.zLoc = 10.0f;
     camera.bgColor = BAMakeColorf(0.2f, 0.1f, 0.1f, 1.0f);
