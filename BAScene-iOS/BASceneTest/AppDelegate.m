@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 
 #import "BAViewController.h"
+#import "BASceneView.h"
 
 @implementation AppDelegate
 
@@ -16,25 +17,54 @@
 @synthesize viewController = _viewController;
 @synthesize scene = _scene;
 
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
-{
-	self.scene = [[BAScene alloc] init];
-	BAStage *stage = self.scene.stage;
+- (id)init {
+	self = [super init];
+	if (self) {
+		self.scene = [[BAScene alloc] init];
+		BAStage *stage = self.scene.stage;
+		[stage createPartitionRoot];
+	}
+	return self;
+}
+
+- (void)prepareScene {
+	
 	NSManagedObjectContext *context = self.scene.context;
 	BAProp *ico = [context propWithName:@"ico" prototype:[context icosahedron]];
-    [stage addProp:ico];
-	
-    [[[ico.prototype.prototypeMeshes anyObject] mesh] compile];
 
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
+	ico.color = [context colorWithColor:BAMakeColorf(1, 1, 1, 1)];
+	[[[ico.prototype.prototypeMeshes anyObject] mesh] compile];
+	[self.scene.stage addProp:ico];
+}
+
+- (void)prepareWindow {
+	
+	self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+	
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
         self.viewController = [[BAViewController alloc] initWithNibName:@"BAViewController_iPhone" bundle:nil];
     } else {
         self.viewController = [[BAViewController alloc] initWithNibName:@"BAViewController_iPad" bundle:nil];
     }
     self.window.rootViewController = self.viewController;
+}
+
+- (void)prepareCamera {
+	
+	BASceneView *sceneView = (BASceneView *)self.viewController.view;
+	BACamera *camera = sceneView.camera;
+	
+	camera.drawDelegate = self.scene.stage;
+	[self.scene addActiveCamerasObject:camera];
+}
+
+- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
+{
+	[self prepareScene];
+	[self prepareWindow];
+	[self prepareCamera];
     [self.window makeKeyAndVisible];
+
     return YES;
 }
 

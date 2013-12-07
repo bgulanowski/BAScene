@@ -40,12 +40,6 @@
     [super viewWillAppear:animated];
 }
 
-- (void)viewDidAppear:(BOOL)animated
-{
-    [(BASceneView *)self.view display];
-    [super viewDidAppear:animated];
-}
-
 - (void)viewWillDisappear:(BOOL)animated
 {
 	[super viewWillDisappear:animated];
