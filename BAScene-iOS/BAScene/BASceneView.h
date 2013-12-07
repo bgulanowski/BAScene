@@ -9,13 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @class BACamera;
+@class CADisplayLink;
 
 @interface BASceneView : UIView
 
 @property (nonatomic, strong) BACamera *camera;
 
 @property (nonatomic, strong) EAGLContext *glContext;
-
-- (void)display;
 
 @end

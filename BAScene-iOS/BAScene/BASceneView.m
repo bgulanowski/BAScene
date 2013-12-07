@@ -10,10 +10,13 @@
 
 #import <BAScene/BACamera.h>
 #import <BAScene/BASceneUtilities.h>
+#import <CoreVideo/CoreVideo.h>
 
 @implementation BASceneView {
     GLuint frameBuffer;
     GLuint colorRenderbuffer;
+	CADisplayLink *displayLink;
+	BOOL running;
 }
 
 @synthesize camera;
@@ -48,7 +51,8 @@
     return [CAEAGLLayer class];
 }
 
-- (void)display {
+- (void)display:(id)sender {
+	
     [EAGLContext setCurrentContext:glContext];
 
     glBindRenderbuffer(GL_RENDERBUFFER, colorRenderbuffer);
@@ -65,12 +69,24 @@
 
 - (void)didMoveToWindow {
     
-    CGSize size = self.bounds.size;
-    
-    glViewport(0, 0, size.width, size.height);
-    glMatrixMode(GL_PROJECTION);
-    glLoadIdentity();
-    glFrustumf(-1.0f, 1.0f, -size.height/size.width, size.height/size.width, 5.0f, 50.0f);
+	if (self.window) {
+		if (!running) {
+			displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(display:)];
+			[displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+			running = YES;
+		}
+		
+		[camera updateViewPortWithSize:self.bounds.size];
+	}
+}
+
+- (void)willMoveToWindow:(UIWindow *)newWindow
+{
+	if (!newWindow && running) {
+		[displayLink invalidate];
+		displayLink = nil;
+		running = NO;
+	}
 }
 
 @end
