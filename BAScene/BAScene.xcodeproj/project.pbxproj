@@ -522,7 +522,7 @@
 		B674125A0FAF99F9001E3C0D /* BAScenePref.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAScenePref.h; sourceTree = "<group>"; };
 		B674125B0FAF99F9001E3C0D /* BAScenePref.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAScenePref.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B67412850FAF9F44001E3C0D /* BACamera.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BACamera.h; sourceTree = "<group>"; };
-		B67412860FAF9F44001E3C0D /* BACamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BACamera.m; sourceTree = "<group>"; };
+		B67412860FAF9F44001E3C0D /* BACamera.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BACamera.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B67412870FAF9F44001E3C0D /* BAColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAColor.h; sourceTree = "<group>"; };
 		B67412880FAF9F44001E3C0D /* BAColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAColor.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B67412890FAF9F44001E3C0D /* BAScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAScene.h; sourceTree = "<group>"; };
