@@ -17,6 +17,11 @@
 
 #import <BAScene/NSArray+BAAdditions.h>
 
+#if TARGET_OS_IPHONE
+#import <OpenGLES/ES1/gl.h>
+#else
+#import <OpenGL/gl.h>
+#endif
 
 @interface BAPolygon ()
 

@@ -20,6 +20,8 @@
 
 #if TARGET_OS_IPHONE
 #import <OpenGLES/ES1/gl.h>
+#else
+#import <OpenGL/gl.h>
 #endif
 
 static NSTimeInterval gInterval = 0;
