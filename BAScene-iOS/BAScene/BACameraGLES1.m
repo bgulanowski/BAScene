@@ -39,8 +39,8 @@
     
     if(colorChanges.background) glClearColor(bgColor.c.r, bgColor.c.g, bgColor.c.b, 1.0f);
     
-    if(colorChanges.lightLoc)   glLightfv(GL_LIGHT0, GL_POSITION,  lightLoc.i);
-    if(colorChanges.light) 	    glLightfv(GL_LIGHT0, GL_AMBIENT,   lightColor.i);
+    if(colorChanges.lightLoc)   glLightfv(GL_LIGHT0, GL_POSITION, lightLoc.i);
+    if(colorChanges.light) 	    glLightfv(GL_LIGHT0, GL_AMBIENT,  lightColor.i);
     if(colorChanges.shine)      glLightfv(GL_LIGHT0, GL_SPECULAR, lightShine.i);
     
     changes = (BACameraOptions) {};
@@ -76,6 +76,10 @@
 	[drawDelegate paintForCamera:self];
 	
 	glPopMatrix();
+	
+	if (options.testOn) {
+		
+	}
 	
 	if(options.rateOn) {
 		

@@ -80,22 +80,19 @@ NSString *BACameraOptionsToString(BACameraOptions options) {
 		NSLog(@"BACamera is an abstract class. Create cameras with %@", NSStringFromSelector(selector));
 	}
 	if(self) {
+        matrix = (BAMatrix4x4f)BAIdentityMatrix4x4f;
+
 		self.focus = BAMakePoint4f(0, 0, 0, 0);
 		self.bgColor = BAMakeColorf(0, 0, 0.1f, 1.0f);
-		self.lightColor = BAMakeColorf(1.f, 1.f, 1.f, 1.f);
-		self.exposures = 1;
-        matrix = (BAMatrix4x4f)BAIdentityMatrix4x4f;
-        self.lightsOn = YES;
-        self.cullingOn = YES;
-        self.depthOn = YES;
-        self.frontMode = self.backMode = BAPolygonModeFill;
 		self.lightColor = BAMakeColorf(0.5f, 0.5f, 0.5f, 1.0f);
 		self.lightShine = BAMakeColorf(0.8f, 0.8f, 0.8f, 1.0f);
+		self.lightLoc = BAMakeLocationf(0, 0, 0, 1);
+		self.frontMode = self.backMode = BAPolygonModeFill;
+		self.exposures = 1;
 		
-		BALocationf loc;
-		
-		loc.p = BAMakePoint4f(0, 0, 0, 1);
-		self.lightLoc = loc;
+		self.lightsOn = YES;
+        self.cullingOn = YES;
+        self.depthOn = YES;
 	}
 	return self;
 }
