@@ -55,6 +55,10 @@
 	BASceneView *sceneView = (BASceneView *)self.viewController.view;
 	BACamera *camera = sceneView.camera;
 	
+	camera.lightLoc = BAMakeLocationf(10., 10., 10., 1.);
+	camera.revolveOn = YES;
+	camera.yRotRate = 5.;
+	
 	[EAGLContext setCurrentContext:sceneView.glContext];
 	[self.scene.stage.partitionRoot compileProps];
 	

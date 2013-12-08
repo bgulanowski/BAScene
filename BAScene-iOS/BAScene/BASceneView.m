@@ -44,19 +44,20 @@
     [camera setup];
     camera.zLoc = 10.0f;
     camera.bgColor = BAMakeColorf(0.2f, 0.1f, 0.1f, 1.0f);
-    camera.lightsOn = NO;
 }
 
 + (Class)layerClass {
     return [CAEAGLLayer class];
 }
 
-- (void)display:(id)sender {
+- (void)display:(CADisplayLink *)sender {
 	
     [EAGLContext setCurrentContext:glContext];
 
     glBindRenderbuffer(GL_RENDERBUFFER, colorRenderbuffer);
 //    glColor4f(0.5f, 0.5f, 0.9f, 1.0f);
+	
+	[camera update:sender.duration];
     [camera capture];
     
     glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer);
