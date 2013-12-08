@@ -156,13 +156,6 @@ typedef struct BACameraValueChanges {
 @property (nonatomic) BAColorf lightColor;
 @property (nonatomic) BAColorf lightShine;
 
-#if TARGET_OS_IPHONE
-@property (nonatomic, assign) UIColor *uibgColor;
-@property (nonatomic, assign) UIColor *uilColor;
-@property (nonatomic, assign) UIColor *uilShine;
-#else
-#endif
-
 @property (nonatomic) BALocationf lightLoc;
 
 @property (nonatomic, getter = isTestOn) BOOL testOn;
@@ -173,9 +166,7 @@ typedef struct BACameraValueChanges {
 @property (nonatomic, getter = areLightsOn) BOOL lightsOn;
 @property (nonatomic, getter = isCullingOn) BOOL cullingOn;
 @property (nonatomic, getter = isDepthOn) BOOL depthOn;
-#if ! TARGET_OS_IPHONE
 @property (nonatomic, getter = isBlurOn) BOOL blurOn;
-#endif
 
 @property (nonatomic, getter = isFrontLineModeOn) BOOL frontLineModeOn;
 @property (nonatomic, getter = isBackLineModeOn) BOOL backLineModeOn;
