@@ -11,6 +11,8 @@
 		843694791852A60C001BAE43 /* BACamera+EAGLCreation.h in Copy Headers to <build>/include/<Product> */ = {isa = PBXBuildFile; fileRef = 843694731852A4D4001BAE43 /* BACamera+EAGLCreation.h */; };
 		8436947A1852A60C001BAE43 /* BACameraGLES1.h in Copy Headers to <build>/include/<Product> */ = {isa = PBXBuildFile; fileRef = 84F9A215184D4C9E004E31E4 /* BACameraGLES1.h */; };
 		8436947B1852A60C001BAE43 /* BACameraGLES2.h in Copy Headers to <build>/include/<Product> */ = {isa = PBXBuildFile; fileRef = 84F9A218184D4CAA004E31E4 /* BACameraGLES2.h */; };
+		843694911855153D001BAE43 /* BACamera+UIColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 843694901855153D001BAE43 /* BACamera+UIColor.m */; };
+		8436949218551679001BAE43 /* BACamera+UIColor.h in Copy Headers to <build>/include/<Product> */ = {isa = PBXBuildFile; fileRef = 8436948F1855153D001BAE43 /* BACamera+UIColor.h */; };
 		84AECA00184BB945002AC8D0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B67CD18713F8045E006772BE /* Foundation.framework */; };
 		84AECA61184BB9A2002AC8D0 /* BAScene.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA22184BB9A1002AC8D0 /* BAScene.xcdatamodel */; };
 		84AECA62184BB9A2002AC8D0 /* BAColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AECA25184BB9A1002AC8D0 /* BAColor.m */; };
@@ -137,6 +139,7 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				8436949218551679001BAE43 /* BACamera+UIColor.h in Copy Headers to <build>/include/<Product> */,
 				843694791852A60C001BAE43 /* BACamera+EAGLCreation.h in Copy Headers to <build>/include/<Product> */,
 				8436947A1852A60C001BAE43 /* BACameraGLES1.h in Copy Headers to <build>/include/<Product> */,
 				8436947B1852A60C001BAE43 /* BACameraGLES2.h in Copy Headers to <build>/include/<Product> */,
@@ -191,6 +194,8 @@
 /* Begin PBXFileReference section */
 		843694731852A4D4001BAE43 /* BACamera+EAGLCreation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BACamera+EAGLCreation.h"; sourceTree = "<group>"; };
 		843694741852A4D4001BAE43 /* BACamera+EAGLCreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BACamera+EAGLCreation.m"; sourceTree = "<group>"; };
+		8436948F1855153D001BAE43 /* BACamera+UIColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BACamera+UIColor.h"; sourceTree = "<group>"; };
+		843694901855153D001BAE43 /* BACamera+UIColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BACamera+UIColor.m"; sourceTree = "<group>"; };
 		84AEC9E8184BB91A002AC8D0 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		84AEC9FF184BB945002AC8D0 /* libBAScene.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libBAScene.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		84AECA22184BB9A1002AC8D0 /* BAScene.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BAScene.xcdatamodel; sourceTree = "<group>"; };
@@ -440,6 +445,8 @@
 				84AECA81184BB9CF002AC8D0 /* BACamera.m */,
 				843694731852A4D4001BAE43 /* BACamera+EAGLCreation.h */,
 				843694741852A4D4001BAE43 /* BACamera+EAGLCreation.m */,
+				8436948F1855153D001BAE43 /* BACamera+UIColor.h */,
+				843694901855153D001BAE43 /* BACamera+UIColor.m */,
 				84F9A215184D4C9E004E31E4 /* BACameraGLES1.h */,
 				84F9A216184D4C9E004E31E4 /* BACameraGLES1.m */,
 				84F9A218184D4CAA004E31E4 /* BACameraGLES2.h */,
@@ -674,6 +681,7 @@
 				84AECA6B184BB9A2002AC8D0 /* BAPrototypeMesh.m in Sources */,
 				84AECA76184BB9A2002AC8D0 /* _BAPolygon.m in Sources */,
 				84AECA78184BB9A2002AC8D0 /* _BAPropGroup.m in Sources */,
+				843694911855153D001BAE43 /* BACamera+UIColor.m in Sources */,
 				84AECA69184BB9A2002AC8D0 /* BAPropGroup.m in Sources */,
 				84AECA7E184BB9A2002AC8D0 /* _BATransform.m in Sources */,
 				84AECA7B184BB9A2002AC8D0 /* _BAScenePref.m in Sources */,

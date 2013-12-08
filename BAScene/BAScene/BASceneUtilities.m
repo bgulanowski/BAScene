@@ -357,7 +357,6 @@ void BASceneLogGLInfo( void ) {
 
 
 
-#if ! TARGET_OS_IPHONE
 @implementation NSColor (BASceneColor)
 
 - (BAColori)BAColori {
@@ -452,7 +451,6 @@ void BASceneLogGLInfo( void ) {
 }
 
 @end
-#endif
 
 
 @implementation BASceneUtilities

@@ -1041,7 +1041,10 @@ static inline BAColorf BAMakeColorf(float r, float g, float b, float a) {
 #define BARandomLightOpaqueColorf() BAMakeColorf(BARandomFloat()*0.5f+0.5f, BARandomFloat()*0.5f+0.5f, BARandomFloat()*0.5f+0.5f, 1.0f)
 
 
-#if ! TARGET_OS_IPHONE
+#if TARGET_OS_IPHONE
+#define NSColor UIColor
+#endif
+
 // TODO: Add CGColor Support
 @interface NSColor (BASceneColor)
 
@@ -1057,7 +1060,7 @@ static inline BAColorf BAMakeColorf(float r, float g, float b, float a) {
 + (NSColor *)randomLightColor; // opaque
 
 @end
-#endif
+
 
 #if ! TARGET_OS_IPHONE
 extern void BADrawBox(GLint x1, GLint y1, GLint z1, GLint x2, GLint y2, GLint z2, GLuint r, GLuint g, GLuint b);
