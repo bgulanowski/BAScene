@@ -1061,6 +1061,10 @@ static inline BAColorf BAMakeColorf(float r, float g, float b, float a) {
 
 @end
 
+#ifdef NSColor
+#undef NSColor
+#endif
+
 
 #if ! TARGET_OS_IPHONE
 extern void BADrawBox(GLint x1, GLint y1, GLint z1, GLint x2, GLint y2, GLint z2, GLuint r, GLuint g, GLuint b);

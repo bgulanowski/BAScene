@@ -356,8 +356,21 @@ void BASceneLogGLInfo( void ) {
 }
 
 
+#if TARGET_OS_IPHONE
+#define NSColor UIColor
+#endif
 
 @implementation NSColor (BASceneColor)
+
+#if TARGET_OS_IPHONE
+- (void)getComponents:(CGFloat *)comps {
+	[self getRed:comps green:comps+1 blue:comps+2 alpha:comps+3];
+}
+
++ (UIColor *)colorWithDeviceRed:(CGFloat)r green:(CGFloat)g blue:(CGFloat)b alpha:(CGFloat)a {
+	return [UIColor colorWithRed:r green:g blue:b alpha:a];
+}
+#endif
 
 - (BAColori)BAColori {
 	
@@ -379,6 +392,9 @@ void BASceneLogGLInfo( void ) {
 
 - (BOOL)isEqualToColor:(NSColor *)other {
     
+#if TARGET_OS_IPHONE
+	const NSInteger count = 4;
+#else
     if(![[self colorSpaceName] isEqualToString:[other colorSpaceName]])
         return NO;
     
@@ -386,7 +402,8 @@ void BASceneLogGLInfo( void ) {
     
     if (count != [other numberOfComponents])
         return NO;
-    
+#endif
+	
     CGFloat comps[4], otherComps[4];
     
     [self getComponents:comps];
@@ -451,6 +468,10 @@ void BASceneLogGLInfo( void ) {
 }
 
 @end
+
+#ifdef NSColor
+#undef NSColor
+#endif
 
 
 @implementation BASceneUtilities
