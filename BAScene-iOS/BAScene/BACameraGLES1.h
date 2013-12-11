@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Marketcircle Inc. All rights reserved.
 //
 
-#import "BACamera.h"
+#import <BAScene/BACameraGLES.h>
 
-@interface BACameraGLES1 : BACamera
+@interface BACameraGLES1 : BACameraGLES
 
 @end

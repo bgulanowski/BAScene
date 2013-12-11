@@ -13,8 +13,6 @@
 #import <CoreVideo/CoreVideo.h>
 
 @implementation BASceneView {
-    GLuint frameBuffer;
-    GLuint colorRenderbuffer;
 	CADisplayLink *displayLink;
 	BOOL running;
 }
@@ -27,23 +25,14 @@
     glContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES1];    
     [EAGLContext setCurrentContext:glContext];
     
-    CAEAGLLayer *layer = (CAEAGLLayer *)self.layer;
-    
-    layer.opaque = YES;
-    
-    glGenFramebuffers(1, &frameBuffer);    
-    glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer);
-
-    glGenRenderbuffers(1, &colorRenderbuffer);
-    glBindRenderbuffer(GL_RENDERBUFFER, colorRenderbuffer);
-
-    [glContext renderbufferStorage:GL_RENDERBUFFER fromDrawable:layer];
-    glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, colorRenderbuffer);
-	
     camera = [[BACamera cameraForEAGLContext:glContext] retain];
     [camera setup];
     camera.zLoc = 10.0f;
     camera.bgColor = BAMakeColorf(0.2f, 0.1f, 0.1f, 1.0f);
+    
+    CAEAGLLayer *layer = (CAEAGLLayer *)self.layer;
+    layer.opaque = YES;
+    [glContext renderbufferStorage:GL_RENDERBUFFER fromDrawable:layer];
 }
 
 + (Class)layerClass {
@@ -51,16 +40,9 @@
 }
 
 - (void)display:(CADisplayLink *)sender {
-	
     [EAGLContext setCurrentContext:glContext];
-
-    glBindRenderbuffer(GL_RENDERBUFFER, colorRenderbuffer);
-//    glColor4f(0.5f, 0.5f, 0.9f, 1.0f);
-	
 	[camera update:sender.duration];
     [camera capture];
-    
-    glBindFramebuffer(GL_FRAMEBUFFER, frameBuffer);
     [glContext presentRenderbuffer:GL_FRAMEBUFFER];
 }
 
