@@ -22,10 +22,15 @@
 
 - (void)sceneViewInit {
     
-    glContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES1];    
-    [EAGLContext setCurrentContext:glContext];
-    
+    glContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
     camera = [[BACamera cameraForEAGLContext:glContext] retain];
+	
+	if (!camera) {
+		glContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES1];
+		camera = [[BACamera cameraForEAGLContext:glContext] retain];
+	}
+	
+    [EAGLContext setCurrentContext:glContext];
     [camera setup];
     camera.zLoc = 10.0f;
     camera.bgColor = BAMakeColorf(0.2f, 0.1f, 0.1f, 1.0f);

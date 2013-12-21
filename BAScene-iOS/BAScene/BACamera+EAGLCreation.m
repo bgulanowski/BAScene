@@ -14,13 +14,13 @@
 @implementation BACamera (EAGLCreation)
 
 + (Class)classForEAGLContext:(EAGLContext *)context {
-	Class BACameraClass = self;
+	Class BACameraClass = nil;
 	switch (context.API) {
 		case kEAGLRenderingAPIOpenGLES3:
 //			BACameraClass = [BACameraGLES3 class];
 //			break;
 		case kEAGLRenderingAPIOpenGLES2:
-			BACameraClass = [BACameraGLES2 class];
+//			BACameraClass = [BACameraGLES2 class];
 			break;
 		case kEAGLRenderingAPIOpenGLES1:
 		default:
