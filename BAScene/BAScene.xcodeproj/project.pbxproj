@@ -16,6 +16,7 @@
 				4E1230A7121ADD6600EC0D92 /* Frameworks */,
 			);
 			dependencies = (
+				84F71E441865F20A0039B2FC /* PBXTargetDependency */,
 				4E123062121ADD2300EC0D92 /* PBXTargetDependency */,
 				4E122FB6121AD8C900EC0D92 /* PBXTargetDependency */,
 				4E182C9412CD36FB00B92FDC /* PBXTargetDependency */,
@@ -28,9 +29,7 @@
 /* Begin PBXBuildFile section */
 		4E058A95117641B100BED553 /* BASceneConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E058A94117641B100BED553 /* BASceneConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4E08E1E3136AFB4900F01674 /* NSIndexSet+BAAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E08E1E1136AFB4900F01674 /* NSIndexSet+BAAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4E08E1E4136AFB4900F01674 /* NSIndexSet+BAAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E08E1E2136AFB4900F01674 /* NSIndexSet+BAAdditions.m */; };
 		4E08E1E5136AFB4900F01674 /* NSIndexSet+BAAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E08E1E1136AFB4900F01674 /* NSIndexSet+BAAdditions.h */; };
-		4E08E1E6136AFB4900F01674 /* NSIndexSet+BAAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E08E1E2136AFB4900F01674 /* NSIndexSet+BAAdditions.m */; };
 		4E122FC4121AD8F600EC0D92 /* _BAPropGroup.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834D9711691D7800306C0A /* _BAPropGroup.h */; };
 		4E122FC5121AD8F600EC0D92 /* _BAMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834D9911691D7800306C0A /* _BAMesh.h */; };
 		4E122FC6121AD8F600EC0D92 /* _BAPartition.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E834D9B11691D7800306C0A /* _BAPartition.h */; };
@@ -85,54 +84,24 @@
 		4E1B6E500FD413D300AE4803 /* BAPartition.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E1B6E4E0FD413D300AE4803 /* BAPartition.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4E1B6E510FD413D300AE4803 /* BAPartition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6E4F0FD413D300AE4803 /* BAPartition.m */; };
 		4E21DF891066C26D00511C91 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E21DF881066C26D00511C91 /* OpenGL.framework */; };
-		4E2957751217389C00DB9320 /* _BAPropGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834D9811691D7800306C0A /* _BAPropGroup.m */; };
-		4E2957761217389C00DB9320 /* _BAMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834D9A11691D7800306C0A /* _BAMesh.m */; };
-		4E2957771217389E00DB9320 /* _BAPartition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834D9C11691D7800306C0A /* _BAPartition.m */; };
-		4E2957791217389F00DB9320 /* _BAPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834DA011691D7800306C0A /* _BAPoint.m */; };
-		4E29577A121738A000DB9320 /* _BAPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834DA211691D7800306C0A /* _BAPolygon.m */; };
-		4E29577B121738A100DB9320 /* _BAProp.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834DA411691D7800306C0A /* _BAProp.m */; };
-		4E29577C121738A200DB9320 /* _BAPrototype.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834DA611691D7800306C0A /* _BAPrototype.m */; };
-		4E29577D121738A300DB9320 /* _BAPrototypeMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB8993F117A84F4005F8C4C /* _BAPrototypeMesh.m */; };
-		4E29577E121738A300DB9320 /* _BAScenePref.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834DA811691D7800306C0A /* _BAScenePref.m */; };
-		4E29577F121738A500DB9320 /* _BAStage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834DAA11691D7800306C0A /* _BAStage.m */; };
-		4E295780121738A500DB9320 /* _BATransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834DAC11691D7800306C0A /* _BATransform.m */; };
 		4E295781121738A700DB9320 /* BACamera.m in Sources */ = {isa = PBXBuildFile; fileRef = B67412860FAF9F44001E3C0D /* BACamera.m */; };
 		4E295782121738AA00DB9320 /* BACameraSetup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBBD434117B253300B7315B /* BACameraSetup.m */; };
-		4E295784121738AF00DB9320 /* BAColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B67412880FAF9F44001E3C0D /* BAColor.m */; };
-		4E295785121738B000DB9320 /* BAPropGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6D760FD1E75C00AE4803 /* BAPropGroup.m */; };
-		4E295786121738B100DB9320 /* BAMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6D590FD1E26F00AE4803 /* BAMesh.m */; };
 		4E295787121738B200DB9320 /* BAMeshEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E944E7210A07C9500ECE62C /* BAMeshEditor.m */; };
-		4E295788121738B500DB9320 /* BAPartition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6E4F0FD413D300AE4803 /* BAPartition.m */; };
-		4E295789121738B600DB9320 /* BATuple.m in Sources */ = {isa = PBXBuildFile; fileRef = B67411E70FAF6B4E001E3C0D /* BATuple.m */; };
-		4E29578C121738BC00DB9320 /* BAPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6DA90FD21CAE00AE4803 /* BAPoint.m */; };
 		4E29578D121738BD00DB9320 /* BAPointsList.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E944E5310A06B7400ECE62C /* BAPointsList.m */; };
-		4E29578E121738BD00DB9320 /* BAPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = B674128C0FAF9F44001E3C0D /* BAPolygon.m */; };
 		4E29578F121738BE00DB9320 /* BAPolygonEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E944E6E10A07C8E00ECE62C /* BAPolygonEditor.m */; };
-		4E295790121738BF00DB9320 /* BAProp.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6D670FD1E3E900AE4803 /* BAProp.m */; };
-		4E295791121738C000DB9320 /* BAPrototype.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6D620FD1E3CB00AE4803 /* BAPrototype.m */; };
-		4E295792121738C200DB9320 /* BAPrototypeMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB89945117A8503005F8C4C /* BAPrototypeMesh.m */; };
 		4E295793121738C200DB9320 /* BAScene.m in Sources */ = {isa = PBXBuildFile; fileRef = B674128A0FAF9F44001E3C0D /* BAScene.m */; };
 		4E295794121738C300DB9320 /* BASceneConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EC7C9E71198FBA500D1E2ED /* BASceneConstants.m */; };
-		4E295795121738C300DB9320 /* BAScenePref.m in Sources */ = {isa = PBXBuildFile; fileRef = B674125B0FAF99F9001E3C0D /* BAScenePref.m */; };
 		4E295796121738C400DB9320 /* BASceneTypes.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E573C31113FF3BB004EE087 /* BASceneTypes.m */; };
 		4E295797121738C500DB9320 /* BASceneUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = B67411A50FAF61EA001E3C0D /* BASceneUtilities.m */; };
 		4E295798121738C500DB9320 /* BASceneView.m in Sources */ = {isa = PBXBuildFile; fileRef = B67412980FAF9FB0001E3C0D /* BASceneView.m */; };
-		4E295799121738C600DB9320 /* BAStage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6E3F0FD3FFC400AE4803 /* BAStage.m */; };
-		4E29579A121738C700DB9320 /* BATransform.m in Sources */ = {isa = PBXBuildFile; fileRef = B67412590FAF99F9001E3C0D /* BATransform.m */; };
 		4E29579B121738C700DB9320 /* BAViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBBD473117B289100B7315B /* BAViewController.m */; };
 		4E2A090D1361B40800EDD4A4 /* _BATuple.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E2A090B1361B40800EDD4A4 /* _BATuple.h */; };
-		4E2A090E1361B40800EDD4A4 /* _BATuple.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A090C1361B40800EDD4A4 /* _BATuple.m */; };
 		4E2A090F1361B40800EDD4A4 /* _BATuple.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E2A090B1361B40800EDD4A4 /* _BATuple.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4E2A09101361B40800EDD4A4 /* _BATuple.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A090C1361B40800EDD4A4 /* _BATuple.m */; };
 		4E3E9F511347D1AE0016C8EA /* scenetest_main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3E9F501347D1AE0016C8EA /* scenetest_main.m */; };
 		4E3E9F5B1347D1C40016C8EA /* libscene.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E2957621217381000DB9320 /* libscene.a */; };
 		4E3E9F761347D2C60016C8EA /* BAVoxelArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E58596B1345FCC100A8D0BB /* BAVoxelArray.m */; };
 		4E3E9F771347D2C70016C8EA /* BAResourceStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDEE12CE36950083CCFC /* BAResourceStorage.m */; };
-		4E3E9F781347D2C70016C8EA /* BASceneResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDE212CE30020083CCFC /* BASceneResource.m */; };
-		4E3E9F791347D2CA0016C8EA /* _BAColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDD212CE2FEF0083CCFC /* _BAColor.m */; };
-		4E3E9F7A1347D2CB0016C8EA /* _BALight.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDD412CE2FEF0083CCFC /* _BALight.m */; };
-		4E3E9F7B1347D2CC0016C8EA /* _BASceneResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDD612CE2FEF0083CCFC /* _BASceneResource.m */; };
-		4E3E9F7C1347D2CE0016C8EA /* BALight.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDE012CE30020083CCFC /* BALight.m */; };
 		4E3E9F8C1347D33C0016C8EA /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E21DF881066C26D00511C91 /* OpenGL.framework */; };
 		4E3FE5AC13324E4800626212 /* BAColorTester.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E3FE5A513324AD700626212 /* BAColorTester.m */; };
 		4E47D191149B590400B5A862 /* BARegionUtilityTester.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E47D190149B590400B5A862 /* BARegionUtilityTester.m */; };
@@ -170,7 +139,6 @@
 		4E887C65133308F200B52EC4 /* BAMatrixTester.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E887C5E133307E800B52EC4 /* BAMatrixTester.m */; };
 		4E91CE171349F25D00B90712 /* BATexture.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E4F2C1C12CFACC90095AD3F /* BATexture.h */; };
 		4E91CE181349F25E00B90712 /* BATexture.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E4F2C1D12CFACC90095AD3F /* BATexture.m */; };
-		4E91CEC41349F80A00B90712 /* BAScene.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = B67411920FAF5E2C001E3C0D /* BAScene.xcdatamodel */; };
 		4E944E4B10A06AB700ECE62C /* BAPolygonEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E944E4A10A06AB700ECE62C /* BAPolygonEditor.xib */; };
 		4E944E4D10A06ACB00ECE62C /* BAMeshEditor.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E944E4C10A06ACB00ECE62C /* BAMeshEditor.xib */; };
 		4E944E4F10A06B3200ECE62C /* BAPointsList.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4E944E4E10A06B3200ECE62C /* BAPointsList.xib */; };
@@ -181,7 +149,6 @@
 		4E944E7310A07C9500ECE62C /* BAMeshEditor.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E944E7110A07C9500ECE62C /* BAMeshEditor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4E944E7410A07C9500ECE62C /* BAMeshEditor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E944E7210A07C9500ECE62C /* BAMeshEditor.m */; };
 		4EA450FF136C4CF40081218A /* NSArray+BAAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EA450FD136C4CF40081218A /* NSArray+BAAdditions.h */; };
-		4EA45100136C4CF40081218A /* NSArray+BAAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA450FE136C4CF40081218A /* NSArray+BAAdditions.m */; };
 		4EA45101136C4CF40081218A /* NSArray+BAAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EA450FD136C4CF40081218A /* NSArray+BAAdditions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4EA45102136C4CF40081218A /* NSArray+BAAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA450FE136C4CF40081218A /* NSArray+BAAdditions.m */; };
 		4EB89940117A84F4005F8C4C /* _BAPrototypeMesh.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EB8993E117A84F4005F8C4C /* _BAPrototypeMesh.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -223,6 +190,58 @@
 		84A591C11769019100C7F7B6 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A591B81769011100C7F7B6 /* CoreVideo.framework */; };
 		84A591C21769019D00C7F7B6 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E21DF881066C26D00511C91 /* OpenGL.framework */; };
 		84A591C31769019D00C7F7B6 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E21DF881066C26D00511C91 /* OpenGL.framework */; };
+		84E287831865F3610050CAA4 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A591B81769011100C7F7B6 /* CoreVideo.framework */; };
+		84E287851865F3D30050CAA4 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84E287841865F3D30050CAA4 /* AppKit.framework */; };
+		84F71DFB1865F0AB0039B2FC /* BATexture.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E4F2C1C12CFACC90095AD3F /* BATexture.h */; };
+		84F71DFC1865F0AB0039B2FC /* BACameraGL1.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F9A226184D5296004E31E4 /* BACameraGL1.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84F71DFD1865F0AB0039B2FC /* BACamera+NSColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 8436946D18529B9E001BAE43 /* BACamera+NSColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84F71DFE1865F0AB0039B2FC /* BACameraGL3.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F9A21F184D4F74004E31E4 /* BACameraGL3.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84F71DFF1865F0AB0039B2FC /* _BATuple.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E2A090B1361B40800EDD4A4 /* _BATuple.h */; };
+		84F71E001865F0AB0039B2FC /* NSIndexSet+BAAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E08E1E1136AFB4900F01674 /* NSIndexSet+BAAdditions.h */; };
+		84F71E011865F0AB0039B2FC /* BACamera+Creation.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F9A3ED18519542004E31E4 /* BACamera+Creation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84F71E021865F0AB0039B2FC /* NSArray+BAAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EA450FD136C4CF40081218A /* NSArray+BAAdditions.h */; };
+		84F71E031865F0AB0039B2FC /* BACameraGL2.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F9A21B184D4F67004E31E4 /* BACameraGL2.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		84F71E051865F0AB0039B2FC /* _BAPropGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834D9811691D7800306C0A /* _BAPropGroup.m */; };
+		84F71E061865F0AB0039B2FC /* _BAMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834D9A11691D7800306C0A /* _BAMesh.m */; };
+		84F71E081865F0AB0039B2FC /* _BAPartition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834D9C11691D7800306C0A /* _BAPartition.m */; };
+		84F71E091865F0AB0039B2FC /* _BAPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834DA011691D7800306C0A /* _BAPoint.m */; };
+		84F71E0A1865F0AB0039B2FC /* _BAPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834DA211691D7800306C0A /* _BAPolygon.m */; };
+		84F71E0B1865F0AB0039B2FC /* _BAProp.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834DA411691D7800306C0A /* _BAProp.m */; };
+		84F71E0C1865F0AB0039B2FC /* _BAPrototype.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834DA611691D7800306C0A /* _BAPrototype.m */; };
+		84F71E101865F0AB0039B2FC /* _BAPrototypeMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB8993F117A84F4005F8C4C /* _BAPrototypeMesh.m */; };
+		84F71E111865F0AB0039B2FC /* _BAScenePref.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834DA811691D7800306C0A /* _BAScenePref.m */; };
+		84F71E121865F0AB0039B2FC /* _BAStage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834DAA11691D7800306C0A /* _BAStage.m */; };
+		84F71E151865F0AB0039B2FC /* _BATransform.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E834DAC11691D7800306C0A /* _BATransform.m */; };
+		84F71E181865F0AB0039B2FC /* BAColor.m in Sources */ = {isa = PBXBuildFile; fileRef = B67412880FAF9F44001E3C0D /* BAColor.m */; };
+		84F71E191865F0AB0039B2FC /* BAPropGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6D760FD1E75C00AE4803 /* BAPropGroup.m */; };
+		84F71E1A1865F0AB0039B2FC /* BAMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6D590FD1E26F00AE4803 /* BAMesh.m */; };
+		84F71E1C1865F0AB0039B2FC /* BAPartition.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6E4F0FD413D300AE4803 /* BAPartition.m */; };
+		84F71E1D1865F0AB0039B2FC /* BATuple.m in Sources */ = {isa = PBXBuildFile; fileRef = B67411E70FAF6B4E001E3C0D /* BATuple.m */; };
+		84F71E1E1865F0AB0039B2FC /* BAPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6DA90FD21CAE00AE4803 /* BAPoint.m */; };
+		84F71E201865F0AB0039B2FC /* BAPolygon.m in Sources */ = {isa = PBXBuildFile; fileRef = B674128C0FAF9F44001E3C0D /* BAPolygon.m */; };
+		84F71E221865F0AB0039B2FC /* BAProp.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6D670FD1E3E900AE4803 /* BAProp.m */; };
+		84F71E231865F0AB0039B2FC /* BAPrototype.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6D620FD1E3CB00AE4803 /* BAPrototype.m */; };
+		84F71E241865F0AB0039B2FC /* BAPrototypeMesh.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EB89945117A8503005F8C4C /* BAPrototypeMesh.m */; };
+		84F71E271865F0AB0039B2FC /* BAScenePref.m in Sources */ = {isa = PBXBuildFile; fileRef = B674125B0FAF99F9001E3C0D /* BAScenePref.m */; };
+		84F71E2B1865F0AB0039B2FC /* BAStage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1B6E3F0FD3FFC400AE4803 /* BAStage.m */; };
+		84F71E2C1865F0AB0039B2FC /* BATransform.m in Sources */ = {isa = PBXBuildFile; fileRef = B67412590FAF99F9001E3C0D /* BATransform.m */; };
+		84F71E301865F0AB0039B2FC /* BASceneResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDE212CE30020083CCFC /* BASceneResource.m */; };
+		84F71E311865F0AB0039B2FC /* _BAColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDD212CE2FEF0083CCFC /* _BAColor.m */; };
+		84F71E321865F0AB0039B2FC /* _BALight.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDD412CE2FEF0083CCFC /* _BALight.m */; };
+		84F71E331865F0AB0039B2FC /* _BASceneResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDD612CE2FEF0083CCFC /* _BASceneResource.m */; };
+		84F71E341865F0AB0039B2FC /* BALight.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDE012CE30020083CCFC /* BALight.m */; };
+		84F71E361865F0AB0039B2FC /* BAScene.xcdatamodel in Sources */ = {isa = PBXBuildFile; fileRef = B67411920FAF5E2C001E3C0D /* BAScene.xcdatamodel */; };
+		84F71E371865F0AB0039B2FC /* _BATuple.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E2A090C1361B40800EDD4A4 /* _BATuple.m */; };
+		84F71E391865F0AB0039B2FC /* NSArray+BAAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EA450FE136C4CF40081218A /* NSArray+BAAdditions.m */; };
+		84F71E3B1865F0AB0039B2FC /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A591BA1769017F00C7F7B6 /* Cocoa.framework */; };
+		84F71E3C1865F0AB0039B2FC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A591B51769009200C7F7B6 /* CoreData.framework */; };
+		84F71E3D1865F0AB0039B2FC /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A591B81769011100C7F7B6 /* CoreVideo.framework */; };
+		84F71E3E1865F0AB0039B2FC /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E21DF881066C26D00511C91 /* OpenGL.framework */; };
+		84F71E451865F2340039B2FC /* libscenemodel.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F71E421865F0AB0039B2FC /* libscenemodel.a */; };
+		84F71E461865F2470039B2FC /* libscenemodel.a in Libraries */ = {isa = PBXBuildFile; fileRef = 84F71E421865F0AB0039B2FC /* libscenemodel.a */; };
+		84F71E4A1865F2E50039B2FC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F71E491865F2E50039B2FC /* Foundation.framework */; };
+		84F71E4B1865F2EA0039B2FC /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A591B51769009200C7F7B6 /* CoreData.framework */; };
+		84F71E4D1865F2F10039B2FC /* ApplicationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84F71E4C1865F2F10039B2FC /* ApplicationServices.framework */; };
 		84F9A21D184D4F67004E31E4 /* BACameraGL2.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F9A21B184D4F67004E31E4 /* BACameraGL2.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		84F9A21E184D4F67004E31E4 /* BACameraGL2.m in Sources */ = {isa = PBXBuildFile; fileRef = 84F9A21C184D4F67004E31E4 /* BACameraGL2.m */; };
 		84F9A221184D4F74004E31E4 /* BACameraGL3.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F9A21F184D4F74004E31E4 /* BACameraGL3.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -298,6 +317,20 @@
 			remoteGlobalIDString = 4E2957611217381000DB9320;
 			remoteInfo = scene;
 		};
+		84F71E431865F20A0039B2FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84F71DF91865F0AB0039B2FC;
+			remoteInfo = scenemodel;
+		};
+		84F71E471865F2C60039B2FC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84F71DF91865F0AB0039B2FC;
+			remoteInfo = scenemodel;
+		};
 		B67411BC0FAF62B4001E3C0D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
@@ -362,6 +395,7 @@
 			dstPath = "BAScene SDK/Libraries";
 			dstSubfolderSpec = 16;
 			files = (
+				84F71E461865F2470039B2FC /* libscenemodel.a in Libraries */,
 				4E122FEE121AD91500EC0D92 /* libscene.a in Libraries */,
 			);
 			name = Libraries;
@@ -486,6 +520,10 @@
 		84A591B51769009200C7F7B6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		84A591B81769011100C7F7B6 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		84A591BA1769017F00C7F7B6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		84E287841865F3D30050CAA4 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		84F71E421865F0AB0039B2FC /* libscenemodel.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libscenemodel.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		84F71E491865F2E50039B2FC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		84F71E4C1865F2F10039B2FC /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
 		84F8BCB71770B7F100F6643D /* human.h.motemplate */ = {isa = PBXFileReference; lastKnownFileType = text; path = human.h.motemplate; sourceTree = "<group>"; };
 		84F8BCB81770B7F100F6643D /* human.m.motemplate */ = {isa = PBXFileReference; lastKnownFileType = text; path = human.m.motemplate; sourceTree = "<group>"; };
 		84F8BCB91770B7F100F6643D /* machine.h.motemplate */ = {isa = PBXFileReference; lastKnownFileType = text; path = machine.h.motemplate; sourceTree = "<group>"; };
@@ -549,8 +587,25 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E3E9F5B1347D1C40016C8EA /* libscene.a in Frameworks */,
+				84E287851865F3D30050CAA4 /* AppKit.framework in Frameworks */,
+				84F71E4D1865F2F10039B2FC /* ApplicationServices.framework in Frameworks */,
+				84F71E4B1865F2EA0039B2FC /* CoreData.framework in Frameworks */,
+				84E287831865F3610050CAA4 /* CoreVideo.framework in Frameworks */,
+				84F71E4A1865F2E50039B2FC /* Foundation.framework in Frameworks */,
 				4E3E9F8C1347D33C0016C8EA /* OpenGL.framework in Frameworks */,
+				4E3E9F5B1347D1C40016C8EA /* libscene.a in Frameworks */,
+				84F71E451865F2340039B2FC /* libscenemodel.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84F71E3A1865F0AB0039B2FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84F71E3B1865F0AB0039B2FC /* Cocoa.framework in Frameworks */,
+				84F71E3C1865F0AB0039B2FC /* CoreData.framework in Frameworks */,
+				84F71E3D1865F0AB0039B2FC /* CoreVideo.framework in Frameworks */,
+				84F71E3E1865F0AB0039B2FC /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -588,6 +643,7 @@
 				B67411B70FAF62AD001E3C0D /* BASceneTests.octest */,
 				4E2957621217381000DB9320 /* libscene.a */,
 				4E3E9F4B1347D1840016C8EA /* scenetest */,
+				84F71E421865F0AB0039B2FC /* libscenemodel.a */,
 			);
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
@@ -595,10 +651,13 @@
 		0867D691FE84028FC02AAC07 /* BAScene */ = {
 			isa = PBXGroup;
 			children = (
-				B67411C10FAF62D7001E3C0D /* BASceneTests */,
-				4E7113891055A946002B54BB /* Docs */,
+				84E287841865F3D30050CAA4 /* AppKit.framework */,
+				84F71E4C1865F2F10039B2FC /* ApplicationServices.framework */,
+				84F71E491865F2E50039B2FC /* Foundation.framework */,
 				08FB77AEFE84172EC02AAC07 /* BAScene */,
+				B67411C10FAF62D7001E3C0D /* BASceneTests */,
 				0867D69AFE84028FC02AAC07 /* Dependencies */,
+				4E7113891055A946002B54BB /* Docs */,
 				034768DFFF38A50411DB9C8B /* Products */,
 			);
 			name = BAScene;
@@ -896,6 +955,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		84F71DFA1865F0AB0039B2FC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84F71DFB1865F0AB0039B2FC /* BATexture.h in Headers */,
+				84F71DFC1865F0AB0039B2FC /* BACameraGL1.h in Headers */,
+				84F71DFD1865F0AB0039B2FC /* BACamera+NSColor.h in Headers */,
+				84F71DFE1865F0AB0039B2FC /* BACameraGL3.h in Headers */,
+				84F71DFF1865F0AB0039B2FC /* _BATuple.h in Headers */,
+				84F71E001865F0AB0039B2FC /* NSIndexSet+BAAdditions.h in Headers */,
+				84F71E011865F0AB0039B2FC /* BACamera+Creation.h in Headers */,
+				84F71E021865F0AB0039B2FC /* NSArray+BAAdditions.h in Headers */,
+				84F71E031865F0AB0039B2FC /* BACameraGL2.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		8DC2EF500486A6940098B216 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -986,12 +1061,30 @@
 			buildRules = (
 			);
 			dependencies = (
+				84F71E481865F2C60039B2FC /* PBXTargetDependency */,
 				4E3E9F541347D1B70016C8EA /* PBXTargetDependency */,
 			);
 			name = scenetest;
 			productName = scenetest;
 			productReference = 4E3E9F4B1347D1840016C8EA /* scenetest */;
 			productType = "com.apple.product-type.tool";
+		};
+		84F71DF91865F0AB0039B2FC /* scenemodel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84F71E3F1865F0AB0039B2FC /* Build configuration list for PBXNativeTarget "scenemodel" */;
+			buildPhases = (
+				84F71DFA1865F0AB0039B2FC /* Headers */,
+				84F71E041865F0AB0039B2FC /* Sources */,
+				84F71E3A1865F0AB0039B2FC /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = scenemodel;
+			productName = scene;
+			productReference = 84F71E421865F0AB0039B2FC /* libscenemodel.a */;
+			productType = "com.apple.product-type.library.static";
 		};
 		8DC2EF4F0486A6940098B216 /* BAScene */ = {
 			isa = PBXNativeTarget;
@@ -1060,6 +1153,7 @@
 				4E2957611217381000DB9320 /* scene */,
 				4E122FB2121AD8C300EC0D92 /* BAScene SDK */,
 				4E3E9F4A1347D1840016C8EA /* scenetest */,
+				84F71DF91865F0AB0039B2FC /* scenemodel */,
 			);
 		};
 /* End PBXProject section */
@@ -1108,59 +1202,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E2957751217389C00DB9320 /* _BAPropGroup.m in Sources */,
-				4E2957761217389C00DB9320 /* _BAMesh.m in Sources */,
 				84F9A22B184D5296004E31E4 /* BACameraGL1.m in Sources */,
-				4E2957771217389E00DB9320 /* _BAPartition.m in Sources */,
-				4E2957791217389F00DB9320 /* _BAPoint.m in Sources */,
-				4E29577A121738A000DB9320 /* _BAPolygon.m in Sources */,
-				4E29577B121738A100DB9320 /* _BAProp.m in Sources */,
-				4E29577C121738A200DB9320 /* _BAPrototype.m in Sources */,
 				84F9A234184D9F94004E31E4 /* NSOpenGLContext+BAScene.m in Sources */,
 				84F9A225184D4F7A004E31E4 /* BACameraGL2.m in Sources */,
 				84F9A3EC1851908A004E31E4 /* BACamera+Creation.m in Sources */,
-				4E29577D121738A300DB9320 /* _BAPrototypeMesh.m in Sources */,
-				4E29577E121738A300DB9320 /* _BAScenePref.m in Sources */,
-				4E29577F121738A500DB9320 /* _BAStage.m in Sources */,
 				8436947218529B9E001BAE43 /* BACamera+NSColor.m in Sources */,
 				84F9A224184D4F74004E31E4 /* BACameraGL3.m in Sources */,
-				4E295780121738A500DB9320 /* _BATransform.m in Sources */,
 				4E295781121738A700DB9320 /* BACamera.m in Sources */,
 				4E295782121738AA00DB9320 /* BACameraSetup.m in Sources */,
-				4E295784121738AF00DB9320 /* BAColor.m in Sources */,
-				4E295785121738B000DB9320 /* BAPropGroup.m in Sources */,
-				4E295786121738B100DB9320 /* BAMesh.m in Sources */,
 				4E295787121738B200DB9320 /* BAMeshEditor.m in Sources */,
-				4E295788121738B500DB9320 /* BAPartition.m in Sources */,
-				4E295789121738B600DB9320 /* BATuple.m in Sources */,
-				4E29578C121738BC00DB9320 /* BAPoint.m in Sources */,
 				4E29578D121738BD00DB9320 /* BAPointsList.m in Sources */,
-				4E29578E121738BD00DB9320 /* BAPolygon.m in Sources */,
 				4E29578F121738BE00DB9320 /* BAPolygonEditor.m in Sources */,
-				4E295790121738BF00DB9320 /* BAProp.m in Sources */,
-				4E295791121738C000DB9320 /* BAPrototype.m in Sources */,
-				4E295792121738C200DB9320 /* BAPrototypeMesh.m in Sources */,
 				4E295793121738C200DB9320 /* BAScene.m in Sources */,
 				4E295794121738C300DB9320 /* BASceneConstants.m in Sources */,
-				4E295795121738C300DB9320 /* BAScenePref.m in Sources */,
 				4E295796121738C400DB9320 /* BASceneTypes.m in Sources */,
 				4E295797121738C500DB9320 /* BASceneUtilities.m in Sources */,
 				4E295798121738C500DB9320 /* BASceneView.m in Sources */,
-				4E295799121738C600DB9320 /* BAStage.m in Sources */,
-				4E29579A121738C700DB9320 /* BATransform.m in Sources */,
 				4E29579B121738C700DB9320 /* BAViewController.m in Sources */,
 				4E3E9F761347D2C60016C8EA /* BAVoxelArray.m in Sources */,
 				4E3E9F771347D2C70016C8EA /* BAResourceStorage.m in Sources */,
-				4E3E9F781347D2C70016C8EA /* BASceneResource.m in Sources */,
-				4E3E9F791347D2CA0016C8EA /* _BAColor.m in Sources */,
-				4E3E9F7A1347D2CB0016C8EA /* _BALight.m in Sources */,
-				4E3E9F7B1347D2CC0016C8EA /* _BASceneResource.m in Sources */,
-				4E3E9F7C1347D2CE0016C8EA /* BALight.m in Sources */,
 				4E91CE181349F25E00B90712 /* BATexture.m in Sources */,
-				4E91CEC41349F80A00B90712 /* BAScene.xcdatamodel in Sources */,
-				4E2A090E1361B40800EDD4A4 /* _BATuple.m in Sources */,
-				4E08E1E6136AFB4900F01674 /* NSIndexSet+BAAdditions.m in Sources */,
-				4EA45100136C4CF40081218A /* NSArray+BAAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1169,6 +1230,45 @@
 			buildActionMask = 2147483647;
 			files = (
 				4E3E9F511347D1AE0016C8EA /* scenetest_main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84F71E041865F0AB0039B2FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84F71E051865F0AB0039B2FC /* _BAPropGroup.m in Sources */,
+				84F71E061865F0AB0039B2FC /* _BAMesh.m in Sources */,
+				84F71E081865F0AB0039B2FC /* _BAPartition.m in Sources */,
+				84F71E091865F0AB0039B2FC /* _BAPoint.m in Sources */,
+				84F71E0A1865F0AB0039B2FC /* _BAPolygon.m in Sources */,
+				84F71E0B1865F0AB0039B2FC /* _BAProp.m in Sources */,
+				84F71E0C1865F0AB0039B2FC /* _BAPrototype.m in Sources */,
+				84F71E101865F0AB0039B2FC /* _BAPrototypeMesh.m in Sources */,
+				84F71E111865F0AB0039B2FC /* _BAScenePref.m in Sources */,
+				84F71E121865F0AB0039B2FC /* _BAStage.m in Sources */,
+				84F71E151865F0AB0039B2FC /* _BATransform.m in Sources */,
+				84F71E181865F0AB0039B2FC /* BAColor.m in Sources */,
+				84F71E191865F0AB0039B2FC /* BAPropGroup.m in Sources */,
+				84F71E1A1865F0AB0039B2FC /* BAMesh.m in Sources */,
+				84F71E1C1865F0AB0039B2FC /* BAPartition.m in Sources */,
+				84F71E1D1865F0AB0039B2FC /* BATuple.m in Sources */,
+				84F71E1E1865F0AB0039B2FC /* BAPoint.m in Sources */,
+				84F71E201865F0AB0039B2FC /* BAPolygon.m in Sources */,
+				84F71E221865F0AB0039B2FC /* BAProp.m in Sources */,
+				84F71E231865F0AB0039B2FC /* BAPrototype.m in Sources */,
+				84F71E241865F0AB0039B2FC /* BAPrototypeMesh.m in Sources */,
+				84F71E271865F0AB0039B2FC /* BAScenePref.m in Sources */,
+				84F71E2B1865F0AB0039B2FC /* BAStage.m in Sources */,
+				84F71E2C1865F0AB0039B2FC /* BATransform.m in Sources */,
+				84F71E301865F0AB0039B2FC /* BASceneResource.m in Sources */,
+				84F71E311865F0AB0039B2FC /* _BAColor.m in Sources */,
+				84F71E321865F0AB0039B2FC /* _BALight.m in Sources */,
+				84F71E331865F0AB0039B2FC /* _BASceneResource.m in Sources */,
+				84F71E341865F0AB0039B2FC /* BALight.m in Sources */,
+				84F71E361865F0AB0039B2FC /* BAScene.xcdatamodel in Sources */,
+				84F71E371865F0AB0039B2FC /* _BATuple.m in Sources */,
+				84F71E391865F0AB0039B2FC /* NSArray+BAAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1228,7 +1328,6 @@
 				4E4F2C1F12CFACC90095AD3F /* BATexture.m in Sources */,
 				4E58596D1345FCC100A8D0BB /* BAVoxelArray.m in Sources */,
 				4E2A09101361B40800EDD4A4 /* _BATuple.m in Sources */,
-				4E08E1E4136AFB4900F01674 /* NSIndexSet+BAAdditions.m in Sources */,
 				4EA45102136C4CF40081218A /* NSArray+BAAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1271,6 +1370,16 @@
 			isa = PBXTargetDependency;
 			target = 4E2957611217381000DB9320 /* scene */;
 			targetProxy = 4E3E9F531347D1B70016C8EA /* PBXContainerItemProxy */;
+		};
+		84F71E441865F20A0039B2FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84F71DF91865F0AB0039B2FC /* scenemodel */;
+			targetProxy = 84F71E431865F20A0039B2FC /* PBXContainerItemProxy */;
+		};
+		84F71E481865F2C60039B2FC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84F71DF91865F0AB0039B2FC /* scenemodel */;
+			targetProxy = 84F71E471865F2C60039B2FC /* PBXContainerItemProxy */;
 		};
 		B67411BD0FAF62B4001E3C0D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1473,9 +1582,7 @@
 					"-all_load",
 					"-ObjC",
 					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
+					BAFoundation,
 				);
 				PRODUCT_NAME = scenetest;
 			};
@@ -1495,11 +1602,46 @@
 					"-all_load",
 					"-ObjC",
 					"-framework",
-					Foundation,
-					"-framework",
-					AppKit,
+					BAFoundation,
 				);
 				PRODUCT_NAME = scenetest;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+		84F71E401865F0AB0039B2FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				"GCC_ENABLE_OBJC_GC[arch=x86_64]" = supported;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = BAScene/BAScene_Prefix.pch;
+				INSTALL_PATH = /usr/local/lib;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = scenemodel;
+			};
+			name = Debug;
+		};
+		84F71E411865F0AB0039B2FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				"GCC_ENABLE_OBJC_GC[arch=i386]" = supported;
+				"GCC_ENABLE_OBJC_GC[arch=x86_64]" = supported;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = BAScene/BAScene_Prefix.pch;
+				INSTALL_PATH = /usr/local/lib;
+				OTHER_LDFLAGS = "";
+				PRODUCT_NAME = scenemodel;
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -1606,6 +1748,15 @@
 			buildConfigurations = (
 				4E3E9F4D1347D1840016C8EA /* Debug */,
 				4E3E9F4E1347D1840016C8EA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		84F71E3F1865F0AB0039B2FC /* Build configuration list for PBXNativeTarget "scenemodel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84F71E401865F0AB0039B2FC /* Debug */,
+				84F71E411865F0AB0039B2FC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
