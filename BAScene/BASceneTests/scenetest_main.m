@@ -45,7 +45,8 @@ static void testVoxelArrayRemoveHidden( void ) {
 
 static void testBoxVsCube( void ) {
 	
-	NSManagedObjectContext *oc = [BAScene configuredContext];
+	BAScene *scene = [[BAScene alloc] init];
+	NSManagedObjectContext *oc = [scene context];
 	BAMesh *cube = [BAMesh cube];
 	BAMesh *box = [BAMesh boxWithWidth:10 depth:2 height:31.5];
 	
@@ -60,7 +61,7 @@ static void testCosine( void ) {
 	GLfloat cosp2 = cosine(M_PI_2);
 	
 	NSLog(@"PI: %.20f; PI/2: %.20f", M_PI, M_PI_2);
-	NSLog(@"cos pi/2: %.110f; ULPs from zero: %llu; equal? %@; ULP_DELTA: %u",
+	NSLog(@"cos pi/2: %.110f; ULPs from zero: %lu; equal? %@; ULP_DELTA: %u",
 		  cosp2, ulpDiff(cosp2, 0), BAEqualFloats(cosp2, 0)? @"YES":@"NO", ULPS_DELTA);
 }
 
