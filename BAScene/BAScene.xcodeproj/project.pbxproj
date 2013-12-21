@@ -175,6 +175,20 @@
 		4EFEDDE612CE30020083CCFC /* BASceneResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDE212CE30020083CCFC /* BASceneResource.m */; };
 		4EFEDDEF12CE36950083CCFC /* BAResourceStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EFEDDED12CE36950083CCFC /* BAResourceStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4EFEDDF012CE36950083CCFC /* BAResourceStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDEE12CE36950083CCFC /* BAResourceStorage.m */; };
+		842162611865F81300585C0B /* BACamera+Creation.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F9A3ED18519542004E31E4 /* BACamera+Creation.h */; };
+		842162621865F81300585C0B /* BACamera+NSColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 8436946D18529B9E001BAE43 /* BACamera+NSColor.h */; };
+		842162631865F81300585C0B /* BACameraGL1.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F9A226184D5296004E31E4 /* BACameraGL1.h */; };
+		842162641865F81300585C0B /* BACameraGL2.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F9A21B184D4F67004E31E4 /* BACameraGL2.h */; };
+		842162651865F81300585C0B /* BACameraGL3.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F9A21F184D4F74004E31E4 /* BACameraGL3.h */; };
+		842162661865F81300585C0B /* BAGeometry.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E7FBBD11132CF4500965767 /* BAGeometry.h */; };
+		842162671865F81300585C0B /* BASceneOpenGL.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F9A22F184D5715004E31E4 /* BASceneOpenGL.h */; };
+		842162681865F81300585C0B /* BATexture.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E4F2C1C12CFACC90095AD3F /* BATexture.h */; };
+		842162691865F82400585C0B /* _BAColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EFEDDD112CE2FEF0083CCFC /* _BAColor.h */; };
+		8421626A1865F82400585C0B /* _BALight.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EFEDDD312CE2FEF0083CCFC /* _BALight.h */; };
+		8421626B1865F82400585C0B /* _BASceneResource.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EFEDDD512CE2FEF0083CCFC /* _BASceneResource.h */; };
+		8421626C1865F82400585C0B /* _BATuple.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E2A090B1361B40800EDD4A4 /* _BATuple.h */; };
+		8421626D1865F82F00585C0B /* NSArray+BAAdditions.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EA450FD136C4CF40081218A /* NSArray+BAAdditions.h */; };
+		8421626E1865F82F00585C0B /* NSOpenGLContext+BAScene.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F9A230184D9F90004E31E4 /* NSOpenGLContext+BAScene.h */; };
 		8436946F18529B9E001BAE43 /* BACamera+NSColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 8436946D18529B9E001BAE43 /* BACamera+NSColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8436947018529B9E001BAE43 /* BACamera+NSColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 8436946D18529B9E001BAE43 /* BACamera+NSColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8436947118529B9E001BAE43 /* BACamera+NSColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8436946E18529B9E001BAE43 /* BACamera+NSColor.m */; };
@@ -347,6 +361,20 @@
 			dstPath = "BAScene SDK/Headers";
 			dstSubfolderSpec = 16;
 			files = (
+				8421626D1865F82F00585C0B /* NSArray+BAAdditions.h in Headers */,
+				8421626E1865F82F00585C0B /* NSOpenGLContext+BAScene.h in Headers */,
+				842162691865F82400585C0B /* _BAColor.h in Headers */,
+				8421626A1865F82400585C0B /* _BALight.h in Headers */,
+				8421626B1865F82400585C0B /* _BASceneResource.h in Headers */,
+				8421626C1865F82400585C0B /* _BATuple.h in Headers */,
+				842162611865F81300585C0B /* BACamera+Creation.h in Headers */,
+				842162621865F81300585C0B /* BACamera+NSColor.h in Headers */,
+				842162631865F81300585C0B /* BACameraGL1.h in Headers */,
+				842162641865F81300585C0B /* BACameraGL2.h in Headers */,
+				842162651865F81300585C0B /* BACameraGL3.h in Headers */,
+				842162661865F81300585C0B /* BAGeometry.h in Headers */,
+				842162671865F81300585C0B /* BASceneOpenGL.h in Headers */,
+				842162681865F81300585C0B /* BATexture.h in Headers */,
 				4E122FC4121AD8F600EC0D92 /* _BAPropGroup.h in Headers */,
 				4E122FC5121AD8F600EC0D92 /* _BAMesh.h in Headers */,
 				4E122FC6121AD8F600EC0D92 /* _BAPartition.h in Headers */,
