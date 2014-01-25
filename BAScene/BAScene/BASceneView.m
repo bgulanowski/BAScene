@@ -146,12 +146,14 @@ CVReturn BASceneViewDisplayLink(CVDisplayLinkRef displayLink,
 	if(displayLink || [theEvent isARepeat])
 		return;
 	[self processKeys:[theEvent characters] up:NO];
-	[self startDrawTimer];
+	if(self.camera.moving)
+		[self startDrawTimer];
 }
 
 - (void)keyUp:(NSEvent *)theEvent {
-	[self cancelDrawTimer];
     [self processKeys:[theEvent characters] up:YES];
+	if(!self.camera.moving)
+		[self cancelDrawTimer];
 }
 
 -(void)mouseDown:(NSEvent *)theEvent {

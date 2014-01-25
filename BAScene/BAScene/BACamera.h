@@ -178,6 +178,7 @@ typedef struct BACameraValueChanges {
 @property (nonatomic) GLfloat lightZ;
 
 @property (readonly) BAPoint4f location;
+@property (readonly, getter = isMoving) BOOL moving;
 
 // move relative to the current position in absolute coordinates
 - (void)translateX:(GLfloat)dx y:(GLfloat)dy z:(GLfloat)dz;

@@ -328,6 +328,9 @@ NSString *BACameraOptionsToString(BACameraOptions options) {
     return lightLoc.p.z;
 }
 
+- (BOOL)isMoving {
+	return xRate || yRate || zRate || xRotRate || yRotRate || zRotRate;
+}
 
 #pragma mark - BACamera
 
@@ -375,7 +378,7 @@ NSString *BACameraOptionsToString(BACameraOptions options) {
 - (void)update:(NSTimeInterval)interval {
     
     // All the rates are units per second; update the postion and orientation in light of the change
-    if(!interval || !(xRate || yRate || zRate || xRotRate || yRotRate || zRotRate))
+    if(!interval || !self.moving)
         return;
     
     // These transformations may happen on background thread, so must avoid triggering KVO updates
