@@ -99,6 +99,25 @@ CVReturn BASceneViewDisplayLink(CVDisplayLinkRef displayLink,
     CGLUnlockContext(cglContext);
 }
 
+- (void)startDrawTimer {
+	if(drawTimer)
+		return;
+	drawTimer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_main_queue());
+	dispatch_source_set_timer(drawTimer, dispatch_time(DISPATCH_TIME_NOW, 0), NSEC_PER_SEC/30.f, NSEC_PER_USEC/10000);
+	dispatch_source_set_event_handler(drawTimer, ^{
+		[self setNeedsDisplay:YES];
+	});
+	dispatch_resume(drawTimer);
+}
+
+- (void)cancelDrawTimer {
+	if(!drawTimer)
+		return;
+	dispatch_source_cancel(drawTimer);
+	dispatch_release(drawTimer);
+	drawTimer = NULL;
+}
+
 
 #pragma mark - Accessors
 
@@ -124,11 +143,14 @@ CVReturn BASceneViewDisplayLink(CVDisplayLinkRef displayLink,
 }
 
 - (void)keyDown:(NSEvent *)theEvent {
-    if(![theEvent isARepeat] || !displayLink)
-        [self processKeys:[theEvent characters] up:NO];
+	if(displayLink || [theEvent isARepeat])
+		return;
+	[self processKeys:[theEvent characters] up:NO];
+	[self startDrawTimer];
 }
 
 - (void)keyUp:(NSEvent *)theEvent {
+	[self cancelDrawTimer];
     [self processKeys:[theEvent characters] up:YES];
 }
 
@@ -142,10 +164,12 @@ CVReturn BASceneViewDisplayLink(CVDisplayLinkRef displayLink,
 	
     while(dragging) {
 		theEvent = [[self window] nextEventMatchingMask:NSRightMouseUpMask | NSRightMouseDraggedMask | NSMouseExited];
-		if(NSRightMouseUp == [theEvent type]|NSMouseExited == [theEvent type])
+		NSEventType eventType = [theEvent type];
+		if(NSRightMouseUp == eventType|NSMouseExited == eventType)
 			dragging = NO;
 		else {
-			[self.camera translateX:[theEvent deltaX]*0.1f y:0.0f z:[theEvent deltaY]*0.1f];
+			if(eventType == NSMouseMoved)
+				[self.camera translateX:[theEvent deltaX]*0.1f y:0.0f z:[theEvent deltaY]*0.1f];
 			[self setNeedsDisplay:YES];
 		}
     }
@@ -343,8 +367,6 @@ CVReturn BASceneViewDisplayLink(CVDisplayLinkRef displayLink,
 		else if(right)
 			[camera setXRate:movementRate];
 	}
-    
-    [self setNeedsDisplay:YES];
 }
 
 - (void)mouseLook {

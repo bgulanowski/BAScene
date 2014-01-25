@@ -29,6 +29,7 @@
     BOOL _drawInBackground;
     
     CVDisplayLinkRef displayLink;
+	dispatch_source_t drawTimer;
 }
 
 @property (nonatomic, retain) BACamera *camera;
