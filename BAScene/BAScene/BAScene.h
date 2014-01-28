@@ -39,7 +39,7 @@
 
 @property (nonatomic, readonly) NSTimeInterval lastUpdate;
 @property (nonatomic, assign) dispatch_queue_t updateQueue;
-@property (readonly) NSSet *activeCameras;
+@property (readonly, copy) NSSet *activeCameras;
 @property (nonatomic, strong) BAStage *stage;
 
 - (void)addActiveCamerasObject:(BACamera *)camera;

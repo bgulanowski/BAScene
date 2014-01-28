@@ -20,6 +20,20 @@
 
 #pragma mark - Accessors
 
+- (NSSet *)activeCameras {
+	
+	__block NSSet *cameras;
+	dispatch_queue_t mainQueue = dispatch_get_main_queue();
+	dispatch_queue_t targetQueue = updateQueue ?: mainQueue;
+
+	if(targetQueue == dispatch_get_current_queue())
+		cameras = [_activeCameras copy];
+	else
+		dispatch_sync(targetQueue, ^{ cameras = [_activeCameras copy]; });
+
+	return cameras;
+}
+
 - (void)setUpdateQueue:(dispatch_queue_t)newQueue {
     if(updateQueue)
         dispatch_release(updateQueue);
@@ -82,29 +96,26 @@
 - (void)startUpdates:(BOOL (^)(BAScene *scene, NSTimeInterval interval))updateBlock {
     
     if(!updateQueue)
-		self.updateQueue = dispatch_queue_create("BAScene_update", NULL);
+		self.updateQueue = dispatch_queue_create("BAScene_update", DISPATCH_QUEUE_SERIAL);
 
     dispatch_once(&updateToken, ^{
 
         _lastUpdate = [NSDate timeIntervalSinceReferenceDate];
         timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, updateQueue);
         
-        BAScene *weakSelf = self;
         int64_t delta = NSEC_PER_SEC/100;
         
         dispatch_source_set_event_handler(timer, ^{
             
-            NSTimeInterval lastUpdate = weakSelf->_lastUpdate;
+            NSTimeInterval lastUpdate = _lastUpdate;
             NSTimeInterval now = [NSDate timeIntervalSinceReferenceDate];
             
-            weakSelf->_lastUpdate = now;
+            _lastUpdate = now;
             
-            if(updateBlock(weakSelf, now - lastUpdate))
+            if(updateBlock(self, now - lastUpdate))
                 dispatch_async(dispatch_get_main_queue(), ^{ [self cancelUpdates]; });
         });
         dispatch_source_set_timer(timer, dispatch_time(DISPATCH_TIME_NOW, 0), delta, NSEC_PER_USEC/10000);
-        
-//        updateBlock(self, 0);
 
         [self resumeUpdates];
     });
@@ -112,7 +123,7 @@
 
 - (void)startUpdates {
     [self startUpdates:^BOOL(BAScene *scene, NSTimeInterval interval) {
-        for (BACamera *camera in self.activeCameras)
+        for (BACamera *camera in _activeCameras)
             [camera update:interval];
         [self.stage update:interval];
         return [scene update:interval];
