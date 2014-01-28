@@ -69,7 +69,7 @@ static NSArray *pointSort;
 
 - (void)awakeFromFetch {
 	
-	count = [self.polygons count]*3;
+	count = (GLsizei)[self.polygons count]*3;
 	
 	if(self.resources)
 		[self prepareVertexBuffer];
@@ -294,7 +294,7 @@ return _ivar_;\
 	glBufferData(GL_ARRAY_BUFFER, [vertexResource.data length], [vertexResource.data bytes], GL_STATIC_DRAW);
     
     if(!count)
-        count = [vertexResource.data length]/(sizeof(GLfloat)*(3+(self.hasNormalsValue?3:0)));
+        count = (GLsizei)[vertexResource.data length]/(sizeof(GLfloat)*(3+(self.hasNormalsValue?3:0)));
 	
 	vertexResource.data = nil;
 }
@@ -372,16 +372,17 @@ static inline NSUInteger copyNormalData(BATuple *vertex, BATuple *normal, GLfloa
 	
 	GLfloat *rawVertices = NULL;
 	GLfloat *rawNormals = NULL;
-	NSUInteger i_v = 0, i_n = 0, pointsPerPolygon = 3;
-		
+	NSUInteger i_v = 0, i_n = 0;
+	GLsizei pointsPerPolygon = 3;
+	
 #if ! TARGET_OS_IPHONE
 	if(GL_QUADS == self.typeValue)
 		pointsPerPolygon = 4;
 	else if(GL_POLYGON == self.typeValue)
-		pointsPerPolygon = 3 * ([[[self.polygons anyObject] points] count] - 2);
+		pointsPerPolygon = 3 * ((GLsizei)[[[self.polygons anyObject] points] count] - 2);
 #endif
 	
-	count = [self.polygons count] * pointsPerPolygon;
+	count = (GLsizei)[self.polygons count] * pointsPerPolygon;
 
 	NSUInteger elementsPerVertex = (3+((int)self.hasNormalsValue*3)+((int)self.hasTextureValue*2));
 	size_t rawVertsSize = sizeof(GLfloat)*count*elementsPerVertex, rawNormalsSize = 0;

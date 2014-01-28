@@ -31,7 +31,7 @@ extern BOOL drawNormals;
 	GLuint vertexBuffer; // interleaved, based on the compiled data loaded from the vertex buffer resource
 	GLuint normalBuffer;
 	GLuint displayList;
-	NSUInteger count;
+	GLsizei count;
 	
 	double minX;
 	double maxX;
