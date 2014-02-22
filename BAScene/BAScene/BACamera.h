@@ -171,7 +171,7 @@ typedef struct BACameraValueChanges {
 @property (nonatomic, getter = isFrontLineModeOn) BOOL frontLineModeOn;
 @property (nonatomic, getter = isBackLineModeOn) BOOL backLineModeOn;
 
-@property(nonatomic) GLfloat frameRate;
+@property (nonatomic) GLfloat frameRate;
 
 @property (nonatomic) GLfloat lightX;
 @property (nonatomic) GLfloat lightY;
