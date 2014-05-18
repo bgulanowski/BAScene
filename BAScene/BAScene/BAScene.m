@@ -23,13 +23,11 @@
 - (NSSet *)activeCameras {
 	
 	__block NSSet *cameras;
-	dispatch_queue_t mainQueue = dispatch_get_main_queue();
-	dispatch_queue_t targetQueue = updateQueue ?: mainQueue;
-
-	if(targetQueue == dispatch_get_current_queue())
-		cameras = [_activeCameras copy];
+	
+	if(updateQueue)
+		dispatch_sync(updateQueue, ^{ cameras = [_activeCameras copy]; });
 	else
-		dispatch_sync(targetQueue, ^{ cameras = [_activeCameras copy]; });
+		cameras = [_activeCameras copy];
 
 	return cameras;
 }
