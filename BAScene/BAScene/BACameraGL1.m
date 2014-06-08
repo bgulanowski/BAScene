@@ -21,6 +21,7 @@ static inline GLenum BAPolygonModeToGL(BAPolygonMode mode) {
     }
 }
 
+#if 0
 static inline BAPolygonMode BAPolygonModeFromGL(GLenum mode) {
     switch (mode) {
         case GL_POINT: return BAPolygonModePoint; break;
@@ -29,6 +30,7 @@ static inline BAPolygonMode BAPolygonModeFromGL(GLenum mode) {
         default:       return BAPolygonModeFill;  break;
     }
 }
+#endif
 
 @implementation BACameraGL1
 
