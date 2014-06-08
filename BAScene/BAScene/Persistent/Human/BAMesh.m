@@ -351,17 +351,19 @@ static inline NSUInteger copyVertexData(BAPoint *point, GLfloat *buffer) {
 	return i;
 }
 
-//static inline NSUInteger copyNormalData(BATuple *vertex, BATuple *normal, GLfloat *buffer) {
-//		
-//	buffer[0] = vertex.xValue;
-//	buffer[1] = vertex.yValue;
-//	buffer[2] = vertex.zValue;
-//	buffer[3] = vertex.xValue + 0.25f * normal.xValue;
-//	buffer[4] = vertex.yValue + 0.25f * normal.yValue;
-//	buffer[5] = vertex.zValue + 0.25f * normal.zValue;
-//	
-//	return 6;
-//}
+#if ! TARGET_OS_IPHONE
+static inline NSUInteger copyNormalData(BATuple *vertex, BATuple *normal, GLfloat *buffer) {
+		
+	buffer[0] = vertex.xValue;
+	buffer[1] = vertex.yValue;
+	buffer[2] = vertex.zValue;
+	buffer[3] = vertex.xValue + 0.25f * normal.xValue;
+	buffer[4] = vertex.yValue + 0.25f * normal.yValue;
+	buffer[5] = vertex.zValue + 0.25f * normal.zValue;
+	
+	return 6;
+}
+#endif
 
 - (void)compile {
 	
