@@ -143,7 +143,7 @@ CVReturn BASceneViewDisplayLink(CVDisplayLinkRef displayLink,
 }
 
 - (void)keyDown:(NSEvent *)theEvent {
-	if(displayLink || [theEvent isARepeat])
+	if([theEvent isARepeat])
 		return;
 	[self processKeys:[theEvent characters] up:NO];
 	if(self.camera.moving)
