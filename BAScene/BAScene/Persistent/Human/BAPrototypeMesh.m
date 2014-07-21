@@ -33,6 +33,7 @@
 
 	self.mesh->appliesColor = appliesColor && !hasColor && !self.mesh.texture;
 	[self.mesh paintForCamera:camera];
+	[camera revertViewTransform];
 }
 
 - (void)setColor:(BAColor *)aColor {

@@ -12,6 +12,8 @@
 
 #import <math.h>
 
+#define LOG_UNIMPLEMENTED() NSLog(@"Unimplemented method %@", NSStringFromSelector(_cmd))
+
 #if TARGET_OS_IPHONE
 #import <BAScene/BACamera+EAGLCreation.h>
 #else
@@ -360,19 +362,23 @@ NSString *BACameraOptionsToString(BACameraOptions options) {
 }
 
 - (void)setup {
-	NSLog(@"Unimplemented method %@", NSStringFromSelector(_cmd));
+	LOG_UNIMPLEMENTED();
 }
 
 - (void)updateViewPortWithSize:(CGSize)size {
-	NSLog(@"Unimplemented method %@", NSStringFromSelector(_cmd));
+	LOG_UNIMPLEMENTED();
 }
 
 - (void)applyViewTransform:(BAMatrix4x4f * const)transform {
-	NSLog(@"Unimplemented method %@", NSStringFromSelector(_cmd));
+	LOG_UNIMPLEMENTED();
+}
+
+- (void)revertViewTransform {
+	LOG_UNIMPLEMENTED();
 }
 
 - (void)submitMeshWithVertices:(GLfloat)vertices hasColors:(BOOL)hasColors hasNormals:(BOOL)hasNormals {
-	NSLog(@"Unimplemented method %@", NSStringFromSelector(_cmd));
+	LOG_UNIMPLEMENTED();
 }
 
 - (void)update:(NSTimeInterval)interval {
@@ -392,7 +398,7 @@ NSString *BACameraOptionsToString(BACameraOptions options) {
 }
 
 - (void)updateGLState {
-	NSLog(@"Unimplemented method %@", NSStringFromSelector(_cmd));
+	LOG_UNIMPLEMENTED();
 }
 
 
@@ -417,7 +423,7 @@ do {\
 }
 
 - (void)capture {
-	NSLog(@"Unimplemented method %@", NSStringFromSelector(_cmd));
+	LOG_UNIMPLEMENTED();
 }
 
 - (void)stop {
@@ -430,11 +436,11 @@ do {\
 }
 
 - (void)logCameraState {
-	NSLog(@"Unimplemented method %@", NSStringFromSelector(_cmd));
+	LOG_UNIMPLEMENTED();
 }
 
 - (void)logGLState {
-	NSLog(@"Unimplemented method %@", NSStringFromSelector(_cmd));
+	LOG_UNIMPLEMENTED();
 }
 
 @end

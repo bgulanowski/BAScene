@@ -188,6 +188,7 @@ typedef struct BACameraValueChanges {
 
 // These can only be called during -paintWithCamera:
 - (void)applyViewTransform:(BAMatrix4x4f * const)transform;
+- (void)revertViewTransform;
 - (void)submitMeshWithVertices:(GLfloat)vertices hasColors:(BOOL)hasColors hasNormals:(BOOL)hasNormals;
 
 - (void)setup;

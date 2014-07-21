@@ -54,7 +54,14 @@ static inline BAPolygonMode BAPolygonModeFromGL(GLenum mode) {
 }
 
 - (void)applyViewTransform:(BAMatrix4x4f * const)transform {
+	_transformApplyCount++;
+	glPushMatrix();
 	glMultMatrixf( transform->i );
+}
+
+- (void)revertViewTransform {
+	glPopMatrix();
+	_transformApplyCount--;
 }
 
 - (void)updateGLState {
@@ -75,9 +82,54 @@ static inline BAPolygonMode BAPolygonModeFromGL(GLenum mode) {
     colorChanges = (BACameraColorChanges) {};
 }
 
+#if 0
+// This is now so old I forget exactly how it worked
+- (void)blurWithAccumulateBuffer {
+	
+	if(options.blurOn && blur > 0)
+		glAccum(GL_RETURN, blur);
+	
+	GLint viewport[4];
+	glGetIntegerv(GL_VIEWPORT, viewport);
+	
+	glBindFramebuffer(GL_FRAMEBUFFER, blurBuffer);
+	glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, blurTexture, 0);
+	
+	if(GL_FRAMEBUFFER_COMPLETE == glCheckFramebufferStatus(GL_FRAMEBUFFER)) {
+		glCopyTexImage2D(GL_TEXTURE_2D, 0, GL_RGB8, 0, 0, viewport[2], viewport[3], 0);
+		
+		// do stuff
+		
+		// set rendering back to the windowing system's default framebuffer
+		glBindFramebuffer(GL_FRAMEBUFFER, 0);
+	}
+}
+#endif
+
+- (void)drawFramerate:(NSTimeInterval)start {
+	
+	renderTimes[timeIndex] = [NSDate timeIntervalSinceReferenceDate] - start;
+	static BOOL logTime = YES;
+	if(logTime) {
+		NSLog(@"Frame took %.5f", renderTimes[timeIndex]);
+		logTime = NO;
+	}
+	if(++timeIndex > 30) {
+		timeIndex = 0;
+		
+		NSTimeInterval total = 0;
+		for(NSUInteger index = 0; index<30; ++index)
+			total += renderTimes[index];
+		
+		self.frameRate = 30.0f/total;
+		
+		NSLog(@"Last thirty renders took %f seconds total", total);
+	}
+}
+
 - (void)capture {
 	
-	NSTimeInterval start = [NSDate timeIntervalSinceReferenceDate];
+	NSTimeInterval start = options.rateOn ? [NSDate timeIntervalSinceReferenceDate] : 0;
 	
     [self updateGLState];
     
@@ -100,31 +152,9 @@ static inline BAPolygonMode BAPolygonModeFromGL(GLenum mode) {
         m = matrix;
     
     glLoadMatrixf(m.i);
-	
-#if 0
-	if(blurOn && blur > 0)
-		glAccum(GL_RETURN, blur);
-	
-	{
 		
-		GLint viewport[4];
-		glGetIntegerv(GL_VIEWPORT, viewport);
-		
-		glBindFramebuffer(GL_FRAMEBUFFER, blurBuffer);
-		glFramebufferTexture2D(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_TEXTURE_2D, blurTexture, 0);
-		
-		if(GL_FRAMEBUFFER_COMPLETE == glCheckFramebufferStatus(GL_FRAMEBUFFER)) {
-			glCopyTexImage2D(GL_TEXTURE_2D, 0, GL_RGB8, 0, 0, viewport[2], viewport[3], 0);
-			
-			// do stuff
-			
-			// set rendering back to the windowing system's default framebuffer
-			glBindFramebuffer(GL_FRAMEBUFFER, 0);
-		}
-	}
-#endif
-	
 #if ! TARGET_OS_IPHONE
+	// TODO: make these into BAVisible objects; add to props
 	if(options.testOn) {
 		static GLUquadric *quad = NULL;
 		if(NULL == quad) quad = gluNewQuadric();
@@ -149,31 +179,8 @@ static inline BAPolygonMode BAPolygonModeFromGL(GLenum mode) {
 	
 	glPopMatrix();
 	
-	//	if(blurOn && blur > 0) {
-	//		glAccum(GL_MULT, 0.6);
-	//		glAccum(GL_ACCUM, 0.4);
-	//	}
-	
-	if(options.rateOn) {
-		
-		renderTimes[timeIndex] = [NSDate timeIntervalSinceReferenceDate] - start;
-		static BOOL logTime = YES;
-		if(logTime) {
-			NSLog(@"Frame took %.5f", renderTimes[timeIndex]);
-			logTime = NO;
-		}
-		if(++timeIndex > 30) {
-			timeIndex = 0;
-			
-			NSTimeInterval total = 0;
-			for(NSUInteger index = 0; index<30; ++index)
-				total += renderTimes[index];
-			
-			self.frameRate = 30.0f/total;
-			
-			NSLog(@"Last thirty renders took %f seconds total", total);
-		}
-	}
+	if(options.rateOn)
+		[self drawFramerate:start];
 }
 
 - (void)logCameraState {

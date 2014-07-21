@@ -8,6 +8,9 @@
 
 #import <BAScene/BAScene.h>
 
-@interface BACameraGL1 : BACamera
+@interface BACameraGL1 : BACamera {
+@private
+	NSUInteger _transformApplyCount;
+}
 
 @end

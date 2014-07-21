@@ -31,20 +31,22 @@ static NSTimeInterval gInterval = 0;
 @synthesize userInfo, bounds=_bounds;
 
 #pragma mark NSObject
+
+#pragma mark - NSObject
 - (void)dealloc {
 	self.userInfo = nil;
 	[super dealloc];
 }
 
 
-#pragma mark NSManagedObject
+#pragma mark - NSManagedObject
 - (void)awakeFromFetch {
 	[super awakeFromFetch];
 	[self.transform rebuild];
 }
 
 
-#pragma mark BAVisible
+#pragma mark - BAVisible
 - (void)paintForCamera:(BACamera *)camera {
 	[self.transform applyWithCamera:camera];
 
@@ -56,6 +58,7 @@ static NSTimeInterval gInterval = 0;
 	for(BAPrototypeMesh *pm in self.prototype.prototypeMeshes)
 		pm->appliesColor = !hasColor;
 	[self.prototype paintForCamera:camera];
+	[camera revertViewTransform];
 }
 
 - (void)setColor:(BAColor *)aColor {
@@ -63,6 +66,7 @@ static NSTimeInterval gInterval = 0;
 	hasColor = (nil != aColor);
 }
 
+#pragma mark - BAProp
 - (GLfloat)distanceForCameraLocation:(BAPointf)cloc {
 	
 	BAPoint4f tloc = [self.transform location].p;

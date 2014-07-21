@@ -153,7 +153,7 @@
 + (NSString *)defaultStoreExtension { return @"bascene"; }
 
 
-#pragma mark New
+#pragma mark - BAScene
 
 + (NSManagedObjectModel *)sceneModel {
     static NSManagedObjectModel *sceneModel;
