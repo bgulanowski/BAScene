@@ -54,7 +54,7 @@ typedef struct BACameraValueChanges {
 } BACameraColorChanges;
 
 
-@class BACamera, BAColor, BATransform;
+@class BACamera, BAColor;
 
 @protocol BAPropContainer<NSObject>
 - (NSArray *)sortedPropsForCamera:(BACamera *)camera;

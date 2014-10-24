@@ -174,6 +174,9 @@ static inline BAPolygonMode BAPolygonModeFromGL(GLenum mode) {
 	
 	for(self.exposureIndex=0; self.exposureIndex<self.exposures ; ++self.exposureIndex)
 		[props makeObjectsPerformSelector:@selector(paintForCamera:) withObject:self];
+	if (_transformApplyCount != 0) {
+		NSLog(@"Unbalanced transform stack");
+	}
 	
 	[drawDelegate paintForCamera:self];
 	

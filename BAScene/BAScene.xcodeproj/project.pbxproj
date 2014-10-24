@@ -683,9 +683,6 @@
 		0867D691FE84028FC02AAC07 /* BAScene */ = {
 			isa = PBXGroup;
 			children = (
-				84E287841865F3D30050CAA4 /* AppKit.framework */,
-				84F71E4C1865F2F10039B2FC /* ApplicationServices.framework */,
-				84F71E491865F2E50039B2FC /* Foundation.framework */,
 				08FB77AEFE84172EC02AAC07 /* BAScene */,
 				B67411C10FAF62D7001E3C0D /* BASceneTests */,
 				0867D69AFE84028FC02AAC07 /* Dependencies */,
@@ -699,10 +696,13 @@
 			isa = PBXGroup;
 			children = (
 				84357C02183AF22700664A68 /* BAFoundation.framework */,
+				4E21DF881066C26D00511C91 /* OpenGL.framework */,
 				84A591BA1769017F00C7F7B6 /* Cocoa.framework */,
+				84E287841865F3D30050CAA4 /* AppKit.framework */,
 				84A591B51769009200C7F7B6 /* CoreData.framework */,
 				84A591B81769011100C7F7B6 /* CoreVideo.framework */,
-				4E21DF881066C26D00511C91 /* OpenGL.framework */,
+				84F71E491865F2E50039B2FC /* Foundation.framework */,
+				84F71E4C1865F2F10039B2FC /* ApplicationServices.framework */,
 				B67411D90FAF63FA001E3C0D /* SenTestingKit.framework */,
 			);
 			name = Dependencies;
@@ -1154,7 +1154,7 @@
 			name = BASceneTests;
 			productName = BASceneTests;
 			productReference = B67411B70FAF62AD001E3C0D /* BASceneTests.octest */;
-			productType = "com.apple.product-type.bundle";
+			productType = "com.apple.product-type.bundle.ocunit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -1162,7 +1162,7 @@
 		0867D690FE84028FC02AAC07 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastTestingUpgradeCheck = 0510;
+				LastTestingUpgradeCheck = 0600;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Bored Astronaut";
 			};
@@ -1590,6 +1590,10 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/brent/Dev/github/BAScene/Vendor/Frameworks/Release,
+				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1612,6 +1616,10 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/brent/Dev/github/BAScene/Vendor/Frameworks/Release,
+				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
