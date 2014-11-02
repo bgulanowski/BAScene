@@ -112,7 +112,7 @@
     SEL meshSelector = NSSelectorFromString([name stringByAppendingString:@"Mesh"]);
 	
 	if(!proto)
-		proto = [self prototypeWithName:protoName mesh:objc_msgSend(self, meshSelector)];
+		proto = [self prototypeWithName:protoName mesh:((id(*)(id,SEL))objc_msgSend)(self, meshSelector)];
 	
 	return proto;
 }
