@@ -10,7 +10,7 @@
 #define BAScene_BASceneOpenGL_h
 
 #if TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR
-#import <OpenGLES/ES1/gl.h>
+#import <OpenGLES/ES2/gl.h>
 #else
 #import <OpenGL/gl.h>
 #endif

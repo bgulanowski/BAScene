@@ -10,6 +10,7 @@
 
 #import <BAScene/BACamera+EAGLCreation.h>
 #import <BAScene/BASceneUtilities.h>
+#import "BASceneOpenGL.h"
 #import <CoreVideo/CoreVideo.h>
 
 @implementation BASceneView {

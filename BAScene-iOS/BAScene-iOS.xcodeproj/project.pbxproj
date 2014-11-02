@@ -195,6 +195,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8419ECD81A064FB6004D4906 /* BASceneOpenGL.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = BASceneOpenGL.h; path = ../../BAScene/BAScene/BASceneOpenGL.h; sourceTree = "<group>"; };
 		843694731852A4D4001BAE43 /* BACamera+EAGLCreation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BACamera+EAGLCreation.h"; sourceTree = "<group>"; };
 		843694741852A4D4001BAE43 /* BACamera+EAGLCreation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BACamera+EAGLCreation.m"; sourceTree = "<group>"; };
 		8436948F1855153D001BAE43 /* BACamera+UIColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BACamera+UIColor.h"; sourceTree = "<group>"; };
@@ -466,6 +467,7 @@
 				84AECA87184BB9CF002AC8D0 /* BAScene.m */,
 				84AECA88184BB9CF002AC8D0 /* BASceneConstants.h */,
 				84AECA89184BB9CF002AC8D0 /* BASceneConstants.m */,
+				8419ECD81A064FB6004D4906 /* BASceneOpenGL.h */,
 				84AECA8A184BB9CF002AC8D0 /* BASceneTypes.h */,
 				84AECA8B184BB9CF002AC8D0 /* BASceneTypes.m */,
 				84AECA8C184BB9CF002AC8D0 /* BASceneUtilities.h */,
@@ -613,7 +615,7 @@
 		B67CD17813F8045E006772BE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0500;
+				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Marketcircle Inc";
 			};
 			buildConfigurationList = B67CD17B13F8045E006772BE /* Build configuration list for PBXProject "BAScene-iOS" */;
@@ -922,8 +924,10 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -959,8 +963,10 @@
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

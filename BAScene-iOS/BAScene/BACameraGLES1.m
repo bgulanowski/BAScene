@@ -17,11 +17,7 @@
 
 - (void)setup {
     
-	glGenFramebuffersOES(1, &_frameBuffer);
-    glBindFramebufferOES(GL_FRAMEBUFFER, _frameBuffer);
     glGenRenderbuffersOES(1, &_colorRenderBuffer);
-    glBindRenderbufferOES(GL_RENDERBUFFER, _colorRenderBuffer);
-    glFramebufferRenderbufferOES(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, _colorRenderBuffer);
 	
 	glDepthFunc(GL_LESS);
 	glBlendFunc(GL_SRC_ALPHA,  GL_ONE_MINUS_SRC_ALPHA);
@@ -58,8 +54,6 @@
 	NSTimeInterval start = [NSDate timeIntervalSinceReferenceDate];
 	
     [self updateGLState];
-	
-	glBindRenderbufferOES(GL_RENDERBUFFER, _colorRenderBuffer);
 
 	glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
     
@@ -109,8 +103,6 @@
 			NSLog(@"Last thirty renders took %f seconds total", total);
 		}
 	}
-
-	glBindFramebufferOES(GL_FRAMEBUFFER, _frameBuffer);
 }
 
 - (void)updateViewPortWithSize:(CGSize)size {
