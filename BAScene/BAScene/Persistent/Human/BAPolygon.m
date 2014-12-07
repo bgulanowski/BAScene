@@ -127,7 +127,7 @@ NSArray *vertexSort;
 	
 	for(BAPoint *point in [self orderedPoints])	{
 		
-		if(doColor)
+		if(doColor && point.color)
 			glColor3fv(point.color->values.i);
 
 		if(doTex && [point texCoord]) {
