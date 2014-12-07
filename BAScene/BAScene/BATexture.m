@@ -195,8 +195,7 @@
 	NSBitmapImageRep* bitmap = nil;
     CGSize imgSize = NSSizeToCGSize([self size]);
 	
-	[self setFlipped:YES];
-    [self lockFocus];
+    [self lockFocusFlipped:YES];
 	bitmap = [[[NSBitmapImageRep alloc] initWithFocusedViewRect:NSMakeRect(0.0, 0.0, imgSize.width, imgSize.height)] autorelease];
 	[self unlockFocus];
 	
