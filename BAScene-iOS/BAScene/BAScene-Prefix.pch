@@ -6,6 +6,8 @@
 
 #ifdef __OBJC__
 	#import <UIKit/UIKit.h>
+	#import <BAFoundation/BAMacros.h>
+	#import <BAFoundation/BAFunctions.h>
 	#import <BAFoundation/NSManagedObjectContext+BAAdditions.h>
 	#import <BAFoundation/NSManagedObject+BAAdditions.h>
 #endif

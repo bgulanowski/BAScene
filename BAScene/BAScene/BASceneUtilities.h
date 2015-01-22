@@ -16,31 +16,6 @@
 #import <BAScene/BASceneTypes.h>
 
 
-//#if CGFLOAT_IS_DOUBLE
-//#define sine sin
-//#define cosine cos
-//#define absolute fabs
-//#define BAInt long long
-//#define BAUInt unsigned long long
-//#define NAN_OFFSET LLONG_MAX+1 // -1 in signed long long
-//#define ULPS_DELTA 0x3fffffff
-//#define EPSILON DBL_EPSILON
-//#else
-#define sine sinf
-#define cosine cosf
-#define absolute fabsf
-#define BAInt long
-#define BAUInt unsigned long
-#define NAN_OFFSET LONG_MAX+1  // -1 signed long
-#define ULPS_DELTA 0x0fff
-#ifdef FLT_EPSILON
-#define EPSILON FLT_EPSILON
-#else
-#define EPSILON __FLT_EPSILON__
-#endif
-//#endif
-
-
 // http://www.cygnus-software.com/papers/comparingfloats/comparingfloats.htm
 // updated:
 // https://randomascii.wordpress.com/2012/02/25/comparing-floating-point-numbers-2012-edition/
@@ -83,28 +58,10 @@ static inline NSInteger BAmod(NSInteger dend, NSInteger div) {
 }
 
 
-#pragma mark -
-#pragma mark Randomness
+#pragma mark - Randomness
 
-#define BARandomLongLong()             (((long long)random() << 32) | (long long)random())
-#define BARandomFloat()                ((float)random()/(float)INT_MAX)
 #define BARandomGLfloat()              ((GLfloat)random()/(GLfloat)INT_MAX)
-#if CGFLOAT_IS_DOUBLE
-#define BARandomCGFloat()              ((GLfloat)BARandomLongLong()/(GLfloat)LLONG_MAX)
-#else
-#define BARandomCGFloat                BARandomFloat
-#endif
-#define BARandomBool()                 (random() & 1)
-#define BARandomSignedness()           (BARandomBool() * 2 - 1)
-#define BARandomCGFloatInRange(_a, _b) (BARandomCGFloat() * fabs(_b - _a) + MIN(_a,_b))
 #define BARandomGLfloatInRange(_a, _b) (BARandomGLfloat() * fabs(_b - _a) + MIN(_a,_b))
-
-static inline NSUInteger BARandomIntegerInRange(NSUInteger min, NSUInteger max) {
-	
-	NSUInteger result = (NSUInteger)BARandomCGFloatInRange(min, max+1);
-	
-	return result > max ? max : result;
-}
 
 extern void BARandomSphereSurfaceLocation(GLfloat cx, GLfloat cy, GLfloat cz, GLfloat r, GLfloat *x, GLfloat *y, GLfloat *z);
 
