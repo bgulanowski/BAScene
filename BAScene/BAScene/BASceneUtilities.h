@@ -12,6 +12,7 @@
 #import <CoreGraphics/CGGeometry.h>
 #endif
 
+#import <BAFoundation/BAFunctions.h>
 #import <BAScene/BASceneConstants.h>
 #import <BAScene/BASceneTypes.h>
 
@@ -30,7 +31,7 @@ BAInt b = *(BAInt*)&_f2_;\
 if (a < 0) a = (BAInt)(NAN_OFFSET - (BAUInt)a);\
 if (b < 0) b = (BAInt)(NAN_OFFSET - (BAUInt)b);\
 \
-_r_ = absolute(a - b);\
+_r_ = ABS(a - b);\
 } while(0)
 
 
