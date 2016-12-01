@@ -29,6 +29,7 @@ static NSTimeInterval gInterval = 0;
 @implementation BAProp
 
 @synthesize userInfo, bounds=_bounds;
+@synthesize insideOut=_insideOut;
 
 #pragma mark NSObject
 
@@ -57,7 +58,11 @@ static NSTimeInterval gInterval = 0;
 
 	for(BAPrototypeMesh *pm in self.prototype.prototypeMeshes)
 		pm->appliesColor = !hasColor;
+    if (self.insideOut) {
+        glFrontFace(GL_CW);
+    }
 	[self.prototype paintForCamera:camera];
+    glFrontFace(GL_CCW);
 	[camera revertViewTransform];
 }
 

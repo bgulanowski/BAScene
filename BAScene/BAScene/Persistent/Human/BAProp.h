@@ -21,6 +21,7 @@
 
 @property (retain) id userInfo;
 @property (nonatomic, readonly) BARegionf bounds;
+@property (nonatomic) BOOL insideOut;
 
 - (void)update;
 

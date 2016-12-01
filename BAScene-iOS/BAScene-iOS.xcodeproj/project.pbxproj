@@ -125,6 +125,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		841B61491C36FB5800BE6740 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 847A60C11A70961900D18304 /* BAFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B6AAB6CA14C21B9A0007A0A4;
+			remoteInfo = BAFoundation;
+		};
+		841B61531C3833AC00BE6740 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 847A60C11A70961900D18304 /* BAFoundation.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B6AAB6C914C21B9A0007A0A4;
+			remoteInfo = BAFoundation;
+		};
 		84DD3813184BD5A600E7C1AF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B67CD17813F8045E006772BE /* Project object */;
@@ -348,6 +362,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		841B61461C36FB5800BE6740 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				841B614A1C36FB5800BE6740 /* libBAFoundation.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		84AECA21184BB9A1002AC8D0 /* Persistent */ = {
 			isa = PBXGroup;
 			children = (
@@ -587,6 +609,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				841B61541C3833AC00BE6740 /* PBXTargetDependency */,
 			);
 			name = BAScene;
 			productName = BAScene;
@@ -630,6 +653,12 @@
 			mainGroup = B67CD17613F8045E006772BE;
 			productRefGroup = B67CD18513F8045E006772BE /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 841B61461C36FB5800BE6740 /* Products */;
+					ProjectRef = 847A60C11A70961900D18304 /* BAFoundation.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				84AEC9FE184BB945002AC8D0 /* BAScene */,
@@ -637,6 +666,16 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		841B614A1C36FB5800BE6740 /* libBAFoundation.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBAFoundation.a;
+			remoteRef = 841B61491C36FB5800BE6740 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		84DD37DE184BD08600E7C1AF /* Resources */ = {
@@ -722,6 +761,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		841B61541C3833AC00BE6740 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = BAFoundation;
+			targetProxy = 841B61531C3833AC00BE6740 /* PBXContainerItemProxy */;
+		};
 		84DD3814184BD5A600E7C1AF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 84AEC9FE184BB945002AC8D0 /* BAScene */;

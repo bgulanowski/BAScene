@@ -29,7 +29,7 @@
 	else
 		cameras = [_activeCameras copy];
 
-	return cameras;
+	return [cameras autorelease];
 }
 
 - (void)setUpdateQueue:(dispatch_queue_t)newQueue {
