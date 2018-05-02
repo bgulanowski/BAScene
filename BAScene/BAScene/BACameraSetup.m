@@ -13,4 +13,9 @@
 
 @synthesize camera;
 
+- (void)dealloc {
+    self.camera = nil;
+    [super dealloc];
+}
+
 @end

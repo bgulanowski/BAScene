@@ -78,6 +78,10 @@
 
 - (void)dealloc {
     self.updateQueue = NULL;
+    self.stage = nil;
+    self.model = nil;
+    [_activeCameras release];
+    _activeCameras = nil;
     [super dealloc];
 }
 

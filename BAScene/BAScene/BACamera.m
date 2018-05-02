@@ -67,6 +67,7 @@ NSString *BACameraOptionsToString(BACameraOptions options) {
 
 - (void)dealloc {
     self.drawDelegate = nil;
+    self.container = nil;
     [super dealloc];
 }
 
