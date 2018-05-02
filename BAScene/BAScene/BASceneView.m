@@ -88,12 +88,12 @@ CVReturn BASceneViewDisplayLink(CVDisplayLinkRef displayLink,
     CGLLockContext(cglContext);
     CGLSetCurrentContext(cglContext);
 
-	BOOL oldBlurOn = self.camera.blurOn;
-    
-	if([self inLiveResize])
-		self.camera.blurOn=NO;
+//    BOOL oldBlurOn = self.camera.blurOn;
+//
+//    if([self inLiveResize])
+//        self.camera.blurOn=NO;
     [camera capture];
-	self.camera.blurOn=oldBlurOn;
+//    self.camera.blurOn=oldBlurOn;
     
     CGLFlushDrawable(cglContext);
     CGLUnlockContext(cglContext);
