@@ -11,9 +11,6 @@
 #import <BAScene/BASceneUtilities.h>
 #import <BAScene/BATransform.h>
 
-#import <BAFoundation/NSManagedObject+BAAdditions.h>
-
-
 @implementation BATuple
 
 #pragma mark - NSMutableCopying
