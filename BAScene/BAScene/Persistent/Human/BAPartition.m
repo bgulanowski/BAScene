@@ -72,10 +72,13 @@ static NSString *kBARootPartitionName = @"BAScene:RootPartition";
 	double x[2], y[2], z[2];
 	
 	x[0] = BAMinXf(region), x[1] = x[0]+dim, y[0] = BAMinYf(region), y[1] = y[0]+dim, z[0] = BAMinZf(region), z[1] = z[0]+dim;
-	for(unsigned i=0; i<2; ++i)
-		for(unsigned j=0; j<2; ++j)
-			for(unsigned k=0; k<2; ++k)
+    for(unsigned i=0; i<2; ++i) {
+        for(unsigned j=0; j<2; ++j) {
+            for(unsigned k=0; k<2; ++k) {
 				[children addObject:[BAPartition partitionWithDimension:dim location:BAMakeLocationf(x[i]+dim_2, y[j]+dim_2, z[k]+dim_2, 1.0f) parent:self]];
+            }
+        }
+    }
 	
 	[self addSubgroups:children];
 }

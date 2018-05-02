@@ -203,10 +203,13 @@ NSString *BACameraOptionsToString(BACameraOptions options) {
     options.rateOn = rateOn;
     changes.rateOn = YES;
     @synchronized(self) {
-        if(options.rateOn && !renderTimes)
+        if(options.rateOn && !renderTimes) {
             renderTimes = malloc(sizeof(NSTimeInterval)*30);
-        else if(!options.rateOn && renderTimes)
-            free(renderTimes), renderTimes = NULL;
+        }
+        else if(!options.rateOn && renderTimes) {
+            free(renderTimes);
+            renderTimes = NULL;
+        }
     }
 }
 
