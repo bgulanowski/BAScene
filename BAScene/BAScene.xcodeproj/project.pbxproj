@@ -175,8 +175,6 @@
 		4EFEDDE612CE30020083CCFC /* BASceneResource.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDE212CE30020083CCFC /* BASceneResource.m */; };
 		4EFEDDEF12CE36950083CCFC /* BAResourceStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EFEDDED12CE36950083CCFC /* BAResourceStorage.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4EFEDDF012CE36950083CCFC /* BAResourceStorage.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EFEDDEE12CE36950083CCFC /* BAResourceStorage.m */; };
-		84195B91196A045900C2745F /* BAFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84357C02183AF22700664A68 /* BAFoundation.framework */; };
-		84195B92196A045B00C2745F /* BAFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84357C02183AF22700664A68 /* BAFoundation.framework */; };
 		842162611865F81300585C0B /* BACamera+Creation.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F9A3ED18519542004E31E4 /* BACamera+Creation.h */; };
 		842162621865F81300585C0B /* BACamera+NSColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 8436946D18529B9E001BAE43 /* BACamera+NSColor.h */; };
 		842162631865F81300585C0B /* BACameraGL1.h in Headers */ = {isa = PBXBuildFile; fileRef = 84F9A226184D5296004E31E4 /* BACameraGL1.h */; };
@@ -280,7 +278,6 @@
 		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
 		B67411A60FAF61EA001E3C0D /* BASceneUtilities.h in Headers */ = {isa = PBXBuildFile; fileRef = B67411A40FAF61EA001E3C0D /* BASceneUtilities.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B67411D40FAF63D6001E3C0D /* BAPropTester.m in Sources */ = {isa = PBXBuildFile; fileRef = B67411C50FAF62F6001E3C0D /* BAPropTester.m */; };
-		B67411DA0FAF63FA001E3C0D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B67411D90FAF63FA001E3C0D /* SenTestingKit.framework */; };
 		B67411E00FAF6476001E3C0D /* BAScene.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* BAScene.framework */; };
 		B67411F30FAF6CAB001E3C0D /* BASceneTestSupport.m in Sources */ = {isa = PBXBuildFile; fileRef = B67411F20FAF6CAB001E3C0D /* BASceneTestSupport.m */; };
 		B67411F50FAF6CB9001E3C0D /* BATuple.h in Headers */ = {isa = PBXBuildFile; fileRef = B67411E60FAF6B4E001E3C0D /* BATuple.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -332,6 +329,34 @@
 			proxyType = 1;
 			remoteGlobalIDString = 4E2957611217381000DB9320;
 			remoteInfo = scene;
+		};
+		8454E783209A4F43001C39E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8454E76D209A4EE7001C39E0 /* BAFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 8DC2EF5B0486A6940098B216;
+			remoteInfo = BAFoundation;
+		};
+		8454E785209A4F43001C39E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8454E76D209A4EE7001C39E0 /* BAFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4E4CC4A51338D0F2007AD580;
+			remoteInfo = BAFoundationTests;
+		};
+		8454E787209A4F43001C39E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8454E76D209A4EE7001C39E0 /* BAFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4E792A92133A2E82003C9B3E;
+			remoteInfo = baft;
+		};
+		8454E789209A4F43001C39E0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8454E76D209A4EE7001C39E0 /* BAFoundation.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 4E792AAB133A2ECF003C9B3E;
+			remoteInfo = baf;
 		};
 		84F71E431865F20A0039B2FC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -544,9 +569,9 @@
 		4EFEDDE212CE30020083CCFC /* BASceneResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BASceneResource.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		4EFEDDED12CE36950083CCFC /* BAResourceStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAResourceStorage.h; sourceTree = "<group>"; };
 		4EFEDDEE12CE36950083CCFC /* BAResourceStorage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAResourceStorage.m; sourceTree = "<group>"; };
-		84357C02183AF22700664A68 /* BAFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BAFoundation.framework; path = ../Vendor/Frameworks/Release/BAFoundation.framework; sourceTree = "<group>"; };
 		8436946D18529B9E001BAE43 /* BACamera+NSColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "BACamera+NSColor.h"; sourceTree = "<group>"; };
 		8436946E18529B9E001BAE43 /* BACamera+NSColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "BACamera+NSColor.m"; sourceTree = "<group>"; };
+		8454E76D209A4EE7001C39E0 /* BAFoundation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = BAFoundation.xcodeproj; path = BAFoundation/BAFoundation.xcodeproj; sourceTree = GITHUB; };
 		84A591B51769009200C7F7B6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		84A591B81769011100C7F7B6 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		84A591BA1769017F00C7F7B6 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -578,7 +603,6 @@
 		B67411B80FAF62AD001E3C0D /* BASceneTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BASceneTests-Info.plist"; sourceTree = "<group>"; };
 		B67411C40FAF62F6001E3C0D /* BAPropTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BAPropTester.h; sourceTree = "<group>"; };
 		B67411C50FAF62F6001E3C0D /* BAPropTester.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BAPropTester.m; sourceTree = "<group>"; };
-		B67411D90FAF63FA001E3C0D /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		B67411E60FAF6B4E001E3C0D /* BATuple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BATuple.h; sourceTree = "<group>"; };
 		B67411E70FAF6B4E001E3C0D /* BATuple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BATuple.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		B67411EC0FAF6C6E001E3C0D /* BATupleTester.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BATupleTester.h; sourceTree = "<group>"; };
@@ -647,7 +671,6 @@
 				84A591B91769011200C7F7B6 /* CoreVideo.framework in Frameworks */,
 				84A591B7176900B100C7F7B6 /* CoreData.framework in Frameworks */,
 				4E21DF891066C26D00511C91 /* OpenGL.framework in Frameworks */,
-				84195B91196A045900C2745F /* BAFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -659,9 +682,7 @@
 				84A591BE1769018D00C7F7B6 /* CoreData.framework in Frameworks */,
 				84A591C01769019000C7F7B6 /* CoreVideo.framework in Frameworks */,
 				84A591C21769019D00C7F7B6 /* OpenGL.framework in Frameworks */,
-				B67411DA0FAF63FA001E3C0D /* SenTestingKit.framework in Frameworks */,
 				B67411E00FAF6476001E3C0D /* BAScene.framework in Frameworks */,
-				84195B92196A045B00C2745F /* BAFoundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -695,7 +716,7 @@
 		0867D69AFE84028FC02AAC07 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
-				84357C02183AF22700664A68 /* BAFoundation.framework */,
+				8454E76D209A4EE7001C39E0 /* BAFoundation.xcodeproj */,
 				4E21DF881066C26D00511C91 /* OpenGL.framework */,
 				84A591BA1769017F00C7F7B6 /* Cocoa.framework */,
 				84E287841865F3D30050CAA4 /* AppKit.framework */,
@@ -703,7 +724,6 @@
 				84A591B81769011100C7F7B6 /* CoreVideo.framework */,
 				84F71E491865F2E50039B2FC /* Foundation.framework */,
 				84F71E4C1865F2F10039B2FC /* ApplicationServices.framework */,
-				B67411D90FAF63FA001E3C0D /* SenTestingKit.framework */,
 			);
 			name = Dependencies;
 			sourceTree = "<group>";
@@ -894,6 +914,17 @@
 				4E944E4A10A06AB700ECE62C /* BAPolygonEditor.xib */,
 			);
 			name = Editors;
+			sourceTree = "<group>";
+		};
+		8454E77D209A4F43001C39E0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8454E784209A4F43001C39E0 /* BAFoundation.framework */,
+				8454E786209A4F43001C39E0 /* BAFoundationTests.xctest */,
+				8454E788209A4F43001C39E0 /* baft */,
+				8454E78A209A4F43001C39E0 /* libbaf.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		84EFE8AA16E283BE0053A6F0 /* Other files */ = {
@@ -1179,6 +1210,12 @@
 			mainGroup = 0867D691FE84028FC02AAC07 /* BAScene */;
 			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 8454E77D209A4F43001C39E0 /* Products */;
+					ProjectRef = 8454E76D209A4EE7001C39E0 /* BAFoundation.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				8DC2EF4F0486A6940098B216 /* BAScene */,
@@ -1190,6 +1227,37 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		8454E784209A4F43001C39E0 /* BAFoundation.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = BAFoundation.framework;
+			remoteRef = 8454E783209A4F43001C39E0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8454E786209A4F43001C39E0 /* BAFoundationTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = BAFoundationTests.xctest;
+			remoteRef = 8454E785209A4F43001C39E0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8454E788209A4F43001C39E0 /* baft */ = {
+			isa = PBXReferenceProxy;
+			fileType = "compiled.mach-o.executable";
+			path = baft;
+			remoteRef = 8454E787209A4F43001C39E0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		8454E78A209A4F43001C39E0 /* libbaf.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libbaf.a;
+			remoteRef = 8454E789209A4F43001C39E0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8DC2EF520486A6940098B216 /* Resources */ = {
@@ -1441,10 +1509,6 @@
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/brent/Dev/github/BAScene/Vendor/Frameworks/Release,
-				);
 				FRAMEWORK_VERSION = A;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_MODEL_TUNING = G5;
@@ -1468,10 +1532,6 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					/Users/brent/Dev/github/BAScene/Vendor/Frameworks/Release,
-				);
 				FRAMEWORK_VERSION = A;
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = s;
@@ -1505,7 +1565,6 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../Vendor/Frameworks/$(CONFIGURATION)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -1541,7 +1600,6 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/../Vendor/Frameworks/$(CONFIGURATION)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
