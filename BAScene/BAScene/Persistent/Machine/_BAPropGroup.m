@@ -12,7 +12,7 @@
 }
 
 - (BAPropGroup *)insertBAPropGroup {
-	return [NSEntityDescription insertNewObjectForEntityForName:@"PropGroup" inManagedObjectContext:self];
+	return (BAPropGroup *)[NSEntityDescription insertNewObjectForEntityForName:@"PropGroup" inManagedObjectContext:self];
 }
 
 - (NSUInteger)countOfPropGroupObjectsWithPredicate:(NSPredicate *)predicate {

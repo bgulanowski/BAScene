@@ -14,7 +14,7 @@
 - (<$managedObjectClassName$> *)insert<$managedObjectClassName$> {
 	<$if hasUUID$>_<$managedObjectClassName$> *new = [NSEntityDescription insertNewObjectForEntityForName:@"<$name$>" inManagedObjectContext:self];
     [new setValue:[BAUUID UUID] forKey:@"uuid"];
-    return (<$managedObjectClassName$> *)new;<$else$>return [NSEntityDescription insertNewObjectForEntityForName:@"<$name$>" inManagedObjectContext:self];<$endif$>
+    return new;<$else$>return (<$managedObjectClassName$> *)[NSEntityDescription insertNewObjectForEntityForName:@"<$name$>" inManagedObjectContext:self];<$endif$>
 }
 
 - (NSUInteger)countOf<$name$>ObjectsWithPredicate:(NSPredicate *)predicate {

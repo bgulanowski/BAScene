@@ -12,7 +12,7 @@
 }
 
 - (BATuple *)insertBATuple {
-	return [NSEntityDescription insertNewObjectForEntityForName:@"Tuple" inManagedObjectContext:self];
+	return (BATuple *)[NSEntityDescription insertNewObjectForEntityForName:@"Tuple" inManagedObjectContext:self];
 }
 
 - (NSUInteger)countOfTupleObjectsWithPredicate:(NSPredicate *)predicate {

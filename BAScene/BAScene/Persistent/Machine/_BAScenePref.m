@@ -12,7 +12,7 @@
 }
 
 - (BAScenePref *)insertBAScenePref {
-	return [NSEntityDescription insertNewObjectForEntityForName:@"Pref" inManagedObjectContext:self];
+	return (BAScenePref *)[NSEntityDescription insertNewObjectForEntityForName:@"Pref" inManagedObjectContext:self];
 }
 
 - (NSUInteger)countOfPrefObjectsWithPredicate:(NSPredicate *)predicate {

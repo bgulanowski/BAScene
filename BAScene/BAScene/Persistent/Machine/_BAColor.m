@@ -12,7 +12,7 @@
 }
 
 - (BAColor *)insertBAColor {
-	return [NSEntityDescription insertNewObjectForEntityForName:@"Color" inManagedObjectContext:self];
+	return (BAColor *)[NSEntityDescription insertNewObjectForEntityForName:@"Color" inManagedObjectContext:self];
 }
 
 - (NSUInteger)countOfColorObjectsWithPredicate:(NSPredicate *)predicate {

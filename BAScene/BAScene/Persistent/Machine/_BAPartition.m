@@ -12,7 +12,7 @@
 }
 
 - (BAPartition *)insertBAPartition {
-	return [NSEntityDescription insertNewObjectForEntityForName:@"Partition" inManagedObjectContext:self];
+	return (BAPartition *)[NSEntityDescription insertNewObjectForEntityForName:@"Partition" inManagedObjectContext:self];
 }
 
 - (NSUInteger)countOfPartitionObjectsWithPredicate:(NSPredicate *)predicate {

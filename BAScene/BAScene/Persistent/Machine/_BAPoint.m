@@ -12,7 +12,7 @@
 }
 
 - (BAPoint *)insertBAPoint {
-	return [NSEntityDescription insertNewObjectForEntityForName:@"Point" inManagedObjectContext:self];
+	return (BAPoint *)[NSEntityDescription insertNewObjectForEntityForName:@"Point" inManagedObjectContext:self];
 }
 
 - (NSUInteger)countOfPointObjectsWithPredicate:(NSPredicate *)predicate {

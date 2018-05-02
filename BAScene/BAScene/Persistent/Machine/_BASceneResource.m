@@ -12,7 +12,7 @@
 }
 
 - (BASceneResource *)insertBASceneResource {
-	return [NSEntityDescription insertNewObjectForEntityForName:@"SceneResource" inManagedObjectContext:self];
+	return (BASceneResource *)[NSEntityDescription insertNewObjectForEntityForName:@"SceneResource" inManagedObjectContext:self];
 }
 
 - (NSUInteger)countOfSceneResourceObjectsWithPredicate:(NSPredicate *)predicate {

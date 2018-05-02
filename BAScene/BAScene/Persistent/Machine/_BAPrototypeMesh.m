@@ -12,7 +12,7 @@
 }
 
 - (BAPrototypeMesh *)insertBAPrototypeMesh {
-	return [NSEntityDescription insertNewObjectForEntityForName:@"PrototypeMesh" inManagedObjectContext:self];
+	return (BAPrototypeMesh *)[NSEntityDescription insertNewObjectForEntityForName:@"PrototypeMesh" inManagedObjectContext:self];
 }
 
 - (NSUInteger)countOfPrototypeMeshObjectsWithPredicate:(NSPredicate *)predicate {

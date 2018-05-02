@@ -12,7 +12,7 @@
 }
 
 - (BALight *)insertBALight {
-	return [NSEntityDescription insertNewObjectForEntityForName:@"Light" inManagedObjectContext:self];
+	return (BALight *)[NSEntityDescription insertNewObjectForEntityForName:@"Light" inManagedObjectContext:self];
 }
 
 - (NSUInteger)countOfLightObjectsWithPredicate:(NSPredicate *)predicate {

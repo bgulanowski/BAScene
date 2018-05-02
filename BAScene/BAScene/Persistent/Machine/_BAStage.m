@@ -12,7 +12,7 @@
 }
 
 - (BAStage *)insertBAStage {
-	return [NSEntityDescription insertNewObjectForEntityForName:@"Stage" inManagedObjectContext:self];
+	return (BAStage *)[NSEntityDescription insertNewObjectForEntityForName:@"Stage" inManagedObjectContext:self];
 }
 
 - (NSUInteger)countOfStageObjectsWithPredicate:(NSPredicate *)predicate {

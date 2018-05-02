@@ -12,7 +12,7 @@
 }
 
 - (BAMesh *)insertBAMesh {
-	return [NSEntityDescription insertNewObjectForEntityForName:@"Mesh" inManagedObjectContext:self];
+	return (BAMesh *)[NSEntityDescription insertNewObjectForEntityForName:@"Mesh" inManagedObjectContext:self];
 }
 
 - (NSUInteger)countOfMeshObjectsWithPredicate:(NSPredicate *)predicate {

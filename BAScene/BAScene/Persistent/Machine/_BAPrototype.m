@@ -12,7 +12,7 @@
 }
 
 - (BAPrototype *)insertBAPrototype {
-	return [NSEntityDescription insertNewObjectForEntityForName:@"Prototype" inManagedObjectContext:self];
+	return (BAPrototype *)[NSEntityDescription insertNewObjectForEntityForName:@"Prototype" inManagedObjectContext:self];
 }
 
 - (NSUInteger)countOfPrototypeObjectsWithPredicate:(NSPredicate *)predicate {

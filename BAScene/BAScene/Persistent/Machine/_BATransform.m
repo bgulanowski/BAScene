@@ -12,7 +12,7 @@
 }
 
 - (BATransform *)insertBATransform {
-	return [NSEntityDescription insertNewObjectForEntityForName:@"Transform" inManagedObjectContext:self];
+	return (BATransform *)[NSEntityDescription insertNewObjectForEntityForName:@"Transform" inManagedObjectContext:self];
 }
 
 - (NSUInteger)countOfTransformObjectsWithPredicate:(NSPredicate *)predicate {

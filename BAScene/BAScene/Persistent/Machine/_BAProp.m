@@ -12,7 +12,7 @@
 }
 
 - (BAProp *)insertBAProp {
-	return [NSEntityDescription insertNewObjectForEntityForName:@"Prop" inManagedObjectContext:self];
+	return (BAProp *)[NSEntityDescription insertNewObjectForEntityForName:@"Prop" inManagedObjectContext:self];
 }
 
 - (NSUInteger)countOfPropObjectsWithPredicate:(NSPredicate *)predicate {

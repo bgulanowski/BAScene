@@ -12,7 +12,7 @@
 }
 
 - (BAPolygon *)insertBAPolygon {
-	return [NSEntityDescription insertNewObjectForEntityForName:@"Polygon" inManagedObjectContext:self];
+	return (BAPolygon *)[NSEntityDescription insertNewObjectForEntityForName:@"Polygon" inManagedObjectContext:self];
 }
 
 - (NSUInteger)countOfPolygonObjectsWithPredicate:(NSPredicate *)predicate {
