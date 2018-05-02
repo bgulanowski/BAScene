@@ -34,7 +34,7 @@ if (b < 0) b = (BAInt)(NAN_OFFSET - (BAUInt)b);\
 _r_ = ABS(a - b);\
 } while(0)
 
-
+/*
 static inline BAUInt BAULPDiffFloats(GLfloat f1, GLfloat f2) {
 	BAUInt r;
 	ULPDiffs(r, f1, f2);
@@ -46,6 +46,7 @@ static inline BOOL BAEqualFloatsULP(GLfloat f1, GLfloat f2) {
 	ULPDiffs(r, f1, f2);
     return r <= ULPS_DELTA;
 }
+*/
 
 #define BAEqualFloats(_f1_, _f2_) (absolute(_f1_-_f2_) <= EPSILON)
 #define BAEqualElements(_e1_, _e2_) (absolute(_e1_-_e2_) <= 1.0f/(1<<16))
