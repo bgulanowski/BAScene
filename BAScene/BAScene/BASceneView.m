@@ -100,7 +100,7 @@ CVReturn BASceneViewDisplayLink(CVDisplayLinkRef displayLink,
 }
 
 - (void)startDrawTimer {
-	if(drawTimer)
+	if(drawTimer || displayLink)
 		return;
 	drawTimer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, dispatch_get_main_queue());
 	dispatch_source_set_timer(drawTimer, dispatch_time(DISPATCH_TIME_NOW, 0), NSEC_PER_SEC/30.f, NSEC_PER_USEC/10000);
@@ -130,11 +130,18 @@ CVReturn BASceneViewDisplayLink(CVDisplayLinkRef displayLink,
 #pragma mark - NSObject
 
 - (void)dealloc {
+    [self disableDisplayLink];
     self.camera = nil;
-    CVDisplayLinkRelease(displayLink), displayLink = NULL;
     [super dealloc];
 }
 
+#pragma mark - NSView
+
+- (void)display {
+    if(!displayLink) {
+        [super display];
+    }
+}
 
 #pragma mark - NSResponder
 
@@ -165,15 +172,14 @@ CVReturn BASceneViewDisplayLink(CVDisplayLinkRef displayLink,
     BOOL dragging = YES;
 	
     while(dragging) {
-		theEvent = [[self window] nextEventMatchingMask:NSRightMouseUpMask | NSRightMouseDraggedMask | NSMouseExited];
-		NSEventType eventType = [theEvent type];
-		if(NSRightMouseUp == eventType|NSMouseExited == eventType)
-			dragging = NO;
-		else {
-			if(eventType == NSMouseMoved)
-				[self.camera translateX:[theEvent deltaX]*0.1f y:0.0f z:[theEvent deltaY]*0.1f];
-			[self setNeedsDisplay:YES];
-		}
+		theEvent = [[self window] nextEventMatchingMask:NSRightMouseUpMask | NSRightMouseDraggedMask];
+        if ([theEvent type] == NSEventTypeRightMouseDragged) {
+            [self.camera translateX:[theEvent deltaX]*0.1f y:0.0f z:[theEvent deltaY]*0.1f];
+            [self display];
+        }
+        else {
+            dragging = NO;
+        }
     }
 }
 
@@ -183,12 +189,13 @@ CVReturn BASceneViewDisplayLink(CVDisplayLinkRef displayLink,
 
     while(dragging) {
 		theEvent = [[self window] nextEventMatchingMask:NSOtherMouseUpMask | NSOtherMouseDraggedMask];
-		if(NSOtherMouseUp == [theEvent type])
+        if ([theEvent type] == NSOtherMouseDragged) {
+            [self.camera translateX:[theEvent deltaX]*0.1f y:-[theEvent deltaY]*0.1f z:0.0f];
+            [self display];
+        }
+        else {
 			dragging = NO;
-		else {
-			[self.camera translateX:[theEvent deltaX]*0.1f y:-[theEvent deltaY]*0.1f z:0.0f];
-			[self setNeedsDisplay:YES];
-		}
+        }
     }
 }
 
@@ -203,7 +210,7 @@ CVReturn BASceneViewDisplayLink(CVDisplayLinkRef displayLink,
 //            NSLog(@"Mouse at %@", NSStringFromPoint(loc));
 //        }
         mouseLocation = loc;
-        [self setNeedsDisplay:YES];
+        [self display];
     }
 }
 
@@ -375,14 +382,11 @@ CVReturn BASceneViewDisplayLink(CVDisplayLinkRef displayLink,
 	
     BOOL dragging = YES;
 	NSWindow *window = [self window];
-	
+    
     while(dragging) {
 		static NSUInteger eventMask = NSLeftMouseUpMask | NSLeftMouseDraggedMask | NSKeyDownMask | NSKeyUpMask;
-		NSEvent *event = [window nextEventMatchingMask:eventMask untilDate:nil inMode:NSDefaultRunLoopMode dequeue:YES];
+		NSEvent *event = [window nextEventMatchingMask:eventMask];
 		
-		if (!event)
-			continue;
-
 		switch ([event type]) {
 			case NSKeyDown:
 				[self keyDown:event];
@@ -393,10 +397,12 @@ CVReturn BASceneViewDisplayLink(CVDisplayLinkRef displayLink,
 			case NSLeftMouseUp:
 				dragging = NO;
 				break;
-			default:
+			case NSEventTypeLeftMouseDragged:
 				[self.camera rotateX:[event deltaY]*0.4 y:[event deltaX]*0.3];
-				[self setNeedsDisplay:YES];
+                [self display];
 				break;
+            default:
+                break;
 		}
     }
 }
@@ -435,7 +441,6 @@ CVReturn BASceneViewDisplayLink(CVDisplayLinkRef displayLink,
         return;
     CVDisplayLinkRelease(displayLink), displayLink = NULL;
 }
-
 
 static Class gCameraClass = nil;
 
