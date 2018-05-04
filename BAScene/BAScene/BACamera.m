@@ -361,8 +361,8 @@ NSString *BACameraOptionsToString(BACameraOptions options) {
     m = BAMultiplyMatrix4x4f(m, BAXAxisRotationD4f(-xRot));
     matrix = BAMultiplyMatrix4x4f(m, matrix);
 
-    self.xRot += xDeg;
-    self.yRot += yDeg;
+    xRot += xDeg;
+    yRot += yDeg;
 }
 
 - (void)setup {
