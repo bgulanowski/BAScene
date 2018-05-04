@@ -16,6 +16,7 @@
  * 
  */
 
+#define FRAME_RATE_UPDATE 60.0f
 
 typedef enum {
     BAPolygonModeFill = 0,
@@ -199,5 +200,6 @@ typedef struct BACameraValueChanges {
 
 - (void)logCameraState;
 - (void)logGLState;
+- (void)drawFramerate:(NSTimeInterval)start;
 
 @end

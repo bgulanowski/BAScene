@@ -106,27 +106,6 @@ static inline BAPolygonMode BAPolygonModeFromGL(GLenum mode) {
 }
 #endif
 
-- (void)drawFramerate:(NSTimeInterval)start {
-	
-	renderTimes[timeIndex] = [NSDate timeIntervalSinceReferenceDate] - start;
-	static BOOL logTime = YES;
-	if(logTime) {
-		NSLog(@"Frame took %.5f", renderTimes[timeIndex]);
-		logTime = NO;
-	}
-	if(++timeIndex > 30) {
-		timeIndex = 0;
-		
-		NSTimeInterval total = 0;
-		for(NSUInteger index = 0; index<30; ++index)
-			total += renderTimes[index];
-		
-		self.frameRate = 30.0f/total;
-		
-		NSLog(@"Last thirty renders took %f seconds total", total);
-	}
-}
-
 - (void)capture {
 	
 	NSTimeInterval start = options.rateOn ? [NSDate timeIntervalSinceReferenceDate] : 0;

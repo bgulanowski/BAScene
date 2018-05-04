@@ -205,7 +205,7 @@ NSString *BACameraOptionsToString(BACameraOptions options) {
     changes.rateOn = YES;
     @synchronized(self) {
         if(options.rateOn && !renderTimes) {
-            renderTimes = malloc(sizeof(NSTimeInterval)*30);
+            renderTimes = malloc(sizeof(NSTimeInterval)*FRAME_RATE_UPDATE);
         }
         else if(!options.rateOn && renderTimes) {
             free(renderTimes);
@@ -445,6 +445,31 @@ do {\
 
 - (void)logGLState {
 	LOG_UNIMPLEMENTED();
+}
+
+- (void)drawFramerate:(NSTimeInterval)start {
+    
+    NSTimeInterval frameTime = [NSDate timeIntervalSinceReferenceDate] - start;
+    
+    static BOOL logTime = YES;
+    if(logTime) {
+        NSLog(@"Frame took %.5f", frameTime);
+        logTime = NO;
+    }
+
+    if(++timeIndex > FRAME_RATE_UPDATE) {
+        
+        NSTimeInterval total = 0;
+        for(NSUInteger index = 0; index < FRAME_RATE_UPDATE; ++index)
+            total += renderTimes[index];
+        
+        self.frameRate = FRAME_RATE_UPDATE/total;
+        
+        NSLog(@"Last %.f renders took %f seconds total", FRAME_RATE_UPDATE, total);
+        timeIndex = 0;
+    }
+
+    renderTimes[timeIndex] = frameTime;
 }
 
 @end
