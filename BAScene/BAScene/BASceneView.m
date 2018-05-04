@@ -172,7 +172,8 @@ CVReturn BASceneViewDisplayLink(CVDisplayLinkRef displayLink,
     BOOL dragging = YES;
 	
     while(dragging) {
-		theEvent = [[self window] nextEventMatchingMask:NSRightMouseUpMask | NSRightMouseDraggedMask];
+        NSEventMask eventMask = NSRightMouseUpMask | NSRightMouseDraggedMask;
+        theEvent = [NSApp nextEventMatchingMask:eventMask untilDate:[NSDate distantFuture] inMode:NSEventTrackingRunLoopMode dequeue:YES];
         if ([theEvent type] == NSEventTypeRightMouseDragged) {
             [self.camera translateX:[theEvent deltaX]*0.1f y:0.0f z:[theEvent deltaY]*0.1f];
             [self display];
@@ -188,7 +189,8 @@ CVReturn BASceneViewDisplayLink(CVDisplayLinkRef displayLink,
     BOOL dragging = YES;
 
     while(dragging) {
-		theEvent = [[self window] nextEventMatchingMask:NSOtherMouseUpMask | NSOtherMouseDraggedMask];
+        NSEventMask eventMask = NSOtherMouseUpMask | NSOtherMouseDraggedMask;
+		theEvent = [NSApp nextEventMatchingMask:eventMask untilDate:[NSDate distantFuture] inMode:NSEventTrackingRunLoopMode dequeue:YES];
         if ([theEvent type] == NSOtherMouseDragged) {
             [self.camera translateX:[theEvent deltaX]*0.1f y:-[theEvent deltaY]*0.1f z:0.0f];
             [self display];
@@ -381,11 +383,10 @@ CVReturn BASceneViewDisplayLink(CVDisplayLinkRef displayLink,
 - (void)mouseLook {
 	
     BOOL dragging = YES;
-	NSWindow *window = [self window];
     
     while(dragging) {
-		static NSUInteger eventMask = NSLeftMouseUpMask | NSLeftMouseDraggedMask | NSKeyDownMask | NSKeyUpMask;
-		NSEvent *event = [window nextEventMatchingMask:eventMask];
+		static NSUInteger eventMask = NSLeftMouseUpMask | NSLeftMouseDraggedMask | NSEventTypeMouseMoved | NSKeyDownMask | NSKeyUpMask;
+		NSEvent *event = [NSApp nextEventMatchingMask:eventMask untilDate:[NSDate distantFuture] inMode:NSEventTrackingRunLoopMode dequeue:YES];
 		
 		switch ([event type]) {
 			case NSKeyDown:
@@ -398,6 +399,7 @@ CVReturn BASceneViewDisplayLink(CVDisplayLinkRef displayLink,
 				dragging = NO;
 				break;
 			case NSEventTypeLeftMouseDragged:
+            case NSEventTypeMouseMoved:
 				[self.camera rotateX:[event deltaY]*0.4 y:[event deltaX]*0.3];
                 [self display];
 				break;
