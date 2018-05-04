@@ -193,6 +193,7 @@
 		8436947018529B9E001BAE43 /* BACamera+NSColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 8436946D18529B9E001BAE43 /* BACamera+NSColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		8436947118529B9E001BAE43 /* BACamera+NSColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8436946E18529B9E001BAE43 /* BACamera+NSColor.m */; };
 		8436947218529B9E001BAE43 /* BACamera+NSColor.m in Sources */ = {isa = PBXBuildFile; fileRef = 8436946E18529B9E001BAE43 /* BACamera+NSColor.m */; };
+		8454E7A7209A527F001C39E0 /* BAFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8454E784209A4F43001C39E0 /* BAFoundation.framework */; };
 		84A591B7176900B100C7F7B6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A591B51769009200C7F7B6 /* CoreData.framework */; };
 		84A591B91769011200C7F7B6 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A591B81769011100C7F7B6 /* CoreVideo.framework */; };
 		84A591BB1769017F00C7F7B6 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84A591BA1769017F00C7F7B6 /* Cocoa.framework */; settings = {ATTRIBUTES = (Required, ); }; };
@@ -667,6 +668,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8454E7A7209A527F001C39E0 /* BAFoundation.framework in Frameworks */,
 				84A591BB1769017F00C7F7B6 /* Cocoa.framework in Frameworks */,
 				84A591B91769011200C7F7B6 /* CoreVideo.framework in Frameworks */,
 				84A591B7176900B100C7F7B6 /* CoreData.framework in Frameworks */,
@@ -709,6 +711,7 @@
 				0867D69AFE84028FC02AAC07 /* Dependencies */,
 				4E7113891055A946002B54BB /* Docs */,
 				034768DFFF38A50411DB9C8B /* Products */,
+				8454E7A6209A527F001C39E0 /* Frameworks */,
 			);
 			name = BAScene;
 			sourceTree = "<group>";
@@ -925,6 +928,13 @@
 				8454E78A209A4F43001C39E0 /* libbaf.a */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		8454E7A6209A527F001C39E0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		84EFE8AA16E283BE0053A6F0 /* Other files */ = {
@@ -1194,7 +1204,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastTestingUpgradeCheck = 0610;
-				LastUpgradeCheck = 0900;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Bored Astronaut";
 			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "BAScene" */;
@@ -1505,6 +1515,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1528,6 +1539,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DYLIB_COMPATIBILITY_VERSION = 1;
@@ -1557,6 +1569,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -1593,6 +1606,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
@@ -1617,6 +1631,7 @@
 		4E122FB3121AD8C300EC0D92 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1628,6 +1643,7 @@
 		4E122FB4121AD8C300EC0D92 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1640,6 +1656,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1656,6 +1673,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1672,6 +1690,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1697,6 +1716,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1722,6 +1742,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1739,6 +1760,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
@@ -1756,6 +1778,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1787,6 +1810,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_WEAK = YES;
 				COMBINE_HIDPI_IMAGES = YES;
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
