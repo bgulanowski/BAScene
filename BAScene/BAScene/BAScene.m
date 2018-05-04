@@ -105,7 +105,7 @@
         _lastUpdate = [NSDate timeIntervalSinceReferenceDate];
         timer = dispatch_source_create(DISPATCH_SOURCE_TYPE_TIMER, 0, 0, updateQueue);
         
-        int64_t delta = NSEC_PER_SEC/100;
+        int64_t delta = NSEC_PER_SEC/60;
         
         dispatch_source_set_event_handler(timer, ^{
             
@@ -117,7 +117,7 @@
             if(updateBlock(self, now - lastUpdate))
                 dispatch_async(dispatch_get_main_queue(), ^{ [self cancelUpdates]; });
         });
-        dispatch_source_set_timer(timer, dispatch_time(DISPATCH_TIME_NOW, 0), delta, NSEC_PER_USEC/10000);
+        dispatch_source_set_timer(timer, dispatch_time(DISPATCH_TIME_NOW, 0), delta, 100);
 
         [self resumeUpdates];
     });
