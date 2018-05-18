@@ -396,9 +396,9 @@ NSString *BACameraOptionsToString(BACameraOptions options) {
     [self translateX:xRate*interval y:yRate*interval z:zRate*interval];
     [self rotateX:xRotRate*interval y:yRotRate*interval];
     
-    dispatch_async(dispatch_get_main_queue(), ^{
-        [self sendKeyValueUpdates];
-    });
+//    dispatch_async(dispatch_get_main_queue(), ^{
+//        [self sendKeyValueUpdates];
+//    });
 }
 
 - (void)updateGLState {
