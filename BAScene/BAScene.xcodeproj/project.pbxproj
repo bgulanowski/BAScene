@@ -715,8 +715,8 @@
 				B67411C10FAF62D7001E3C0D /* BASceneTests */,
 				0867D69AFE84028FC02AAC07 /* Dependencies */,
 				4E7113891055A946002B54BB /* Docs */,
-				034768DFFF38A50411DB9C8B /* Products */,
 				8454E7A6209A527F001C39E0 /* Frameworks */,
+				034768DFFF38A50411DB9C8B /* Products */,
 			);
 			name = BAScene;
 			sourceTree = "<group>";
@@ -1237,7 +1237,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastTestingUpgradeCheck = 0610;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Bored Astronaut";
 			};
 			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "BAScene" */;
